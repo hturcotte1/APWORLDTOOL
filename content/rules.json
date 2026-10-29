@@ -1,0 +1,14 @@
+{
+  "empireOrder": ["mughal", "mingqing", "tokugawa", "ottoman", "russia", "spain", "safavid", "songhai"],
+  "tiers": {
+    "easy": { "label": "Easy", "pointsMin": 0, "pointsMax": 5, "stability": 4, "maxInstantCollapses": 1, "blurb": "A strong, stable starting position. Mistakes cost points but rarely sink you." },
+    "medium": { "label": "Medium", "pointsMin": -1, "pointsMax": 6, "stability": 3, "maxInstantCollapses": 3, "blurb": "Real rivals and real risks. Bad choices can lose points and shake your empire." },
+    "hard": { "label": "Hard", "pointsMin": -3, "pointsMax": 8, "stability": 2, "maxInstantCollapses": 6, "blurb": "High risk, high reward. The biggest scores are possible here, and so are fast collapses." }
+  },
+  "collapsePenalty": { "fraction": 0.5, "minimum": 10, "explain": "If your empire collapses, you lose half of your points (at least 10)." },
+  "pathLength": { "min": 7, "max": 9 },
+  "nodesPerEmpire": { "min": 12, "max": 15 },
+  "timelineLength": { "min": 4, "max": 6 },
+  "optionsPerNode": 3,
+  "maxExplanationSentences": 3
+}

@@ -1,0 +1,22 @@
+{
+  "_note": "Shared key terms. The game adds a short definition in parentheses the FIRST time a term appears in a play-through. Empire files can add their own terms in their \"glossary\" list.",
+  "terms": [
+    { "term": "Sunni", "match": ["Sunnis"], "def": "the larger branch of Islam" },
+    { "term": "Shia", "def": "the second-largest branch of Islam, which holds that leadership should have passed through Muhammad's family" },
+    { "term": "Twelver Shia", "def": "the main branch of Shia Islam, which honors twelve imams (leaders) from Muhammad's family, starting with his cousin and son-in-law Ali" },
+    { "term": "jizya", "def": "a tax paid by non-Muslims under Muslim rule in exchange for protection and the right to practice their faith" },
+    { "term": "gunpowder empire", "match": ["gunpowder empires"], "def": "an empire that grew by using guns and cannons" },
+    { "term": "Habsburgs", "match": ["Habsburg"], "def": "a powerful Catholic royal family that ruled Austria, Spain, and other European lands" },
+    { "term": "caliph", "def": "a ruler who claims to lead the Muslim community as a successor to Muhammad" },
+    { "term": "tribute", "def": "payments a weaker state makes to a stronger one to show loyalty or buy peace" },
+    { "term": "inflation", "def": "rising prices, so money buys less" },
+    { "term": "Protestant Reformation", "def": "the movement, begun by Martin Luther in 1517, that split Western Christianity into Catholic and Protestant churches" },
+    { "term": "Protestants", "match": ["Protestant"], "def": "Christians who broke away from the Catholic Church during the Reformation" },
+    { "term": "Jesuit", "match": ["Jesuits"], "def": "a member of a Catholic religious order famous for its missionaries and scholars" },
+    { "term": "Confucian", "match": ["Confucianism"], "def": "based on the teachings of Confucius, which stress order, loyalty, duty, and respect for elders" },
+    { "term": "shah", "def": "the title of the ruler of Persia (Iran)" },
+    { "term": "Persia", "def": "the name Europeans long used for Iran" },
+    { "term": "hajj", "def": "the pilgrimage to Mecca that every Muslim who is able should make once" },
+    { "term": "bureaucracy", "def": "a system of trained government officials" }
+  ]
+}

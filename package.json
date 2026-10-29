@@ -1,0 +1,22 @@
+{
+  "name": "ap-world-empires",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AP World History Unit 3 (Land-Based Empires, 1450-1750) branching review game with a shared leaderboard.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "balance": "node scripts/balance.mjs",
+    "review-doc": "node scripts/build-review.mjs",
+    "test": "node --test --no-warnings \"test/unit/*.test.mjs\"",
+    "test:e2e": "node --no-warnings test/e2e/run.mjs",
+    "check": "npm run validate && npm run balance && npm test",
+    "dev": "wrangler dev",
+    "db:migrate:local": "wrangler d1 migrations apply ap-world-empires --local",
+    "db:migrate:remote": "wrangler d1 migrations apply ap-world-empires --remote",
+    "deploy": "npm run check && wrangler d1 migrations apply ap-world-empires --remote && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

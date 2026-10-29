@@ -1,0 +1,400 @@
+{
+  "id": "tokugawa",
+  "name": "Tokugawa Japan",
+  "tier": "easy",
+  "tierReason": "An island nation finally at peace. Keep the daimyo in line and you're safe.",
+  "summary": "Unite Japan under the shogun, control the samurai lords, and decide how open to be to the world.",
+  "color": "#be185d",
+  "emblem": "fuji",
+  "startYear": 1600,
+  "endYear": 1750,
+  "intro": "You begin as Tokugawa Ieyasu in 1600, the warlord who has just won the final struggle for power after Japan's long civil wars, and guide his family's government, the Tokugawa shogunate, into the 1700s. Your strengths: an island nation, a victorious army, and a tired country that wants peace. Your challenges: hundreds of proud regional lords with their own samurai, and European missionaries and traders arriving by sea.",
+  "start": "sekigahara",
+  "collapse": { "text": "Rival daimyo rebelled, and Japan slid back into civil war. Your family lost control of the country." },
+  "survive": { "text": "Your Tokugawa shogunate keeps Japan peaceful and stable into the 1700s (in reality, it lasted until 1868)." },
+  "glossary": [
+    { "term": "daimyo", "def": "powerful regional lords who ruled their own lands with their own samurai" },
+    { "term": "samurai", "def": "Japan's hereditary warrior class, who served daimyo and the shogun" },
+    { "term": "shogun", "def": "Japan's top military ruler, who governed in the emperor's name" },
+    { "term": "shogunate", "def": "the government run by the shogun" },
+    { "term": "Edo", "def": "the Tokugawa capital, today's Tokyo" },
+    { "term": "rōnin", "match": ["ronin"], "def": "samurai with no lord to serve" },
+    { "term": "sankin-kōtai", "def": "'alternate attendance': daimyo had to live in Edo every other year" },
+    { "term": "sakoku", "def": "'closed country': the policy of strictly limiting contact with foreigners" },
+    { "term": "Dejima", "def": "a tiny artificial island in Nagasaki harbor where Dutch traders had to live" },
+    { "term": "kabuki", "def": "a popular, colorful style of Japanese theater" },
+    { "term": "rangaku", "def": "'Dutch learning': the study of European science through Dutch books" }
+  ],
+  "timeline": [
+    { "year": "1600–1603", "text": "Tokugawa Ieyasu wins the Battle of Sekigahara and becomes shogun, ruling from Edo (Tokyo)." },
+    { "year": "1614–1615", "text": "The shogunate bans Christianity and destroys the rival Toyotomi family at Osaka Castle." },
+    { "year": "1635", "text": "Alternate attendance (sankin-kōtai) forces daimyo to spend every other year in Edo." },
+    { "year": "1637–1641", "text": "After the Shimabara Rebellion, Japan expels the Portuguese (1639) and limits European trade to the Dutch, moved to Nagasaki in 1641." },
+    { "year": "1680s–1700s", "text": "Peace brings booming cities, rich merchants, kabuki theater, and woodblock prints." },
+    { "year": "1720", "text": "Shogun Yoshimune allows non-religious European books, opening the way for \"Dutch learning.\"" }
+  ],
+  "nodes": {
+    "sekigahara": {
+      "year": 1600,
+      "title": "After Sekigahara",
+      "milestone": true,
+      "text": "For more than a century, Japan was torn apart by civil wars between daimyo with their own samurai armies. The warlord Toyotomi Hideyoshi reunited it, but after he died in 1598 the lords split into rival camps. Now you, Tokugawa Ieyasu, have won the great Battle of Sekigahara against a coalition of rival lords. How will you treat the lords who fought against you, and those who switched sides at the last minute?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reward loyal lords with lands near your base at Edo, take land away from many enemies, and move the rest to distant regions where they can't threaten you.",
+          "points": 5,
+          "next": "shogun",
+          "explanation": "That's what Ieyasu did. He took away or shrank the lands of dozens of enemy daimyo, placed trusted hereditary vassals (fudai) near Edo, and kept the \"outside\" lords (tozama), former enemies and newer allies alike, at a distance. This map of power lasted for more than 250 years."
+        },
+        {
+          "id": "b",
+          "text": "Execute every lord who opposed you and seize all of their lands.",
+          "points": 1,
+          "stability": -1,
+          "set": ["executions"],
+          "next": "restless",
+          "explanation": "Mass executions would terrify the surviving lords into new rebellions. Ieyasu executed a few leaders, like Ishida Mitsunari, but mostly took away or reduced lands and moved rivals far from Edo."
+        },
+        {
+          "id": "c",
+          "text": "Forgive everyone and let all the lords keep their lands as before.",
+          "points": 1,
+          "set": ["forgave"],
+          "next": "restless",
+          "explanation": "Too soft. Leaving powerful enemies with full armies and lands invites another civil war. Ieyasu reorganized the whole map of Japan's domains to protect his power."
+        }
+      ]
+    },
+    "shogun": {
+      "year": 1603,
+      "title": "A Title Fit for a Ruler",
+      "text": "Japan has an emperor in Kyoto whose family has reigned for centuries, but he holds little real power. Military rulers called shoguns have often governed in the emperor's name. You have the power. Now you need a title that makes it legitimate.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ask the emperor to name you shogun, keep him in Kyoto as a respected symbol, and govern from your own castle town of Edo.",
+          "points": 5,
+          "next": "christianity",
+          "explanation": "Exactly right. In 1603 the emperor appointed Ieyasu shogun, giving his rule legitimacy while real power stayed in Edo. The Tokugawa shogunate ruled Japan until 1868."
+        },
+        {
+          "id": "b",
+          "text": "Remove the emperor and declare yourself emperor.",
+          "points": 0,
+          "stability": -1,
+          "next": "christianity",
+          "explanation": "The emperor was believed to descend from the sun goddess, and replacing him would turn many daimyo against you. Ieyasu was smarter: he ruled as shogun in the emperor's name."
+        },
+        {
+          "id": "c",
+          "text": "Rule as guardian for Toyotomi Hideyori, the young son of the last great warlord.",
+          "points": 2,
+          "next": "christianity",
+          "explanation": "That would leave a rival family at the center of power. Ieyasu took the title of shogun in 1603 and later destroyed the Toyotomi at Osaka in 1615."
+        }
+      ]
+    },
+    "restless": {
+      "year": 1601,
+      "title": "Restless Lords",
+      "text": "Japan is uneasy. Several powerful lords are quietly rebuilding their armies and meeting in secret. Some say Toyotomi Hideyori, the young son of the last great warlord, should rule instead of you.",
+      "context": [
+        { "if": "executions", "text": "Your executions terrified the surviving lords, and their fear is turning into plotting." },
+        { "if": "forgave", "text": "Your former enemies kept all their lands and armies, and they don't fear you." }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Redraw the map: move dangerous lords to distant domains, reward loyal ones near Edo, and get the emperor to name you shogun.",
+          "points": 4,
+          "next": "christianity",
+          "explanation": "A good recovery, and what Ieyasu really did right after Sekigahara. He reorganized the daimyo domains and became shogun in 1603, starting more than 250 years of Tokugawa rule."
+        },
+        {
+          "id": "b",
+          "text": "Raise taxes on peasants to build a giant army that will scare the lords.",
+          "points": 1,
+          "next": "christianity",
+          "explanation": "Overtaxing peasants creates new enemies. Ieyasu relied on rearranging the lords' lands and on his title as shogun instead."
+        },
+        {
+          "id": "c",
+          "text": "Ignore the rumors. They'll fade.",
+          "points": 0,
+          "stability": -1,
+          "next": "christianity",
+          "explanation": "Ignoring plots right after a civil war is dangerous. Ieyasu acted quickly, reorganizing the domains and becoming shogun in 1603."
+        }
+      ]
+    },
+    "christianity": {
+      "year": 1614,
+      "title": "The Christian Question",
+      "milestone": true,
+      "text": "Jesuit missionaries led by Francis Xavier, working with Portuguese traders, arrived in Japan in 1549, and about 300,000 Japanese have become Christians, including some daimyo. Spanish friars have come too, from the Philippines, a land Spain conquered. Some advisers fear that missionaries are the first step toward European conquest, and that Christians will be loyal to the Pope instead of to you.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ban Christianity, expel the missionaries, and require every family to register at a Buddhist temple.",
+          "points": 5,
+          "next": "osaka",
+          "explanation": "This is what the shogunate did, starting with a nationwide ban in 1614 and later temple registration for every family. Thousands of Japanese Christians were persecuted or killed, but the shogun removed a group he saw as a foreign threat to his control."
+        },
+        {
+          "id": "b",
+          "text": "Welcome the missionaries. Christianity could bring you European allies and guns.",
+          "points": 0,
+          "stability": -1,
+          "next": "kyushu",
+          "explanation": "Risky for a new government. The shogunate feared that missionaries served Spain and Portugal and that converts would put the Pope above the shogun, so it banned Christianity in 1614."
+        },
+        {
+          "id": "c",
+          "text": "Allow Christians to worship privately, but stop new missionaries from arriving.",
+          "points": 2,
+          "next": "kyushu",
+          "explanation": "A middle path, but the shogunate decided Christianity was too dangerous to tolerate at all. It banned the religion in 1614 and later executed many Christians who refused to give up their faith."
+        }
+      ]
+    },
+    "osaka": {
+      "year": 1614,
+      "title": "The Siege of Osaka Castle",
+      "text": "One rival remains: Toyotomi Hideyori, son of the late warlord Toyotomi Hideyoshi, inside the mighty Osaka Castle. Tens of thousands of rōnin have flocked to join him, including some Christians angered by your ban.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Besiege Osaka Castle and destroy the Toyotomi family's power once and for all.",
+          "points": 5,
+          "next": "alternate",
+          "explanation": "Ruthless but effective. In 1614–1615 Ieyasu's armies besieged and destroyed Osaka Castle, and Hideyori died. With no rival left, the Tokugawa ruled unchallenged."
+        },
+        {
+          "id": "b",
+          "text": "Arrange a marriage alliance and share power with the Toyotomi.",
+          "points": 2,
+          "next": "alternate",
+          "explanation": "Ieyasu had already married his granddaughter to Hideyori, but the Toyotomi remained a rallying point for enemies. In 1615 he destroyed Osaka Castle instead."
+        },
+        {
+          "id": "c",
+          "text": "Leave Hideyori alone in his castle.",
+          "points": 0,
+          "next": "alternate",
+          "explanation": "A rival with a famous name and a castle full of rōnin was a constant threat. Ieyasu removed it in 1615."
+        }
+      ]
+    },
+    "kyushu": {
+      "year": 1620,
+      "title": "Crosses in Kyushu",
+      "text": "Christianity is spreading on the southern island of Kyushu. Spanish friars keep slipping in from Manila, and rumors say they are spying for Spain. Some local lords protect Christians because they want Spanish and Portuguese trade.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ban Christianity, expel the missionaries, and require every family to register at a Buddhist temple.",
+          "points": 4,
+          "next": "alternate",
+          "explanation": "The shogunate did this: it banned Christianity in 1614 and enforced the ban harshly in the 1620s and 1630s. The persecution cost many lives, but it removed what the shogun saw as a foreign threat."
+        },
+        {
+          "id": "b",
+          "text": "Let each lord decide what to do about Christians in his own domain.",
+          "points": 1,
+          "next": "alternate",
+          "explanation": "That would let local lords build foreign alliances behind your back. The shogunate enforced one rule for all of Japan: Christianity was banned."
+        },
+        {
+          "id": "c",
+          "text": "Invite more Spanish ships. The trade is too good to lose.",
+          "points": 0,
+          "stability": -1,
+          "next": "alternate",
+          "explanation": "Spanish trade came with Spanish missionaries, and the shogun feared Spain might try to conquer Japan as it had the Philippines. Japan cut off all trade with Spain in 1624."
+        }
+      ]
+    },
+    "alternate": {
+      "year": 1635,
+      "title": "Keeping the Daimyo in Line",
+      "milestone": true,
+      "text": "You are Tokugawa Iemitsu, Ieyasu's grandson and the third shogun. Japan is at peace, but about 250 daimyo still rule their own domains with their own samurai. You need a system that keeps them loyal and too busy to rebel, without fighting another war.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Require every daimyo to live in Edo every other year, and to leave his wife and heir in Edo permanently.",
+          "points": 5,
+          "next": "sakoku",
+          "explanation": "This is the real policy, called sankin-kōtai, made official in 1635. Traveling back and forth with huge processions was expensive, and family members in Edo were basically hostages, so rebellion became nearly impossible."
+        },
+        {
+          "id": "b",
+          "text": "Send shogunate soldiers to watch over every domain.",
+          "points": 1,
+          "next": "shimabara",
+          "explanation": "Stationing troops in about 250 domains would be hugely expensive. Alternate attendance (sankin-kōtai) kept the daimyo in line far more cheaply: they paid for their own costly trips to Edo, and their families stayed there."
+        },
+        {
+          "id": "c",
+          "text": "Trust the daimyo. The wars are over.",
+          "points": 0,
+          "stability": -1,
+          "next": "shimabara",
+          "explanation": "Too trusting. Ambitious lords with castles and armies could restart civil war. In 1635 the shogunate made alternate attendance (sankin-kōtai) official."
+        }
+      ]
+    },
+    "shimabara": {
+      "year": 1637,
+      "title": "The Shimabara Rebellion",
+      "text": "In the Shimabara region of Kyushu, peasants crushed by heavy taxes, famine, and persecution of Christians have risen up. Led by a teenager called Amakusa Shirō, tens of thousands of rebels, many of them Christians, have seized an old castle and refuse to surrender.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Send a huge army to crush the rebellion, then punish the cruel local lord whose taxes caused it.",
+          "points": 3,
+          "next": "sakoku",
+          "explanation": "That's what happened. A shogunate army of more than 100,000 took the castle in 1638, and the local lord was executed for misrule. Afterward, the shogun cut ties with the Portuguese, blaming Christianity for the revolt."
+        },
+        {
+          "id": "b",
+          "text": "Negotiate: let the rebels practice Christianity if they go home.",
+          "points": 1,
+          "stability": -1,
+          "next": "sakoku",
+          "explanation": "Giving in to an armed revolt would encourage more of them. The shogunate crushed the rebellion in 1638 and tightened its ban on Christianity."
+        },
+        {
+          "id": "c",
+          "text": "Crush the rebellion, but leave the local lord's taxes alone.",
+          "points": 2,
+          "next": "sakoku",
+          "explanation": "Victory without fixing the cause invites new revolts. The shogunate did crush the rebels in 1638, but it also executed the local lord whose cruelty had caused the uprising."
+        }
+      ]
+    },
+    "sakoku": {
+      "year": 1639,
+      "title": "Closing the Country",
+      "milestone": true,
+      "text": "The Shimabara Rebellion of 1637–1638, a revolt of peasants, many of them Christians, has convinced the shogunate that foreign influence is dangerous. But trade brings in silk, sugar, medicines, and news of the world. The Portuguese, Dutch, Chinese, and Koreans all trade with Japan. The Dutch are Protestants who care about profit, not converting people.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Expel the Portuguese, ban Japanese from traveling abroad, and allow only the Dutch and Chinese to trade at Nagasaki, under close watch.",
+          "points": 5,
+          "next": "genroku",
+          "explanation": "This was sakoku: the Portuguese were expelled in 1639, and in 1641 the Dutch were moved to the tiny island of Dejima in Nagasaki harbor. Trade with China, Korea, and a few others continued through approved channels. It kept foreign influence out while still bringing in goods and news."
+        },
+        {
+          "id": "b",
+          "text": "Cut off all foreign contact completely: no ships, no traders, no exceptions.",
+          "points": 2,
+          "set": ["closed_tight"],
+          "next": "isolation",
+          "explanation": "Japan was never completely closed. The shogunate kept carefully controlled trade with the Dutch and Chinese at Nagasaki and with Korea, which brought in useful goods and information."
+        },
+        {
+          "id": "c",
+          "text": "Open Japan's ports to all European traders and missionaries.",
+          "points": 0,
+          "stability": -1,
+          "set": ["opened"],
+          "next": "isolation",
+          "explanation": "After the Shimabara Rebellion, the shogunate saw missionaries as a direct threat. In 1639 it expelled the Portuguese and limited European trade to the Dutch at Nagasaki."
+        }
+      ]
+    },
+    "genroku": {
+      "year": 1700,
+      "title": "Merchants Get Rich",
+      "text": "A century of peace has transformed Japan. Edo has perhaps a million people. Osaka merchants grow rich trading rice, and city people enjoy kabuki theater and woodblock prints, some colored by hand. But in Confucian theory, merchants rank at the bottom, below samurai, farmers, and artisans, and many samurai are now deeply in debt to merchants.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep the official class order on paper, but let merchants prosper.",
+          "points": 5,
+          "next": "yoshimune",
+          "explanation": "This is roughly what happened, though the shogunate still lived mostly on rice taxes from farmers and taxed merchants only lightly. Merchants grew rich and city culture flourished, but the government was often short of money."
+        },
+        {
+          "id": "b",
+          "text": "Cancel all samurai debts and seize the property of rich merchants.",
+          "points": 1,
+          "next": "yoshimune",
+          "explanation": "That would wreck trust and the economy that fed your cities. The shogunate sometimes helped indebted samurai and even seized one rich Osaka merchant's fortune in 1705, but it relied on merchants' wealth and kept them in business."
+        },
+        {
+          "id": "c",
+          "text": "Let samurai give up their status and become merchants.",
+          "points": 2,
+          "next": "yoshimune",
+          "explanation": "That would break the class system that kept order. The Tokugawa kept samurai as a separate class of officials and warriors paid in rice, even though many grew poor."
+        }
+      ]
+    },
+    "isolation": {
+      "year": 1650,
+      "title": "Trouble at the Ports",
+      "text": "Ten years later, your foreign trade policy is causing problems, and your advisers want a fix.",
+      "context": [
+        { "if": "closed_tight", "text": "With all trade cut off, Japan is short of Chinese silk, medicines, and sugar, and smugglers are getting rich." },
+        { "if": "opened", "text": "European ships crowd your ports, missionaries are back, and Spanish and Portuguese captains quarrel with your officials." }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Allow trade only with the Dutch and Chinese at Nagasaki, under the shogunate's close control.",
+          "points": 4,
+          "next": "yoshimune",
+          "explanation": "That's the system the Tokugawa actually used from 1641 until the 1850s. Controlled trade at Nagasaki brought in goods and news while keeping foreign influence out."
+        },
+        {
+          "id": "b",
+          "text": "Leave things as they are.",
+          "points": 1,
+          "next": "yoshimune",
+          "explanation": "Unsolved problems pile up. The real Tokugawa system kept a small, controlled window to the world at Nagasaki, which brought in goods and information while keeping missionaries out."
+        },
+        {
+          "id": "c",
+          "text": "Let each daimyo make his own trade deals with foreigners.",
+          "points": 2,
+          "next": "yoshimune",
+          "explanation": "Lords who trade on their own can grow rich and build foreign alliances against you. The shogunate kept foreign trade firmly under its own control at Nagasaki."
+        }
+      ]
+    },
+    "yoshimune": {
+      "year": 1720,
+      "title": "Dutch Learning",
+      "milestone": true,
+      "text": "You are Tokugawa Yoshimune, the eighth shogun. The treasury is short of money, and you want practical ideas to improve farming, medicine, and the calendar. The Dutch traders at Nagasaki have books about European science, but since 1630, any book that mentions Christianity, including Chinese translations of European science books, has been banned.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Allow European books on science and medicine, as long as they don't promote Christianity.",
+          "points": 5,
+          "next": "end",
+          "explanation": "Exactly what Yoshimune did in 1720. This opened the door to rangaku, as Japanese scholars studied European medicine, astronomy, and geography, knowledge that later helped Japan modernize quickly in the 1800s."
+        },
+        {
+          "id": "b",
+          "text": "Keep the ban on European books.",
+          "points": 2,
+          "next": "end",
+          "explanation": "Safe but limiting. Yoshimune lifted the ban on non-religious European books in 1720, and the \"Dutch learning\" that followed gave Japan valuable scientific knowledge."
+        },
+        {
+          "id": "c",
+          "text": "Invite European teachers to open schools across Japan, missionaries included.",
+          "points": 0,
+          "stability": -1,
+          "next": "end",
+          "explanation": "Letting missionaries back in would undo a century of policy and risk the foreign influence the shogunate feared. Yoshimune allowed only non-religious books, brought in through Nagasaki by Chinese and Dutch traders."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,402 @@
+{
+  "id": "mingqing",
+  "name": "Ming & Qing China",
+  "tier": "easy",
+  "tierReason": "A huge, wealthy state with an ancient bureaucracy. You start from a position of strength.",
+  "summary": "Guard the Great Wall, ride the silver boom, and pass the Mandate of Heaven to the Qing.",
+  "color": "#a16207",
+  "emblem": "roof",
+  "startYear": 1449,
+  "endYear": 1750,
+  "intro": "You guide China's imperial government from 1449 into the 1700s, first under the Ming dynasty and then under the Manchu-led Qing. Your strengths: a huge population, skilled officials chosen by exams, and one of the most productive economies in the world. Your challenges: northern raiders, pirates, a growing dependence on foreign silver, and keeping the Mandate of Heaven.",
+  "start": "tumu",
+  "collapse": { "text": "Famine, rebellion, and a paralyzed government brought down your dynasty early. Northern invaders and rebel armies fought over the ruins." },
+  "survive": { "text": "Under the Qing, China in the 1700s is one of the largest, richest, and most populous empires in the world." },
+  "glossary": [
+    { "term": "Ming", "def": "the Chinese dynasty that ruled from 1368 to 1644" },
+    { "term": "Oirat Mongols", "def": "a powerful Mongol people of the northern steppe" },
+    { "term": "steppe", "def": "the huge grasslands of Central Asia, home to nomadic horse riders" },
+    { "term": "Great Wall", "def": "long defensive walls along China's northern border" },
+    { "term": "tribute missions", "def": "visits by foreign envoys who brought gifts to the emperor and received gifts and trading rights in return" },
+    { "term": "wokou", "def": "pirates and smugglers, both Japanese and Chinese, who raided China's coast" },
+    { "term": "Single Whip Reform", "def": "a reform that combined many taxes and labor duties into one payment in silver" },
+    { "term": "eunuchs", "match": ["eunuch"], "def": "castrated men who served the emperor inside the palace" },
+    { "term": "civil service exams", "match": ["civil service exam", "the exams"], "def": "tests on Confucian classics used to choose government officials based on merit" },
+    { "term": "Manchus", "match": ["Manchu"], "def": "a people from Manchuria, northeast of China, who founded the Qing dynasty" },
+    { "term": "Qing", "def": "the Manchu-led dynasty that ruled China from 1644 to 1912" },
+    { "term": "Mandate of Heaven", "def": "the belief that Heaven gives a good ruler the right to rule and takes it away from a bad one" },
+    { "term": "Little Ice Age", "def": "a period of colder weather, worst in the 1600s, that caused crop failures around the world" },
+    { "term": "queue", "def": "a Manchu hairstyle: the front of the head shaved and the rest worn in a long braid" },
+    { "term": "Rites Controversy", "def": "a dispute over whether Chinese Christians could take part in Confucian ceremonies honoring ancestors" },
+    { "term": "tribute", "def": "gifts and formal respect that foreign rulers offered the Chinese emperor, who often gave back even richer gifts" }
+  ],
+  "timeline": [
+    { "year": "1449", "text": "Mongols capture the emperor at Tumu. The Ming defend Beijing and later rebuild the Great Wall in brick and stone." },
+    { "year": "1567–1581", "text": "The Ming partly legalize overseas trade. Japanese and American silver floods in, and the Single Whip Reform makes taxes payable in silver." },
+    { "year": "1601", "text": "The Jesuit Matteo Ricci reaches Beijing, bringing European science and maps." },
+    { "year": "1644", "text": "Rebels take Beijing and the last Ming emperor dies. The Manchus seize Beijing, and their Qing dynasty (named in 1636) begins ruling China." },
+    { "year": "1661–1722", "text": "The Kangxi Emperor crushes the Three Feudatories (1681), takes Taiwan (1683), and signs the Treaty of Nerchinsk with Russia (1689)." },
+    { "year": "1721", "text": "After the Rites Controversy, Kangxi orders an end to Christian missionary work but keeps Jesuit scientists at court." }
+  ],
+  "nodes": {
+    "tumu": {
+      "year": 1449,
+      "title": "The Emperor Is Captured!",
+      "milestone": true,
+      "text": "You lead the court of the Ming dynasty. Disaster: the young emperor led a huge army against the Oirat Mongols and was captured at Tumu Fortress. Mongol horsemen are now riding toward Beijing, your capital. Panicked officials want to flee south to the old capital, Nanjing. Others, led by the minister Yu Qian, say Beijing must be defended.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Put the emperor's brother on the throne, refuse the Mongols' ransom demands, and defend Beijing. Then strengthen the northern frontier with walls.",
+          "points": 5,
+          "next": "sea_ban",
+          "explanation": "That's what happened. Yu Qian defended Beijing, a new emperor took the throne, and the Mongols released their captive in 1450 once he was no longer useful. Over the next century and a half, the Ming rebuilt much of the Great Wall in brick and stone; most of the wall visitors see today is Ming."
+        },
+        {
+          "id": "b",
+          "text": "Flee south to Nanjing and leave the north to defend itself.",
+          "points": 1,
+          "stability": -1,
+          "next": "mongol_raids",
+          "explanation": "Abandoning Beijing would have handed the north to the Mongols and shattered the dynasty's prestige. Instead, the minister Yu Qian rallied the defense of Beijing, and the Mongols withdrew."
+        },
+        {
+          "id": "c",
+          "text": "Pay whatever ransom the Mongols demand to get the emperor back.",
+          "points": 1,
+          "next": "mongol_raids",
+          "explanation": "Paying huge ransoms would invite more kidnappings and raids. The Ming court crowned the emperor's brother instead, so the captive was worth little to the Mongols, who released him in 1450."
+        }
+      ]
+    },
+    "mongol_raids": {
+      "year": 1475,
+      "title": "Raiders on the Frontier",
+      "text": "Mongol horsemen keep raiding China's northern frontier, stealing livestock and burning villages, then vanishing back into the steppe. Your officials are divided about how to keep the north safe.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Build long defensive walls with watchtowers and soldiers stationed along the northern frontier.",
+          "points": 3,
+          "next": "sea_ban",
+          "explanation": "This became Ming policy. Starting in the 1470s, the Ming built long walls along the frontier, and by the late 1500s they had rebuilt much of the Great Wall in brick and stone. Most of the Great Wall that visitors see today dates from the Ming."
+        },
+        {
+          "id": "b",
+          "text": "Send a giant army deep into Mongolia to destroy the raiders once and for all.",
+          "points": 0,
+          "stability": -1,
+          "next": "sea_ban",
+          "explanation": "The disaster at Tumu in 1449 showed how dangerous that was: steppe horsemen could retreat endlessly and strike back. The Ming chose walls and garrisons instead."
+        },
+        {
+          "id": "c",
+          "text": "Open border markets where Mongols can trade horses for Chinese goods.",
+          "points": 2,
+          "next": "sea_ban",
+          "explanation": "A smart idea that the Ming eventually adopted. In 1571 they made peace with the Mongol leader Altan Khan and opened border markets, which reduced raiding. Together with wall building, trade helped calm the frontier."
+        }
+      ]
+    },
+    "sea_ban": {
+      "year": 1560,
+      "title": "Pirates and Silver",
+      "milestone": true,
+      "text": "Since the 1370s, the Ming have banned private overseas trade; foreigners may come only on tribute missions to the emperor. After Admiral Zheng He's great voyages ended in 1433, the Ming also stopped sending big fleets abroad. But pirates and smugglers called wokou raid the coast, and illegal trade is booming, because Japan has silver to sell and China's economy is hungry for silver.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ease the sea ban and allow licensed Chinese merchants to trade overseas from an official port.",
+          "points": 5,
+          "next": "single_whip",
+          "explanation": "That's what the Ming did in 1567, opening a port in Fujian to licensed traders. Legal trade cut down on piracy, and silver poured in: from Japan through Portuguese traders (direct trade with Japan stayed banned), and after 1571 from the Americas on Spanish ships through Manila. China became the world's biggest buyer of silver."
+        },
+        {
+          "id": "b",
+          "text": "Keep the ban and fight the pirates with soldiers.",
+          "points": 2,
+          "next": "pirates",
+          "explanation": "Fighting pirates was necessary, and General Qi Jiguang crushed many of them in the 1560s. But as long as trade was illegal, merchants kept becoming smugglers, so the Ming eased the ban in 1567."
+        },
+        {
+          "id": "c",
+          "text": "Execute every smuggler and burn any ship that leaves port.",
+          "points": 0,
+          "stability": -1,
+          "next": "pirates",
+          "explanation": "Brutal and self-defeating. Coastal people depended on the sea, and harsh crackdowns pushed more of them into piracy. The Ming eased the ban in 1567, letting silver flow in legally."
+        }
+      ]
+    },
+    "single_whip": {
+      "year": 1581,
+      "title": "Taxes in Silver",
+      "text": "Silver is pouring into China. Your chief minister, Zhang Juzheng, says the tax system is a mess: farmers pay part of their taxes in grain, part in cloth, and part in forced labor on roads and canals. Rich landowners hide their land from tax collectors.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Combine all taxes and labor duties into one payment in silver, and survey the land so everyone pays a fair share.",
+          "points": 5,
+          "set": ["single_whip"],
+          "next": "wanli",
+          "explanation": "This is the Single Whip Reform, spread across China around 1581. It made taxes simpler and filled the treasury, but it also tied China's economy to foreign silver, which may have become a problem when silver imports fell in the 1630s and 1640s."
+        },
+        {
+          "id": "b",
+          "text": "Keep collecting grain, cloth, and labor the old way.",
+          "points": 2,
+          "next": "wanli",
+          "explanation": "Familiar but inefficient, and rich landowners kept hiding land. Zhang Juzheng pushed the Single Whip Reform instead, converting most taxes into one silver payment."
+        },
+        {
+          "id": "c",
+          "text": "Let local landlords decide how much their villages owe.",
+          "points": 0,
+          "stability": -1,
+          "next": "wanli",
+          "explanation": "That invites corruption: landlords would protect themselves and overtax the poor. Zhang Juzheng's land survey and Single Whip Reform aimed at the opposite, fairer and simpler taxes paid in silver."
+        }
+      ]
+    },
+    "pirates": {
+      "year": 1563,
+      "title": "The Pirate Coast",
+      "text": "Pirate fleets burn coastal towns and even attack cities far up the Yangzi River. Many of the so-called pirates are really Chinese merchants who became smugglers because overseas trade is illegal. Your coastal armies are poorly trained.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Train disciplined new armies under General Qi Jiguang, then make overseas trade legal so merchants don't need to smuggle.",
+          "points": 4,
+          "next": "wanli",
+          "explanation": "That's what worked. Qi Jiguang's well-trained troops defeated the pirates in the 1560s, and in 1567 the Ming eased the sea ban. Legal trade then brought silver flowing into China."
+        },
+        {
+          "id": "b",
+          "text": "Pay the pirate leaders to go away.",
+          "points": 1,
+          "next": "wanli",
+          "explanation": "Paying off pirates often encouraged more piracy. The Ming beat them with General Qi Jiguang's armies and then partly legalized overseas trade in 1567."
+        },
+        {
+          "id": "c",
+          "text": "Build more forts along the coast and keep the ban.",
+          "points": 2,
+          "next": "wanli",
+          "explanation": "Defenses helped, but as long as trade was illegal, smuggling and piracy continued. The Ming eased the ban in 1567."
+        }
+      ]
+    },
+    "wanli": {
+      "year": 1600,
+      "title": "The Emperor Who Stopped Working",
+      "milestone": true,
+      "text": "You are the Wanli Emperor, on the throne since 1572. For years, after bitter fights with your officials over who should be your heir, you have refused to attend court, meet your ministers, or fill empty government posts. Palace eunuchs are gaining power, and officials are splitting into feuding factions. Meanwhile, in Manchuria to the northeast, a chief named Nurhaci is uniting the Jurchen tribes, who will later be called Manchus.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Get back to work: meet your ministers, fill empty posts with officials who passed the civil service exams, and keep the eunuchs in check.",
+          "points": 5,
+          "next": "jesuits",
+          "explanation": "That would have been the wise path. In reality, Wanli withdrew from government for decades, posts sat empty, and eunuchs and factions grew powerful, one reason the Ming weakened in its final years."
+        },
+        {
+          "id": "b",
+          "text": "Send trusted eunuchs out to collect special new taxes on mines and merchants.",
+          "points": 1,
+          "next": "eunuch_rule",
+          "explanation": "This really happened in the late 1590s and early 1600s. The eunuch tax collectors were hated and set off riots in many cities, damaging the dynasty's reputation."
+        },
+        {
+          "id": "c",
+          "text": "Stay hidden in the palace and let the officials fight it out.",
+          "points": 0,
+          "stability": -1,
+          "next": "eunuch_rule",
+          "explanation": "This is what Wanli actually did for decades. Without an active emperor, factions feuded, problems went unsolved, and the Ming state weakened just as the Manchus were rising."
+        }
+      ]
+    },
+    "jesuits": {
+      "year": 1601,
+      "title": "Visitors from the West",
+      "text": "An Italian Jesuit priest named Matteo Ricci arrives in Beijing. He speaks Chinese, dresses like a Confucian scholar, and brings gifts: chiming clocks, a world map, and knowledge of European mathematics and astronomy. He also hopes to convert Chinese people to Christianity.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Welcome Ricci's science and maps, and let the Jesuits live in Beijing under imperial rules.",
+          "points": 5,
+          "set": ["jesuits"],
+          "next": "qing_rule",
+          "explanation": "That's what happened. Ricci was allowed to live in Beijing, where he helped translate European mathematics and made a famous world map in Chinese. Jesuits later helped run the imperial astronomy office, but very few Chinese converted to Christianity."
+        },
+        {
+          "id": "b",
+          "text": "Send the foreigners away. China needs nothing from them.",
+          "points": 2,
+          "next": "qing_rule",
+          "explanation": "China was confident in its own civilization, but the Jesuits' astronomy and mathematics proved useful; later emperors even put Jesuits in charge of the imperial calendar. Ricci was allowed to stay in Beijing until his death in 1610."
+        },
+        {
+          "id": "c",
+          "text": "Let them preach anywhere and build churches in every city.",
+          "points": 1,
+          "next": "qing_rule",
+          "explanation": "Too risky: officials worried that missionaries would undermine Confucian traditions and loyalty to the emperor. The Ming let Ricci stay mainly because of his science, not his preaching."
+        }
+      ]
+    },
+    "eunuch_rule": {
+      "year": 1626,
+      "title": "The Eunuch Dictator",
+      "text": "A powerful eunuch named Wei Zhongxian now controls the government for a young emperor. Flattering officials build temples in his honor, and he arrests and tortures officials who criticize him. Drought and famine are starting in the northwest, and in the northeast Nurhaci's Jurchens (later called Manchus) have captured Ming cities.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Remove Wei Zhongxian and bring honest, exam-trained officials back into government.",
+          "points": 4,
+          "next": "qing_rule",
+          "explanation": "The next emperor did exactly this in 1627, and Wei killed himself. But the damage was done: years of factional fighting had weakened the government just as rebellion and famine spread."
+        },
+        {
+          "id": "b",
+          "text": "Let Wei keep running things. At least there's order.",
+          "points": 0,
+          "stability": -1,
+          "next": "qing_rule",
+          "explanation": "Rule by a corrupt eunuch who tortured his critics destroyed trust in the government. Wei Zhongxian's power ended in 1627, but the Ming never fully recovered."
+        },
+        {
+          "id": "c",
+          "text": "Purge both the eunuchs and the officials, and rule entirely alone.",
+          "points": 2,
+          "next": "qing_rule",
+          "explanation": "No emperor can run an empire alone; China needed its trained scholar-officials. The last Ming emperor did remove Wei in 1627, but he then distrusted his ministers, firing dozens and executing several officials and generals."
+        }
+      ]
+    },
+    "qing_rule": {
+      "year": 1644,
+      "title": "The Mandate of Heaven Passes",
+      "milestone": true,
+      "text": "The cold Little Ice Age brought famines, and a drop in silver imports may have hurt the economy. In 1644 the rebel Li Zicheng captured Beijing, and the last Ming emperor hanged himself. A Ming general then let the Manchus through the Great Wall, and they took Beijing for themselves. Many Chinese believe the Ming lost the Mandate of Heaven. You now rule as the new Qing dynasty, a small Manchu minority ruling well over a hundred million Han Chinese.",
+      "context": [
+        { "if": "single_whip", "text": "Because Ming taxes were collected in silver, any drop in silver imports hurt taxpayers and the treasury." },
+        { "if": "jesuits", "text": "Jesuit astronomers are still in Beijing, and they offer to serve your new dynasty." }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep the Ming system: Confucian ministries, the civil service exams, and Han Chinese officials working side by side with Manchus. Present yourself as the rightful holder of the Mandate of Heaven.",
+          "points": 5,
+          "next": "koxinga",
+          "explanation": "Exactly the Qing strategy. They kept the exams and bureaucracy, often paired a Manchu and a Han official in top posts, and gave the last Ming emperor a proper burial. But they also forced Han men to wear the Manchu queue hairstyle as a sign of loyalty."
+        },
+        {
+          "id": "b",
+          "text": "Replace the Chinese bureaucracy with Manchu nobles and end the exams.",
+          "points": 0,
+          "stability": -1,
+          "next": "feudatories",
+          "explanation": "A tiny Manchu minority could never govern over a hundred million people alone. The Qing kept the Confucian exams and Han officials, which over time won over most of China's educated class."
+        },
+        {
+          "id": "c",
+          "text": "Reward the Ming generals who joined you by letting them rule huge southern provinces as their own kingdoms.",
+          "points": 2,
+          "next": "feudatories",
+          "explanation": "The Qing really did this in the 1650s, giving three Han generals who had conquered the south for them giant territories. It worked at first, but in 1673 those \"Three Feudatories\" rebelled against the emperor."
+        }
+      ]
+    },
+    "koxinga": {
+      "year": 1662,
+      "title": "The Pirate King of Taiwan",
+      "text": "Ming loyalists still resist in the south. The most famous is Zheng Chenggong, known in Europe as Koxinga, who commands a huge fleet. In 1662 he drives the Dutch out of Taiwan. He dies that year, but his son keeps the island as a base for raids on your coast. Your new emperor, Kangxi, is only a boy.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Build up a navy, win over Zheng commanders willing to switch sides, and then conquer Taiwan.",
+          "points": 5,
+          "next": "rites",
+          "explanation": "That's what the Qing did. In 1683 a Qing fleet led by a former Zheng admiral captured Taiwan, and the island became part of the Qing Empire."
+        },
+        {
+          "id": "b",
+          "text": "Force everyone on the southern coast to move inland so the raiders find no supplies.",
+          "points": 2,
+          "next": "rites",
+          "explanation": "The Qing actually did this starting in 1661, a brutal \"Great Clearance\" that ruined coastal communities. It hurt the rebels, but it took a navy to finally conquer Taiwan in 1683."
+        },
+        {
+          "id": "c",
+          "text": "Ignore Taiwan. It's just a small island.",
+          "points": 0,
+          "stability": -1,
+          "next": "rites",
+          "explanation": "Leaving a rebel base just off your coast invites endless raids. The Qing conquered Taiwan in 1683 and made it part of the empire."
+        }
+      ]
+    },
+    "feudatories": {
+      "year": 1673,
+      "title": "The Three Feudatories Revolt",
+      "text": "Three Han Chinese generals, including Wu Sangui, the general who let the Manchus through the Great Wall, rule giant southern provinces almost like independent kings. When the young Kangxi Emperor moves to take their lands back, they rebel, and much of southern China joins them.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fight back with loyal Manchu and Han armies, and offer pardons to rebels who switch sides.",
+          "points": 5,
+          "next": "rites",
+          "explanation": "Kangxi did just this. The war lasted eight years, but by 1681 the Qing had crushed the revolt and placed the south under direct imperial rule."
+        },
+        {
+          "id": "b",
+          "text": "Give in and let the generals keep their lands forever.",
+          "points": 0,
+          "stability": -1,
+          "next": "rites",
+          "explanation": "That would leave China split into rival kingdoms. Kangxi refused, and his victory in 1681 made the Qing the unquestioned rulers of China."
+        },
+        {
+          "id": "c",
+          "text": "Make peace with the generals, but secretly plan to poison them.",
+          "points": 2,
+          "next": "rites",
+          "explanation": "Plots like this often backfire and destroy trust. Kangxi chose open war plus pardons for rebels who surrendered, and he won by 1681."
+        }
+      ]
+    },
+    "rites": {
+      "year": 1715,
+      "title": "Kangxi and the Rites Controversy",
+      "milestone": true,
+      "text": "You are the Kangxi Emperor, one of China's greatest rulers. You have set a border with Russia in the Treaty of Nerchinsk (1689), and you admire the Jesuits' mathematics and astronomy. But the Pope has now ruled (1715), after a long dispute called the Rites Controversy, that Chinese Christians may not take part in ceremonies honoring their ancestors and Confucius. You see those ceremonies as the heart of Chinese culture.",
+      "context": [
+        { "if": "jesuits", "text": "Jesuits have served the imperial court ever since Matteo Ricci arrived in the Ming era." }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep the Jesuit scientists at court, but ban missionaries who follow the Pope's ruling from preaching in China.",
+          "points": 5,
+          "next": "end",
+          "explanation": "Close to Kangxi's response. In 1721 he ordered that missionaries could no longer preach in China, while Jesuit astronomers and artists kept serving at court; his son formally banned Christianity in 1724. The Qing welcomed useful knowledge but kept firm control over religion and culture."
+        },
+        {
+          "id": "b",
+          "text": "Let missionaries preach freely and follow whatever the Pope decides.",
+          "points": 1,
+          "next": "end",
+          "explanation": "That would let a foreign religious leader decide what your subjects could do, a threat to the emperor's authority. Kangxi banned missionary preaching in 1721 instead."
+        },
+        {
+          "id": "c",
+          "text": "Expel every European, including the court scientists, and stop learning from the West entirely.",
+          "points": 2,
+          "next": "end",
+          "explanation": "Too extreme for Kangxi, who personally studied geometry with Jesuit teachers. He banned missionary work in 1721 but kept useful Jesuit experts at court."
+        }
+      ]
+    }
+  }
+}
