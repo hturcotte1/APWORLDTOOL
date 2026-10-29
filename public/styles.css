@@ -186,6 +186,7 @@ fieldset { border: 0; padding: 0; margin: 18px 0 0; min-width: 0; }
 .diff-easy { color: var(--easy); }
 .diff-medium { color: var(--medium); }
 .diff-hard { color: var(--hard); }
+.show-sm { display: none; }
 .register-of-empires { max-width: 1000px; }
 .reg-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .reg-col h3 { font-size: 1.15rem; margin-bottom: 4px; }
@@ -443,6 +444,9 @@ dialog::backdrop { background: rgba(6, 10, 12, 0.7); }
   .initial { font-size: 3.6rem; }
   table.terms th { width: 40%; }
   .hide-sm { display: none; }
+  .show-sm { display: block; }
+  th .show-sm { display: inline; }
+  .realm-cell .diff { margin-top: 4px; font-size: 0.78rem; white-space: nowrap; }
   table.rolls th, table.rolls td { padding: 8px 4px; }
   table.rolls .realm span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .del-word { display: none; }

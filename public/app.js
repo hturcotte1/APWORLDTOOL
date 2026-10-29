@@ -786,7 +786,7 @@ function boardHtml() {
       <td class="rank">${crown(r.rank)}<span>${r.rank}</span></td>
       <td class="who">${esc(r.name)}${isMe(r) ? ' <span class="you">you</span>' : ''}</td>
       ${all ? `<td class="hide-sm">${r.period}</td>` : ''}
-      <td>${realm(r)}</td>
+      <td class="realm-cell">${realm(r)}<span class="show-sm">${difficulty(r.tier, r.tierLabel)}</span></td>
       <td class="hide-sm">${difficulty(r.tier, r.tierLabel)}</td>
       <td class="num">${minus(r.score)}</td>
       <td class="fate-cell">${r.outcome === 'survived' ? '<span class="fate-survived">Survived</span>' : '<span class="fate-collapsed">Collapsed</span>'}</td>
@@ -801,7 +801,7 @@ function boardHtml() {
   return `
     ${d.entries.length ? `
     <div class="table-wrap"><table class="rolls">
-      <thead><tr><th>Rank</th><th>Name</th>${all ? '<th class="hide-sm">Period</th>' : ''}<th>Empire</th><th class="hide-sm">Tier</th><th class="num">Score</th><th>Result</th>${teacher ? '<th><span class="sr-only">Delete</span></th>' : ''}</tr></thead>
+      <thead><tr><th>Rank</th><th>Name</th>${all ? '<th class="hide-sm">Period</th>' : ''}<th>Empire<span class="show-sm"> &amp; tier</span></th><th class="hide-sm">Tier</th><th class="num">Score</th><th>Result</th>${teacher ? '<th><span class="sr-only">Delete</span></th>' : ''}</tr></thead>
       <tbody>${rows}</tbody>
     </table></div>` : ''}
     ${playing}

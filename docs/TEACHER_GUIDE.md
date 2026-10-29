@@ -28,12 +28,13 @@ No student accounts or logins are needed. It works on Chromebooks, laptops, tabl
 
 **Only the first game counts.** A student's first finished game (matched by first name + period, ignoring capital letters and extra spaces) goes on the leaderboard. Every game after that is clearly labeled **"Practice run – doesn't count for the leaderboard"** and is never saved. Encourage students to replay with other empires for review.
 
-**If the bell rings mid-game:** progress is saved on that device. When the student reopens the link on the same device, a **Continue** button appears on the start screen. Until they finish, their name shows under **Still playing** on the leaderboard.
+**If the bell rings mid-game:** progress is saved on that device. When the student reopens the link on the same device, their game appears under **Unfinished reigns** on the start screen with a **Resume** button. Until they finish, their name shows under **Reigns in progress** on the leaderboard.
 
 ## Reading the leaderboard
 
 - Tabs at the top switch between **Period 1**, **Period 2**, **Period 3**, and **All Classes**.
-- Columns: **Rank**, **Name**, **Empire**, **Tier** (Easy/Medium/Hard), **Score**, and **Result** (Survived or Collapsed). The All Classes view also shows the period.
+- Columns: **Rank**, **Name**, **Empire**, **Tier** (I Easy / II Medium / III Hard), **Score**, and **Result** (Survived or Collapsed). The All Classes view also shows the period. On phones, the tier appears under each empire's seal and the period column is hidden to save space.
+- The top three ranks get a gold crown.
 - Students with the same score share a rank.
 - It **updates automatically** every 10 seconds, so you can leave it up on a projector.
 - **What scores mean:** strong play scores about 35–40 on an Easy empire, about 40–48 on a Medium one, and about 50–64 on a Hard one. Collapses usually score near zero or below. Hard empires have the highest ceiling and the biggest risk. That's intentional, and it makes a good discussion point about why some empires were harder to rule.
@@ -44,10 +45,10 @@ No student accounts or logins are needed. It works on Chromebooks, laptops, tabl
 1. Click **Teacher** in the small footer at the bottom of any page.
 2. Type the teacher password and click **Unlock**. The leaderboard opens in teacher mode.
 3. You can now:
-   - **Delete a single entry:** click **✕ Delete** next to it. Use this for joke names, or to let a student replay for an official score (for example, if their first game was interrupted on a device they can't get back to).
+   - **Delete a single entry:** click **✕ Delete** next to it (just **✕** on a phone). Use this for joke names, or to let a student replay for an official score (for example, if their first game was interrupted on a device they can't get back to).
    - **Clear one period's leaderboard:** pick that period's tab, then click **Clear Period N leaderboard**.
    - **Clear all leaderboards:** for example, at the start of a new school year. You'll be asked to confirm twice.
-   - Abandoned games appear under **Still playing**. Click the **✕** next to a name to remove it, so the student can start over officially.
+   - Abandoned games appear under **Reigns in progress**. Click the **✕** next to a name to remove it, so the student can start over officially.
 4. Click **Exit teacher mode** when you're done. The password is only remembered while that browser tab is open.
 
 Deleting and clearing can't be undone.
@@ -83,7 +84,7 @@ The leaderboard stores only each student's **first name, period, empire, score, 
 |---|---|
 | "Couldn't reach the game server" | Usually school Wi-Fi or a web filter. Ask IT to allow the game's address (it ends in **workers.dev**). |
 | A student sees "Practice run" before playing | Someone already used that name in that period. Check the leaderboard, delete the wrong entry if needed, or have the student add a last initial. |
-| A student lost their game (different device, cleared browser) | Delete their "Still playing" entry in teacher mode so they can start over officially. |
+| A student lost their game (different device, cleared browser) | Delete their "Reigns in progress" entry in teacher mode so they can start over officially. |
 | Teacher password doesn't work | Check for typos, then reset it (see "Changing the teacher password"). |
 
 ## Content and accuracy
