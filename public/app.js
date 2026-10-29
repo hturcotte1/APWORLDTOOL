@@ -2,7 +2,8 @@
 // The server decides every score. This file only shows screens, sends the
 // student's choices, and remembers unfinished games on this device so a
 // refresh doesn't lose progress. Scores are never kept in the browser.
-import { emblem } from './emblems.js';
+import { emblem, SEAL_DEFS } from './emblems.js';
+import { MAP, project, LAND } from './map-data.js';
 
 const app = document.getElementById('app');
 const SAVE_KEY = 'rte-saved-games-v1';
@@ -34,27 +35,23 @@ const rangeText = (t) => `${fmtPts(t.pointsMin).replace('+0', '0')} to ${fmtPts(
 const plural = (n, word) => `${word}${Math.abs(n) === 1 ? '' : 's'}`;
 const keyOfName = (n) => String(n || '').normalize('NFC').replace(/\s+/g, ' ').trim().toLowerCase();
 const empireOf = (id) => S.empires[id];
-const TIER_PIPS = { easy: 1, medium: 2, hard: 3 };
+const shortName = (name) => String(name).replace(/ (Empire|China|Japan)$/, '');
+const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+const TIER_NUM = { easy: 1, medium: 2, hard: 3 };
 
 function shields(n, max) {
   let out = '';
   for (let i = 0; i < max; i++) {
-    out += `<svg viewBox="0 0 20 22" aria-hidden="true" class="${i < n ? 'on' : 'off'}"><path d="M10 1.5 L18 4.5 V10.5 C18 15.5 14.6 19 10 20.8 C5.4 19 2 15.5 2 10.5 V4.5 Z"/></svg>`;
+    out += `<svg viewBox="0 0 20 22" aria-hidden="true" class="${i < n ? 'on' : 'off'}"><path d="M10 1.5 L18 4.5 V10.5 C18 15.5 14.6 19 10 20.8 C5.4 19 2 15.5 2 10.5 V4.5 Z"/><path class="cross" d="M10 6v10M6 10h8"/></svg>`;
   }
   return `<span class="shields" role="img" aria-label="Stability ${n} of ${max}">${out}</span>`;
 }
 
-function pips(tier) {
-  const n = TIER_PIPS[tier] || 1;
-  return `<span class="pips" aria-hidden="true">${[1, 2, 3].map((i) => `<i class="${i <= n ? 'on' : ''}"></i>`).join('')}</span>`;
+function difficulty(tier, label) {
+  return `<span class="diff diff-${tier}"><span class="diff-num">${ROMAN[TIER_NUM[tier]]}</span> ${esc(label)}</span>`;
 }
 
-function tierTag(tier, label) {
-  return `<span class="tier-tag tier-${tier}">${pips(tier)}${esc(label)}</span>`;
-}
-
-// A laurel wreath drawn around the end-screen emblem: two leafy branches
-// rising from the bottom along a circle.
+// A laurel wreath drawn around the end-screen seal.
 function laurel() {
   let leaves = '';
   for (let i = 0; i < 10; i++) {
@@ -80,7 +77,46 @@ function toast(message, ms = 5000) {
 }
 
 function setAccent(color) {
-  document.documentElement.style.setProperty('--accent', color || '#8a5a00');
+  document.documentElement.style.setProperty('--realm', color || '#7a2e1d');
+}
+
+// ---------- maps ----------
+const GRATICULE = (() => {
+  let d = '';
+  for (let lon = -120; lon <= 165; lon += 15) d += `M${project(lon, 0)[0]} 0V${MAP.height}`;
+  for (let lat = -45; lat <= 75; lat += 15) d += `M0 ${project(0, lat)[1]}H${MAP.width}`;
+  return d;
+})();
+
+function mapSvg(viewBox, cls, extra = '') {
+  return `<svg class="${cls}" viewBox="${viewBox}" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <rect class="sea" x="-500" y="-500" width="${MAP.width + 1000}" height="${MAP.height + 1000}"/>
+    <path class="grat" d="${GRATICULE}"/>
+    <use href="#land-shape" class="coast"/>
+    <use href="#land-shape" class="land"/>
+    ${extra}
+  </svg>`;
+}
+
+// A crop of the world map centered on a capital: [x, y, w, h].
+function cropAround(capital, w, h) {
+  const [cx, cy] = project(capital.lon, capital.lat);
+  const x = Math.min(Math.max(cx - w / 2, 0), MAP.width - w);
+  const y = Math.min(Math.max(cy - h / 2, 0), MAP.height - h);
+  return [x, y, w, h];
+}
+
+// The big map behind every screen; during a game it shows the empire's region.
+function focusTable(empire) {
+  const svg = document.querySelector('#maptable svg');
+  if (!svg) return;
+  const vb = empire?.capital ? cropAround(empire.capital, 520, 300).join(' ') : `0 0 ${MAP.width} ${MAP.height}`;
+  if (svg.getAttribute('viewBox') === vb) return;
+  svg.classList.add('fading');
+  setTimeout(() => {
+    svg.setAttribute('viewBox', vb);
+    svg.classList.remove('fading');
+  }, reducedMotion ? 0 : 250);
 }
 
 // ---------- device storage (only to resume unfinished games) ----------
@@ -188,6 +224,12 @@ function richFor(screenKey) {
     return html;
   };
 }
+// Splits the first letter off so it can be set as a large initial.
+function dropCap(html) {
+  const m = html.match(/^(\s*)([A-Za-z])/);
+  if (!m) return `<p class="lead">${html}</p>`;
+  return `<p class="lead"><span class="initial" aria-hidden="true">${m[2]}</span><span class="sr-only">${m[2]}</span>${html.slice(m[0].length)}</p>`;
+}
 
 // ---------- screen plumbing ----------
 function render(html, focusSelector = 'h1') {
@@ -215,74 +257,89 @@ function go(screen) {
   })[screen]();
 }
 
-function practiceBanner() {
+function practiceNote() {
   const practice = S.game ? S.game.practice : S.player?.practice;
   if (!practice) return '';
-  return `<div class="practice-banner" role="note"><span class="pb-icon" aria-hidden="true">✎</span><div><b>Practice run – doesn't count for the leaderboard</b><span>Only your first game counts. Play as much as you like to review!</span></div></div>`;
+  return `<div class="practice" role="note"><b>Practice run – doesn't count for the leaderboard</b><span>Only your first game counts. Play as often as you like to review.</span></div>`;
 }
 
+// The strategy-game bar across the top of every in-game screen.
 function hud(decisionNumber, year) {
   const e = empireOf(S.game.empire);
   const v = S.view;
-  const span = e.endYear - e.startYear;
-  const pct = Math.min(100, Math.max(0, ((year - e.startYear) / span) * 100));
   return `
-  <div class="hud" style="--c:${e.color}">
-    <div class="hud-who">${emblem(e.emblem, e.color, 44)}<div><b>${esc(e.name)}</b><span>${esc(S.game.name || '')}${S.game.period ? ` · Period ${S.game.period}` : ''}</span></div></div>
-    <div class="hud-stats">
-      <div class="stat"><b>${decisionNumber}</b><span>Decision</span></div>
-      <div class="stat"><b>${minus(v.points)}</b><span>Score</span></div>
-      <div class="stat">${shields(v.stability, v.maxStability)}<span>Stability</span></div>
-    </div>
+  <div class="hud">
+    <div class="hud-realm">${emblem(e.emblem, e.color, 38)}<div><b>${esc(e.name)}</b><span>${esc(S.game.name || '')}${S.game.period ? ` · Period ${S.game.period}` : ''}</span></div></div>
+    <dl class="hud-stats">
+      <div><dt>Year</dt><dd>${year}</dd></div>
+      <div><dt>Decision</dt><dd>${decisionNumber}</dd></div>
+      <div><dt>Score</dt><dd>${minus(v.points)}</dd></div>
+      <div><dt>Stability</dt><dd>${shields(v.stability, v.maxStability)}</dd></div>
+    </dl>
   </div>
-  <div class="yearline" role="img" aria-label="Year ${year}, between ${e.startYear} and ${e.endYear}">
-    <span class="yl-end">${e.startYear}</span>
-    <div class="yl-track"><div class="yl-fill" style="width:${pct}%"></div><div class="yl-marker" style="left:clamp(24px, ${pct}%, calc(100% - 24px))"><span>${year}</span></div></div>
-    <span class="yl-end">${e.endYear}</span>
+  ${ruler(e, year)}`;
+}
+
+// A timeline ruler with a tick every 50 years and a pointer at the current year.
+function ruler(e, year) {
+  const span = e.endYear - e.startYear;
+  const at = (y) => (((y - e.startYear) / span) * 100).toFixed(2);
+  let ticks = '';
+  for (let y = Math.ceil(e.startYear / 50) * 50; y <= e.endYear; y += 50) {
+    ticks += `<span class="tick" style="left:${at(y)}%"><i>${y}</i></span>`;
+  }
+  for (let y = Math.ceil(e.startYear / 10) * 10; y <= e.endYear; y += 10) {
+    if (y % 50) ticks += `<span class="tick minor" style="left:${at(y)}%"></span>`;
+  }
+  return `<div class="ruler" role="img" aria-label="Year ${year}, on a timeline from ${e.startYear} to ${e.endYear}">
+    <div class="ruler-track"><div class="ruler-done" style="width:${at(year)}%"></div>${ticks}<span class="ruler-ptr" style="left:${at(year)}%"><b>${year}</b></span></div>
   </div>`;
 }
 
-// ---------- start ----------
+// ---------- start: the title page ----------
 function screenStart() {
   setAccent(null);
+  focusTable(null);
   S.game = null;
   const saved = readSaved();
   const last = S.player || loadPlayer();
-  const emblems = S.config.empires.map((e, i) => `<span class="float" style="--i:${i}">${emblem(e.emblem, e.color, 46, e.name)}</span>`).join('');
   render(`
-  <section class="hero">
-    <div class="hero-emblems">${emblems}</div>
-    <p class="eyebrow">AP World History · Unit 3</p>
-    <h1 class="logo">Rule the Empire</h1>
-    <p class="tagline">Land-Based Empires, 1450–1750. Eight empires. Three centuries. Every choice counts.</p>
-    <div class="orn" aria-hidden="true"><span></span><i></i><span></span></div>
-  </section>
-  ${saved.length ? `
-  <section class="card resume-card">
-    <h2>Continue a game</h2>
-    ${saved.map((g) => {
-      const e = empireOf(g.empire);
-      return `<div class="saved">${emblem(e.emblem, e.color, 40)}<div class="grow"><b>${esc(g.name || 'Player')}</b> · ${esc(e.name)}<br><span class="small muted">Period ${esc(g.period || '?')} · Decision ${g.decision || 1}${g.practice ? ' · Practice run' : ''}</span></div><button class="btn btn-primary" data-resume="${esc(g.id)}">Continue</button></div>`;
-    }).join('')}
-  </section>` : ''}
-  <form class="card start-card" id="start-form" novalidate>
-    <h2>Who's ruling today?</h2>
-    <label class="field" for="name">Your first name</label>
-    <input id="name" name="name" type="text" maxlength="20" autocomplete="given-name" autocapitalize="words" spellcheck="false" value="${esc(last?.name || '')}" required>
-    <p class="hint">First name only. If someone in your class has the same name, add your last initial (like “Maya R”).</p>
-    <fieldset class="period-field">
-      <legend class="field">Class period</legend>
-      <div class="periods">${[1, 2, 3].map((p) => `<label><input type="radio" name="period" value="${p}" ${Number(last?.period) === p ? 'checked' : ''}><span>Period ${p}</span></label>`).join('')}</div>
-    </fieldset>
-    <p class="error" id="start-error" role="alert" hidden></p>
-    <button class="btn btn-primary btn-big" type="submit">Choose your empire <span aria-hidden="true">→</span></button>
-  </form>
-  <section class="how">
-    <div class="how-item"><span class="how-num">1</span><b>Pick an empire</b><p>Easy, Medium, or Hard. Harder empires can score higher, but they collapse faster.</p></div>
-    <div class="how-item"><span class="how-num">2</span><b>Make about 8 decisions</b><p>Earn points for choices that help your empire gain, keep, and legitimize power.</p></div>
-    <div class="how-item"><span class="how-num">3</span><b>See what really happened</b><p>After every choice, compare your decision with real history.</p></div>
-  </section>
-  <p class="center small muted">Only your <b>first</b> game counts for the leaderboard. Every game after that is practice.</p>`, 'h1');
+  <article class="paper titlepage">
+    <p class="imprint">AP World History · Unit 3</p>
+    <h1 class="title">Rule the Empire</h1>
+    <p class="subtitle">A game of choices among the great land empires, 1450–1750</p>
+    <div class="seal-row" aria-hidden="true">${S.config.empires.map((e) => emblem(e.emblem, e.color, 34)).join('')}</div>
+    ${saved.length ? `
+    <section class="unfinished">
+      <h2 class="rubric">Unfinished reigns</h2>
+      ${saved.map((g) => {
+        const e = empireOf(g.empire);
+        return `<div class="saved-row">${emblem(e.emblem, e.color, 36)}<div class="grow"><b>${esc(g.name || 'Player')}</b>, ${esc(e.name)}<br><span class="fine">Period ${esc(g.period || '?')} · Decision ${g.decision || 1}${g.practice ? ' · Practice run' : ''}</span></div><button class="btn" data-resume="${esc(g.id)}">Resume</button></div>`;
+      }).join('')}
+    </section>` : ''}
+    <form id="start-form" class="enlist" novalidate>
+      <h2 class="rubric">Who rules today?</h2>
+      <label class="field" for="name">First name</label>
+      <input id="name" name="name" type="text" maxlength="20" autocomplete="given-name" autocapitalize="words" spellcheck="false" value="${esc(last?.name || '')}" required>
+      <p class="fine">First name only. If a classmate in your period has the same name, add your last initial (“Maya R”).</p>
+      <fieldset>
+        <legend class="field">Class period</legend>
+        <div class="periods">${[1, 2, 3].map((p) => `<label><input type="radio" name="period" value="${p}" ${Number(last?.period) === p ? 'checked' : ''}><span><i aria-hidden="true"></i>Period ${p}</span></label>`).join('')}</div>
+      </fieldset>
+      <p class="error" id="start-error" role="alert" hidden></p>
+      <button class="btn btn-main" type="submit">Choose your realm</button>
+    </form>
+    <section class="rules">
+      <h2 class="rubric">How to play</h2>
+      <ol>
+        <li><b>Choose a realm.</b> Easy, Medium, or Hard. Harder empires can score higher, but they collapse faster.</li>
+        <li><b>Make about eight decisions.</b> Each choice earns points for how well it helped your empire gain, keep, and legitimize power.</li>
+        <li><b>Learn what really happened.</b> After every choice, compare your decision with the history.</li>
+      </ol>
+      <p class="fine">Only your first game counts for the leaderboard. Every game after that is practice.</p>
+    </section>
+    <p class="fleuron" aria-hidden="true">❦</p>
+  </article>`);
 
   app.querySelector('#start-form').addEventListener('submit', submitStart);
   app.querySelectorAll('[data-resume]').forEach((b) => b.addEventListener('click', () => resume(b.dataset.resume, b)));
@@ -313,81 +370,87 @@ async function submitStart(ev) {
   }
 }
 
-// ---------- empire select ----------
+// ---------- realm select: the world map ----------
 function screenEmpires() {
   setAccent(null);
+  focusTable(null);
   S.game = null;
-  const groups = ['easy', 'medium', 'hard'].map((t) => {
+  const pins = S.config.empires.map((e) => {
+    const [x, y] = project(e.capital.lon, e.capital.lat);
+    return `<button class="pin pin-${e.capital.label || 'below'} diff-${e.tier}" style="left:${((x / MAP.width) * 100).toFixed(2)}%;top:${((y / MAP.height) * 100).toFixed(2)}%" data-empire="${e.id}" aria-label="${esc(e.name)} (${esc(e.tierLabel)}), capital ${esc(e.capital.name)}">
+      ${emblem(e.emblem, e.color, 40)}
+      <span class="pin-label"><b>${esc(shortName(e.name))}</b><span class="diff-num">${ROMAN[TIER_NUM[e.tier]]}</span></span>
+    </button>`;
+  }).join('');
+  const columns = ['easy', 'medium', 'hard'].map((t) => {
     const tier = S.config.tiers[t];
-    const list = S.config.empires.filter((e) => e.tier === t);
     return `
-    <section class="tier-group">
-      <div class="tier-head">
-        <h2 class="tier-${t}">${pips(t)} ${esc(tier.label)}</h2>
-        <p>${esc(tier.blurb)}</p>
-        <div class="tier-meta"><span>${rangeText(tier)} points per decision</span><span>${shields(tier.stability, tier.stability)} stability</span></div>
-      </div>
-      <div class="empire-grid">${list.map(empireCard).join('')}</div>
+    <section class="reg-col diff-${t}">
+      <h3>${difficulty(t, tier.label)}</h3>
+      <p class="fine">${esc(tier.blurb)}<br>${rangeText(tier)} points per decision · ${tier.stability} stability</p>
+      ${S.config.empires.filter((e) => e.tier === t).map((e) => `
+        <button class="reg-entry" data-empire="${e.id}">
+          ${emblem(e.emblem, e.color, 44)}
+          <span><b>${esc(e.name)}</b><span class="fine">${e.startYear}–${e.endYear} · ${esc(e.capital.name)}</span><span class="reg-why">${esc(e.tierReason)}</span></span>
+        </button>`).join('')}
     </section>`;
-  });
+  }).join('');
   render(`
-  <div class="page-head">
-    <p class="eyebrow">Period ${esc(S.player.period)}</p>
-    <h1>Choose your empire, ${esc(S.player.name)}</h1>
-    <p class="muted">Each empire is rated by how hard it is to rule well. Classmates can pick the same one.</p>
+  <header class="board-head">
+    <p class="imprint light">Period ${esc(S.player.period)} · ${esc(S.player.name)}</p>
+    <h1 class="title light">Choose your realm</h1>
+    <p class="subtitle light">Select a capital on the map, or pick from the register below. Classmates may choose the same realm.</p>
+  </header>
+  ${practiceNote()}
+  <div class="worldmap">
+    ${mapSvg(`0 0 ${MAP.width} ${MAP.height}`, 'worldmap-svg')}
+    <div class="pins">${pins}</div>
+    <p class="map-legend"><span class="diff-num">I</span> Easy <span class="diff-num">II</span> Medium <span class="diff-num">III</span> Hard</p>
   </div>
-  ${practiceBanner()}
-  ${groups.join('')}
-  <div class="btn-row"><button class="btn btn-ghost" data-go="start">← Change name or period</button></div>`);
+  <article class="paper register-of-empires">
+    <h2 class="rubric center">Register of Empires</h2>
+    <div class="reg-cols">${columns}</div>
+  </article>
+  <div class="btn-row"><button class="btn btn-ghost-light" data-go="start">Change name or period</button></div>`);
   app.querySelectorAll('[data-empire]').forEach((b) => b.addEventListener('click', () => {
     S.introEmpire = b.dataset.empire;
     go('intro');
   }));
 }
 
-function empireCard(e) {
-  return `
-  <button class="empire-card" style="--c:${e.color}" data-empire="${e.id}" aria-label="${esc(e.name)}, ${esc(e.tierLabel)}: ${esc(e.tierReason)}">
-    <div class="ec-banner">${emblem(e.emblem, e.color, 64)}${tierTag(e.tier, e.tierLabel)}</div>
-    <div class="ec-body">
-      <h3>${esc(e.name)}</h3>
-      <div class="ec-years">${e.startYear}–${e.endYear}</div>
-      <p class="ec-why"><b>Why ${esc(e.tierLabel.toLowerCase())}?</b> ${esc(e.tierReason)}</p>
-      <p class="ec-sum">${esc(e.summary)}</p>
-      <span class="ec-cta">Rule this empire <span aria-hidden="true">→</span></span>
-    </div>
-  </button>`;
-}
-
-// ---------- intro ----------
+// ---------- dossier ----------
 function screenIntro() {
   const e = empireOf(S.introEmpire);
   setAccent(e.color);
+  focusTable(e);
+  const [x, y, w, h] = cropAround(e.capital, 340, 120);
+  const [px, py] = project(e.capital.lon, e.capital.lat);
   render(`
-  ${practiceBanner()}
-  <section class="briefing" style="--c:${e.color}">
-    <div class="br-banner">
-      <div class="br-emblem">${emblem(e.emblem, e.color, 96, e.name)}</div>
+  ${practiceNote()}
+  <article class="paper dossier">
+    <div class="vignette">${mapSvg(`${x} ${y} ${w} ${h}`, 'vignette-svg', `<circle class="city" cx="${px}" cy="${py}" r="2.2"/><text class="city-name" x="${px + 4}" y="${py - 4}">${esc(e.capital.name)}</text>`)}</div>
+    <header class="dossier-head">
+      ${emblem(e.emblem, e.color, 92, e.name)}
       <div>
-        <p class="eyebrow light">${e.startYear}–${e.endYear}</p>
+        <p class="imprint">The realm of the</p>
         <h1>${esc(e.name)}</h1>
-        ${tierTag(e.tier, e.tierLabel)}
+        <p class="dossier-meta">${e.startYear}–${e.endYear} · ${difficulty(e.tier, e.tierLabel)}</p>
       </div>
+    </header>
+    ${dropCap(esc(e.intro))}
+    <table class="terms">
+      <caption class="rubric">Terms of rule</caption>
+      <tr><th>Points per decision</th><td>${rangeText(e)}</td></tr>
+      <tr><th>Stability</th><td>${shields(e.stability, e.stability)} <span class="fine">Bad choices can cost stability. Lose it all and your empire collapses.</span></td></tr>
+      <tr><th>If you collapse</th><td>${esc(S.config.collapsePenalty)}</td></tr>
+      <tr><th>Why ${esc(e.tierLabel.toLowerCase())}?</th><td>${esc(e.tierReason)}</td></tr>
+      <tr><th>Length</th><td>About 8 decisions</td></tr>
+    </table>
+    <div class="btn-row">
+      <button class="btn btn-main" id="begin">Take the throne</button>
+      <button class="btn btn-ghost" data-go="empires">Back to the map</button>
     </div>
-    <div class="br-body">
-      <p class="story">${esc(e.intro)}</p>
-      <div class="facts">
-        <div class="fact"><b>Points per decision</b><span class="fact-big">${rangeText(e)}</span></div>
-        <div class="fact"><b>Stability</b>${shields(e.stability, e.stability)}<span class="small">Bad choices can cost stability. Lose it all and your empire collapses.</span></div>
-        <div class="fact"><b>Why ${esc(e.tierLabel.toLowerCase())}?</b><span class="small">${esc(e.tierReason)}</span></div>
-      </div>
-      <p class="small muted">${esc(S.config.collapsePenalty)} A full reign is about 8 decisions.</p>
-      <div class="btn-row">
-        <button class="btn btn-primary btn-big" id="begin">Begin your reign <span aria-hidden="true">→</span></button>
-        <button class="btn btn-ghost" data-go="empires">Choose a different empire</button>
-      </div>
-    </div>
-  </section>`);
+  </article>`);
   app.querySelector('#begin').addEventListener('click', begin);
 }
 
@@ -411,42 +474,48 @@ async function begin(ev) {
   }
 }
 
-// ---------- decision ----------
+// ---------- decision: the event window ----------
+function eventMap(e) {
+  const [x, y, w, h] = cropAround(e.capital, 380, 105);
+  const [px, py] = project(e.capital.lon, e.capital.lat);
+  return `<div class="vignette">${mapSvg(`${x} ${y} ${w} ${h}`, 'vignette-svg', `<circle class="city" cx="${px}" cy="${py}" r="2.2"/><text class="city-name" x="${px + 4}" y="${py - 4}">${esc(e.capital.name)}</text>`)}</div>`;
+}
+
 function screenDecision() {
   const e = empireOf(S.game.empire);
   setAccent(e.color);
+  focusTable(e);
   const n = S.view.node;
   const r = richFor(`node:${S.choices.length}`);
-  const story = r(n.text);
-  const context = n.context.map((c) => `<div class="context"><b>Because of your earlier choices</b>${r(c)}</div>`).join('');
+  const story = dropCap(r(n.text));
+  const context = n.context.map((c) => `<aside class="marginalia"><span class="manicule" aria-hidden="true">☞</span><span><b>Because of your earlier choices:</b> ${r(c)}</span></aside>`).join('');
   const options = n.options.map((o, i) => `
-    <button class="option" data-key="${esc(o.key)}">
-      <span class="letter" aria-hidden="true">${'ABC'[i]}</span>
+    <li><button class="choice" data-key="${esc(o.key)}">
+      <span class="choice-num" aria-hidden="true">${ROMAN[i + 1]}.</span>
       <span class="otext">${r(o.text)}</span>
-    </button>`).join('');
+    </button></li>`).join('');
   render(`
   ${hud(S.view.decision, n.year)}
-  ${practiceBanner()}
-  <article class="scroll">
-    <header class="scroll-head">
-      <div class="big-year" aria-hidden="true">${n.year}</div>
-      <div>
-        <p class="kicker"><span class="sr-only">Year ${n.year}. </span>${n.milestone ? '<span class="star" aria-hidden="true">★</span> Turning point' : `Decision ${S.view.decision}`}</p>
-        <h1>${esc(n.title)}</h1>
-      </div>
+  ${practiceNote()}
+  <article class="paper event">
+    <header class="event-head">
+      <h1>${esc(n.title)}</h1>
+      <span class="anno">Anno ${n.year}</span>
     </header>
+    ${eventMap(e)}
+    ${n.milestone ? '<p class="turning"><span aria-hidden="true">✠</span> A turning point of the age</p>' : ''}
+    ${story}
     ${context}
-    <p class="story">${story}</p>
-  </article>
-  <h2 class="choose-head">What will you do?</h2>
-  <div class="options">${options}</div>`);
-  app.querySelectorAll('.option').forEach((b) => b.addEventListener('click', () => choose(b)));
+    <h2 class="rubric choose-head">What will you do?</h2>
+    <ol class="choices">${options}</ol>
+  </article>`);
+  app.querySelectorAll('.choice').forEach((b) => b.addEventListener('click', () => choose(b)));
 }
 
 async function choose(btn) {
   if (S.busy) return;
   S.busy = true;
-  const buttons = app.querySelectorAll('.option');
+  const buttons = app.querySelectorAll('.choice');
   buttons.forEach((b) => (b.disabled = true));
   btn.classList.add('chosen');
   try {
@@ -489,103 +558,118 @@ function applyPlay(res, justChose) {
   saveGame();
 }
 
-// ---------- result ----------
+// ---------- result: the verdict ----------
+function verdictFor(points, tier) {
+  if (points === tier.pointsMax) return { cls: 'good', word: 'Masterstroke' };
+  if (points >= Math.ceil(tier.pointsMax * 0.6)) return { cls: 'good', word: 'Wise choice' };
+  if (points > 0) return { cls: 'ok', word: 'Doubtful' };
+  if (points === 0) return { cls: 'bad', word: 'Weak choice' };
+  return { cls: 'bad', word: 'Folly' };
+}
+
 function screenResult() {
   const e = empireOf(S.game.empire);
   const tier = S.config.tiers[e.tier];
   const v = S.view;
   const r = v.lastResult;
   const rich2 = richFor(`result:${S.choices.length}`);
-  const cls = r.points >= Math.ceil(tier.pointsMax * 0.6) ? 'good' : r.points > 0 ? 'ok' : 'bad';
-  const label = r.points === tier.pointsMax ? 'Excellent choice!' : cls === 'good' ? 'Strong choice' : r.points > 0 ? 'Not the best choice' : r.points === 0 ? 'Weak choice' : 'Costly mistake';
-  const decisionNum = S.choices.length;
   const ending = v.ending;
-  let warning = '';
+  const verdict = ending?.type === 'collapsed' ? { cls: 'bad', word: 'Ruin' } : verdictFor(r.points, tier);
+  const decisionNum = S.choices.length;
+  const effects = [`${fmtPts(r.points)} ${plural(r.points, 'point')}`];
+  if (r.stabilityDelta) effects.push(`stability ${fmtPts(r.stabilityDelta)}`);
+  let fall = '';
   if (ending?.type === 'collapsed') {
-    warning = ending.cause === 'stability'
-      ? `<div class="collapse-warning"><span aria-hidden="true">⚠</span> Your stability has run out. One mistake too many: your empire is collapsing.</div>`
-      : `<div class="collapse-warning"><span aria-hidden="true">⚠</span> This choice was a disaster. Your empire is collapsing.</div>`;
+    fall = `<div class="fall"><b>The realm is falling.</b> ${ending.cause === 'stability' ? 'Your stability has run out. One mistake too many.' : 'This choice was a disaster.'}</div>`;
   }
   render(`
   ${hud(decisionNum, r.year)}
-  ${practiceBanner()}
-  <section class="result" aria-live="polite">
-    <div class="verdict ${cls}">
-      <div class="medal"><span>${fmtPts(r.points)}</span></div>
-      <div>
-        <p class="kicker">Decision ${decisionNum} · ${r.year}</p>
-        <h1>${label}</h1>
-        <p class="verdict-sub">${fmtPts(r.points)} ${plural(r.points, 'point')}${r.stabilityDelta ? ` · <span class="stab-change">Stability ${fmtPts(r.stabilityDelta)}</span>` : ''}</p>
+  ${practiceNote()}
+  <article class="paper event outcome" aria-live="polite">
+    <header class="event-head">
+      <h1>${esc(r.title)}</h1>
+      <span class="anno">Anno ${r.year}</span>
+    </header>
+    <div class="verdict">
+      <div class="stamp ${verdict.cls}" role="img" aria-label="${verdict.word}, ${fmtPts(r.points)} ${plural(r.points, 'point')}"><b>${fmtPts(r.points)}</b><span>${verdict.word}</span></div>
+      <div class="decree">
+        <p class="rubric">Your decree</p>
+        <blockquote>${rich2(r.choice)}</blockquote>
+        <p class="effects">${effects.join(' · ')}</p>
       </div>
     </div>
-    ${warning}
-    <div class="chose"><b>You chose</b><p>${rich2(r.choice)}</p></div>
-    <div class="history"><b><span aria-hidden="true">📜</span> What actually happened</b><p class="story">${rich2(r.explanation)}</p></div>
-    <div class="btn-row end"><button class="btn btn-primary btn-big" id="next">${ending ? 'See how your story ends' : 'Next decision'} <span aria-hidden="true">→</span></button></div>
-  </section>`);
+    ${fall}
+    <section class="history">
+      <h2 class="rubric">What actually happened</h2>
+      <p>${rich2(r.explanation)}</p>
+    </section>
+    <div class="btn-row end"><button class="btn btn-main" id="next">${ending ? 'See how your reign ends' : 'Next decision'}</button></div>
+  </article>`);
   app.querySelector('#next').addEventListener('click', () => go(ending ? 'end' : 'decision'));
 }
 
-// ---------- ending ----------
+// ---------- ending: the chronicle ----------
 function screenEnd() {
   const e = empireOf(S.game.empire);
   setAccent(e.color);
+  focusTable(e);
   const end = S.view.ending;
   const collapsed = end.type === 'collapsed';
   const recap = end.recap.map((h) => {
     const cls = h.points > 0 ? 'pos' : h.points === 0 ? 'zero' : 'neg';
     return `
-    <li>
-      <span class="rc-year">${h.year}</span>
-      <div class="rc-main">
+    <tr>
+      <td class="yr">${h.year}</td>
+      <td>
         <b>${esc(h.title)}</b>
-        <p>${esc(h.choice)}</p>
-        ${h.best ? `<p class="rc-best">Best choice: ${esc(h.best.text)} <span>(${fmtPts(h.best.points)})</span></p>` : '<p class="rc-best ok">✓ You made the best choice.</p>'}
-        ${h.stabilityDelta ? `<p class="rc-best">Stability ${fmtPts(h.stabilityDelta)}</p>` : ''}
-      </div>
-      <span class="pill ${cls}">${fmtPts(h.points)}</span>
-    </li>`;
+        <span class="you-chose">${esc(h.choice)}</span>
+        ${h.best ? `<span class="wiser"><i>The wiser course:</i> ${esc(h.best.text)} (${fmtPts(h.best.points)})</span>` : '<span class="wiser best">You chose the wisest course.</span>'}
+      </td>
+      <td class="pts ${cls}">${fmtPts(h.points)}${h.stabilityDelta ? `<span class="stab">${shields(1, 1)}${fmtPts(h.stabilityDelta)}</span>` : ''}</td>
+    </tr>`;
   }).join('');
   const timeline = end.timeline.map((t) => `<li><span class="tl-year">${esc(t.year)}</span><p>${esc(t.text)}</p></li>`).join('');
   render(`
-  <section class="finale ${collapsed ? 'collapsed' : 'survived'}" style="--c:${e.color}">
-    <div class="finale-emblem">${collapsed ? '' : laurel()}${emblem(e.emblem, collapsed ? '#57534e' : e.color, 96)}${collapsed ? '<span class="crack" aria-hidden="true"></span>' : ''}</div>
-    <p class="eyebrow light">${esc(e.name)}</p>
-    <h1>${collapsed ? `Your empire collapsed in ${end.year}` : `Your empire endured to ${end.year}!`}</h1>
-    <p>${esc(end.text)}</p>
-  </section>
-  <section class="card scorecard">
-    <div class="final">
-      <span class="small muted">Final score</span>
-      <b id="final-score" data-to="${end.finalScore}">${minus(end.finalScore)}</b>
-      <span class="rating ${collapsed ? 'bad' : ''}">${esc(end.rating)}</span>
-    </div>
-    <div class="score-detail">
-      <ul class="breakdown">
-        <li><span>Points from ${end.recap.length} decisions</span><b>${minus(end.points)}</b></li>
-        ${collapsed ? `<li class="neg"><span>Collapse penalty</span><b>−${end.penalty}</b></li>` : ''}
-        <li class="total"><span>Final score</span><b>${minus(end.finalScore)}</b></li>
-        <li class="muted"><span>Best possible with this empire</span><span>${end.maxScore}</span></li>
-      </ul>
-      ${S.game.recorded
-        ? `<p class="saved-note"><span aria-hidden="true">✓</span> Saved to the Period ${esc(S.game.period)} leaderboard</p>`
-        : `<div class="practice-banner slim"><span class="pb-icon" aria-hidden="true">✎</span><div><b>Practice run – doesn't count for the leaderboard</b></div></div>`}
-      <div class="btn-row">
-        <button class="btn btn-primary" data-go="leaderboard">View leaderboard</button>
-        <button class="btn btn-ghost" id="again">Play again (practice)</button>
+  <article class="paper chronicle ${collapsed ? 'reign-fallen' : 'reign-endured'}">
+    <header class="chron-head">
+      <p class="imprint">The chronicle of the</p>
+      <h1>${esc(e.name)}</h1>
+      <div class="chron-seal">${collapsed ? '' : laurel()}${emblem(e.emblem, collapsed ? '#6b6258' : e.color, 96)}${collapsed ? '<span class="crack" aria-hidden="true"></span>' : ''}</div>
+      <p class="fate">${collapsed ? `Fell in ${end.year}` : `Endured to ${end.year}`}</p>
+      <p class="fate-text">${esc(end.text)}</p>
+    </header>
+    <section class="reckoning">
+      <div class="final">
+        <span class="rubric">Final score</span>
+        <b id="final-score" data-to="${end.finalScore}">${minus(end.finalScore)}</b>
+        <span class="rating">${esc(end.rating)}</span>
       </div>
+      <table class="sums">
+        <tr><th>Points from ${end.recap.length} decisions</th><td>${minus(end.points)}</td></tr>
+        ${collapsed ? `<tr class="neg"><th>Collapse penalty</th><td>−${end.penalty}</td></tr>` : ''}
+        <tr class="total"><th>Final score</th><td>${minus(end.finalScore)}</td></tr>
+        <tr class="best-line"><th>Best possible with this empire</th><td>${end.maxScore}</td></tr>
+      </table>
+    </section>
+    ${S.game.recorded
+      ? `<p class="entered">Entered in the Period ${esc(S.game.period)} register.</p>`
+      : `<div class="practice"><b>Practice run – doesn't count for the leaderboard</b></div>`}
+    <div class="btn-row center">
+      <button class="btn btn-main" data-go="leaderboard">View the leaderboard</button>
+      <button class="btn btn-ghost" id="again">Play again (practice)</button>
     </div>
-  </section>
-  <div class="two-col">
-    <section class="card">
-      <h2>Your choices</h2>
-      <ol class="recap">${recap}</ol>
-    </section>
-    <section class="card">
-      <h2>What really happened</h2>
-      <ol class="timeline">${timeline}</ol>
-    </section>
-  </div>`);
+    <div class="chron-cols">
+      <section>
+        <h2 class="rubric">Your reign, decision by decision</h2>
+        <table class="ledger"><tbody>${recap}</tbody></table>
+      </section>
+      <section>
+        <h2 class="rubric">As it truly happened</h2>
+        <ol class="timeline">${timeline}</ol>
+      </section>
+    </div>
+    <p class="fleuron" aria-hidden="true">❦</p>
+  </article>`);
   countUp(app.querySelector('#final-score'));
   app.querySelector('#again').addEventListener('click', () => {
     S.player = { name: S.game.name, period: S.game.period, practice: true };
@@ -628,22 +712,22 @@ async function resume(id, btn) {
   }
 }
 
-// ---------- leaderboard ----------
+// ---------- leaderboard: the register of rulers ----------
 function screenLeaderboard() {
   setAccent(S.game ? empireOf(S.game.empire).color : null);
-  const tabs = [['1', 'Period 1'], ['2', 'Period 2'], ['3', 'Period 3'], ['all', 'All Classes']];
+  focusTable(null);
+  const tabs = [['1', 'Period 1'], ['2', 'Period 2'], ['3', 'Period 3'], ['all', 'All classes']];
   render(`
-  <div class="page-head">
-    <p class="eyebrow">Hall of Rulers</p>
-    <h1>Leaderboard</h1>
-    <p class="muted">First attempts only. <span class="live"><i></i> Updates automatically</span></p>
-  </div>
+  <header class="board-head">
+    <h1 class="title light">Leaderboard</h1>
+    <p class="subtitle light">The register of rulers · first games only · <span class="live"><i></i>updates automatically</span></p>
+  </header>
   ${S.teacher ? teacherBar() : ''}
   <div class="tabs" role="tablist" aria-label="Choose a class period">
     ${tabs.map(([k, l]) => `<button class="tab" role="tab" aria-selected="${String(S.board.period) === k}" data-period="${k}">${l}</button>`).join('')}
   </div>
-  <div id="board">${boardHtml()}</div>
-  <div class="btn-row"><button class="btn btn-ghost" id="board-back">← Back</button></div>`);
+  <article class="paper register" id="board">${boardHtml()}</article>
+  <div class="btn-row"><button class="btn btn-ghost-light" id="board-back">Back</button></div>`);
   app.querySelectorAll('[data-period]').forEach((b) => b.addEventListener('click', () => {
     S.board.period = b.dataset.period;
     S.board.data = null;
@@ -676,7 +760,7 @@ async function loadBoard() {
     }
   } catch (e) {
     const el = app.querySelector('#board');
-    if (el && !S.board.data) el.innerHTML = `<div class="card empty">${esc(e.message)}</div>`;
+    if (el && !S.board.data) el.innerHTML = `<p class="empty">${esc(e.message)}</p>`;
   }
 }
 
@@ -686,52 +770,42 @@ function isMe(row) {
 
 function boardHtml() {
   const d = S.board.data;
-  if (!d) return '<div class="card loading">Loading the leaderboard…</div>';
+  if (!d) return '<p class="empty">Opening the register…</p>';
   const all = d.period === 'all';
   const teacher = !!S.teacher;
   if (!d.entries.length && !d.playing.length) {
-    return `<div class="card empty"><div class="empty-crown" aria-hidden="true">♛</div><b>No rulers yet.</b><p>Finish a game to claim the first spot!</p></div>`;
+    return `<p class="empty"><b>No rulers yet.</b> Finish a game to claim the first line of the register.</p>`;
   }
-  const empCell = (r) => {
+  const realm = (r) => {
     const e = empireOf(r.empire);
-    return `<span class="emp">${e ? emblem(e.emblem, e.color, 26) : ''}<span>${esc(r.empireName)}</span></span>`;
+    return `<span class="realm">${e ? emblem(e.emblem, e.color, 26) : ''}<span>${esc(shortName(r.empireName))}</span></span>`;
   };
-  const podium = d.entries.filter((r) => r.rank <= 3).slice(0, 3).map((r) => `
-    <div class="podium-card place-${r.rank} ${isMe(r) ? 'me' : ''}">
-      <div class="medal-ring">${r.rank}</div>
-      <b class="pc-name">${esc(r.name)}</b>
-      <span class="pc-emp">${empCell(r)}</span>
-      <span class="pc-score">${minus(r.score)}</span>
-      <span class="pc-meta">${tierTag(r.tier, r.tierLabel)}${all ? ` · P${r.period}` : ''}</span>
-    </div>`).join('');
+  const crown = (rank) => (rank <= 3 ? `<svg class="crown c${rank}" viewBox="0 0 24 18" aria-hidden="true"><path d="M2 15 L1 4 L7 9 L12 1 L17 9 L23 4 L22 15 Z"/><rect x="2" y="15.5" width="20" height="2.5"/></svg>` : '');
   const rows = d.entries.map((r) => `
-    <tr class="${isMe(r) ? 'me' : ''}">
-      <td class="rank">${r.rank <= 3 ? `<span class="rank-medal place-${r.rank}">${r.rank}</span>` : r.rank}</td>
-      <td class="name">${esc(r.name)}${isMe(r) ? ' <span class="you">you</span>' : ''}</td>
-      ${all ? `<td class="hide-sm">P${r.period}</td>` : ''}
-      <td>${empCell(r)}</td>
-      <td class="hide-sm">${tierTag(r.tier, r.tierLabel)}</td>
+    <tr class="${isMe(r) ? 'me' : ''} ${r.rank <= 3 ? 'top' : ''}">
+      <td class="rank">${crown(r.rank)}<span>${r.rank}</span></td>
+      <td class="who">${esc(r.name)}${isMe(r) ? ' <span class="you">you</span>' : ''}</td>
+      ${all ? `<td class="hide-sm">${r.period}</td>` : ''}
+      <td>${realm(r)}</td>
+      <td class="hide-sm">${difficulty(r.tier, r.tierLabel)}</td>
       <td class="num">${minus(r.score)}</td>
-      <td>${r.outcome === 'survived' ? '<span class="outcome survived">Survived</span>' : '<span class="outcome collapsed">Collapsed</span>'}</td>
+      <td class="fate-cell">${r.outcome === 'survived' ? '<span class="fate-survived">Survived</span>' : '<span class="fate-collapsed">Collapsed</span>'}</td>
       ${teacher ? `<td><button class="del" data-del="${r.id}" data-label="${esc(`${r.name} (Period ${r.period}, ${r.empireName}, ${r.score} points)`)}" aria-label="Delete ${esc(r.name)}"><span aria-hidden="true">✕</span><span class="del-word" aria-hidden="true"> Delete</span></button></td>` : ''}
     </tr>`).join('');
   const playing = d.playing.length ? `
-    <section class="card playing">
-      <h2>Still playing</h2>
-      <div class="playing-list">${d.playing.map((r) => `<span class="chip">${empCell(r)} <b>${esc(r.name)}</b>${all ? ` · P${r.period}` : ''}${teacher ? ` <button class="del small" data-del="${r.id}" data-label="${esc(`${r.name} (Period ${r.period}, still playing)`)}" aria-label="Delete ${esc(r.name)}">✕</button>` : ''}</span>`).join('')}</div>
-      <p class="small muted">${teacher ? 'If a game was abandoned, delete it so the student can start over officially.' : 'These rulers are still in the middle of their first game.'}</p>
+    <section class="in-progress">
+      <h2 class="rubric">Reigns in progress</h2>
+      <p class="playing-list">${d.playing.map((r) => `<span class="chip">${realm(r)} <b>${esc(r.name)}</b>${all ? ` · P${r.period}` : ''}${teacher ? ` <button class="del small" data-del="${r.id}" data-label="${esc(`${r.name} (Period ${r.period}, still playing)`)}" aria-label="Delete ${esc(r.name)}">✕</button>` : ''}</span>`).join('')}</p>
+      <p class="fine">${teacher ? 'If a game was abandoned, delete it so the student can start over officially.' : 'These rulers are still in the middle of their first game.'}</p>
     </section>` : '';
   return `
-    ${d.entries.length ? `<div class="podium">${podium}</div>` : ''}
     ${d.entries.length ? `
-    <section class="card table-card">
-      <div class="table-wrap"><table class="board">
-        <thead><tr><th>Rank</th><th>Name</th>${all ? '<th class="hide-sm">Period</th>' : ''}<th>Empire</th><th class="hide-sm">Tier</th><th class="num">Score</th><th>Result</th>${teacher ? '<th><span class="sr-only">Delete</span></th>' : ''}</tr></thead>
-        <tbody>${rows}</tbody>
-      </table></div>
-    </section>` : ''}
+    <div class="table-wrap"><table class="rolls">
+      <thead><tr><th>Rank</th><th>Name</th>${all ? '<th class="hide-sm">Period</th>' : ''}<th>Empire</th><th class="hide-sm">Tier</th><th class="num">Score</th><th>Result</th>${teacher ? '<th><span class="sr-only">Delete</span></th>' : ''}</tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>` : ''}
     ${playing}
-    <p class="small muted center">Updated ${S.board.updated ? S.board.updated.toLocaleTimeString() : ''}</p>`;
+    <p class="fine center updated">Updated ${S.board.updated ? S.board.updated.toLocaleTimeString() : ''}</p>`;
 }
 
 function bindBoard() {
@@ -751,8 +825,8 @@ function bindBoard() {
 function teacherBar() {
   const p = S.board.period;
   return `
-  <div class="teacher-bar">
-    <div><b>Teacher mode is on.</b> Use the ✕ Delete buttons to remove a single entry (for example, a joke name), or clear a whole leaderboard.</div>
+  <div class="paper teacher-bar">
+    <p><b>Teacher mode is on.</b> Use the ✕ Delete buttons to remove a single entry (for example, a joke name), or clear a whole leaderboard.</p>
     <div class="btn-row">
       ${p !== 'all' ? `<button class="btn btn-danger" id="clear-period">Clear Period ${p} leaderboard</button>` : ''}
       <button class="btn btn-danger" id="clear-all">Clear ALL leaderboards</button>
@@ -781,7 +855,7 @@ async function clearBoard(period) {
   if (period === 'all' && !confirm('Are you sure? This deletes every score in every period.')) return;
   try {
     const res = await api('/api/teacher/clear', { period }, { 'x-teacher-password': S.teacher });
-    toast(`Cleared ${res.deleted} ${plural(res.deleted, 'entry').replace('entrys', 'entries')}.`);
+    toast(`Cleared ${res.deleted} ${res.deleted === 1 ? 'entry' : 'entries'}.`);
     loadBoard();
   } catch (e) {
     teacherError(e);
@@ -838,14 +912,27 @@ document.addEventListener('click', (ev) => {
   go(where);
 });
 
+function mountMapTable() {
+  // Shared shapes (the world's land and the seal shading) used by every map and seal.
+  const defs = document.createElement('div');
+  defs.innerHTML = `<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><path id="land-shape" d="${LAND}"/>${SEAL_DEFS}</defs></svg>`;
+  document.body.prepend(defs.firstElementChild);
+  const table = document.createElement('div');
+  table.id = 'maptable';
+  table.setAttribute('aria-hidden', 'true');
+  table.innerHTML = mapSvg(`0 0 ${MAP.width} ${MAP.height}`, 'table-svg');
+  document.body.prepend(table);
+}
+
 async function init() {
+  mountMapTable();
   document.getElementById('teacher-link').addEventListener('click', () => S.config && openTeacher());
   document.getElementById('teacher-form').addEventListener('submit', submitTeacher);
   document.getElementById('teacher-cancel').addEventListener('click', () => document.getElementById('teacher-dialog').close());
   try {
     S.config = await api('/api/config');
   } catch (e) {
-    app.innerHTML = `<div class="card empty"><b>The game couldn't load.</b><p>${esc(e.message)}</p><button class="btn btn-primary" id="reload">Try again</button></div>`;
+    app.innerHTML = `<article class="paper"><p class="empty"><b>The game couldn't load.</b> ${esc(e.message)}</p><button class="btn btn-main" id="reload">Try again</button></article>`;
     app.querySelector('#reload').addEventListener('click', () => location.reload());
     return;
   }

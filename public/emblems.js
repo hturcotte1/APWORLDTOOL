@@ -72,9 +72,33 @@ const shapes = {
     <path d="M30 53 v-6 a2 2 0 0 1 4 0 v6 z" fill="currentColor" opacity=".45"/>`,
 };
 
+// Wax-seal outline: a slightly irregular, lumpy circle (same shape every time).
+const SEAL_EDGE = (() => {
+  const pts = [];
+  for (let i = 0; i < 48; i++) {
+    const a = (i / 48) * Math.PI * 2;
+    const r = 30 + 1.3 * Math.sin(a * 11 + 0.7) + 0.8 * Math.sin(a * 5 + 2.1) + 0.5 * Math.cos(a * 17);
+    pts.push(`${(32 + r * Math.cos(a)).toFixed(2)} ${(32 + r * Math.sin(a)).toFixed(2)}`);
+  }
+  return `M${pts.join(' L')}Z`;
+})();
+
+// Shared shading for every seal (added to the page once).
+export const SEAL_DEFS = `
+  <radialGradient id="seal-shade" cx="35%" cy="30%" r="75%">
+    <stop offset="0" stop-color="#fff" stop-opacity=".28"/>
+    <stop offset=".55" stop-color="#fff" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".35"/>
+  </radialGradient>`;
+
 export function emblem(name, color, size = 56, label = '') {
   const body = shapes[name] || '';
   const a11y = label ? `role="img" aria-label="${label}"` : 'aria-hidden="true"';
-  return `<svg class="emblem" viewBox="0 0 64 64" width="${size}" height="${size}" ${a11y} style="color:${color}">
-    <circle cx="32" cy="32" r="31" fill="${color}"/>${body}</svg>`;
+  return `<svg class="emblem seal" viewBox="0 0 64 64" width="${size}" height="${size}" ${a11y} style="color:${color}">
+    <path d="${SEAL_EDGE}" fill="${color}"/>
+    <path d="${SEAL_EDGE}" fill="url(#seal-shade)"/>
+    <circle cx="32" cy="32" r="24.5" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.2"/>
+    <circle cx="32" cy="32" r="22.6" fill="none" stroke="#000" stroke-opacity=".18" stroke-width=".8"/>
+    <g transform="translate(32 32) scale(.66) translate(-32 -32)" opacity=".92">${body}</g>
+  </svg>`;
 }

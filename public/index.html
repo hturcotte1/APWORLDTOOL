@@ -5,32 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rule the Empire</title>
   <meta name="description" content="A choose-your-path review game for AP World History Unit 3: Land-Based Empires (1450–1750).">
-  <meta name="theme-color" content="#f5efe3" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15130f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#172a31">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%23b91c1c'/%3E%3Cpath d='M14 46h36v5H14zM21 36h22v10H21zM21 36c0-10 6-13 11-20 5 7 11 10 11 20z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preload" href="/fonts/ebgaramond-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/imfell-english-sc.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <script type="module" src="/app.js"></script>
 </head>
 <body>
   <main id="app" tabindex="-1">
-    <div class="loading">Loading the game…</div>
-    <noscript><p class="card">This game needs JavaScript turned on.</p></noscript>
+    <p class="center">Unrolling the maps…</p>
+    <noscript><p class="paper">This game needs JavaScript turned on.</p></noscript>
   </main>
   <footer>
-    <span>Rule the Empire · AP World History review</span>
+    <span>Rule the Empire · AP World History review · Map data: Natural Earth</span>
     · <button class="btn-link" type="button" data-go="leaderboard">Leaderboard</button>
     · <button class="btn-link" type="button" id="teacher-link">Teacher</button>
   </footer>
   <dialog id="teacher-dialog" aria-labelledby="teacher-title">
     <form id="teacher-form">
       <h2 id="teacher-title">Teacher controls</h2>
-      <p class="small muted">Enter the teacher password to manage the leaderboards.</p>
+      <p>Enter the teacher password to manage the leaderboards.</p>
       <label class="field" for="teacher-password">Password</label>
       <input id="teacher-password" type="password" autocomplete="current-password" required>
       <p class="error" id="teacher-error" role="alert" hidden></p>
       <div class="btn-row end">
-        <button class="btn-ghost" type="button" id="teacher-cancel">Cancel</button>
-        <button class="btn-primary" type="submit">Unlock</button>
+        <button class="btn btn-ghost" type="button" id="teacher-cancel">Cancel</button>
+        <button class="btn btn-main" type="submit">Unlock</button>
       </div>
     </form>
   </dialog>

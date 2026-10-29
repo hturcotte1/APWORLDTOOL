@@ -58,7 +58,7 @@ async function startLocalServer() {
 }
 
 async function optionTextsOnPage(page) {
-  return page.$$eval('.option', (buttons) => buttons.map((b) => {
+  return page.$$eval('.choice', (buttons) => buttons.map((b) => {
     const t = b.querySelector('.otext').cloneNode(true);
     t.querySelectorAll('.def').forEach((d) => d.remove());
     return t.textContent.replace(/\s+/g, ' ').trim();
@@ -82,36 +82,36 @@ async function playInBrowser(browser, { name, period, empireId, choices }) {
 
   let state = replay(e, rules, []);
   for (let i = 0; i < choices.length; i++) {
-    await page.waitForSelector('.option:not([disabled])');
+    await page.waitForSelector('.choice:not([disabled])');
     const node = e.nodes[state.nodeId];
     const option = node.options.find((o) => o.id === choices[i]);
     const shown = await optionTextsOnPage(page);
     if (shown.length !== 3) throw new Error(`${empireId}: expected 3 options at ${state.nodeId}, saw ${shown.length}`);
     const index = shown.indexOf(option.text);
     if (index < 0) throw new Error(`${empireId}: option "${option.text}" not shown at ${state.nodeId}. Shown: ${JSON.stringify(shown)}`);
-    const heading = (await page.textContent('.scroll h1')).trim();
+    const heading = (await page.textContent('.event h1')).trim();
     if (heading !== node.title) throw new Error(`${empireId}: expected decision "${node.title}", saw "${heading}"`);
-    await page.click(`.option >> nth=${index}`);
+    await page.click(`.choice >> nth=${index}`);
     await page.waitForSelector('#next');
-    const pts = (await page.textContent('.medal span')).trim();
+    const pts = (await page.textContent('.stamp b')).trim();
     if (pts !== fmtPts(option.points)) throw new Error(`${empireId}: ${state.nodeId}/${option.id} showed ${pts}, expected ${fmtPts(option.points)}`);
     state = replay(e, rules, choices.slice(0, i + 1));
     await page.click('#next');
   }
 
-  await page.waitForSelector('.finale');
-  const title = (await page.textContent('.finale h1')).trim();
+  await page.waitForSelector('.chronicle');
+  const title = (await page.textContent('.chronicle .fate')).trim();
   const end = expected.ending;
-  const wantTitle = end.type === 'survived' ? `Your empire endured to ${end.year}!` : `Your empire collapsed in ${end.year}`;
+  const wantTitle = end.type === 'survived' ? `Endured to ${end.year}` : `Fell in ${end.year}`;
   if (title !== wantTitle) throw new Error(`${empireId}: end title "${title}", expected "${wantTitle}"`);
   const finalTo = await page.getAttribute('#final-score', 'data-to');
   if (Number(finalTo) !== end.finalScore) throw new Error(`${empireId}: final score ${finalTo}, expected ${end.finalScore}`);
-  const recapCount = await page.$$eval('.recap li', (l) => l.length);
+  const recapCount = await page.$$eval('.ledger tr', (l) => l.length);
   if (recapCount !== choices.length) throw new Error(`${empireId}: recap shows ${recapCount} choices, expected ${choices.length}`);
   const timelineCount = await page.$$eval('.timeline li', (l) => l.length);
   if (timelineCount !== e.timeline.length) throw new Error(`${empireId}: timeline shows ${timelineCount} events`);
-  const saved = await page.$('.saved-note');
-  const practice = await page.$('.practice-banner');
+  const saved = await page.$('.entered');
+  const practice = await page.$('.practice');
   if (!saved || practice) throw new Error(`${empireId}: first game should be saved to the leaderboard (saved=${!!saved}, practice=${!!practice})`);
   if (errors.length) throw new Error(`${empireId}: browser errors: ${errors.join(' | ')}`);
   return { ctx, page, end };
@@ -120,12 +120,12 @@ async function playInBrowser(browser, { name, period, empireId, choices }) {
 async function practiceCheck(page) {
   // Same student plays again: must be labeled practice and never saved.
   await page.click('#again');
-  await page.waitForSelector('.practice-banner');
+  await page.waitForSelector('.practice');
   await page.click('[data-empire="mughal"]');
   await page.click('#begin');
-  await page.waitForSelector('.option');
-  if (!(await page.$('.practice-banner'))) throw new Error('practice banner missing during a repeat game');
-  const text = await page.textContent('.practice-banner');
+  await page.waitForSelector('.choice');
+  if (!(await page.$('.practice'))) throw new Error('practice banner missing during a repeat game');
+  const text = await page.textContent('.practice');
   if (!text.includes("Practice run – doesn't count for the leaderboard")) throw new Error(`practice label text wrong: ${text}`);
 }
 

@@ -6,6 +6,7 @@
   "summary": "Build a giant empire on the Niger River, win over Timbuktu's scholars, and face Morocco's guns.",
   "color": "#9a3412",
   "emblem": "mosque",
+  "capital": { "name": "Gao", "lon": -0.04, "lat": 16.27, "label": "below" },
   "startYear": 1464,
   "endYear": 1600,
   "intro": "You begin as Sonni Ali in 1468, the warrior-king who turned Songhai into an empire along the Niger River, and guide it through the reign of Askia Muhammad and his heirs. Your strengths: control of the gold and salt trade across the Sahara, the great cities of Gao, Timbuktu, and Jenne, and a huge army. Your challenges: keeping the support of Muslim scholars and merchants, avoiding fights over the throne, and a rival to the north with guns.",

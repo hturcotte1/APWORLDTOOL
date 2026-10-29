@@ -6,6 +6,7 @@
   "summary": "Guard the Great Wall, ride the silver boom, and pass the Mandate of Heaven to the Qing.",
   "color": "#a16207",
   "emblem": "roof",
+  "capital": { "name": "Beijing", "lon": 116.41, "lat": 39.9, "label": "above" },
   "startYear": 1449,
   "endYear": 1750,
   "intro": "You guide China's imperial government from 1449 into the 1700s, first under the Ming dynasty and then under the Manchu-led Qing. Your strengths: a huge population, skilled officials chosen by exams, and one of the most productive economies in the world. Your challenges: northern raiders, pirates, a growing dependence on foreign silver, and keeping the Mandate of Heaven.",

@@ -6,6 +6,7 @@
   "summary": "Unite Japan under the shogun, control the samurai lords, and decide how open to be to the world.",
   "color": "#be185d",
   "emblem": "fuji",
+  "capital": { "name": "Edo", "lon": 139.69, "lat": 35.69, "label": "below" },
   "startYear": 1600,
   "endYear": 1750,
   "intro": "You begin as Tokugawa Ieyasu in 1600, the warlord who has just won the final struggle for power after Japan's long civil wars, and guide his family's government, the Tokugawa shogunate, into the 1700s. Your strengths: an island nation, a victorious army, and a tired country that wants peace. Your challenges: hundreds of proud regional lords with their own samurai, and European missionaries and traders arriving by sea.",

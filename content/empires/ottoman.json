@@ -6,6 +6,7 @@
   "summary": "Take Constantinople, face the Safavids, and hold a giant empire of many faiths together.",
   "color": "#b91c1c",
   "emblem": "crescent",
+  "capital": { "name": "Istanbul", "lon": 28.98, "lat": 41.01, "label": "below" },
   "startYear": 1453,
   "endYear": 1750,
   "intro": "You begin as Sultan Mehmed II in 1453 and guide the Ottoman Empire through the reigns of Selim I, Suleiman the Magnificent, and beyond. Your strengths: an elite army armed with gunpowder weapons, and lands that sit between Europe and Asia. Your challenges: rivals on every border and millions of subjects of many different faiths to hold together.",

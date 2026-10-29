@@ -6,6 +6,7 @@
   "summary": "Fund Columbus, build an empire in the Americas, and decide what to do with a mountain of silver.",
   "color": "#7e22ce",
   "emblem": "galleon",
+  "capital": { "name": "Madrid", "lon": -3.7, "lat": 40.42, "label": "left" },
   "startYear": 1492,
   "endYear": 1750,
   "intro": "You begin as Queen Isabella in 1492 and guide the Spanish Crown through Charles V, Philip II, and their heirs. Your strengths: daring explorers, conquests in the Americas, and more silver than any empire before you. Your challenges: enemies across Europe, the Protestant Reformation, rebellions, and the temptation to spend your fortune on endless wars.",

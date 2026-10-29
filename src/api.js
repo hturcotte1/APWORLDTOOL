@@ -38,6 +38,7 @@ export function createApi({ empires, rules, glossary }) {
           summary: e.summary,
           color: e.color,
           emblem: e.emblem,
+          capital: e.capital || null,
           startYear: e.startYear,
           endYear: e.endYear,
           intro: e.intro,

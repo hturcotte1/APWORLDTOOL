@@ -6,6 +6,7 @@
   "summary": "Found an empire with gunpowder, unite Hindus and Muslims, and build the Taj Mahal.",
   "color": "#15803d",
   "emblem": "dome",
+  "capital": { "name": "Agra", "lon": 78.01, "lat": 27.18, "label": "below" },
   "startYear": 1526,
   "endYear": 1750,
   "intro": "You begin as Babur in 1526, a prince from Central Asia invading northern India with cannons and guns, and continue through his descendants Akbar, Shah Jahan, and Aurangzeb. Your strengths: some of the richest farmland and trade on Earth. Your challenge: a Muslim dynasty ruling over a mostly Hindu population.",

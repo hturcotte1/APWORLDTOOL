@@ -12,24 +12,28 @@ const wait = (p, ms = 550) => p.waitForTimeout(ms);
 async function play(page, empireId, choices, shotEvery = null) {
   const e = content.empires[empireId];
   for (let i = 0; i < choices.length; i++) {
-    await page.waitForSelector('.option:not([disabled])');
+    await page.waitForSelector('.choice:not([disabled])');
     const state = replay(e, content.rules, choices.slice(0, i));
     const text = e.nodes[state.nodeId].options.find((o) => o.id === choices[i]).text;
-    const shown = await page.$$eval('.option .otext', (els) => els.map((el) => { const c = el.cloneNode(true); c.querySelectorAll('.def').forEach((d) => d.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); }));
-    await page.click(`.option >> nth=${shown.indexOf(text)}`);
+    const shown = await page.$$eval('.choice .otext', (els) => els.map((el) => { const c = el.cloneNode(true); c.querySelectorAll('.def').forEach((d) => d.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); }));
+    await page.click(`.choice >> nth=${shown.indexOf(text)}`);
     await page.waitForSelector('#next');
     if (shotEvery) await shotEvery(i);
     await page.click('#next');
   }
-  await page.waitForSelector('.finale');
+  await page.waitForSelector('.chronicle');
   await wait(page, 1100);
 }
 
-async function newPlayer(page, name, period, empireId) {
+async function newPlayer(page, name, period, empireId, shot = null) {
   await page.goto(BASE);
+  await page.waitForSelector('#start-form');
+  if (shot) { await wait(page, 700); await shot('0-start'); }
   await page.fill('#name', name);
   await page.click(`.periods input[value="${period}"] + span`);
   await page.click('#start-form button[type=submit]');
+  await page.waitForSelector('[data-empire]');
+  if (shot) { await wait(page, 700); await shot('1-realms'); }
   await page.click(`[data-empire="${empireId}"]`);
   await wait(page);
 }
@@ -44,9 +48,12 @@ for (const [label, viewport, colorScheme] of [['desk', { width: 1366, height: 76
   const shot = (n) => page.screenshot({ path: `${OUT}/${label}-${n}.png`, fullPage: true });
 
   // Collapse on a hard empire.
-  await newPlayer(page, `Fall ${label} ${tag}`, 1, 'spain');
+  await newPlayer(page, `Fall ${label} ${tag}`, 1, 'spain', shot);
   await shot('a-intro-spain');
   await page.click('#begin');
+  await page.waitForSelector('.choice');
+  await wait(page, 700);
+  await shot('a2-decision');
   const { collapse } = plannedPaths(content.empires.spain);
   await play(page, 'spain', collapse.choices, async (i) => { if (i === collapse.choices.length - 1) { await wait(page); await shot('b-collapse-result'); } });
   await shot('c-collapse-end');
@@ -60,7 +67,7 @@ for (const [label, viewport, colorScheme] of [['desk', { width: 1366, height: 76
   // Start a game and leave it unfinished, to show "Continue" and "Still playing".
   await newPlayer(page, `Half ${label} ${tag}`, 2, 'tokugawa');
   await page.click('#begin');
-  await page.waitForSelector('.option');
+  await page.waitForSelector('.choice');
   await page.goto(BASE);
   await page.waitForSelector('#start-form');
   await wait(page);

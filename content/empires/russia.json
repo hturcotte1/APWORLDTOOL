@@ -6,6 +6,7 @@
   "summary": "Throw off the Mongols, expand across Siberia, and race to catch up with Europe.",
   "color": "#1d4ed8",
   "emblem": "onion",
+  "capital": { "name": "Moscow", "lon": 37.62, "lat": 55.76, "label": "right" },
   "startYear": 1480,
   "endYear": 1750,
   "intro": "You begin as Ivan III, Grand Prince of Moscow, in 1480 and lead Russia through Ivan the Terrible, the Romanov tsars, and Peter the Great. Your strengths: vast lands to expand into, valuable furs, and a powerful Orthodox Church. Your challenges: raiders from the steppe, powerful nobles, a huge population of poor peasants, and European rivals with better ships and guns.",

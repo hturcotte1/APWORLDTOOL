@@ -6,6 +6,7 @@
   "summary": "Create a Shia empire in Persia, survive the Ottoman guns, and build the jewel of Isfahan.",
   "color": "#0e7490",
   "emblem": "sun",
+  "capital": { "name": "Isfahan", "lon": 51.67, "lat": 32.65, "label": "below" },
   "startYear": 1501,
   "endYear": 1750,
   "intro": "You begin as Ismail in 1501, a teenage religious leader who has just captured Tabriz and crowned himself shah, and guide the Safavid dynasty through its golden age under Shah Abbas and beyond. Your strengths: devoted warriors, a powerful religious identity, and some of the world's finest silk and art. Your challenges: the mighty Sunni Ottomans to the west, Uzbek raiders to the east, and ambitious chiefs at home.",
