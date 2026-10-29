@@ -853,6 +853,11 @@ async function init() {
   if (location.hash === '#leaderboard') go('leaderboard');
   else go('start');
   if (location.hash === '#teacher') openTeacher();
+  // Links like .../#leaderboard or .../#teacher also work in a tab that's already open.
+  window.addEventListener('hashchange', () => {
+    if (location.hash === '#leaderboard') go('leaderboard');
+    if (location.hash === '#teacher') openTeacher();
+  });
 }
 
 init();

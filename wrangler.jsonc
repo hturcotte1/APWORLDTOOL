@@ -1,13 +1,13 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "ap-world-empires",
+  "name": "rule-the-empire",
   "main": "src/worker.js",
   "compatibility_date": "2025-10-01",
   "assets": { "directory": "./public", "binding": "ASSETS" },
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "ap-world-empires",
+      "database_name": "rule-the-empire",
       "database_id": "00000000-0000-0000-0000-000000000000",
       "migrations_dir": "migrations"
     }

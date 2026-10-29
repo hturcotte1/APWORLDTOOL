@@ -1,5 +1,5 @@
 {
-  "name": "ap-world-empires",
+  "name": "rule-the-empire",
   "version": "1.0.0",
   "private": true,
   "description": "AP World History Unit 3 (Land-Based Empires, 1450-1750) branching review game with a shared leaderboard.",
@@ -12,9 +12,11 @@
     "test:e2e": "node --no-warnings test/e2e/run.mjs",
     "check": "npm run validate && npm run balance && npm test",
     "dev": "wrangler dev",
-    "db:migrate:local": "wrangler d1 migrations apply ap-world-empires --local",
-    "db:migrate:remote": "wrangler d1 migrations apply ap-world-empires --remote",
-    "deploy": "npm run check && wrangler d1 migrations apply ap-world-empires --remote && wrangler deploy"
+    "db:migrate:local": "wrangler d1 migrations apply rule-the-empire --local",
+    "db:migrate:remote": "wrangler d1 migrations apply rule-the-empire --remote",
+    "deploy": "NODE_USE_ENV_PROXY=1 node scripts/deploy.mjs",
+    "format-content": "node scripts/format-content.mjs",
+    "test:e2e:live": "node --no-warnings test/e2e/run.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"

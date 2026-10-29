@@ -42,7 +42,7 @@ function run(cmd, args, opts = {}) {
 
 async function startLocalServer() {
   persistDir = mkdtempSync(path.join(tmpdir(), 'rte-e2e-'));
-  await run('npx', ['wrangler', 'd1', 'migrations', 'apply', 'ap-world-empires', '--local', '--persist-to', persistDir]);
+  await run('npx', ['wrangler', 'd1', 'migrations', 'apply', 'rule-the-empire', '--local', '--persist-to', persistDir]);
   const port = 8790 + Math.floor(Math.random() * 100);
   server = spawn('npx', ['wrangler', 'dev', '--port', String(port), '--ip', '127.0.0.1', '--persist-to', persistDir,
     '--var', 'TEACHER_PASSWORD:e2e-teacher', '--var', 'GAME_SECRET:e2e-secret'], { cwd: ROOT, stdio: 'ignore' });
