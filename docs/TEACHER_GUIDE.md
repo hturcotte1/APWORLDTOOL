@@ -44,7 +44,7 @@ No student accounts or logins are needed. It works on Chromebooks, laptops, tabl
 1. Click **Teacher** in the small footer at the bottom of any page.
 2. Type the teacher password and click **Unlock**. The leaderboard opens in teacher mode.
 3. You can now:
-   - **Delete a single entry:** click **Delete** next to it. Use this for joke names, or to let a student replay for an official score (for example, if their first game was interrupted on a device they can't get back to).
+   - **Delete a single entry:** click **✕ Delete** next to it. Use this for joke names, or to let a student replay for an official score (for example, if their first game was interrupted on a device they can't get back to).
    - **Clear one period's leaderboard:** pick that period's tab, then click **Clear Period N leaderboard**.
    - **Clear all leaderboards:** for example, at the start of a new school year. You'll be asked to confirm twice.
    - Abandoned games appear under **Still playing**. Click the **✕** next to a name to remove it, so the student can start over officially.

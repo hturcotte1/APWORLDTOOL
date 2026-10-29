@@ -510,6 +510,11 @@ dialog::backdrop { background: rgba(10, 8, 4, 0.55); backdrop-filter: blur(2px);
   .pc-score { font-size: 1.5rem; }
   .pc-meta .tier-tag { display: none; }
   .hide-sm { display: none; }
+  table.board .emp span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  table.board th, table.board td { padding: 9px 5px; }
+  .outcome { font-size: 0.72rem; padding: 2px 7px; }
+  .del { padding: 3px 8px; font-size: 0.8rem; }
+  .del-word { display: none; }
   .recap li { grid-template-columns: 44px 1fr auto; gap: 8px; }
   .tier-head { grid-template-columns: 1fr; }
 }

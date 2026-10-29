@@ -713,7 +713,7 @@ function boardHtml() {
       <td class="hide-sm">${tierTag(r.tier, r.tierLabel)}</td>
       <td class="num">${minus(r.score)}</td>
       <td>${r.outcome === 'survived' ? '<span class="outcome survived">Survived</span>' : '<span class="outcome collapsed">Collapsed</span>'}</td>
-      ${teacher ? `<td><button class="del" data-del="${r.id}" data-label="${esc(`${r.name} (Period ${r.period}, ${r.empireName}, ${r.score} points)`)}">Delete</button></td>` : ''}
+      ${teacher ? `<td><button class="del" data-del="${r.id}" data-label="${esc(`${r.name} (Period ${r.period}, ${r.empireName}, ${r.score} points)`)}" aria-label="Delete ${esc(r.name)}"><span aria-hidden="true">✕</span><span class="del-word" aria-hidden="true"> Delete</span></button></td>` : ''}
     </tr>`).join('');
   const playing = d.playing.length ? `
     <section class="card playing">
@@ -752,7 +752,7 @@ function teacherBar() {
   const p = S.board.period;
   return `
   <div class="teacher-bar">
-    <div><b>Teacher mode is on.</b> Use “Delete” to remove a single entry (for example, a joke name), or clear a whole leaderboard.</div>
+    <div><b>Teacher mode is on.</b> Use the ✕ Delete buttons to remove a single entry (for example, a joke name), or clear a whole leaderboard.</div>
     <div class="btn-row">
       ${p !== 'all' ? `<button class="btn btn-danger" id="clear-period">Clear Period ${p} leaderboard</button>` : ''}
       <button class="btn btn-danger" id="clear-all">Clear ALL leaderboards</button>
