@@ -40,6 +40,26 @@
       "title": "A New Shah in Tabriz",
       "milestone": true,
       "text": "You are Ismail, just 14 years old, leader of the Safavid Sufi order. Your devoted Qizilbash warriors believe you have holy, almost divine powers. You have just captured the city of Tabriz and crowned yourself shah of Persia. Most of your new subjects are Sunni Muslims, like the powerful Ottomans to your west. You must decide what your empire will stand for.",
+      "scene": {
+        "year": "1501",
+        "title": "A Shia empire",
+        "caption": "Ismail is crowned shah in Tabriz and makes Twelver Shia Islam the official faith, setting his empire apart from its Sunni neighbors, the Ottomans and the Uzbeks.",
+        "view": [33, 24, 65, 43],
+        "steps": [
+          { "city": "Ardabil", "at": [48.29, 38.25], "mark": "plain", "pos": "right" },
+          {
+            "arrow": [
+              [48.29, 38.25],
+              [46.5, 38.1]
+            ],
+            "side": "own"
+          },
+          { "city": "Tabriz", "at": [46.29, 38.08], "mark": "taken", "pos": "left", "note": "Ismail crowned, 1501" },
+          { "area": "Twelver Shia Islam", "at": [53, 33.2], "size": [5.4, 3.8], "side": "own" },
+          { "text": "Sunni Ottomans", "at": [36.5, 38.5], "kind": "geo" },
+          { "text": "Sunni Uzbeks", "at": [61.5, 40.6], "kind": "geo" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -128,6 +148,36 @@
       "title": "The Ottomans Are Coming",
       "milestone": true,
       "text": "The Ottoman Sultan Selim I, a Sunni who calls you a heretic, is marching east with a huge army of musket-armed janissaries and many cannons. Your Qizilbash are brave horsemen with swords and bows, and they believe you cannot lose. Your generals argue: fight, or fall back?",
+      "scene": {
+        "year": "1514",
+        "title": "Defeat at Chaldiran",
+        "caption": "Ismail fights at Chaldiran and is badly beaten by Ottoman guns. Selim briefly occupies Tabriz, then withdraws. Later shahs avoid open battle and burn the land instead.",
+        "view": [33, 30, 57, 44],
+        "steps": [
+          { "city": "Tabriz", "at": [46.29, 38.08], "mark": "home", "pos": "below" },
+          {
+            "arrow": [
+              [34.5, 39.6],
+              [40, 39.6],
+              [43.8, 39.2]
+            ],
+            "side": "foe",
+            "label": "Ottoman army"
+          },
+          { "battle": "Chaldiran", "at": [44, 39.1], "won": false, "note": "1514", "pos": "above" },
+          { "city": "Tabriz", "at": [46.29, 38.08], "mark": "lost", "pos": "below", "note": "occupied briefly" },
+          {
+            "arrow": [
+              [46, 37.6],
+              [40.5, 37.2],
+              [35, 37.6]
+            ],
+            "side": "foe",
+            "style": "retreat",
+            "label": "Selim withdraws"
+          }
+        ]
+      },
       "context": [
         { "if": "shia", "text": "Your Shia faith inspires your warriors, but it also makes the Sunni Ottomans see you as a dangerous heretic." }
       ],
@@ -222,6 +272,27 @@
       "title": "Shah Abbas Takes Charge",
       "milestone": true,
       "text": "You are Shah Abbas, crowned as a teenager in a time of crisis. The Ottomans have seized your western provinces and the Uzbeks your eastern ones. At home, the Qizilbash chiefs are so powerful that they murdered your mother and have made and unmade shahs. You need an army, and officials, loyal only to you.",
+      "scene": {
+        "year": "1588",
+        "title": "Shah Abbas rebuilds",
+        "caption": "Abbas makes a costly peace with the Ottomans in 1590, giving up land, and turns east to beat the Uzbeks near Herat in 1598. Meanwhile he builds a new army of ghulams loyal only to him.",
+        "view": [40, 25, 68, 42],
+        "steps": [
+          { "city": "Qazvin", "at": [50, 36.27], "mark": "home", "pos": "below", "note": "capital" },
+          { "area": "lands given up, 1590", "at": [45.4, 38], "size": [2.8, 2], "side": "foe" },
+          {
+            "arrow": [
+              [50, 36.27],
+              [56.5, 36],
+              [62, 34.5]
+            ],
+            "side": "own",
+            "label": "east against the Uzbeks"
+          },
+          { "battle": "Herat", "at": [62.2, 34.35], "won": true, "note": "1598", "pos": "below" },
+          { "text": "a new ghulam army", "at": [52.5, 31], "kind": "event" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -309,6 +380,25 @@
       "title": "The Shah's Sons",
       "milestone": true,
       "text": "Shah Abbas feared his own sons, because powerful princes often plotted against shahs. He had one son killed and others blinded, and from now on princes are raised hidden away in the harem, knowing nothing about governing or war. Abbas has just died. How will the next generation of rulers be prepared?",
+      "scene": {
+        "year": "1638",
+        "title": "A weaker throne",
+        "caption": "Under Shah Safi, raised in the harem, the Safavids lose Baghdad to the Ottomans and Kandahar to the Mughals in 1638. Later shahs leave more and more power to court officials.",
+        "view": [37, 25, 70, 40],
+        "steps": [
+          { "city": "Isfahan", "at": [51.67, 32.65], "mark": "home", "pos": "below", "note": "princes raised in the harem" },
+          {
+            "arrow": [
+              [38.5, 36.6],
+              [44.2, 33.5]
+            ],
+            "side": "foe",
+            "label": "Ottomans"
+          },
+          { "city": "Baghdad", "at": [44.37, 33.31], "mark": "lost", "pos": "below", "note": "lost, 1638" },
+          { "city": "Kandahar", "at": [65.7, 31.62], "mark": "lost", "pos": "below", "note": "lost to the Mughals" }
+        ]
+      },
       "context": [
         { "if": "isfahan", "text": "Isfahan's silk trade and splendid monuments have made your dynasty rich and admired." }
       ],

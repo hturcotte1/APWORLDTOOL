@@ -40,6 +40,21 @@
       "title": "After Sekigahara",
       "milestone": true,
       "text": "For more than a century, Japan was torn apart by civil wars between daimyo with their own samurai armies. The warlord Toyotomi Hideyoshi reunited it, but after he died in 1598 the lords split into rival camps. Now you, Tokugawa Ieyasu, have won the great Battle of Sekigahara against a coalition of rival lords. How will you treat the lords who fought against you, and those who switched sides at the last minute?",
+      "scene": {
+        "year": "1600",
+        "title": "The map of power",
+        "caption": "Ieyasu wins at Sekigahara. Trusted vassals get lands near Edo, while outside lords, former enemies and newer allies alike, are kept in distant domains.",
+        "view": [128, 30.5, 144, 40],
+        "steps": [
+          { "battle": "Sekigahara", "at": [136.47, 35.37], "won": true, "note": "1600", "pos": "below" },
+          { "city": "Edo", "at": [139.69, 35.69], "mark": "home", "pos": "below" },
+          { "area": "trusted vassals", "at": [139.4, 36.3], "size": [1.5, 0.9], "side": "own" },
+          { "city": "Satsuma", "at": [130.55, 31.6], "mark": "foe", "pos": "right" },
+          { "city": "Chōshū", "at": [131.4, 34.4], "mark": "foe", "pos": "above" },
+          { "city": "Sendai", "at": [140.87, 38.27], "mark": "foe", "pos": "left" },
+          { "text": "outside lords, far from Edo", "at": [133.6, 38.8], "kind": "event" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -134,6 +149,37 @@
       "title": "The Christian Question",
       "milestone": true,
       "text": "Jesuit missionaries led by Francis Xavier, working with Portuguese traders, arrived in Japan in 1549, and about 300,000 Japanese have become Christians, including some daimyo. Spanish friars have come too, from the Philippines, a land Spain conquered. Some advisers fear that missionaries are the first step toward European conquest, and that Christians will be loyal to the Pope instead of to you.",
+      "scene": {
+        "year": "1614",
+        "title": "Christianity banned",
+        "caption": "The shogunate bans Christianity and ships missionaries and Christian leaders off to Macau and Manila. Later, every family must register at a Buddhist temple.",
+        "view": [108, 8, 144, 40],
+        "steps": [
+          { "city": "Edo", "at": [139.69, 35.69], "mark": "home", "pos": "above", "note": "1614: Christianity banned" },
+          { "city": "Nagasaki", "at": [129.87, 32.75], "mark": "plain", "pos": "right" },
+          {
+            "arrow": [
+              [129.87, 32.75],
+              [121, 28],
+              [113.54, 22.2]
+            ],
+            "side": "neutral",
+            "style": "exile",
+            "label": "missionaries expelled"
+          },
+          {
+            "arrow": [
+              [129.87, 32.75],
+              [127, 22],
+              [120.98, 14.6]
+            ],
+            "side": "neutral",
+            "style": "exile"
+          },
+          { "city": "Macau", "at": [113.54, 22.2], "mark": "plain", "pos": "left" },
+          { "city": "Manila", "at": [120.98, 14.6], "mark": "plain", "pos": "left" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -221,6 +267,30 @@
       "title": "Keeping the Daimyo in Line",
       "milestone": true,
       "text": "You are Tokugawa Iemitsu, Ieyasu's grandson and the third shogun. Japan is at peace, but about 250 daimyo still rule their own domains with their own samurai. You need a system that keeps them loyal and too busy to rebel, without fighting another war.",
+      "scene": {
+        "year": "1635",
+        "title": "All roads lead to Edo",
+        "caption": "Under sankin-kōtai, every daimyo must live in Edo every other year, and his wife and heir stay there. The costly processions leave little money for rebellion.",
+        "view": [128, 30.5, 144, 40],
+        "steps": [
+          { "city": "Edo", "at": [139.69, 35.69], "mark": "home", "pos": "below" },
+          {
+            "network": [139.69, 35.69],
+            "to": [
+              [130.55, 31.6],
+              [131.4, 34.4],
+              [133.53, 33.56],
+              [136.66, 36.56],
+              [140.87, 38.27],
+              [132.46, 34.4],
+              [130.4, 33.6]
+            ],
+            "label": "daimyo processions",
+            "flow": "in"
+          },
+          { "text": "every other year", "at": [134, 38.6], "kind": "event" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -280,6 +350,45 @@
       "title": "Closing the Country",
       "milestone": true,
       "text": "The Shimabara Rebellion of 1637–1638, a revolt of peasants, many of them Christians, has convinced the shogunate that foreign influence is dangerous. But trade brings in silk, sugar, medicines, and news of the world. The Portuguese, Dutch, Chinese, and Koreans all trade with Japan. The Dutch are Protestants who care about profit, not converting people.",
+      "scene": {
+        "year": "1639",
+        "title": "A closed country",
+        "caption": "The Portuguese are expelled and Japanese may no longer go abroad. From 1641 the Dutch trade only from Dejima in Nagasaki, while Chinese ships and Korean trade continue.",
+        "view": [108, 12, 142, 42],
+        "steps": [
+          { "city": "Edo", "at": [139.69, 35.69], "mark": "home", "pos": "below" },
+          {
+            "arrow": [
+              [129.87, 32.75],
+              [121, 28],
+              [113.54, 22.2]
+            ],
+            "side": "neutral",
+            "style": "exile",
+            "label": "Portuguese expelled"
+          },
+          { "city": "Nagasaki", "at": [129.87, 32.75], "mark": "plain", "pos": "right", "note": "Dejima: the Dutch" },
+          {
+            "route": [
+              [119.8, 26.2],
+              [125, 30],
+              [129.87, 32.75]
+            ],
+            "kind": "trade",
+            "label": "Chinese ships"
+          },
+          {
+            "route": [
+              [127, 37.5],
+              [129.04, 35.1],
+              [129.3, 34.3]
+            ],
+            "kind": "trade",
+            "label": "Korea"
+          },
+          { "text": "no Japanese may go abroad", "at": [131.5, 24.5], "kind": "event" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -372,6 +481,36 @@
       "title": "Dutch Learning",
       "milestone": true,
       "text": "You are Tokugawa Yoshimune, the eighth shogun. The treasury is short of money, and you want practical ideas to improve farming, medicine, and the calendar. The Dutch traders at Nagasaki have books about European science, but since 1630, any book that mentions Christianity, including Chinese translations of European science books, has been banned.",
+      "scene": {
+        "year": "1720",
+        "title": "Dutch learning",
+        "caption": "Yoshimune lets European books on science and medicine into Japan. Through Dejima, Dutch learning (rangaku) reaches Japanese scholars.",
+        "view": [125, 29.5, 143, 39.5],
+        "steps": [
+          {
+            "route": [
+              [125.5, 30.4],
+              [128.2, 31.6],
+              [129.87, 32.75]
+            ],
+            "kind": "trade",
+            "label": "Dutch ships"
+          },
+          { "city": "Nagasaki", "at": [129.87, 32.75], "mark": "plain", "pos": "below", "note": "Dejima" },
+          {
+            "arrow": [
+              [129.87, 32.75],
+              [132.5, 34],
+              [136.5, 35],
+              [139.69, 35.69]
+            ],
+            "side": "own",
+            "style": "flow",
+            "label": "European books"
+          },
+          { "city": "Edo", "at": [139.69, 35.69], "mark": "home", "pos": "below", "note": "scholars study rangaku" }
+        ]
+      },
       "options": [
         {
           "id": "a",

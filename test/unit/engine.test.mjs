@@ -105,3 +105,29 @@ test('the public view never reveals points before a choice', () => {
   assert.ok(!json.includes('explanation'));
   assert.equal(view.node.options.length, 3);
 });
+
+test('a turning point\'s map scene comes back with its result', () => {
+  // Depth-first search for the first path that answers the given node.
+  const pathTo = (e, target) => {
+    const walk = (state, choices) => {
+      if (state.ending) return null;
+      for (const o of visibleOptions(e.nodes[state.nodeId], state.flags)) {
+        const next = [...choices, o.id];
+        if (state.nodeId === target) return next;
+        const found = walk(applyChoice(e, rules, state, o.id), next);
+        if (found) return found;
+      }
+      return null;
+    };
+    return walk(startState(e, rules), []);
+  };
+  for (const e of Object.values(empires)) {
+    for (const [id, node] of Object.entries(e.nodes)) {
+      if (!node.milestone) continue;
+      const path = pathTo(e, id);
+      assert.ok(path, `${e.id}/${id} is reachable`);
+      const view = publicView(e, rules, replay(e, rules, path));
+      assert.deepEqual(view.lastResult.scene, node.scene || null, `${e.id}/${id}`);
+    }
+  }
+});

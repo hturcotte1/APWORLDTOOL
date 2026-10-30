@@ -81,6 +81,7 @@ async function playInBrowser(browser, { name, period, empireId, choices }) {
   await page.click('#begin');
 
   let state = replay(e, rules, []);
+  let scenes = 0;
   for (let i = 0; i < choices.length; i++) {
     await page.waitForSelector('.choice:not([disabled])');
     const node = e.nodes[state.nodeId];
@@ -97,6 +98,17 @@ async function playInBrowser(browser, { name, period, empireId, choices }) {
     if (pts !== fmtPts(option.points)) throw new Error(`${empireId}: ${state.nodeId}/${option.id} showed ${pts}, expected ${fmtPts(option.points)}`);
     state = replay(e, rules, choices.slice(0, i + 1));
     await page.click('#next');
+    // A collapse shows the fall of the empire; a turning point shows its map scene.
+    if (state.ending?.type === 'collapsed') {
+      await page.waitForSelector('.fall-ov');
+      await page.click('#scene-next');
+    } else if (node.scene) {
+      await page.waitForSelector('.scene-ov');
+      const sceneTitle = (await page.textContent('.scene .event-head h1')).trim();
+      if (sceneTitle !== node.scene.title) throw new Error(`${empireId}: scene "${sceneTitle}" after ${node.title}, expected "${node.scene.title}"`);
+      scenes++;
+      await page.click('#scene-next');
+    }
   }
 
   await page.waitForSelector('.chronicle');
@@ -114,7 +126,7 @@ async function playInBrowser(browser, { name, period, empireId, choices }) {
   const practice = await page.$('.practice');
   if (!saved || practice) throw new Error(`${empireId}: first game should be saved to the leaderboard (saved=${!!saved}, practice=${!!practice})`);
   if (errors.length) throw new Error(`${empireId}: browser errors: ${errors.join(' | ')}`);
-  return { ctx, page, end };
+  return { ctx, page, end, scenes };
 }
 
 async function practiceCheck(page) {
@@ -147,11 +159,11 @@ async function main() {
         const period = (n++ % 3) + 1;
         const t0 = Date.now();
         try {
-          const { ctx, page, end } = await playInBrowser(browser, { name, period, empireId: id, choices: p.choices });
+          const { ctx, page, end, scenes } = await playInBrowser(browser, { name, period, empireId: id, choices: p.choices });
           if (n === 1) await practiceCheck(page);
           await ctx.close();
           created.push({ name, period, score: end.finalScore, outcome: end.type });
-          results.push(`  ok  ${id.padEnd(9)} ${kind.padEnd(8)} ${p.choices.length} decisions, ${end.type} ${end.type === 'collapsed' ? `in ${end.year}` : ''}, final score ${minus(end.finalScore)} (${((Date.now() - t0) / 1000).toFixed(1)}s)`);
+          results.push(`  ok  ${id.padEnd(9)} ${kind.padEnd(8)} ${p.choices.length} decisions, ${end.type} ${end.type === 'collapsed' ? `in ${end.year}` : ''}, final score ${minus(end.finalScore)}, ${scenes} map ${scenes === 1 ? 'scene' : 'scenes'} (${((Date.now() - t0) / 1000).toFixed(1)}s)`);
         } catch (err) {
           failures++;
           results.push(`  FAIL ${id} ${kind}: ${err.message}`);
@@ -174,6 +186,30 @@ async function main() {
       results.push('  FAIL the practice game was saved to the leaderboard');
     }
     results.push(`  ok  leaderboard has all ${created.length} first-attempt games, and the practice game was not saved`);
+    const counted = board.standings.reduce((sum, p) => sum + p.games, 0);
+    if (board.standings.length !== 3 || counted < created.length) {
+      failures++;
+      results.push(`  FAIL class standings count ${counted} games, expected at least ${created.length}`);
+    }
+
+    // The teacher password opens the class report, which counts these games.
+    const pw = process.env.TEACHER_PASSWORD || (server ? 'e2e-teacher' : null);
+    if (pw) {
+      const ctx = await browser.newContext({ viewport: { width: 1366, height: 900 } });
+      const page = await ctx.newPage();
+      await page.goto(`${BASE}/#teacher`);
+      await page.waitForSelector('#teacher-password');
+      await page.fill('#teacher-password', pw);
+      await page.click('#teacher-form button[type=submit]');
+      await page.waitForSelector('.tiles');
+      const finished = Number((await page.textContent('.tile b')).trim());
+      const missed = await page.$$eval('.miss', (l) => l.length);
+      if (!(finished >= created.length) || !missed) {
+        failures++;
+        results.push(`  FAIL class report shows ${finished} finished games and ${missed} decisions`);
+      } else results.push(`  ok  teacher login opens the class report (${finished} finished games, ${missed} most-missed decisions listed)`);
+      await ctx.close();
+    }
   } finally {
     await browser.close();
     // Remove test entries from a real deployment.

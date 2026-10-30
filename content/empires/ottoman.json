@@ -40,6 +40,25 @@
       "title": "The Walls of Constantinople",
       "milestone": true,
       "text": "You are Sultan Mehmed II, just 21 years old. Constantinople, the capital of what is left of the old Byzantine Empire, sits in the middle of your lands and controls trade between Europe and Asia. Its thousand-year-old walls have stopped attackers for centuries. An engineer from Hungary named Orban offers to build you some of the biggest cannons the world has ever seen.",
+      "scene": {
+        "year": "1453",
+        "title": "The city falls",
+        "caption": "After weeks of cannon fire, Constantinople falls on May 29, 1453. Mehmed makes it his capital, and it becomes known as Istanbul.",
+        "view": [17, 34, 43, 48],
+        "steps": [
+          { "city": "Edirne", "at": [26.56, 41.68], "mark": "home", "pos": "above", "note": "Ottoman capital" },
+          {
+            "arrow": [
+              [26.56, 41.68],
+              [28.8, 41.1]
+            ],
+            "side": "own"
+          },
+          { "battle": "", "at": [28.98, 41.01], "won": true },
+          { "city": "Istanbul", "was": "Constantinople", "at": [28.98, 41.01], "mark": "taken", "pos": "below", "note": "May 29, 1453" },
+          { "text": "Black Sea", "at": [34.5, 43.3], "kind": "geo" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -134,6 +153,33 @@
       "title": "Showdown at Chaldiran",
       "milestone": true,
       "text": "It is 1514, and you are now Sultan Selim I. To the east, Shah Ismail of the new Safavid Empire in Persia has made Shia Islam his official religion, and his preachers are winning followers among Turkmen tribes inside your lands. The Ottomans are Sunni Muslims, so you see this as a threat to your faith and your throne. Ismail's Qizilbash cavalry are fearsome horsemen, while your janissaries were recruited as boys through the devshirme.",
+      "scene": {
+        "year": "1514",
+        "title": "Victory at Chaldiran",
+        "caption": "Ottoman guns crush the Qizilbash cavalry at Chaldiran. Selim briefly takes the Safavid capital, Tabriz, and Safavid expansion into Ottoman lands stops.",
+        "view": [24, 31, 52, 46],
+        "steps": [
+          { "city": "Istanbul", "at": [28.98, 41.01], "mark": "home", "pos": "below" },
+          {
+            "arrow": [
+              [28.98, 41.01],
+              [37, 40.6],
+              [43.8, 39.2]
+            ],
+            "side": "own",
+            "label": "Selim's army"
+          },
+          { "battle": "Chaldiran", "at": [44, 39.1], "won": true, "note": "1514", "pos": "above" },
+          {
+            "arrow": [
+              [44, 39.1],
+              [46.1, 38.2]
+            ],
+            "side": "own"
+          },
+          { "city": "Tabriz", "at": [46.29, 38.08], "mark": "taken", "pos": "below", "note": "taken briefly" }
+        ]
+      },
       "context": [
         { "if": "late_conquest", "text": "Constantinople fell to you only after a long, expensive delay, and that cost you money and prestige." },
         { "if": "cannons", "text": "Ever since Constantinople, your army has invested heavily in cannons and muskets." },
@@ -235,6 +281,34 @@
       "title": "Suleiman at the Gates of Vienna",
       "milestone": true,
       "text": "You are now Suleiman the Magnificent. You have already crushed the Kingdom of Hungary at the Battle of Mohács (1526). Now your huge army is camped outside Vienna, capital of the Habsburgs. But it's autumn, heavy rains forced you to leave your biggest cannons behind, and your supply lines stretch back hundreds of miles.",
+      "scene": {
+        "year": "1529",
+        "title": "The gates of Vienna",
+        "caption": "Suleiman lifts the siege of Vienna as winter nears. He keeps most of Hungary under a friendly vassal king, and later allies with France against the Habsburgs.",
+        "view": [0, 38, 34, 54],
+        "steps": [
+          { "city": "Istanbul", "at": [28.98, 41.01], "mark": "home", "pos": "below" },
+          { "battle": "Mohács", "at": [18.68, 45.99], "won": true, "note": "1526", "pos": "left" },
+          {
+            "arrow": [
+              [18.68, 45.99],
+              [16.5, 48]
+            ],
+            "side": "own"
+          },
+          { "battle": "Vienna", "at": [16.37, 48.21], "won": false, "note": "siege lifted, 1529", "pos": "above" },
+          { "area": "Hungary: a friendly king", "at": [22.4, 47.6], "size": [2.4, 1.1], "side": "own" },
+          {
+            "link": [
+              [28.98, 41.01],
+              [16, 39.6],
+              [2.35, 48.86]
+            ],
+            "label": "alliance with France, 1536"
+          },
+          { "city": "Paris", "at": [2.35, 48.86], "mark": "ally", "pos": "above" }
+        ]
+      },
       "context": [
         { "if": "holy_cities", "text": "With Egypt's taxes and the prestige of protecting Mecca and Medina, your treasury and reputation are at their peak." }
       ],
@@ -358,6 +432,33 @@
       "title": "The Janissaries Grow Too Powerful",
       "milestone": true,
       "text": "By the 1600s, things have changed. Fewer boys are taken through the devshirme, and janissaries now marry, run shops, and pass their jobs to their sons. Silver from the Americas and the government's own debasing of its coins (mixing in cheaper metal) have caused inflation, so soldiers' pay buys less. In 1622, mutinous janissaries killed Sultan Osman II, who had planned to replace them. The empire needs order.",
+      "scene": {
+        "year": "1656",
+        "title": "The Köprülü revival",
+        "caption": "From 1656 the Köprülü grand viziers restore order, crush revolts, and even win new lands: Crete in 1669 and Podolia in 1672.",
+        "view": [12, 34, 42, 50],
+        "steps": [
+          { "city": "Istanbul", "at": [28.98, 41.01], "mark": "home", "pos": "below", "note": "strong grand viziers" },
+          {
+            "arrow": [
+              [28.98, 41.01],
+              [27.6, 37.6],
+              [25.4, 35.6]
+            ],
+            "side": "own"
+          },
+          { "city": "Crete", "at": [25.13, 35.34], "mark": "taken", "pos": "left", "note": "1669" },
+          {
+            "arrow": [
+              [28.98, 41.01],
+              [28.2, 45],
+              [26.7, 48.4]
+            ],
+            "side": "own"
+          },
+          { "city": "Podolia", "at": [26.58, 48.68], "mark": "taken", "pos": "left", "note": "1672" }
+        ]
+      },
       "context": [
         { "if": "kanun", "text": "Suleiman's law codes and trained officials still give your government a strong foundation." }
       ],

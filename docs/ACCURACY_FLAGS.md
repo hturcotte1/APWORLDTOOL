@@ -72,3 +72,19 @@ simplifies them. Spot-check these first.
 
 ### Counterfactual options (by design)
 Some top-scoring options are "the road not taken" (for example, Spain not sending the Armada, the Safavids training their princes, Songhai avoiding battle at Tondibi). These reward what would have been smartest for the empire; each explanation says clearly what actually happened.
+
+### Map scenes (after each turning point)
+The animated maps are drawn schematically: arrows and routes show the general direction of a campaign or trade route, not its exact path, and shaded ovals mark regions, not borders. Coastlines and rivers come from Natural Earth and show today's courses. Most scenes only restate the turning point's own explanation; these add a detail worth a quick check:
+- **Mughal, 1580:** Akbar's reorganization into 12 provinces (subahs) in 1580. The dots mark approximate provincial capitals.
+- **Ming, 1567:** the reopened port is shown at Yuegang (Haicheng) in Fujian; its position on the map is approximate.
+- **Ming, 1600:** Nurhaci's Later Jin (1616) and the Ming defeat at Sarhu (1619), from the node text's mention of Nurhaci.
+- **Tokugawa, 1600:** Satsuma, Chōshū, and Sendai are shown as examples of distant "outside" (tozama) domains.
+- **Tokugawa, 1614:** missionaries and Christian leaders shipped to Macau and Manila in 1614.
+- **Ottoman, 1656:** the Köprülü-era conquests of Crete (1669) and Podolia (1672).
+- **Russia, 1612:** the volunteer army from Nizhny Novgorod (led by Minin and Pozharsky) that drove the Poles out.
+- **Spain, 1556:** the silver route (Potosí to the Pacific coast, across Panama, via Havana to Seville) is simplified.
+- **Spain, 1588:** fire ships off Calais, the battle off Gravelines, and the Armada's route home around Scotland and Ireland.
+- **Safavid, 1598:** Abbas's victory over the Uzbeks near Herat (the Battle of Rabat-e Pariyan).
+- **Safavid, 1638:** under Shah Safi (raised in the harem), the losses of Baghdad to the Ottomans and Kandahar to the Mughals in 1638.
+- **Songhai, 1468:** scholars fleeing Timbuktu, some to Walata.
+- **Songhai, 1496–1497:** sources differ on whether Askia Muhammad received the title of the caliph's deputy in Cairo or in Mecca, so the scene doesn't say where.

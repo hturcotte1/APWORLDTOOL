@@ -20,6 +20,13 @@ async function play(page, empireId, choices, shotEvery = null) {
     await page.waitForSelector('#next');
     if (shotEvery) await shotEvery(i);
     await page.click('#next');
+    // Turning points show a map scene, and a collapse shows the fall, before moving on.
+    const after = replay(e, content.rules, choices.slice(0, i + 1));
+    if (after.ending?.type === 'collapsed' || e.nodes[state.nodeId].scene) {
+      await page.waitForSelector('#scene-next');
+      if (shotEvery) await shotEvery(i, after.ending ? 'fall' : 'scene');
+      await page.click('#scene-next');
+    }
   }
   await page.waitForSelector('.chronicle');
   await wait(page, 1100);
@@ -56,7 +63,11 @@ for (const [label, viewport, colorScheme] of [['desk', { width: 1366, height: 76
   await wait(page, 700);
   await shot('a2-decision');
   const { collapse } = plannedPaths(content.empires.spain);
-  await play(page, 'spain', collapse.choices, async (i) => { if (i === collapse.choices.length - 1) { await wait(page); await shot('b-collapse-result'); } });
+  await play(page, 'spain', collapse.choices, async (i, where) => {
+    if (i !== collapse.choices.length - 1) return;
+    await wait(page, where ? 3200 : undefined);
+    await shot(where ? 'b2-fall' : 'b-collapse-result');
+  });
   await shot('c-collapse-end');
 
   // A full Songhai game (survives).
@@ -79,9 +90,13 @@ for (const [label, viewport, colorScheme] of [['desk', { width: 1366, height: 76
   await page.waitForSelector('#teacher-password');
   await page.fill('#teacher-password', 'local-teacher-pw');
   await page.click('#teacher-form button[type=submit]');
+  await page.waitForSelector('.tiles');
+  await wait(page, 900);
+  await shot('f-class-report');
+  await page.click('[data-go="leaderboard"]');
   await page.waitForSelector('.teacher-bar');
   await wait(page, 900);
-  await shot('f-teacher-board');
+  await shot('g-teacher-board');
   console.log(label, 'errors:', errors);
   await ctx.close();
 }

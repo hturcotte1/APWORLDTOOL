@@ -231,3 +231,72 @@ test('server replay matches the engine for every empire (best path and a collaps
     }
   }
 });
+
+test('leaderboard shows each period\'s average from finished first games only', async () => {
+  const mughal = plannedPaths(content.empires.mughal);
+  const spain = plannedPaths(content.empires.spain);
+  await playGame('Ana', 1, 'mughal', mughal.best.choices);
+  await playGame('Ben', 1, 'spain', spain.collapse.choices);
+  await playGame('Ana', 1, 'spain', spain.best.choices); // practice: not counted
+  await call('POST', '/api/start', { name: 'Cy', period: 1, empire: 'russia' }); // unfinished: not counted
+  await playGame('Dee', 3, 'spain', spain.best.choices);
+
+  const board = await call('GET', '/api/leaderboard?period=2');
+  assert.equal(board.body.standings.length, 3, 'standings cover every period, whichever tab is open');
+  const [p1, p2, p3] = board.body.standings;
+  const a = mughal.best.state.ending.finalScore;
+  const b = spain.collapse.state.ending.finalScore;
+  assert.deepEqual(p1, { period: 1, games: 2, average: Math.round(((a + b) / 2) * 10) / 10, best: a, survived: 1 });
+  assert.deepEqual(p2, { period: 2, games: 0, average: null, best: null, survived: 0 });
+  assert.equal(p3.games, 1);
+  assert.equal(p3.average, spain.best.state.ending.finalScore);
+});
+
+test('class report needs the teacher password', async () => {
+  assert.equal((await teacher('/api/teacher/report', {}, 'wrong')).status, 401);
+  assert.equal((await call('POST', '/api/teacher/report', {})).status, 401);
+  const ok = await teacher('/api/teacher/report', {});
+  assert.equal(ok.status, 200);
+  assert.equal(ok.body.periods.all.games, 0);
+  assert.deepEqual(ok.body.periods.all.decisions, []);
+});
+
+test('class report counts answers per decision and per period', async () => {
+  const e = content.empires.mughal;
+  const { best, collapse } = plannedPaths(e);
+  await playGame('Ana', 1, 'mughal', best.choices);
+  await playGame('Ben', 2, 'mughal', collapse.choices);
+  // An unfinished game's answers so far count too, but it isn't a finished game.
+  await playGame('Cy', 2, 'mughal', best.choices.slice(0, 2));
+
+  const { body } = await teacher('/api/teacher/report', {});
+  const first = `mughal/${e.start}`;
+  const node = body.nodes[first];
+  assert.equal(node.title, e.nodes[e.start].title);
+  assert.equal(node.options.length, e.nodes[e.start].options.length);
+  const bestId = e.nodes[e.start].options.reduce((x, y) => (y.points > x.points ? y : x)).id;
+  assert.deepEqual(node.best, [bestId]);
+
+  const all = body.periods.all;
+  assert.equal(all.games, 2);
+  assert.equal(all.playing, 1);
+  assert.equal(all.average, Math.round(((best.state.ending.finalScore + collapse.state.ending.finalScore) / 2) * 10) / 10);
+  assert.deepEqual(all.empires, [{ id: 'mughal', games: 2, average: all.average, survived: 1 }]);
+
+  const at = (period, key) => body.periods[period].decisions.find((d) => d.key === key);
+  const expectFirst = (period, picks) => {
+    const d = at(period, first);
+    assert.equal(d.answered, picks.length);
+    assert.equal(d.best, picks.filter((id) => id === bestId).length);
+    for (const id of new Set(picks)) assert.equal(d.counts[id], picks.filter((x) => x === id).length);
+  };
+  expectFirst('all', [best.choices[0], collapse.choices[0], best.choices[0]]);
+  expectFirst('1', [best.choices[0]]);
+  expectFirst('2', [collapse.choices[0], best.choices[0]]);
+  assert.equal(body.periods['3'].decisions.length, 0);
+  // Every answered step of every game is counted once.
+  const totalAnswers = all.decisions.reduce((n, d) => n + d.answered, 0);
+  assert.equal(totalAnswers, best.choices.length + collapse.choices.length + 2);
+  // Names are never part of the report.
+  assert.ok(!JSON.stringify(body).includes('Ana'));
+});

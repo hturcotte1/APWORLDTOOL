@@ -38,6 +38,37 @@
       "title": "The Conquest of Timbuktu",
       "milestone": true,
       "text": "You are Sonni Ali, a fearless warrior-king who has turned the small kingdom of Songhai, centered on the city of Gao on the Niger River, into a growing empire. Timbuktu is controlled by Tuareg desert nomads. Its leaders invite you in, but its Muslim scholars fear you, because you honor Islam in public while also following traditional Songhai religious practices.",
+      "scene": {
+        "year": "1468",
+        "title": "Timbuktu taken",
+        "caption": "Sonni Ali captures Timbuktu. He punishes scholars he suspects of siding with the Tuareg, and many flee the city, some to Walata.",
+        "view": [-9, 12, 4, 21],
+        "steps": [
+          { "city": "Gao", "at": [-0.04, 16.27], "mark": "home", "pos": "below" },
+          {
+            "arrow": [
+              [-0.04, 16.27],
+              [-1.5, 17.2],
+              [-2.8, 16.85]
+            ],
+            "side": "own",
+            "label": "Sonni Ali's cavalry"
+          },
+          { "city": "Timbuktu", "at": [-3, 16.77], "mark": "taken", "pos": "below", "note": "1468" },
+          {
+            "arrow": [
+              [-3, 16.77],
+              [-5, 17.6],
+              [-6.8, 17.3]
+            ],
+            "side": "neutral",
+            "style": "exile",
+            "label": "scholars flee"
+          },
+          { "city": "Walata", "at": [-7, 17.27], "mark": "plain", "pos": "below" },
+          { "text": "Niger River", "at": [-1.6, 14.9], "kind": "geo" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -133,6 +164,29 @@
       "title": "Askia Muhammad Takes the Throne",
       "milestone": true,
       "text": "Sonni Ali has died. You are Muhammad Ture, one of his top generals and a devout Muslim. You have just defeated Sonni Ali's son in battle and seized the throne, taking the title askia. But you are not of royal blood, and many people see you as a usurper.",
+      "scene": {
+        "year": "1496",
+        "title": "The hajj of Askia Muhammad",
+        "caption": "Askia Muhammad makes the hajj to Mecca in 1496–1497 and is named the caliph's deputy for West Africa. Back home he generously supports Timbuktu's scholars.",
+        "view": [-12, 4, 46, 38],
+        "steps": [
+          { "city": "Gao", "at": [-0.04, 16.27], "mark": "home", "pos": "below" },
+          {
+            "route": [
+              [-0.04, 16.27],
+              [8, 21],
+              [20, 27],
+              [31.24, 30.04],
+              [39.83, 21.42]
+            ],
+            "kind": "travel",
+            "label": "the hajj"
+          },
+          { "city": "Cairo", "at": [31.24, 30.04], "mark": "plain", "pos": "above" },
+          { "city": "Mecca", "at": [39.83, 21.42], "mark": "plain", "pos": "below" },
+          { "city": "Timbuktu", "at": [-3, 16.77], "mark": "ally", "pos": "above", "note": "scholars supported" }
+        ]
+      },
       "context": [
         { "if": "protected", "text": "Timbuktu's scholars remember that Songhai protected them, and they are ready to support you." }
       ],
@@ -224,6 +278,36 @@
       "title": "Askia Daoud's Golden Age",
       "milestone": true,
       "text": "You are Askia Daoud, a son of Askia Muhammad. Songhai is rich: gold from the south and salt from the Sahara pass through its cities. But since Askia Muhammad was overthrown by his own son in 1528, brothers have often fought over the throne. And to the north, the Sultan of Morocco wants the salt mines of Taghaza, and his soldiers are trained to use guns.",
+      "scene": {
+        "year": "1549",
+        "title": "Rich, but outgunned",
+        "caption": "Under Askia Daoud, gold and salt make Songhai rich. But its army still fights with spears, bows, and cavalry, while Morocco's soldiers train with guns.",
+        "view": [-15, 9, 7, 34],
+        "steps": [
+          { "city": "Gao", "at": [-0.04, 16.27], "mark": "home", "pos": "right" },
+          { "city": "Taghaza", "at": [-4.98, 23.6], "mark": "plain", "pos": "right", "note": "salt mines" },
+          {
+            "route": [
+              [-4.98, 23.6],
+              [-3.4, 17.2]
+            ],
+            "kind": "salt",
+            "label": "salt"
+          },
+          {
+            "route": [
+              [-8, 10.5],
+              [-5.6, 12.8],
+              [-4.4, 14.6],
+              [-3.2, 16.5]
+            ],
+            "kind": "gold",
+            "label": "gold"
+          },
+          { "city": "Timbuktu", "at": [-3, 16.77], "mark": "plain", "pos": "left" },
+          { "city": "Marrakesh", "at": [-7.99, 31.63], "mark": "foe", "pos": "right", "note": "soldiers with guns" }
+        ]
+      },
       "context": [
         { "if": "organized", "text": "Askia Muhammad's governors and professional army still hold the empire together." }
       ],
@@ -315,6 +399,29 @@
       "title": "An Army Crosses the Sahara",
       "milestone": true,
       "text": "Ahmad al-Mansur, Sultan of Morocco, wants Songhai's gold. He has sent an army of about 4,000 men, many armed with arquebuses, plus several cannons, across the Sahara. It is led by Judar Pasha, a Spanish-born soldier who converted to Islam. The crossing takes months, and many will die on the way. Your army is far larger, but it fights with spears, bows, and cavalry.",
+      "scene": {
+        "year": "1590",
+        "title": "Across the Sahara",
+        "caption": "Judar Pasha's army sets out across the Sahara in late 1590. Many soldiers die on the way, but enough reach the Niger River in early 1591 to fight, with guns and cannons.",
+        "view": [-15, 9, 7, 34],
+        "steps": [
+          { "city": "Marrakesh", "at": [-7.99, 31.63], "mark": "foe", "pos": "right" },
+          {
+            "arrow": [
+              [-7.99, 31.63],
+              [-6.4, 27.5],
+              [-4.6, 22.5],
+              [-2.6, 18.6],
+              [-1.4, 17.1]
+            ],
+            "side": "foe",
+            "label": "Judar Pasha's army"
+          },
+          { "text": "Sahara", "at": [-10, 24], "kind": "geo" },
+          { "text": "many die on the way", "at": [1.2, 24], "kind": "event" },
+          { "city": "Gao", "at": [-0.04, 16.27], "mark": "home", "pos": "right" }
+        ]
+      },
       "context": [
         { "if": "guns", "text": "Your efforts to buy guns have given you a small corps of gunners: not many, but better than none." }
       ],

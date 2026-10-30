@@ -171,6 +171,8 @@ export function publicView(empire, rules, state) {
       points: last.points,
       stabilityDelta: last.stabilityDelta,
       explanation: last.explanation,
+      // a turning point's short map scene of what actually happened
+      scene: empire.nodes[last.nodeId]?.scene || null,
     },
     node: null,
     ending: null,

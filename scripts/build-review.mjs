@@ -48,6 +48,7 @@ const condition = (x) => {
 const out = [];
 out.push('# Content Review: Rule the Empire', '');
 out.push('This document lists every decision in the game so you can spot-check it. It is generated from the content files by `npm run review-doc`, so it always matches what students see.', '');
+out.push('**Map scenes:** after each turning point (★), students see a short animated map of what actually happened, with the caption shown below. Arrows and regions are drawn schematically, not as exact borders.', '');
 out.push('**How to read it:** each empire has 12–15 decisions, but a student sees only about 8 in one play-through. Options are labeled A/B/C here; in the game they appear in a random order. "Next" shows where each choice leads. "Stability −1" means the choice weakens the empire; if stability runs out, the empire collapses. "Flags" are earlier choices the game remembers to change later situations.', '');
 out.push(`**Scoring rules:** ${Object.values(rules.tiers).map((t) => `${t.label}: ${t.pointsMin} to +${t.pointsMax} points per decision, starting stability ${t.stability}`).join('; ')}. ${rules.collapsePenalty.explain}`, '');
 out.push(flags, '');
@@ -85,6 +86,13 @@ for (const id of rules.empireOrder) {
       out.push(`**${o.id.toUpperCase()}.** ${o.text}${condition(o)}  `);
       out.push(`${effects.join(' · ')}  `);
       out.push(`_What actually happened:_ ${o.explanation}${o.collapse ? `  \n_Collapse text:_ ${o.collapse.text}` : ''}`, '');
+    }
+    if (n.scene) {
+      const sc = n.scene;
+      const shown = sc.steps.map((st) => st.city || st.battle || st.area || st.text || st.label).filter(Boolean);
+      out.push(`🗺 **Map scene after this decision: "${sc.title}" (${sc.year}).** ${sc.caption}  `);
+      if (shown.length) out.push(`<sub>On the map: ${shown.join(' · ')}</sub>`);
+      out.push('');
     }
   }
   if (e.glossary?.length) {

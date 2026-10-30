@@ -45,6 +45,33 @@
       "title": "The Emperor Is Captured!",
       "milestone": true,
       "text": "You lead the court of the Ming dynasty. Disaster: the young emperor led a huge army against the Oirat Mongols and was captured at Tumu Fortress. Mongol horsemen are now riding toward Beijing, your capital. Panicked officials want to flee south to the old capital, Nanjing. Others, led by the minister Yu Qian, say Beijing must be defended.",
+      "scene": {
+        "year": "1449",
+        "title": "Beijing holds",
+        "caption": "The Oirat Mongols capture the emperor at Tumu and ride on Beijing. Yu Qian's defense holds, a new emperor takes the throne, and the captive is freed in 1450.",
+        "view": [104, 33, 128, 47],
+        "steps": [
+          { "city": "Beijing", "at": [116.41, 39.9], "mark": "home", "pos": "below" },
+          {
+            "arrow": [
+              [112.6, 43.8],
+              [115.6, 40.4]
+            ],
+            "side": "foe",
+            "label": "Oirat Mongols"
+          },
+          { "battle": "Tumu", "at": [115.6, 40.4], "won": false, "note": "emperor captured", "pos": "left" },
+          {
+            "arrow": [
+              [115.6, 40.4],
+              [116.2, 40.02]
+            ],
+            "side": "foe",
+            "style": "repelled"
+          },
+          { "text": "Beijing holds", "at": [119.8, 37], "kind": "event" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -104,6 +131,44 @@
       "title": "Pirates and Silver",
       "milestone": true,
       "text": "Since the 1370s, the Ming have banned private overseas trade; foreigners may come only on tribute missions to the emperor. After Admiral Zheng He's great voyages ended in 1433, the Ming also stopped sending big fleets abroad. But pirates and smugglers called wokou raid the coast, and illegal trade is booming, because Japan has silver to sell and China's economy is hungry for silver.",
+      "scene": {
+        "year": "1567",
+        "title": "Silver flows in",
+        "caption": "The Ming let licensed merchants trade from a port in Fujian. Silver pours in from Japan through Portuguese traders and, after 1571, from the Americas through Spanish Manila.",
+        "view": [100, 9, 148, 37],
+        "steps": [
+          { "city": "Fujian port", "at": [117.85, 24.45], "mark": "new", "pos": "left", "note": "opened 1567" },
+          { "city": "Macau", "at": [113.54, 22.2], "mark": "plain", "pos": "left", "note": "Portuguese" },
+          {
+            "route": [
+              [130.2, 33],
+              [126, 31],
+              [121.5, 26.5],
+              [113.54, 22.2]
+            ],
+            "kind": "silver",
+            "label": "Japanese silver"
+          },
+          { "city": "Manila", "at": [120.98, 14.6], "mark": "plain", "pos": "right", "note": "Spanish" },
+          {
+            "route": [
+              [147, 17.5],
+              [133, 15],
+              [120.98, 14.6]
+            ],
+            "kind": "silver",
+            "label": "from the Americas"
+          },
+          {
+            "route": [
+              [120.98, 14.6],
+              [119, 20],
+              [117.85, 24.45]
+            ],
+            "kind": "silver"
+          }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -192,6 +257,18 @@
       "title": "The Emperor Who Stopped Working",
       "milestone": true,
       "text": "You are the Wanli Emperor, on the throne since 1572. For years, after bitter fights with your officials over who should be your heir, you have refused to attend court, meet your ministers, or fill empty government posts. Palace eunuchs are gaining power, and officials are splitting into feuding factions. Meanwhile, in Manchuria to the northeast, a chief named Nurhaci is uniting the Jurchen tribes, who will later be called Manchus.",
+      "scene": {
+        "year": "1600",
+        "title": "A silent court",
+        "caption": "Wanli stays away from court for decades while posts sit empty. In the northeast, Nurhaci unites the Jurchens, founds the Later Jin in 1616, and defeats a Ming army in 1619.",
+        "view": [108, 34, 132, 47],
+        "steps": [
+          { "city": "Beijing", "at": [116.41, 39.9], "mark": "home", "pos": "below", "note": "an empty court" },
+          { "area": "Jurchen tribes", "at": [126.8, 43.8], "size": [3.6, 2], "side": "foe" },
+          { "text": "Later Jin, 1616", "at": [127.6, 46.2], "kind": "event" },
+          { "battle": "Sarhu", "at": [124.3, 41.95], "won": false, "note": "1619", "pos": "below" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -280,6 +357,37 @@
       "title": "The Mandate of Heaven Passes",
       "milestone": true,
       "text": "The cold Little Ice Age brought famines, and a drop in silver imports may have hurt the economy. In 1644 the rebel Li Zicheng captured Beijing, and the last Ming emperor hanged himself. A Ming general then let the Manchus through the Great Wall, and they took Beijing for themselves. Many Chinese believe the Ming lost the Mandate of Heaven. You now rule as the new Qing dynasty, a small Manchu minority ruling well over a hundred million Han Chinese.",
+      "scene": {
+        "year": "1644",
+        "title": "The Mandate passes",
+        "caption": "Rebels take Beijing and the last Ming emperor dies. A Ming general opens the Great Wall at Shanhai Pass, and the Manchus take Beijing and rule China as the Qing.",
+        "view": [102, 30, 128, 46],
+        "steps": [
+          {
+            "arrow": [
+              [108.94, 34.34],
+              [110.8, 35.9],
+              [113.3, 37.9],
+              [116.2, 39.7]
+            ],
+            "side": "foe",
+            "label": "Li Zicheng's rebels"
+          },
+          { "city": "Beijing", "at": [116.41, 39.9], "mark": "lost", "pos": "below" },
+          { "city": "Shanhai Pass", "at": [119.75, 40], "mark": "plain", "pos": "below", "note": "the gate opens" },
+          {
+            "arrow": [
+              [123.43, 41.8],
+              [121.6, 41.3],
+              [119.9, 40.5],
+              [116.6, 40.05]
+            ],
+            "side": "own",
+            "label": "Manchu army"
+          },
+          { "city": "Beijing", "at": [116.41, 39.9], "mark": "taken", "pos": "below", "note": "Qing capital" }
+        ]
+      },
       "context": [
         { "if": "single_whip", "text": "Because Ming taxes were collected in silver, any drop in silver imports hurt taxpayers and the treasury." },
         { "if": "jesuits", "text": "Jesuit astronomers are still in Beijing, and they offer to serve your new dynasty." }
@@ -372,6 +480,26 @@
       "title": "Kangxi and the Rites Controversy",
       "milestone": true,
       "text": "You are the Kangxi Emperor, one of China's greatest rulers. You have set a border with Russia in the Treaty of Nerchinsk (1689), and you admire the Jesuits' mathematics and astronomy. But the Pope has now ruled (1715), after a long dispute called the Rites Controversy, that Chinese Christians may not take part in ceremonies honoring their ancestors and Confucius. You see those ceremonies as the heart of Chinese culture.",
+      "scene": {
+        "year": "1715",
+        "title": "Rome versus Beijing",
+        "caption": "The Pope's 1715 ruling reaches China. In 1721 Kangxi forbids missionaries to preach, but Jesuit astronomers and artists keep serving at his court.",
+        "view": [4, 4, 126, 62],
+        "steps": [
+          { "city": "Rome", "at": [12.5, 41.9], "mark": "foe", "pos": "below", "note": "the Pope's ruling, 1715" },
+          {
+            "arrow": [
+              [12.5, 41.9],
+              [62, 48],
+              [116, 40.2]
+            ],
+            "side": "foe",
+            "label": "the ruling reaches China"
+          },
+          { "city": "Beijing", "at": [116.41, 39.9], "mark": "home", "pos": "below", "note": "1721: no more preaching" },
+          { "text": "Jesuit scientists stay at court", "at": [103, 30], "kind": "event" }
+        ]
+      },
       "context": [
         { "if": "jesuits", "text": "Jesuits have served the imperial court ever since Matteo Ricci arrived in the Ming era." }
       ],

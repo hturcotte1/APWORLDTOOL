@@ -40,6 +40,28 @@
       "title": "The Battle of Panipat",
       "milestone": true,
       "text": "You are Babur, a Central Asian prince descended from both Timur and Genghis Khan. You've lost your homeland, but from your base in Kabul you've set your sights on the rich plains of northern India. At Panipat, Ibrahim Lodi, Sultan of Delhi, faces you with a much larger army that includes hundreds of war elephants. Your army is small but battle-tested, and it has something the Sultan's army lacks: field cannons and matchlock guns.",
+      "scene": {
+        "year": "1526",
+        "title": "Victory at Panipat",
+        "caption": "Babur's guns and cavalry defeat the Sultan of Delhi, who dies in the battle. Babur takes Delhi and Agra, and the Mughal Empire is born.",
+        "view": [58, 17, 92, 37],
+        "steps": [
+          { "city": "Kabul", "at": [69.17, 34.53], "mark": "home", "pos": "above" },
+          {
+            "arrow": [
+              [69.17, 34.53],
+              [73.2, 32.6],
+              [76.97, 29.39]
+            ],
+            "side": "own",
+            "label": "Babur's army"
+          },
+          { "battle": "Panipat", "at": [76.97, 29.39], "won": true, "note": "1526", "pos": "left" },
+          { "city": "Delhi", "at": [77.21, 28.61], "mark": "taken", "pos": "right" },
+          { "city": "Agra", "at": [78.01, 27.18], "mark": "taken", "pos": "right" },
+          { "text": "Arabian Sea", "at": [64.5, 19.5], "kind": "geo" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -164,6 +186,26 @@
       "title": "Akbar and the Rajputs",
       "milestone": true,
       "text": "You are Akbar, Babur's grandson, who became emperor at just 13 years old in 1556. You are a Muslim ruler, but most of your subjects are Hindus, and the proud Rajput kings control key forts and the roads to the sea. Your Muslim nobles expect you to keep collecting the jizya from Hindus. How will you win over, or win against, the people you rule?",
+      "scene": {
+        "year": "1562",
+        "title": "A Rajput alliance",
+        "caption": "Akbar marries a Rajput princess from Amber, and her family's princes become top Mughal generals. In 1564 he abolishes the jizya.",
+        "view": [63, 16, 91, 33],
+        "steps": [
+          { "area": "Rajput kingdoms", "at": [73.6, 25.6], "size": [3.4, 2.6], "side": "neutral" },
+          { "city": "Agra", "at": [78.01, 27.18], "mark": "home", "pos": "right" },
+          { "city": "Amber", "at": [75.85, 26.99], "mark": "ally", "pos": "left" },
+          {
+            "link": [
+              [78.01, 27.18],
+              [75.85, 26.99]
+            ],
+            "label": "marriage alliance"
+          },
+          { "text": "1564: jizya abolished", "at": [82.5, 29.6], "kind": "event" },
+          { "text": "Arabian Sea", "at": [66, 18], "kind": "geo" }
+        ]
+      },
       "context": [
         { "if": "went_home", "text": "Because Babur went home to Kabul, your family had to fight its way back into India, and many Indians still see you as foreign invaders." }
       ],
@@ -257,6 +299,33 @@
       "title": "Running a Giant Empire",
       "milestone": true,
       "text": "Your empire now stretches across northern India and is home to many millions of people. You need officers, soldiers, and a way to collect taxes from millions of farmers without letting nobles grow too powerful. Your finance minister, Raja Todar Mal, a Hindu, has an idea: measure the land and set taxes based on average harvests.",
+      "scene": {
+        "year": "1580",
+        "title": "Twelve provinces",
+        "caption": "Akbar divides his empire into 12 provinces. Mansabdars lead its armies, paid with land-tax rights they can't keep forever, and Todar Mal's survey sets the taxes.",
+        "view": [60, 15, 94, 37],
+        "steps": [
+          { "city": "Fatehpur Sikri", "at": [77.66, 27.09], "mark": "home", "pos": "below", "note": "Akbar's capital" },
+          {
+            "network": [77.66, 27.09],
+            "to": [
+              [69.17, 34.53],
+              [74.35, 31.55],
+              [71.47, 30.2],
+              [77.21, 28.61],
+              [74.64, 26.45],
+              [72.57, 23.02],
+              [75.78, 23.18],
+              [81.85, 25.43],
+              [82.2, 26.8],
+              [85.14, 25.6],
+              [88, 24.9]
+            ],
+            "label": "provincial capitals"
+          },
+          { "text": "Todar Mal surveys the land", "at": [84.5, 22], "kind": "event" }
+        ]
+      },
       "context": [
         { "if": "tolerance", "text": "Your Rajput allies now lead some of your best armies." }
       ],
@@ -290,6 +359,23 @@
       "title": "A Monument for the Ages",
       "milestone": true,
       "text": "You are Shah Jahan, Akbar's grandson. Your empire is one of the richest on Earth, and its cotton cloth is sold from Southeast Asia to Europe. In 1631 your beloved wife, Mumtaz Mahal, died. You want to honor her and show the world your dynasty's glory. Your treasury is full, but some advisers want the money spent on conquering your ancestors' homeland in Central Asia.",
+      "scene": {
+        "year": "1632",
+        "title": "Monuments of empire",
+        "caption": "Shah Jahan builds the Taj Mahal at Agra (about 1632–1653) and a new capital at Delhi with the Red Fort. His court moves there in 1648.",
+        "view": [66, 18, 90, 34],
+        "steps": [
+          { "city": "Agra", "at": [78.01, 27.18], "mark": "new", "pos": "right", "note": "the Taj Mahal" },
+          {
+            "arrow": [
+              [78.01, 27.18],
+              [77.21, 28.61]
+            ],
+            "side": "own"
+          },
+          { "city": "Delhi", "at": [77.21, 28.61], "mark": "new", "pos": "left", "note": "new capital, Red Fort" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -319,6 +405,18 @@
       "title": "Aurangzeb's Choice",
       "milestone": true,
       "text": "You are Aurangzeb, Shah Jahan's son. You seized the throne in 1658 after a bloody war against your brothers and imprisoned your father. You are a devout Sunni Muslim who wants your empire to follow strict Islamic law, and religious advisers urge you to bring back the jizya on Hindus. Meanwhile, the Hindu Marathas are rising in the south, and the Sikhs are growing stronger in the Punjab.",
+      "scene": {
+        "year": "1679",
+        "title": "The jizya returns",
+        "caption": "Aurangzeb brings back the jizya and destroys some Hindu temples. The Rajputs revolt, and the Marathas and Sikhs become dangerous enemies.",
+        "view": [62, 12, 90, 36],
+        "steps": [
+          { "city": "Delhi", "at": [77.21, 28.61], "mark": "home", "pos": "right", "note": "1679: jizya restored" },
+          { "city": "Marwar", "at": [73.02, 26.24], "mark": "revolt", "pos": "left", "note": "Rajput revolt" },
+          { "area": "Sikhs", "at": [75.4, 31.2], "size": [1.8, 1.3], "side": "foe" },
+          { "area": "Marathas", "at": [74.6, 18.6], "size": [3.2, 2.6], "side": "foe" }
+        ]
+      },
       "context": [
         { "if": "tolerance", "text": "For over a century, Akbar's alliances with the Rajputs have kept the peace and filled your armies with loyal Hindu commanders." },
         { "ifNot": "tolerance", "text": "The Rajput kings have never fully trusted your dynasty." },

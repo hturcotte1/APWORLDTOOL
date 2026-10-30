@@ -58,3 +58,21 @@ export async function clearEntries(db, period) {
     : await db.prepare('DELETE FROM entries').run();
   return res.meta.changes;
 }
+
+// Count, average, and best score of each period's finished official games.
+export async function periodStats(db) {
+  const res = await db
+    .prepare(
+      `SELECT period, COUNT(*) AS games, AVG(score) AS average, MAX(score) AS best,
+              SUM(CASE WHEN outcome = 'survived' THEN 1 ELSE 0 END) AS survived
+       FROM entries WHERE outcome != 'playing' GROUP BY period`,
+    )
+    .all();
+  return res.results || [];
+}
+
+// Every official game with its saved choices (for the teacher's class report).
+export async function listGames(db) {
+  const res = await db.prepare('SELECT period, empire, score, outcome, progress FROM entries ORDER BY id').all();
+  return res.results || [];
+}

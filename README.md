@@ -23,7 +23,8 @@ Students pick one of eight empires, make about 8 historically grounded decisions
 - **`src/engine.js`** is the pure game logic: branching, flags (earlier choices change later framing and options), stability, collapse, scoring. The server, scripts, and tests all share it.
 - **`src/api.js` + `src/worker.js`** run on Cloudflare Workers. The browser sends only the choices it made, as per-game option codes, and the server replays them, so scores can't be faked. Official first attempts are saved step by step, so students can't take back an answer. The teacher password is checked only on the server (a secret, never sent to the page).
 - **`src/db.js`** stores the leaderboard in Cloudflare D1 (SQLite): first name, period, empire, score, outcome, plus a random game code and choice list for resuming and verifying.
-- **`public/`** holds the game client: plain HTML, CSS, and JS with no framework, original SVG emblems, and self-hosted open-license fonts.
+- **`public/`** holds the game client: plain HTML, CSS, and JS with no framework, original SVG emblems, self-hosted open-license fonts, and a public-domain Natural Earth world map with major rivers. `public/scenes.js` draws the animated map scenes shown after each turning point (the scenes themselves live in the content files).
+- **Teacher Class Report:** unlocking teacher mode opens a report built from the saved first games: most-missed decisions, period-vs-period averages, and empire choices. No extra student data is stored for it.
 
 ## Checks
 

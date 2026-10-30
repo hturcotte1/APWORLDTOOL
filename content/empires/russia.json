@@ -44,6 +44,43 @@
       "title": "The Great Stand on the Ugra River",
       "milestone": true,
       "text": "You are Ivan III, Grand Prince of Moscow. For more than two centuries, Russian princes have paid tribute to the Mongol khans of the Golden Horde. But the Horde is splitting apart, and you have united many Russian lands under Moscow. Now Khan Akhmat's army waits across the Ugra River, demanding that you pay up.",
+      "scene": {
+        "year": "1480",
+        "title": "The Great Stand",
+        "caption": "Russian and Tatar armies face each other across the Ugra River for weeks. Then Khan Akhmat retreats, and historians often date the end of Mongol rule over Russia to this moment.",
+        "view": [24, 42, 58, 60],
+        "steps": [
+          { "city": "Moscow", "at": [37.62, 55.76], "mark": "home", "pos": "above" },
+          {
+            "arrow": [
+              [37.62, 55.76],
+              [36, 54.75]
+            ],
+            "side": "own"
+          },
+          {
+            "arrow": [
+              [45.8, 48.6],
+              [38.6, 50.2],
+              [35.6, 54]
+            ],
+            "side": "foe",
+            "label": "Khan Akhmat"
+          },
+          { "text": "Ugra River", "at": [33, 54.4], "kind": "geo" },
+          {
+            "arrow": [
+              [36, 54],
+              [43.6, 52.4],
+              [46.3, 48.5]
+            ],
+            "side": "foe",
+            "style": "retreat",
+            "label": "the khan retreats"
+          },
+          { "text": "Black Sea", "at": [34, 43.4], "kind": "geo" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -132,6 +169,37 @@
       "title": "Ivan IV and Kazan",
       "milestone": true,
       "text": "You are Ivan IV, the first ruler crowned \"Tsar of All Russia\" (1547). To the east, the Muslim Khanate of Kazan controls the Volga River, a major trade route, and its raiders carry off Russian captives to sell as slaves. You have created a new corps of musketeers, the streltsy, and you have siege cannons.",
+      "scene": {
+        "year": "1552",
+        "title": "Down the Volga",
+        "caption": "Kazan falls in 1552 and Astrakhan in 1556. Russia now holds the whole Volga River down to the Caspian Sea, and Ivan builds St. Basil's Cathedral to celebrate.",
+        "view": [28, 40, 60, 60],
+        "steps": [
+          { "city": "Moscow", "at": [37.62, 55.76], "mark": "home", "pos": "below", "note": "St. Basil's Cathedral" },
+          {
+            "arrow": [
+              [37.62, 55.76],
+              [43.5, 56.6],
+              [48.9, 55.8]
+            ],
+            "side": "own"
+          },
+          { "city": "Kazan", "at": [49.12, 55.79], "mark": "taken", "pos": "right", "note": "1552" },
+          {
+            "arrow": [
+              [49.12, 55.79],
+              [49.6, 53.4],
+              [46.2, 51.5],
+              [44.6, 48.8],
+              [47.8, 46.6]
+            ],
+            "side": "own",
+            "label": "down the Volga"
+          },
+          { "city": "Astrakhan", "at": [48.03, 46.35], "mark": "taken", "pos": "right", "note": "1556" },
+          { "text": "Caspian Sea", "at": [51, 42.2], "kind": "geo" }
+        ]
+      },
       "context": [
         { "if": "third_rome", "text": "Your grandfather's grand Kremlin and Byzantine symbols have made Moscow's ruler a figure of awe." }
       ],
@@ -224,6 +292,35 @@
       "title": "The Time of Troubles",
       "milestone": true,
       "text": "After Ivan IV's family line died out in 1598, Russia fell into chaos called the Time of Troubles: famine, civil war, fake heirs claiming to be Ivan's dead son, and a Polish army occupying Moscow. Now Russians have driven the Poles out of the Kremlin. Someone must become tsar.",
+      "scene": {
+        "year": "1612",
+        "title": "A new dynasty",
+        "caption": "A people's army from Nizhny Novgorod drives the Poles out of Moscow. In 1613 an assembly elects Michael Romanov tsar, and his family rules until 1917.",
+        "view": [14, 44, 50, 62],
+        "steps": [
+          { "city": "Nizhny Novgorod", "at": [44, 56.33], "mark": "plain", "pos": "above" },
+          {
+            "arrow": [
+              [44, 56.33],
+              [38, 55.85]
+            ],
+            "side": "own",
+            "label": "people's army"
+          },
+          {
+            "arrow": [
+              [37.62, 55.76],
+              [30, 54],
+              [21.3, 52.3]
+            ],
+            "side": "foe",
+            "style": "retreat",
+            "label": "Poles driven out"
+          },
+          { "city": "Warsaw", "at": [21, 52.23], "mark": "foe", "pos": "below" },
+          { "city": "Moscow", "at": [37.62, 55.76], "mark": "home", "pos": "below", "note": "1613: Michael Romanov, tsar" }
+        ]
+      },
       "context": [
         { "if": "terror", "text": "Memories of the oprichnina's terror still haunt Russia's noble families." },
         { "if": "siberia", "text": "Siberia's furs are still flowing into the treasury, even in these hard times." }
@@ -316,6 +413,39 @@
       "title": "Peter's Great Embassy",
       "milestone": true,
       "text": "You are Peter the Great: about 6 feet 8 inches tall and endlessly curious. Russia is huge, but it is behind Western Europe in ships, weapons, and science, and its only port for trade with Western Europe, Arkhangelsk, is frozen for much of the year. You want to see Europe's shipyards and workshops for yourself.",
+      "scene": {
+        "year": "1697",
+        "title": "The Grand Embassy",
+        "caption": "Peter tours Europe in 1697–1698 and works in Dutch and English shipyards. Back home he builds a modern army and navy and makes nobles shave their beards.",
+        "view": [-7, 43, 43, 62],
+        "steps": [
+          { "city": "Moscow", "at": [37.62, 55.76], "mark": "home", "pos": "below" },
+          {
+            "route": [
+              [37.62, 55.76],
+              [24.1, 56.95],
+              [20.5, 54.7],
+              [4.9, 52.37],
+              [-0.13, 51.5]
+            ],
+            "kind": "travel",
+            "label": "the Grand Embassy"
+          },
+          { "city": "Amsterdam", "at": [4.9, 52.37], "mark": "plain", "pos": "above", "note": "shipyards" },
+          { "city": "London", "at": [-0.13, 51.5], "mark": "plain", "pos": "below", "note": "shipyards" },
+          {
+            "route": [
+              [4.9, 52.37],
+              [16.37, 48.21],
+              [30, 52.5],
+              [37.62, 55.76]
+            ],
+            "kind": "travel",
+            "label": "home, 1698"
+          },
+          { "city": "Vienna", "at": [16.37, 48.21], "mark": "plain", "pos": "below" }
+        ]
+      },
       "context": [
         { "if": "serfdom", "text": "The nobles' loyalty, secured by the serfdom law of 1649, gives you officers, but serfs will do the hard labor for your new projects." }
       ],

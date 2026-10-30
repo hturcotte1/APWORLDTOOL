@@ -22,6 +22,79 @@ export function sentenceCount(text) {
 }
 const words = (t) => String(t).trim().split(/\s+/).filter(Boolean).length;
 
+// ---------- turning-point map scenes ----------
+// The world map's edges (see public/map-data.js).
+const MAP_BOUNDS = { lon0: -130, lon1: 165, lat0: -45, lat1: 75 };
+const SCENE_KINDS = ['city', 'battle', 'arrow', 'route', 'area', 'text', 'link', 'network'];
+const CITY_MARKS = ['home', 'taken', 'lost', 'ally', 'foe', 'new', 'plain', 'revolt'];
+const SIDES = ['own', 'foe', 'neutral'];
+const ARROW_STYLES = ['solid', 'retreat', 'exile', 'repelled', 'flow'];
+const ROUTE_KINDS = ['silver', 'gold', 'salt', 'trade', 'travel'];
+const LABEL_POS = ['above', 'below', 'left', 'right'];
+function validateScene(where, sc) {
+  const S = `${where} scene`;
+  if (!sc || typeof sc !== 'object') return err(S, 'must be an object');
+  if (!sc.year || typeof sc.year !== 'string') err(S, 'needs a "year" (text, for example "1526")');
+  if (!sc.title || words(sc.title) > 6) err(S, 'needs a short "title" (at most 6 words)');
+  if (!sc.caption) err(S, 'needs a "caption"');
+  else {
+    if (words(sc.caption) > 40) err(S, `caption is too long (${words(sc.caption)} words, max 40)`);
+    if (sentenceCount(sc.caption) > 3) err(S, 'caption should be at most 3 sentences');
+  }
+  const v = sc.view;
+  const viewOk = Array.isArray(v) && v.length === 4 && v.every(Number.isFinite) && v[0] < v[2] && v[1] < v[3]
+    && v[0] >= MAP_BOUNDS.lon0 && v[2] <= MAP_BOUNDS.lon1 && v[1] >= MAP_BOUNDS.lat0 && v[3] <= MAP_BOUNDS.lat1;
+  if (!viewOk) return err(S, `"view" must be [west, south, east, north] inside the map (longitude ${MAP_BOUNDS.lon0} to ${MAP_BOUNDS.lon1}, latitude ${MAP_BOUNDS.lat0} to ${MAP_BOUNDS.lat1})`);
+  // Points may sit a little outside the view (the map shows more on wide screens), not far.
+  const M = 3;
+  const point = (p, what) => {
+    if (!Array.isArray(p) || p.length !== 2 || !p.every(Number.isFinite)) return err(S, `${what} must be a [longitude, latitude] pair`);
+    if (p[0] < v[0] - M || p[0] > v[2] + M || p[1] < v[1] - M || p[1] > v[3] + M) err(S, `${what} [${p}] is outside the scene's view`);
+  };
+  const points = (list, what, min) => {
+    if (!Array.isArray(list) || list.length < min) return err(S, `${what} needs at least ${min} points`);
+    list.forEach((p, i) => point(p, `${what} point ${i + 1}`));
+  };
+  if (!Array.isArray(sc.steps) || sc.steps.length < 2 || sc.steps.length > 9) return err(S, 'needs 2-9 "steps"');
+  sc.steps.forEach((st, i) => {
+    const kinds = SCENE_KINDS.filter((k) => k in st);
+    const T = `step ${i + 1}`;
+    if (kinds.length !== 1) return err(S, `${T} must have exactly one of: ${SCENE_KINDS.join(', ')}`);
+    const kind = kinds[0];
+    if (st.pos !== undefined && !LABEL_POS.includes(st.pos)) err(S, `${T} "pos" must be one of ${LABEL_POS.join(', ')}`);
+    if (kind === 'city') {
+      if (!st.city) err(S, `${T} city needs a name`);
+      point(st.at, `${T} (${st.city})`);
+      if (!CITY_MARKS.includes(st.mark)) err(S, `${T} city "mark" must be one of ${CITY_MARKS.join(', ')}`);
+    } else if (kind === 'battle') {
+      if (typeof st.battle !== 'string') err(S, `${T} battle needs a name (or "" for none)`);
+      point(st.at, `${T} (battle)`);
+      if (typeof st.won !== 'boolean') err(S, `${T} battle needs "won": true or false`);
+    } else if (kind === 'arrow') {
+      points(st.arrow, `${T} arrow`, 2);
+      if (!SIDES.includes(st.side)) err(S, `${T} arrow "side" must be one of ${SIDES.join(', ')}`);
+      if (st.style !== undefined && !ARROW_STYLES.includes(st.style)) err(S, `${T} arrow "style" must be one of ${ARROW_STYLES.join(', ')}`);
+    } else if (kind === 'route') {
+      points(st.route, `${T} route`, 2);
+      if (!ROUTE_KINDS.includes(st.kind)) err(S, `${T} route "kind" must be one of ${ROUTE_KINDS.join(', ')}`);
+    } else if (kind === 'area') {
+      if (!st.area) err(S, `${T} area needs a label`);
+      point(st.at, `${T} (area)`);
+      if (!Array.isArray(st.size) || st.size.length !== 2 || !st.size.every((x) => x > 0)) err(S, `${T} area "size" must be [width, height] in degrees`);
+      if (!SIDES.includes(st.side)) err(S, `${T} area "side" must be one of ${SIDES.join(', ')}`);
+    } else if (kind === 'text') {
+      if (!st.text) err(S, `${T} text needs words to show`);
+      point(st.at, `${T} (text)`);
+      if (!['geo', 'event'].includes(st.kind)) err(S, `${T} text "kind" must be geo or event`);
+    } else if (kind === 'link') {
+      points(st.link, `${T} link`, 2);
+    } else if (kind === 'network') {
+      point(st.network, `${T} network hub`);
+      points(st.to, `${T} network`, 2);
+    }
+  });
+}
+
 // ---------- empire list ----------
 const order = rules.empireOrder;
 for (const f of files) {
@@ -87,6 +160,8 @@ for (const id of order) {
     if (!n.title) err(N, 'missing title');
     if (!n.text) err(N, 'missing text');
     if (n.text && words(n.text) > 120) warn(N, `text is long (${words(n.text)} words)`);
+    if (n.milestone && !n.scene) err(N, 'turning points (milestone) need a map "scene"');
+    if (n.scene) validateScene(N, n.scene);
     if (!Number.isInteger(n.year)) err(N, 'year must be a whole number');
     else if (n.year < e.startYear || n.year > e.endYear) err(N, `year ${n.year} is outside ${e.startYear}-${e.endYear}`);
     for (const c of n.context || []) {

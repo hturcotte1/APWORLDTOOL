@@ -194,7 +194,103 @@ export function createApi({ empires, rules, glossary }) {
       }
       return { rank, ...decorate(r) };
     });
-    return json({ period: period || 'all', entries, playing: rows.filter((r) => r.outcome === 'playing').map(decorate) });
+    return json({
+      period: period || 'all',
+      entries,
+      playing: rows.filter((r) => r.outcome === 'playing').map(decorate),
+      standings: await standings(env),
+    });
+  }
+
+  // Each period's average score, for the class-vs-class standings.
+  async function standings(env) {
+    const rows = await store.periodStats(env.DB);
+    return [1, 2, 3].map((p) => {
+      const r = rows.find((x) => Number(x.period) === p);
+      if (!r || !r.games) return { period: p, games: 0, average: null, best: null, survived: 0 };
+      return { period: p, games: r.games, average: Math.round(r.average * 10) / 10, best: r.best, survived: r.survived };
+    });
+  }
+
+  // The teacher's class report: scores per period and empire, and how often
+  // students found the best option at each decision. Built from the choices
+  // already saved for official games; no extra student data is stored.
+  function classReport(rows) {
+    const blank = () => ({ games: 0, playing: 0, scoreSum: 0, survived: 0, best: null, empires: {}, answers: {} });
+    const groups = { all: blank(), 1: blank(), 2: blank(), 3: blank() };
+    const nodes = {};
+    for (const row of rows) {
+      const e = empires[row.empire];
+      if (!e) continue;
+      let ids = [];
+      try {
+        ids = JSON.parse(row.progress) || [];
+      } catch {
+        /* unreadable progress: count the game, skip its answers */
+      }
+      // Replay the saved choices to see which option was best at each step.
+      const steps = [];
+      let state = startState(e, rules);
+      for (const id of ids) {
+        if (state.ending) break;
+        const visible = visibleOptions(e.nodes[state.nodeId], state.flags);
+        if (!visible.some((o) => o.id === id)) break; // the content changed since this game
+        const best = visible.reduce((a, b) => (b.points > a.points ? b : a));
+        steps.push({ key: `${e.id}/${state.nodeId}`, nodeId: state.nodeId, id, best: best.id });
+        state = applyChoice(e, rules, state, id);
+      }
+      for (const s of steps) {
+        if (!nodes[s.key]) {
+          const n = e.nodes[s.nodeId];
+          nodes[s.key] = {
+            empire: e.id,
+            id: s.nodeId,
+            year: n.year,
+            title: n.title,
+            milestone: !!n.milestone,
+            options: n.options.map((o) => ({ id: o.id, text: o.text, points: o.points })),
+            best: [],
+          };
+        }
+        if (!nodes[s.key].best.includes(s.best)) nodes[s.key].best.push(s.best);
+      }
+      const done = row.outcome !== 'playing';
+      for (const g of [groups.all, groups[row.period]]) {
+        if (!g) continue;
+        if (done) {
+          g.games++;
+          g.scoreSum += row.score;
+          if (row.outcome === 'survived') g.survived++;
+          g.best = g.best === null ? row.score : Math.max(g.best, row.score);
+          const em = (g.empires[e.id] ||= { games: 0, scoreSum: 0, survived: 0 });
+          em.games++;
+          em.scoreSum += row.score;
+          if (row.outcome === 'survived') em.survived++;
+        } else g.playing++;
+        for (const s of steps) {
+          const a = (g.answers[s.key] ||= { answered: 0, best: 0, counts: {} });
+          a.answered++;
+          if (s.id === s.best) a.best++;
+          a.counts[s.id] = (a.counts[s.id] || 0) + 1;
+        }
+      }
+    }
+    const avg = (sum, n) => (n ? Math.round((sum / n) * 10) / 10 : null);
+    const periods = {};
+    for (const [k, g] of Object.entries(groups)) {
+      periods[k] = {
+        games: g.games,
+        playing: g.playing,
+        average: avg(g.scoreSum, g.games),
+        best: g.best,
+        survived: g.survived,
+        empires: order
+          .filter((id) => g.empires[id])
+          .map((id) => ({ id, games: g.empires[id].games, average: avg(g.empires[id].scoreSum, g.empires[id].games), survived: g.empires[id].survived })),
+        decisions: Object.entries(g.answers).map(([key, a]) => ({ key, ...a })),
+      };
+    }
+    return { nodes, periods };
   }
 
   async function teacherGuard(request, env) {
@@ -211,6 +307,7 @@ export function createApi({ empires, rules, glossary }) {
     const denied = await teacherGuard(request, env);
     if (denied) return denied;
     if (path === '/api/teacher/login') return json({ ok: true });
+    if (path === '/api/teacher/report') return json(classReport(await store.listGames(env.DB)));
     if (path === '/api/teacher/delete') {
       const id = Number(body.id);
       if (!Number.isInteger(id)) return fail(400, 'Missing entry id.');

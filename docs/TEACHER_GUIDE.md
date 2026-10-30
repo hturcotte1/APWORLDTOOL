@@ -23,8 +23,9 @@ No student accounts or logins are needed. It works on Chromebooks, laptops, tabl
    - **Hard** (Spanish, Safavid, Songhai): −3 to +8 points per decision, only 2 shields, and some choices can end the game on the spot.
 3. **Make about 8 decisions.** Each decision has 3 options, shuffled differently for every student. Key terms (like *devshirme* or *sakoku*) are defined in parentheses the first time they appear.
 4. **After each choice** they see the points earned, any lost stability, and a short "What actually happened" explanation.
-5. **Stability:** poor choices can cost a shield. If the shields run out, or the student makes a disastrous choice, the empire **collapses early**. A collapse costs half of the student's points (at least 10), so collapsed empires land near the bottom of the leaderboard.
-6. **The end screen** shows the final score, a recap of every choice (with the best option for each decision), and a short timeline of what really happened to that empire. Students who collapse early still see the whole real story.
+5. **Turning points** (4–5 per empire, the ones every student reaches) are followed by a **map scene**: a few seconds of animation showing what really happened, such as Columbus's route across the Atlantic, Ottoman cannons at Constantinople, or Russia's push down the Volga. Students can replay it or skip ahead with **Next decision**.
+6. **Stability:** poor choices can cost a shield. If the shields run out, or the student makes a disastrous choice, the empire **collapses early**: its seal cracks and the map goes dark. A collapse costs half of the student's points (at least 10), so collapsed empires land near the bottom of the leaderboard.
+7. **The end screen** shows the final score, a recap of every choice (with the best option for each decision), and a short timeline of what really happened to that empire. Students who collapse early still see the whole real story.
 
 **Only the first game counts.** A student's first finished game (matched by first name + period, ignoring capital letters and extra spaces) goes on the leaderboard. Every game after that is clearly labeled **"Practice run – doesn't count for the leaderboard"** and is never saved. Encourage students to replay with other empires for review.
 
@@ -32,7 +33,8 @@ No student accounts or logins are needed. It works on Chromebooks, laptops, tabl
 
 ## Reading the leaderboard
 
-- Tabs at the top switch between **Period 1**, **Period 2**, **Period 3**, and **All Classes**.
+- **Class standings** at the top show each period's **average score** (finished first games only), and the leading period gets a **Leads** tag. It's a friendly class-vs-class competition, and it's always shown, whichever tab is open.
+- Tabs switch between **Period 1**, **Period 2**, **Period 3**, and **All Classes**.
 - Columns: **Rank**, **Name**, **Empire**, **Tier** (I Easy / II Medium / III Hard), **Score**, and **Result** (Survived or Collapsed). The All Classes view also shows the period. On phones, the tier appears under each empire's seal and the period column is hidden to save space.
 - The top three ranks get a gold crown.
 - Students with the same score share a rank.
@@ -43,15 +45,26 @@ No student accounts or logins are needed. It works on Chromebooks, laptops, tabl
 ## Teacher controls
 
 1. Click **Teacher** in the small footer at the bottom of any page.
-2. Type the teacher password and click **Unlock**. The leaderboard opens in teacher mode.
-3. You can now:
+2. Type the teacher password and click **Unlock**. The **Class Report** opens (see below).
+3. To manage scores, click **Manage the leaderboard**. The leaderboard opens in teacher mode, where you can:
    - **Delete a single entry:** click **✕ Delete** next to it (just **✕** on a phone). Use this for joke names, or to let a student replay for an official score (for example, if their first game was interrupted on a device they can't get back to).
    - **Clear one period's leaderboard:** pick that period's tab, then click **Clear Period N leaderboard**.
    - **Clear all leaderboards:** for example, at the start of a new school year. You'll be asked to confirm twice.
    - Abandoned games appear under **Reigns in progress**. Click the **✕** next to a name to remove it, so the student can start over officially.
-4. Click **Exit teacher mode** when you're done. The password is only remembered while that browser tab is open.
+4. Click **Class report** to go back to the report, or **Exit teacher mode** when you're done. The password is only remembered while that browser tab is open.
 
 Deleting and clearing can't be undone.
+
+## The Class Report
+
+The report opens when you unlock teacher mode. Students never see it. Use the tabs to look at **Period 1**, **Period 2**, **Period 3**, or **All Classes**. It updates on its own every 30 seconds.
+
+- **At a glance:** finished games, students still playing, average score, the share of empires that survived, and the top score.
+- **Most-missed decisions:** the decisions the fewest students got right, listed first. For each one you see what share of students chose the best option, how the class split across all three options (with the **Best** answer marked, and a **Most picked** tag when one wrong answer was the class favorite), and the points for each. These are the best topics to review in class. Click **Show all** to see every decision students have answered. Decisions with only one or two answers so far are marked, so a single student doesn't skew your picture.
+- **Period against period:** average score, number of games, and survival rate for each period, side by side.
+- **Empires chosen:** how many students picked each empire, their average score, and how many survived.
+
+The report uses students' **first games only**. Practice runs aren't saved, so they aren't counted. Answers from unfinished games count toward "most-missed decisions" but not toward averages. No names appear in the report.
 
 ## Changing the teacher password
 

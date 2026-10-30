@@ -4,11 +4,14 @@
 // refresh doesn't lose progress. Scores are never kept in the browser.
 import { emblem, SEAL_DEFS } from './emblems.js';
 import { MAP, project, LAND } from './map-data.js';
+import { RIVERS } from './river-data.js';
+import { sceneViewBox, sceneOverlay, viewAround, fallOverlay } from './scenes.js';
 
 const app = document.getElementById('app');
 const SAVE_KEY = 'rte-saved-games-v1';
 const PLAYER_KEY = 'rte-player-v1';
 const BOARD_REFRESH_MS = 10000;
+const REPORT_REFRESH_MS = 30000;
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const S = {
@@ -23,7 +26,9 @@ const S = {
   screen: 'start',
   returnTo: 'start',
   board: { period: 'all', data: null, timer: null, updated: null },
+  report: { period: 'all', data: null, timer: null, updated: null, showAll: false },
   teacher: null, // password, kept in memory only while the page is open
+  redraw: null, // redraws the current map scene after a resize
   busy: false,
 };
 
@@ -88,8 +93,8 @@ const GRATICULE = (() => {
   return d;
 })();
 
-function mapSvg(viewBox, cls, extra = '') {
-  return `<svg class="${cls}" viewBox="${viewBox}" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+function mapSvg(viewBox, cls, extra = '', fit = 'slice') {
+  return `<svg class="${cls}" viewBox="${viewBox}" preserveAspectRatio="xMidYMid ${fit}" aria-hidden="true" focusable="false">
     <rect class="sea" x="-500" y="-500" width="${MAP.width + 1000}" height="${MAP.height + 1000}"/>
     <path class="grat" d="${GRATICULE}"/>
     <use href="#land-shape" class="coast"/>
@@ -234,6 +239,8 @@ function dropCap(html) {
 // ---------- screen plumbing ----------
 function render(html, focusSelector = 'h1') {
   stopBoardTimer();
+  stopReportTimer();
+  S.redraw = null;
   app.innerHTML = `<div class="screen ${reducedMotion ? '' : 'enter'}">${html}</div>`;
   window.scrollTo(0, 0);
   const target = app.querySelector(focusSelector);
@@ -252,8 +259,11 @@ function go(screen) {
     intro: screenIntro,
     decision: screenDecision,
     result: screenResult,
+    scene: screenScene,
+    fall: screenFall,
     end: screenEnd,
     leaderboard: screenLeaderboard,
+    report: screenReport,
   })[screen]();
 }
 
@@ -625,7 +635,83 @@ function screenResult() {
     </section>
     <div class="btn-row end"><button class="btn btn-main" id="next">${ending ? 'See how your reign ends' : 'Next decision'}</button></div>
   </article>`);
-  app.querySelector('#next').addEventListener('click', () => go(ending ? 'end' : 'decision'));
+  app.querySelector('#next').addEventListener('click', () => {
+    if (ending?.type === 'collapsed') go('fall');
+    else if (r.scene) go('scene');
+    else go(ending ? 'end' : 'decision');
+  });
+}
+
+// ---------- scenes: a turning point's map of what actually happened ----------
+function sceneMap(view, cls = '') {
+  return `<figure class="scene-map ${cls}">${mapSvg(sceneViewBox(view).join(' '), 'scene-svg', '<use href="#river-shape" class="river"/>', 'meet')}<div class="scene-ov-wrap"></div></figure>`;
+}
+
+// Draws (or redraws) the animated layer to fit the map's current size.
+function drawScene(make, animate) {
+  const fig = app.querySelector('.scene-map');
+  if (!fig) return;
+  const { width, height } = fig.getBoundingClientRect();
+  // Keep coastlines and rivers the same thickness at any zoom: --u is map units per pixel.
+  const vb = fig.querySelector('.scene-svg').viewBox.baseVal;
+  fig.style.setProperty('--u', Math.max(vb.width / width, vb.height / height).toFixed(4));
+  fig.querySelector('.scene-ov-wrap').innerHTML = make(width, height, { animate: animate && !reducedMotion });
+}
+
+function screenScene() {
+  const e = empireOf(S.game.empire);
+  setAccent(e.color);
+  focusTable(e);
+  const r = S.view.lastResult;
+  const sc = r.scene;
+  const ending = S.view.ending;
+  const rich3 = richFor(`scene:${S.choices.length}`);
+  render(`
+  ${hud(S.choices.length, parseInt(sc.year, 10) || r.year)}
+  ${practiceNote()}
+  <article class="paper event scene">
+    <header class="event-head">
+      <h1>${esc(sc.title)}</h1>
+      <span class="anno">Anno ${esc(sc.year)}</span>
+    </header>
+    <p class="turning"><span aria-hidden="true">✠</span> As it truly happened</p>
+    ${sceneMap(sc.view)}
+    <p class="scene-caption">${rich3(sc.caption)}</p>
+    <div class="btn-row end">
+      <button class="btn btn-ghost" id="replay"><span aria-hidden="true">↻</span> Replay</button>
+      <button class="btn btn-main" id="scene-next">${ending ? 'See how your reign ends' : 'Next decision'}</button>
+    </div>
+  </article>`);
+  const draw = (animate) => drawScene((W, H, o) => sceneOverlay(sc, W, H, o), animate);
+  draw(true);
+  S.redraw = () => draw(false);
+  app.querySelector('#replay').addEventListener('click', () => draw(true));
+  app.querySelector('#scene-next').addEventListener('click', () => go(ending ? 'end' : 'decision'));
+}
+
+// The fall of an empire: its seal cracks and the map goes dark, then the chronicle.
+function screenFall() {
+  const e = empireOf(S.game.empire);
+  setAccent(e.color);
+  focusTable(e);
+  const end = S.view.ending;
+  const view = viewAround(e.capital);
+  render(`
+  ${hud(S.choices.length, end.year)}
+  ${practiceNote()}
+  <article class="paper event scene fall-scene">
+    <header class="event-head">
+      <h1>The Realm Falls</h1>
+      <span class="anno">Anno ${end.year}</span>
+    </header>
+    ${sceneMap(view, 'fallen')}
+    <p class="scene-caption">Your ${esc(shortName(e.name))} realm collapses in ${end.year}. Your reign is over, but your chronicle will show how the real story went.</p>
+    <div class="btn-row end"><button class="btn btn-main" id="scene-next">Read your chronicle</button></div>
+  </article>`);
+  const draw = (animate) => drawScene((W, H, o) => fallOverlay(e, view, W, H, o), animate);
+  draw(true);
+  S.redraw = () => draw(false);
+  app.querySelector('#scene-next').addEventListener('click', () => go('end'));
 }
 
 // ---------- ending: the chronicle ----------
@@ -742,6 +828,7 @@ function screenLeaderboard() {
     <h1 class="title light">Leaderboard</h1>
     <p class="subtitle light">The register of rulers · first games only · <span class="live"><i></i>updates automatically</span></p>
   </header>
+  <section class="standings" id="standings" aria-label="Class standings">${standingsHtml()}</section>
   ${S.teacher ? teacherBar() : ''}
   <div class="tabs" role="tablist" aria-label="Choose a class period">
     ${tabs.map(([k, l]) => `<button class="tab" role="tab" aria-selected="${String(S.board.period) === k}" data-period="${k}">${l}</button>`).join('')}
@@ -773,6 +860,8 @@ async function loadBoard() {
     if (S.screen !== 'leaderboard' || S.board.period !== period) return;
     S.board.data = data;
     S.board.updated = new Date();
+    const st = app.querySelector('#standings');
+    if (st) st.innerHTML = standingsHtml();
     const el = app.querySelector('#board');
     if (el) {
       el.innerHTML = boardHtml();
@@ -782,6 +871,23 @@ async function loadBoard() {
     const el = app.querySelector('#board');
     if (el && !S.board.data) el.innerHTML = `<p class="empty">${esc(e.message)}</p>`;
   }
+}
+
+// Class against class: each period's average score.
+function standingsHtml() {
+  const list = S.board.data?.standings;
+  if (!list) return '';
+  const played = list.filter((p) => p.games);
+  const top = played.length ? Math.max(...played.map((p) => p.average)) : null;
+  const leaders = played.filter((p) => p.average === top);
+  return `<h2 class="sr-only">Class standings</h2>${list.map((p) => {
+    const lead = played.length > 1 && leaders.length === 1 && leaders[0] === p;
+    return `<div class="stand${lead ? ' lead' : ''}">
+      <span class="stand-p">Period ${p.period}${lead ? ' <span class="stand-crown">leads</span>' : ''}</span>
+      <b>${p.games ? minus(p.average) : '—'}</b>
+      <span class="stand-sub">${p.games ? `average of ${p.games} ${plural(p.games, 'game')}` : 'no games yet'}</span>
+    </div>`;
+  }).join('')}`;
 }
 
 function isMe(row) {
@@ -848,6 +954,7 @@ function teacherBar() {
   <div class="paper teacher-bar">
     <p><b>Teacher mode is on.</b> Use the ✕ Delete buttons to remove a single entry (for example, a joke name), or clear a whole leaderboard.</p>
     <div class="btn-row">
+      <button class="btn" data-go="report">Class report</button>
       ${p !== 'all' ? `<button class="btn btn-danger" id="clear-period">Clear Period ${p} leaderboard</button>` : ''}
       <button class="btn btn-danger" id="clear-all">Clear ALL leaderboards</button>
       <button class="btn btn-ghost" id="lock">Exit teacher mode</button>
@@ -913,13 +1020,203 @@ async function submitTeacher(ev) {
     S.teacher = input.value;
     dlg.close();
     toast('Teacher mode is on.');
-    go('leaderboard');
+    go('report');
   } catch (e) {
     err.textContent = e.message;
     err.hidden = false;
   } finally {
     btn.disabled = false;
   }
+}
+
+// ---------- teacher: the class report ----------
+const pct = (n, d) => (d ? Math.round((100 * n) / d) : 0);
+
+function stopReportTimer() {
+  if (S.report.timer) clearInterval(S.report.timer);
+  S.report.timer = null;
+}
+
+function screenReport() {
+  if (!S.teacher) return go('leaderboard');
+  setAccent(null);
+  focusTable(null);
+  const tabs = [['1', 'Period 1'], ['2', 'Period 2'], ['3', 'Period 3'], ['all', 'All classes']];
+  render(`
+  <header class="board-head">
+    <h1 class="title light">Class Report</h1>
+    <p class="subtitle light">For the teacher only · first games only · <span class="live"><i></i>updates automatically</span></p>
+  </header>
+  <div class="paper teacher-bar">
+    <p><b>Teacher mode is on.</b> This report comes from students' first games. Practice runs aren't saved, so they aren't counted.</p>
+    <div class="btn-row">
+      <button class="btn btn-main" data-go="leaderboard">Manage the leaderboard</button>
+      <button class="btn btn-ghost" id="lock">Exit teacher mode</button>
+    </div>
+  </div>
+  <div class="tabs" role="tablist" aria-label="Choose a class period">
+    ${tabs.map(([k, l]) => `<button class="tab" role="tab" aria-selected="${String(S.report.period) === k}" data-period="${k}">${l}</button>`).join('')}
+  </div>
+  <article class="paper register report" id="report">${reportHtml()}</article>
+  <div class="btn-row"><button class="btn btn-ghost-light" id="report-back">Back</button></div>`);
+  app.querySelectorAll('[data-period]').forEach((b) => b.addEventListener('click', () => {
+    S.report.period = b.dataset.period;
+    S.report.showAll = false;
+    go('report');
+  }));
+  app.querySelector('#report-back').addEventListener('click', () => go('start'));
+  app.querySelector('#lock').addEventListener('click', () => {
+    S.teacher = null;
+    toast('Teacher mode is off.');
+    go('leaderboard');
+  });
+  bindReport();
+  loadReport();
+  S.report.timer = setInterval(() => {
+    if (document.visibilityState === 'visible') loadReport();
+  }, REPORT_REFRESH_MS);
+}
+
+async function loadReport() {
+  try {
+    const data = await api('/api/teacher/report', {}, { 'x-teacher-password': S.teacher });
+    if (S.screen !== 'report') return;
+    S.report.data = data;
+    S.report.updated = new Date();
+    const el = app.querySelector('#report');
+    if (el) {
+      el.innerHTML = reportHtml();
+      bindReport();
+    }
+  } catch (e) {
+    if (e.status === 401) return teacherError(e);
+    const el = app.querySelector('#report');
+    if (el && !S.report.data) el.innerHTML = `<p class="empty">${esc(e.message)}</p>`;
+  }
+}
+
+function bindReport() {
+  const more = app.querySelector('#show-all');
+  if (more) more.addEventListener('click', () => {
+    S.report.showAll = !S.report.showAll;
+    app.querySelector('#report').innerHTML = reportHtml();
+    bindReport();
+  });
+}
+
+// A thin horizontal bar with its value written beside it.
+function hbar(value, max, cls, title) {
+  const w = value > 0 && max > 0 ? Math.max(2, Math.round((value / max) * 100)) : 0;
+  return `<span class="hbar" title="${esc(title)}"><span class="fill ${cls}" style="width:${w}%"></span></span>`;
+}
+
+function reportHtml() {
+  const d = S.report.data;
+  if (!d) return '<p class="empty">Gathering the reports…</p>';
+  const period = S.report.period;
+  const g = d.periods[period];
+  const where = period === 'all' ? 'any class' : `Period ${period}`;
+  const updated = `<p class="fine center updated">Updated ${S.report.updated ? S.report.updated.toLocaleTimeString() : ''}</p>`;
+  if (!g.games && !g.playing) {
+    return `<p class="empty"><b>No games yet.</b> Nobody in ${where} has started a first game.</p>${periodsHtml(d)}${updated}`;
+  }
+  const tiles = `
+    <section class="tiles" aria-label="At a glance">
+      <div class="tile"><b>${g.games}</b><span>finished ${plural(g.games, 'game')}</span></div>
+      <div class="tile"><b>${g.playing}</b><span>still playing</span></div>
+      <div class="tile"><b>${g.average === null ? '—' : minus(g.average)}</b><span>average score</span></div>
+      <div class="tile"><b>${g.games ? `${pct(g.survived, g.games)}%` : '—'}</b><span>survived</span></div>
+      <div class="tile"><b>${g.best === null ? '—' : minus(g.best)}</b><span>top score</span></div>
+    </section>`;
+  return `${tiles}${missedHtml(d, g)}${periodsHtml(d)}${empiresHtml(g)}${updated}`;
+}
+
+// Period against period: average score, games, and survival rate.
+function periodsHtml(d) {
+  const rows = ['1', '2', '3'].map((k) => ({ k, ...d.periods[k] }));
+  const max = Math.max(1, ...rows.map((r) => r.average || 0));
+  return `
+    <section class="report-sec">
+      <h2 class="rubric">Period against period</h2>
+      <table class="vs">
+        <thead><tr><th>Class</th><th>Average score</th><th class="num">Games</th><th class="num">Survived</th></tr></thead>
+        <tbody>${rows.map((r) => `
+          <tr class="${S.report.period === r.k ? 'sel' : ''}">
+            <th scope="row">Period ${r.k}</th>
+            <td class="bar-cell">${r.games ? `${hbar(r.average, max, 'f-score', `Period ${r.k}: average ${r.average}`)}<b>${minus(r.average)}</b>` : '<span class="fine">no games yet</span>'}</td>
+            <td class="num">${r.games}</td>
+            <td class="num">${r.games ? `${pct(r.survived, r.games)}%` : '—'}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </section>`;
+}
+
+// The decisions students missed most often, with how the class answered.
+function missedHtml(d, g) {
+  const list = g.decisions
+    .map((x) => ({ ...x, node: d.nodes[x.key] }))
+    .filter((x) => x.node && empireOf(x.node.empire))
+    .sort((a, b) => (b.answered >= 3) - (a.answered >= 3) || a.best / a.answered - b.best / b.answered || b.answered - a.answered);
+  if (!list.length) return '';
+  const shown = S.report.showAll ? list : list.slice(0, 6);
+  const items = shown.map((x) => {
+    const n = x.node;
+    const e = empireOf(n.empire);
+    // "Most picked" marks one wrong answer that more students chose than any other answer.
+    const top = Math.max(...Object.values(x.counts));
+    const leaders = Object.keys(x.counts).filter((id) => x.counts[id] === top);
+    const opts = n.options.filter((o) => x.counts[o.id] || n.best.includes(o.id)).map((o) => {
+      const c = x.counts[o.id] || 0;
+      const isBest = n.best.includes(o.id);
+      const mostPicked = !isBest && leaders.length === 1 && leaders[0] === o.id;
+      return `
+        <li class="opt${isBest ? ' is-best' : ''}">
+          <p class="opt-text">${isBest ? '<span class="tag tag-best">✓ Best</span> ' : ''}${mostPicked ? '<span class="tag tag-wrong">Most picked</span> ' : ''}${esc(o.text)}</p>
+          <div class="opt-meter">${hbar(c, x.answered, isBest ? 'f-best' : 'f-other', `${c} of ${x.answered} ${plural(x.answered, 'student')}`)}<span class="opt-val">${pct(c, x.answered)}% <span class="fine">(${c})</span></span><span class="pts">${fmtPts(o.points)}</span></div>
+        </li>`;
+    }).join('');
+    return `
+      <li class="miss">
+        <div class="miss-head">
+          ${emblem(e.emblem, e.color, 30)}
+          <div class="miss-title"><b>${esc(n.title)}</b><span class="fine">${esc(e.name)} · ${n.year}${n.milestone ? ' · turning point' : ''}</span></div>
+          <div class="miss-rate"><b>${pct(x.best, x.answered)}%</b><span>chose the best</span></div>
+        </div>
+        <ul class="opts">${opts}</ul>
+        <p class="fine miss-foot">${x.answered} ${plural(x.answered, 'student')} answered${x.answered < 3 ? ' · only a few answers so far' : ''}</p>
+      </li>`;
+  }).join('');
+  return `
+    <section class="report-sec">
+      <h2 class="rubric">Most-missed decisions</h2>
+      <p class="fine">Sorted so the decisions the fewest students got right come first. Good topics to review in class.</p>
+      <ol class="misses">${items}</ol>
+      ${list.length > 6 ? `<div class="btn-row center"><button class="btn btn-ghost" id="show-all">${S.report.showAll ? 'Show fewer' : `Show all ${list.length} decisions`}</button></div>` : ''}
+    </section>`;
+}
+
+function empiresHtml(g) {
+  if (!g.empires.length) return '';
+  const rows = [...g.empires].sort((a, b) => b.games - a.games).map((r) => {
+    const e = empireOf(r.id);
+    return `
+      <tr>
+        <td><span class="realm">${emblem(e.emblem, e.color, 26)}<span>${esc(shortName(e.name))}</span></span></td>
+        <td class="hide-sm">${difficulty(e.tier, e.tierLabel)}</td>
+        <td class="num">${r.games}</td>
+        <td class="num">${minus(r.average)}</td>
+        <td class="num">${pct(r.survived, r.games)}%</td>
+      </tr>`;
+  }).join('');
+  return `
+    <section class="report-sec">
+      <h2 class="rubric">Empires chosen</h2>
+      <div class="table-wrap"><table class="rolls emp-table">
+        <thead><tr><th>Empire</th><th class="hide-sm">Tier</th><th class="num">Games</th><th class="num">Average</th><th class="num">Survived</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+    </section>`;
 }
 
 // ---------- start up ----------
@@ -935,7 +1232,7 @@ document.addEventListener('click', (ev) => {
 function mountMapTable() {
   // Shared shapes (the world's land and the seal shading) used by every map and seal.
   const defs = document.createElement('div');
-  defs.innerHTML = `<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><path id="land-shape" d="${LAND}"/>${SEAL_DEFS}</defs></svg>`;
+  defs.innerHTML = `<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><path id="land-shape" d="${LAND}"/><path id="river-shape" d="${RIVERS}"/>${SEAL_DEFS}</defs></svg>`;
   document.body.prepend(defs.firstElementChild);
   const table = document.createElement('div');
   table.id = 'maptable';
@@ -957,6 +1254,12 @@ async function init() {
     return;
   }
   S.empires = Object.fromEntries(S.config.empires.map((e) => [e.id, e]));
+  // Map scenes are drawn in screen pixels, so redraw them when the window changes size.
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => S.redraw && S.redraw(), 150);
+  });
   if (location.hash === '#leaderboard') go('leaderboard');
   else go('start');
   if (location.hash === '#teacher') openTeacher();

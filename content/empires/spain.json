@@ -47,6 +47,27 @@
       "title": "A Sailor's Wild Idea",
       "milestone": true,
       "text": "You are Queen Isabella of Castile, ruling Spain with your husband, King Ferdinand of Aragon. In January 1492 your armies captured Granada, the last Muslim kingdom in Spain, completing the Reconquista. Now an Italian sailor named Christopher Columbus asks you to pay for a voyage west across the Atlantic to reach Asia. Your experts say he has badly underestimated the size of the Earth, and they're right.",
+      "scene": {
+        "year": "1492",
+        "title": "A new world",
+        "caption": "Granada falls in January 1492. In August Columbus sails west, and in October he lands in the Bahamas, opening the Americas to Spain.",
+        "view": [-82, 10, 2, 46],
+        "steps": [
+          { "battle": "Granada", "at": [-3.6, 37.18], "won": true, "note": "January", "pos": "below" },
+          {
+            "route": [
+              [-6.89, 37.23],
+              [-15.4, 28.1],
+              [-45, 26],
+              [-74.3, 24.2]
+            ],
+            "kind": "travel",
+            "label": "Columbus sails"
+          },
+          { "city": "Bahamas", "at": [-74.5, 24.1], "mark": "new", "pos": "above", "note": "October" },
+          { "text": "Atlantic Ocean", "at": [-42, 36], "kind": "geo" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -134,6 +155,26 @@
       "title": "The Fall of Tenochtitlan",
       "milestone": true,
       "text": "You are now King Charles I of Spain, Isabella's grandson, who since 1519 has also ruled the Holy Roman Empire as Charles V. The conquistador Hernán Cortés, with about a thousand Spaniards, tens of thousands of Indigenous allies who hated Aztec rule, and the help of a terrible smallpox epidemic, has captured the Aztec capital, Tenochtitlan. Cortés wants to rule Mexico himself, and his men want land and native laborers as rewards.",
+      "scene": {
+        "year": "1521",
+        "title": "Viceroys, not conquistadors",
+        "caption": "Tenochtitlan falls in 1521, and Mexico City rises on its ruins. Spain rules through the Council of the Indies (1524) and viceroys of New Spain (1535) and Peru (1540s).",
+        "view": [-115, -22, 5, 45],
+        "steps": [
+          { "battle": "", "at": [-99.13, 19.43], "won": true },
+          { "city": "Mexico City", "was": "Tenochtitlan", "at": [-99.13, 19.43], "mark": "taken", "pos": "right", "note": "1521" },
+          { "city": "Madrid", "at": [-3.7, 40.42], "mark": "home", "pos": "below", "note": "Council of the Indies" },
+          {
+            "link": [
+              [-3.7, 40.42],
+              [-99.13, 19.43]
+            ],
+            "label": "royal control"
+          },
+          { "area": "New Spain", "at": [-101, 23], "size": [7, 5], "side": "own" },
+          { "area": "Peru", "at": [-75, -10], "size": [4.5, 6], "side": "own" }
+        ]
+      },
       "options": [
         {
           "id": "a",
@@ -222,6 +263,46 @@
       "title": "Mountains of Silver",
       "milestone": true,
       "text": "You are now King Philip II. In 1545 a mountain of silver was found at Potosí, high in the Andes. Soon a forced labor draft called the mita will send thousands of Indigenous workers into its mines, and Spain will mine more silver than any empire before it. Treasure fleets carry it to Spain, and Manila galleons carry it across the Pacific, where Chinese merchants trade silk and porcelain for it. But you have also inherited huge debts and wars against France and the Ottomans, while Protestantism spreads across Europe.",
+      "scene": {
+        "year": "1556",
+        "title": "Silver in, silver out",
+        "caption": "Silver from Potosí crosses the ocean in treasure fleets, but much of it flows straight out again to pay for wars and foreign goods. The Crown goes bankrupt several times.",
+        "view": [-105, -25, 15, 55],
+        "steps": [
+          { "city": "Potosí", "at": [-65.75, -19.59], "mark": "new", "pos": "right", "note": "silver mountain" },
+          {
+            "route": [
+              [-65.75, -19.59],
+              [-70.3, -18.48],
+              [-79.5, 9],
+              [-82.37, 23.13],
+              [-40, 32],
+              [-5.98, 37.39]
+            ],
+            "kind": "silver",
+            "label": "treasure fleets"
+          },
+          { "city": "Seville", "at": [-5.98, 37.39], "mark": "home", "pos": "below" },
+          {
+            "route": [
+              [-5.98, 37.39],
+              [0, 45],
+              [4.4, 51.22]
+            ],
+            "kind": "silver",
+            "label": "to foreign lenders"
+          },
+          {
+            "route": [
+              [-5.98, 37.39],
+              [3, 41],
+              [8.93, 44.4]
+            ],
+            "kind": "silver"
+          },
+          { "text": "the Crown goes bankrupt", "at": [-30, 44], "kind": "event" }
+        ]
+      },
       "context": [
         { "if": "royal", "text": "Royal officials, not conquistadors, run your American colonies, so the silver flows to the Crown." }
       ],
@@ -315,6 +396,42 @@
       "title": "The Spanish Armada",
       "milestone": true,
       "text": "Protestant England, under Queen Elizabeth I, has been helping the Dutch rebels, and English captains like Francis Drake raid your treasure ships. In 1587 England executed Mary, Queen of Scots, a Catholic. You have gathered a huge fleet, the Armada, to carry an army across the sea and invade England.",
+      "scene": {
+        "year": "1588",
+        "title": "The Armada fails",
+        "caption": "The Armada sails from Lisbon, but English fire ships and guns break it up off Calais and Gravelines. Storms wreck many ships as it limps home around Scotland and Ireland.",
+        "view": [-17, 36, 11, 61],
+        "steps": [
+          { "city": "Lisbon", "at": [-9.14, 38.72], "mark": "home", "pos": "right" },
+          {
+            "arrow": [
+              [-9.14, 38.72],
+              [-9.8, 44],
+              [-5, 48.6],
+              [-1, 50.2],
+              [1.9, 50.95]
+            ],
+            "side": "own",
+            "label": "the Armada"
+          },
+          { "city": "London", "at": [-0.13, 51.5], "mark": "foe", "pos": "above" },
+          { "battle": "Gravelines", "at": [2.13, 50.99], "won": false, "note": "1588", "pos": "right" },
+          {
+            "arrow": [
+              [2.13, 50.99],
+              [2.8, 55],
+              [-1.8, 59.4],
+              [-8.2, 57.6],
+              [-11.2, 53],
+              [-9.6, 45.6],
+              [-4, 43.6]
+            ],
+            "side": "own",
+            "style": "retreat",
+            "label": "storms"
+          }
+        ]
+      },
       "context": [
         { "if": "invest", "text": "Your careful spending means the treasury can actually afford a war, if you choose one." }
       ],

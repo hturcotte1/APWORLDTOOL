@@ -2,6 +2,8 @@
 
 This document lists every decision in the game so you can spot-check it. It is generated from the content files by `npm run review-doc`, so it always matches what students see.
 
+**Map scenes:** after each turning point (★), students see a short animated map of what actually happened, with the caption shown below. Arrows and regions are drawn schematically, not as exact borders.
+
 **How to read it:** each empire has 12–15 decisions, but a student sees only about 8 in one play-through. Options are labeled A/B/C here; in the game they appear in a random order. "Next" shows where each choice leads. "Stability −1" means the choice weakens the empire; if stability runs out, the empire collapses. "Flags" are earlier choices the game remembers to change later situations.
 
 **Scoring rules:** Easy: 0 to +5 points per decision, starting stability 4; Medium: -1 to +6 points per decision, starting stability 3; Hard: -3 to +8 points per decision, starting stability 2. If your empire collapses, you lose half of your points (at least 10).
@@ -81,6 +83,22 @@ simplifies them. Spot-check these first.
 ### Counterfactual options (by design)
 Some top-scoring options are "the road not taken" (for example, Spain not sending the Armada, the Safavids training their princes, Songhai avoiding battle at Tondibi). These reward what would have been smartest for the empire; each explanation says clearly what actually happened.
 
+### Map scenes (after each turning point)
+The animated maps are drawn schematically: arrows and routes show the general direction of a campaign or trade route, not its exact path, and shaded ovals mark regions, not borders. Coastlines and rivers come from Natural Earth and show today's courses. Most scenes only restate the turning point's own explanation; these add a detail worth a quick check:
+- **Mughal, 1580:** Akbar's reorganization into 12 provinces (subahs) in 1580. The dots mark approximate provincial capitals.
+- **Ming, 1567:** the reopened port is shown at Yuegang (Haicheng) in Fujian; its position on the map is approximate.
+- **Ming, 1600:** Nurhaci's Later Jin (1616) and the Ming defeat at Sarhu (1619), from the node text's mention of Nurhaci.
+- **Tokugawa, 1600:** Satsuma, Chōshū, and Sendai are shown as examples of distant "outside" (tozama) domains.
+- **Tokugawa, 1614:** missionaries and Christian leaders shipped to Macau and Manila in 1614.
+- **Ottoman, 1656:** the Köprülü-era conquests of Crete (1669) and Podolia (1672).
+- **Russia, 1612:** the volunteer army from Nizhny Novgorod (led by Minin and Pozharsky) that drove the Poles out.
+- **Spain, 1556:** the silver route (Potosí to the Pacific coast, across Panama, via Havana to Seville) is simplified.
+- **Spain, 1588:** fire ships off Calais, the battle off Gravelines, and the Armada's route home around Scotland and Ireland.
+- **Safavid, 1598:** Abbas's victory over the Uzbeks near Herat (the Battle of Rabat-e Pariyan).
+- **Safavid, 1638:** under Shah Safi (raised in the harem), the losses of Baghdad to the Ottomans and Kandahar to the Mughals in 1638.
+- **Songhai, 1468:** scholars fleeing Timbuktu, some to Walata.
+- **Songhai, 1496–1497:** sources differ on whether Askia Muhammad received the title of the caliph's deputy in Cairo or in Mecca, so the scene doesn't say where.
+
 ## Contents
 
 - [Mughal Empire](#mughal-empire) (Easy)
@@ -132,6 +150,9 @@ _What actually happened:_ Bold, but a head-on charge into a much bigger army wit
 **C.** Retreat to Kabul for now. The Sultan's army is far bigger than yours, and one lost battle here could destroy your army and your dream of India. Raid again later, when the odds are better.  
 **0 points** · stability -1 · next: `khanwa` · sets flag: retreated  
 _What actually happened:_ Too cautious. Babur had already raided India several times, and this was his moment. His victory at Panipat in 1526 made him ruler of Delhi and Agra.
+
+🗺 **Map scene after this decision: "Victory at Panipat" (1526).** Babur's guns and cavalry defeat the Sultan of Delhi, who dies in the battle. Babur takes Delhi and Agra, and the Mughal Empire is born.  
+<sub>On the map: Kabul · Babur's army · Panipat · Delhi · Agra · Arabian Sea</sub>
 
 ### 1527 · Stay or Go Home?
 
@@ -210,6 +231,9 @@ _What actually happened:_ Force alone was costly. Akbar did besiege Rajput forts
 **0 points** · stability -1 · next: `chittor`  
 _What actually happened:_ That would have turned millions of Hindus against you. Akbar did the opposite, abolishing the jizya in 1564 and welcoming Hindus into high government posts.
 
+🗺 **Map scene after this decision: "A Rajput alliance" (1562).** Akbar marries a Rajput princess from Amber, and her family's princes become top Mughal generals. In 1564 he abolishes the jizya.  
+<sub>On the map: Rajput kingdoms · Agra · Amber · marriage alliance · 1564: jizya abolished · Arabian Sea</sub>
+
 ### 1568 · The Siege of Chittor
 
 <sub>id: `chittor`</sub>
@@ -266,6 +290,9 @@ _What actually happened:_ Permanent estates would let nobles build private power
 **0 points** · stability -1 · next: `taj`  
 _What actually happened:_ Flat high taxes would ruin farmers in bad years and spark revolts. Todar Mal's system based taxes on surveys of land and average crop yields, which made collection fairer and more reliable.
 
+🗺 **Map scene after this decision: "Twelve provinces" (1580).** Akbar divides his empire into 12 provinces. Mansabdars lead its armies, paid with land-tax rights they can't keep forever, and Todar Mal's survey sets the taxes.  
+<sub>On the map: Fatehpur Sikri · provincial capitals · Todar Mal surveys the land</sub>
+
 ### 1632 · A Monument for the Ages ★ turning point (every player sees this)
 
 <sub>id: `taj`</sub>
@@ -283,6 +310,9 @@ _What actually happened:_ Shah Jahan did try this in 1646–1647: his armies too
 **C.** Save all the money. Grand buildings cost a fortune, and even with a full treasury, a wise ruler keeps reserves for wars, famines, and hard times ahead.  
 **+2 points** · next: `aurangzeb`  
 _What actually happened:_ Saving is sensible, but monuments helped legitimize rule by showing power, faith, and wealth. Shah Jahan's Taj Mahal (about 1632–1653) still symbolizes the Mughal golden age.
+
+🗺 **Map scene after this decision: "Monuments of empire" (1632).** Shah Jahan builds the Taj Mahal at Agra (about 1632–1653) and a new capital at Delhi with the Red Fort. His court moves there in 1648.  
+<sub>On the map: Agra · Delhi</sub>
 
 ### 1679 · Aurangzeb's Choice ★ turning point (every player sees this)
 
@@ -305,6 +335,9 @@ _What actually happened:_ This is what Aurangzeb really did in 1679. He also exe
 **C.** Live by strict Islamic rules at court, but don't tax or punish non-Muslims for their faith.  
 **+3 points** · next: `deccan`  
 _What actually happened:_ A workable middle path: a ruler could be personally devout without alienating his subjects. Aurangzeb instead brought back the jizya in 1679, and resentment helped fuel the revolts that weakened Mughal rule.
+
+🗺 **Map scene after this decision: "The jizya returns" (1679).** Aurangzeb brings back the jizya and destroys some Hindu temples. The Rajputs revolt, and the Marathas and Sikhs become dangerous enemies.  
+<sub>On the map: Delhi · Marwar · Sikhs · Marathas</sub>
 
 ### 1690 · War in the Deccan
 
@@ -396,6 +429,9 @@ _What actually happened:_ Abandoning Beijing would have handed the north to the 
 **+1 points** · next: `mongol_raids`  
 _What actually happened:_ Paying huge ransoms would invite more kidnappings and raids. The Ming court crowned the emperor's brother instead, so the captive was worth little to the Mongols, who released him in 1450.
 
+🗺 **Map scene after this decision: "Beijing holds" (1449).** The Oirat Mongols capture the emperor at Tumu and ride on Beijing. Yu Qian's defense holds, a new emperor takes the throne, and the captive is freed in 1450.  
+<sub>On the map: Beijing · Oirat Mongols · Tumu · Beijing holds</sub>
+
 ### 1475 · Raiders on the Frontier
 
 <sub>id: `mongol_raids`</sub>
@@ -431,6 +467,9 @@ _What actually happened:_ Fighting pirates was necessary, and General Qi Jiguang
 **C.** Make an example of the lawbreakers: execute every smuggler you catch and burn any ship that leaves port. Once people fear the law more than they want silver, the smuggling will stop.  
 **0 points** · stability -1 · next: `pirates`  
 _What actually happened:_ Brutal and self-defeating. Coastal people depended on the sea, and harsh crackdowns pushed more of them into piracy. The Ming eased the ban in 1567, letting silver flow in legally.
+
+🗺 **Map scene after this decision: "Silver flows in" (1567).** The Ming let licensed merchants trade from a port in Fujian. Silver pours in from Japan through Portuguese traders and, after 1571, from the Americas through Spanish Manila.  
+<sub>On the map: Fujian port · Macau · Japanese silver · Manila · from the Americas</sub>
 
 ### 1563 · The Pirate Coast
 
@@ -485,6 +524,9 @@ _What actually happened:_ This really happened in the late 1590s and early 1600s
 **C.** Stay hidden in the palace and let the officials fight it out. They defied you over your heir, so let them run the government without you.  
 **0 points** · stability -1 · next: `eunuch_rule`  
 _What actually happened:_ This is what Wanli actually did for decades. Without an active emperor, factions feuded, problems went unsolved, and the Ming state weakened just as the Manchus were rising.
+
+🗺 **Map scene after this decision: "A silent court" (1600).** Wanli stays away from court for decades while posts sit empty. In the northeast, Nurhaci unites the Jurchens, founds the Later Jin in 1616, and defeats a Ming army in 1619.  
+<sub>On the map: Beijing · Jurchen tribes · Later Jin, 1616 · Sarhu</sub>
 
 ### 1601 · Visitors from the West
 
@@ -543,6 +585,9 @@ _What actually happened:_ A tiny Manchu minority could never govern over a hundr
 **+2 points** · next: `feudatories`  
 _What actually happened:_ The Qing really did this in the 1650s, giving three Han generals who had conquered the south for them giant territories. It worked at first, but in 1673 those "Three Feudatories" rebelled against the emperor.
 
+🗺 **Map scene after this decision: "The Mandate passes" (1644).** Rebels take Beijing and the last Ming emperor dies. A Ming general opens the Great Wall at Shanhai Pass, and the Manchus take Beijing and rule China as the Qing.  
+<sub>On the map: Li Zicheng's rebels · Beijing · Shanhai Pass · Manchu army · Beijing</sub>
+
 ### 1662 · The Pirate King of Taiwan
 
 <sub>id: `koxinga`</sub>
@@ -598,6 +643,9 @@ _What actually happened:_ That would let a foreign religious leader decide what 
 **C.** Expel every European, including the court scientists, and stop learning from the West entirely. Foreigners who obey the Pope over the emperor cannot be trusted.  
 **+2 points** · next: END (survived)  
 _What actually happened:_ Too extreme for Kangxi, who personally studied geometry with Jesuit teachers. He banned missionary work in 1721 but kept useful Jesuit experts at court.
+
+🗺 **Map scene after this decision: "Rome versus Beijing" (1715).** The Pope's 1715 ruling reaches China. In 1721 Kangxi forbids missionaries to preach, but Jesuit astronomers and artists keep serving at his court.  
+<sub>On the map: Rome · the ruling reaches China · Beijing · Jesuit scientists stay at court</sub>
 
 ### Key terms defined in the Ming & Qing China story
 
@@ -658,6 +706,9 @@ _What actually happened:_ Mass executions would terrify the surviving lords into
 **+1 points** · next: `restless` · sets flag: forgave  
 _What actually happened:_ Too soft. Leaving powerful enemies with full armies and lands invites another civil war. Ieyasu reorganized the whole map of Japan's domains to protect his power.
 
+🗺 **Map scene after this decision: "The map of power" (1600).** Ieyasu wins at Sekigahara. Trusted vassals get lands near Edo, while outside lords, former enemies and newer allies alike, are kept in distant domains.  
+<sub>On the map: Sekigahara · Edo · trusted vassals · Satsuma · Chōshū · Sendai · outside lords, far from Edo</sub>
+
 ### 1601 · Restless Lords
 
 <sub>id: `restless`</sub>
@@ -715,6 +766,9 @@ _What actually happened:_ Risky for a new government. The shogunate feared that 
 **+2 points** · next: `kyushu`  
 _What actually happened:_ A middle path, but the shogunate decided Christianity was too dangerous to tolerate at all. It banned the religion in 1614 and later executed many Christians who refused to give up their faith.
 
+🗺 **Map scene after this decision: "Christianity banned" (1614).** The shogunate bans Christianity and ships missionaries and Christian leaders off to Macau and Manila. Later, every family must register at a Buddhist temple.  
+<sub>On the map: Edo · Nagasaki · missionaries expelled · Macau · Manila</sub>
+
 ### 1614 · The Siege of Osaka Castle
 
 <sub>id: `osaka`</sub>
@@ -769,6 +823,9 @@ _What actually happened:_ Stationing troops in about 250 domains would be hugely
 **0 points** · stability -1 · next: `shimabara`  
 _What actually happened:_ Too trusting. Ambitious lords with castles and armies could restart civil war. In 1635 the shogunate made alternate attendance (sankin-kōtai) official.
 
+🗺 **Map scene after this decision: "All roads lead to Edo" (1635).** Under sankin-kōtai, every daimyo must live in Edo every other year, and his wife and heir stay there. The costly processions leave little money for rebellion.  
+<sub>On the map: Edo · daimyo processions · every other year</sub>
+
 ### 1637 · The Shimabara Rebellion
 
 <sub>id: `shimabara`</sub>
@@ -804,6 +861,9 @@ _What actually happened:_ Japan was never completely closed. The shogunate kept 
 **C.** Open Japan's ports to all European traders and missionaries.  
 **0 points** · stability -1 · next: `isolation` · sets flag: opened  
 _What actually happened:_ After the Shimabara Rebellion, the shogunate saw missionaries as a direct threat. In 1639 it expelled the Portuguese and limited European trade to the Dutch at Nagasaki.
+
+🗺 **Map scene after this decision: "A closed country" (1639).** The Portuguese are expelled and Japanese may no longer go abroad. From 1641 the Dutch trade only from Dejima in Nagasaki, while Chinese ships and Korean trade continue.  
+<sub>On the map: Edo · Portuguese expelled · Nagasaki · Chinese ships · Korea · no Japanese may go abroad</sub>
 
 ### 1650 · Trouble at the Ports
 
@@ -862,6 +922,9 @@ _What actually happened:_ Safe but limiting. Yoshimune lifted the ban on non-rel
 **0 points** · stability -1 · next: END (survived)  
 _What actually happened:_ Letting missionaries back in would undo a century of policy and risk the foreign influence the shogunate feared. Yoshimune allowed only non-religious books, brought in through Nagasaki by Chinese and Dutch traders.
 
+🗺 **Map scene after this decision: "Dutch learning" (1720).** Yoshimune lets European books on science and medicine into Japan. Through Dejima, Dutch learning (rangaku) reaches Japanese scholars.  
+<sub>On the map: Dutch ships · Nagasaki · European books · Edo</sub>
+
 ### Key terms defined in the Tokugawa Japan story
 
 - **daimyo**: powerful regional lords who ruled their own lands with their own samurai
@@ -915,6 +978,9 @@ _What actually happened:_ Patient, but slow. A blockade alone could take years, 
 **C.** Leave the city alone for now and conquer easier lands in Anatolia, where your army can win quick, cheap victories.  
 **-1 points** · stability -1 · next: `walls`  
 _What actually happened:_ A missed opportunity. An enemy capital in the heart of your empire could become a base for European crusades. Mehmed made Constantinople his first target, and its capture in 1453 shocked Europe and made his reputation.
+
+🗺 **Map scene after this decision: "The city falls" (1453).** After weeks of cannon fire, Constantinople falls on May 29, 1453. Mehmed makes it his capital, and it becomes known as Istanbul.  
+<sub>On the map: Edirne · Istanbul · Black Sea</sub>
 
 ### 1454 · A City of Many Faiths
 
@@ -978,6 +1044,9 @@ _What actually happened:_ Safe but passive. Ismail's preachers would keep stirri
 **-1 points** · stability -1 · next: `anatolia`  
 _What actually happened:_ Unrealistic. The Sunni–Shia split made the two empires bitter rivals, and Ismail wanted to win your subjects over to his side. Instead, Selim defeated Ismail at the Battle of Chaldiran in 1514.
 
+🗺 **Map scene after this decision: "Victory at Chaldiran" (1514).** Ottoman guns crush the Qizilbash cavalry at Chaldiran. Selim briefly takes the Safavid capital, Tabriz, and Safavid expansion into Ottoman lands stops.  
+<sub>On the map: Istanbul · Selim's army · Chaldiran · Tabriz</sub>
+
 ### 1516 · Egypt and the Holy Cities
 
 <sub>id: `egypt`</sub>
@@ -1033,6 +1102,9 @@ _What actually happened:_ A disaster waiting to happen. Your army would starve a
 **C.** Retreat, then build a powerful navy to rule the Mediterranean.  
 **+4 points** · next: `navy`  
 _What actually happened:_ A good long-term idea. Suleiman did build a strong navy under the admiral Hayreddin Barbarossa, which won the Battle of Preveza in 1538 and dominated much of the Mediterranean. He also had to govern the huge empire he had built, which is why Turks later nicknamed him Kanuni, "the Lawgiver."
+
+🗺 **Map scene after this decision: "The gates of Vienna" (1529).** Suleiman lifts the siege of Vienna as winter nears. He keeps most of Hungary under a friendly vassal king, and later allies with France against the Habsburgs.  
+<sub>On the map: Istanbul · Mohács · Vienna · Hungary: a friendly king · alliance with France, 1536 · Paris</sub>
 
 ### 1535 · War on Two Fronts
 
@@ -1110,6 +1182,9 @@ _What actually happened:_ Osman II tried something like this and was murdered by
 **C.** Keep the janissaries happy with bonuses, paid for by selling tax-collecting rights to the highest bidder.  
 **+2 points** · next: `karlowitz`  
 _What actually happened:_ This is close to what happened, and it bought time. But tax farming let collectors squeeze peasants, and payoffs didn't fix discipline. Real recovery came when the Köprülü grand viziers took charge in 1656.
+
+🗺 **Map scene after this decision: "The Köprülü revival" (1656).** From 1656 the Köprülü grand viziers restore order, crush revolts, and even win new lands: Crete in 1669 and Podolia in 1672.  
+<sub>On the map: Istanbul · Crete · Podolia</sub>
 
 ### 1683 · Vienna, Once More
 
@@ -1202,6 +1277,9 @@ _What actually happened:_ Paying would keep Moscow a junior partner of the Mongo
 **-1 points** · stability -1 · next: `horde`  
 _What actually happened:_ A risky battle could have wiped out Moscow's army in one day. Ivan III wisely held the river crossings and waited, and the khan retreated in 1480 without a major battle.
 
+🗺 **Map scene after this decision: "The Great Stand" (1480).** Russian and Tatar armies face each other across the Ugra River for weeks. Then Khan Akhmat retreats, and historians often date the end of Mongol rule over Russia to this moment.  
+<sub>On the map: Moscow · Khan Akhmat · Ugra River · the khan retreats · Black Sea</sub>
+
 ### 1490 · Heir to Byzantium
 
 <sub>id: `third_rome`</sub>
@@ -1257,6 +1335,9 @@ _What actually happened:_ Moscow had tried controlling Kazan through friendly kh
 **C.** Ignore the east and fight Sweden and Poland for ports on the Baltic Sea, opening a direct sea route for trade with Europe.  
 **-1 points** · stability -1 · next: `oprichnina`  
 _What actually happened:_ Ivan did start a war for the Baltic in 1558, the Livonian War, and lost it after 25 years. Conquering Kazan first, as he actually did in 1552, was the much better move.
+
+🗺 **Map scene after this decision: "Down the Volga" (1552).** Kazan falls in 1552 and Astrakhan in 1556. Russia now holds the whole Volga River down to the Caspian Sea, and Ivan builds St. Basil's Cathedral to celebrate.  
+<sub>On the map: Moscow · Kazan · down the Volga · Astrakhan · Caspian Sea</sub>
 
 ### 1565 · The Tsar's Terror
 
@@ -1315,6 +1396,9 @@ _What actually happened:_ Some boyars really tried this in 1610, but a Catholic 
 **-1 points** · stability -1 · next: `razin`  
 _What actually happened:_ More civil war would leave Russia open to invasion. Russians chose unity instead, electing Michael Romanov as tsar in 1613.
 
+🗺 **Map scene after this decision: "A new dynasty" (1612).** A people's army from Nizhny Novgorod drives the Poles out of Moscow. In 1613 an assembly elects Michael Romanov tsar, and his family rules until 1917.  
+<sub>On the map: Nizhny Novgorod · people's army · Poles driven out · Warsaw · Moscow</sub>
+
 ### 1649 · The Law Code of 1649
 
 <sub>id: `law_code`</sub>
@@ -1370,6 +1454,9 @@ _What actually happened:_ Sticking with old ways would leave Russia's army behin
 **C.** Order the whole country to become Western overnight and shut down the Orthodox Church.  
 **-1 points** · stability -1 · next: `sweden`  
 _What actually happened:_ Too extreme. Peter's reforms were forceful, but he reorganized the Church rather than abolishing it, placing it under a government council called the Holy Synod (1721).
+
+🗺 **Map scene after this decision: "The Grand Embassy" (1697).** Peter tours Europe in 1697–1698 and works in Dutch and English shipyards. Back home he builds a modern army and navy and makes nobles shave their beards.  
+<sub>On the map: Moscow · the Grand Embassy · Amsterdam · London · home, 1698 · Vienna</sub>
 
 ### 1700 · The Great Northern War
 
@@ -1466,6 +1553,9 @@ _What actually happened:_ The experts were right about the distance, but nobody 
 **-2 points** · stability -1 · next: `second_chance`  
 _What actually happened:_ In 1492 Ferdinand and Isabella really did order Spain's Jews to convert or leave, and the Inquisition hunted suspected heretics. Spain lost many skilled merchants and craftspeople, but the rulers also funded Columbus, a far better investment.
 
+🗺 **Map scene after this decision: "A new world" (1492).** Granada falls in January 1492. In August Columbus sails west, and in October he lands in the Bahamas, opening the Americas to Spain.  
+<sub>On the map: Granada · Columbus sails · Bahamas · Atlantic Ocean</sub>
+
 ### 1494 · Dividing the World
 
 <sub>id: `tordesillas`</sub>
@@ -1519,6 +1609,9 @@ _What actually happened:_ Dangerous: conquistadors far from Spain could become i
 **C.** Reward the conquistadors with encomiendas, but keep a royal governor in charge.  
 **+3 points** · next: `conquistadors`  
 _What actually happened:_ This is close to what happened at first. But the encomienda system led to terrible abuse of Indigenous people, whose populations were also devastated by disease, and the settlers who held encomiendas grew powerful enough to challenge the Crown.
+
+🗺 **Map scene after this decision: "Viceroys, not conquistadors" (1521).** Tenochtitlan falls in 1521, and Mexico City rises on its ruins. Spain rules through the Council of the Indies (1524) and viceroys of New Spain (1535) and Peru (1540s).  
+<sub>On the map: Mexico City · Madrid · royal control · New Spain · Peru</sub>
 
 ### 1542 · The New Laws
 
@@ -1576,6 +1669,9 @@ _What actually happened:_ This is close to what Philip II did. Endless wars cost
 **+1 points** · next: `bankrupt`  
 _What actually happened:_ Much of Spain's silver really did flow out to pay for foreign goods and loans, enriching Dutch, Italian, and German merchants and bankers, while Spain's own industries fell behind.
 
+🗺 **Map scene after this decision: "Silver in, silver out" (1556).** Silver from Potosí crosses the ocean in treasure fleets, but much of it flows straight out again to pay for wars and foreign goods. The Crown goes bankrupt several times.  
+<sub>On the map: Potosí · treasure fleets · Seville · to foreign lenders · the Crown goes bankrupt</sub>
+
 ### 1566 · Trouble in the Netherlands
 
 <sub>id: `dutch`</sub>
@@ -1632,6 +1728,9 @@ _What actually happened:_ This is what Philip did. English ships, fire ships, an
 **C.** Send the Armada, but only after building better long-range cannons and a clear plan to pick up your army in the Netherlands.  
 **+3 points** · next: `decline`  
 _What actually happened:_ Better preparation might have helped, since the Armada's guns and its link-up with the army in the Netherlands were weak points. Still, invading England was a huge gamble, and in 1588 it failed.
+
+🗺 **Map scene after this decision: "The Armada fails" (1588).** The Armada sails from Lisbon, but English fire ships and guns break it up off Calais and Gravelines. Storms wreck many ships as it limps home around Scotland and Ireland.  
+<sub>On the map: Lisbon · the Armada · London · Gravelines · storms</sub>
 
 ### 1609 · The Moriscos
 
@@ -1727,6 +1826,9 @@ _What actually happened:_ Ismail's power came from his followers' devotion to hi
 **+2 points** · next: `unrest`  
 _What actually happened:_ Tolerance can work (as Akbar's Mughal India later showed), but Ismail's power rested on religious zeal, and a shared Shia faith bound his diverse subjects to the dynasty. In 1501 he made Twelver Shia Islam the state religion.
 
+🗺 **Map scene after this decision: "A Shia empire" (1501).** Ismail is crowned shah in Tabriz and makes Twelver Shia Islam the official faith, setting his empire apart from its Sunni neighbors, the Ottomans and the Uzbeks.  
+<sub>On the map: Ardabil · Tabriz · Twelver Shia Islam · Sunni Ottomans · Sunni Uzbeks</sub>
+
 ### 1505 · Doubts Among the Faithful
 
 <sub>id: `unrest`</sub>
@@ -1782,6 +1884,9 @@ _What actually happened:_ This is what Ismail did at Chaldiran in 1514. Ottoman 
 **C.** Send ambassadors to Selim offering to stop spreading Shia Islam in Ottoman lands. A promise costs you nothing and might turn his army around.  
 **+2 points** · next: `aftermath` · sets flag: peace_offer  
 _What actually happened:_ Selim wanted to crush the Safavid threat, not negotiate. Ismail fought at Chaldiran in 1514 and lost badly to Ottoman firepower.
+
+🗺 **Map scene after this decision: "Defeat at Chaldiran" (1514).** Ismail fights at Chaldiran and is badly beaten by Ottoman guns. Selim briefly occupies Tabriz, then withdraws. Later shahs avoid open battle and burn the land instead.  
+<sub>On the map: Tabriz · Ottoman army · Chaldiran · Tabriz · Selim withdraws</sub>
 
 ### 1524 · After the Defeat
 
@@ -1839,6 +1944,9 @@ _What actually happened:_ Fighting two strong enemies with a weak, divided army 
 **+1 points** · next: `ottoman_west`  
 _What actually happened:_ The Qizilbash chiefs had already murdered your mother and fought over the throne. Abbas cut their power by building a new army of ghulams loyal only to him.
 
+🗺 **Map scene after this decision: "Shah Abbas rebuilds" (1588).** Abbas makes a costly peace with the Ottomans in 1590, giving up land, and turns east to beat the Uzbeks near Herat in 1598. Meanwhile he builds a new army of ghulams loyal only to him.  
+<sub>On the map: Qazvin · lands given up, 1590 · east against the Uzbeks · Herat · a new ghulam army</sub>
+
 ### 1598 · Half the World
 
 <sub>id: `isfahan`</sub>
@@ -1894,6 +2002,9 @@ _What actually happened:_ This is what the Safavids did after Abbas, and it prod
 **C.** Name one heir and train him well for the throne. Keep the other princes far from court, with comfortable lives but no armies or offices, so they cannot gather supporters against him.  
 **+3 points** · next: `afghans`  
 _What actually happened:_ Better than locking them all away. The Safavids instead kept princes in the harem, and later shahs were often weak and easily controlled.
+
+🗺 **Map scene after this decision: "A weaker throne" (1638).** Under Shah Safi, raised in the harem, the Safavids lose Baghdad to the Ottomans and Kandahar to the Mughals in 1638. Later shahs leave more and more power to court officials.  
+<sub>On the map: Isfahan · Ottomans · Baghdad · Kandahar</sub>
 
 ### 1722 · The Afghan Challenge
 
@@ -1984,6 +2095,9 @@ _What actually happened:_ This is close to what Sonni Ali did in 1468. It fright
 **+1 points** · next: `scholars` · sets flag: skipped  
 _What actually happened:_ That would leave a rich prize to your rivals. Sonni Ali captured Timbuktu in 1468, and it became one of Songhai's most important cities.
 
+🗺 **Map scene after this decision: "Timbuktu taken" (1468).** Sonni Ali captures Timbuktu. He punishes scholars he suspects of siding with the Tuareg, and many flee the city, some to Walata.  
+<sub>On the map: Gao · Sonni Ali's cavalry · Timbuktu · scholars flee · Walata · Niger River</sub>
+
 ### 1470 · Angry Scholars, Nervous Merchants
 
 <sub>id: `scholars`</sub>
@@ -2043,6 +2157,9 @@ _What actually happened:_ Askia Muhammad's support came from Muslim scholars and
 **+2 points** · next: `rebels`  
 _What actually happened:_ An army can seize a throne, but keeping it requires legitimacy. Askia Muhammad built his on Islam, the hajj, and the support of Timbuktu's scholars.
 
+🗺 **Map scene after this decision: "The hajj of Askia Muhammad" (1496).** Askia Muhammad makes the hajj to Mecca in 1496–1497 and is named the caliph's deputy for West Africa. Back home he generously supports Timbuktu's scholars.  
+<sub>On the map: Gao · the hajj · Cairo · Mecca · Timbuktu</sub>
+
 ### 1495 · A Shaky Throne
 
 <sub>id: `rebels`</sub>
@@ -2099,6 +2216,9 @@ _What actually happened:_ Many in Songhai believed the desert would protect them
 **+3 points** · next: `succession`  
 _What actually happened:_ Salt miners really did move to new mines farther south, at Taoudenni, after Morocco seized Taghaza in the 1580s. But giving ground didn't satisfy Morocco, which wanted Songhai's gold, not just its salt.
 
+🗺 **Map scene after this decision: "Rich, but outgunned" (1549).** Under Askia Daoud, gold and salt make Songhai rich. But its army still fights with spears, bows, and cavalry, while Morocco's soldiers train with guns.  
+<sub>On the map: Gao · Taghaza · salt · gold · Timbuktu · Marrakesh</sub>
+
 ### 1582 · Who Will Rule Next?
 
 <sub>id: `succession`</sub>
@@ -2154,6 +2274,9 @@ _What actually happened:_ This is what Songhai did. The Moroccans lost many men 
 **C.** Send gifts and offer to pay Morocco a yearly tribute in gold, hoping al-Mansur will call off his army.  
 **+3 points** · next: `tondibi_weak`  
 _What actually happened:_ Diplomacy might have worked earlier, but al-Mansur's army was already on the march. Songhai ended up fighting at the Battle of Tondibi in 1591.
+
+🗺 **Map scene after this decision: "Across the Sahara" (1590).** Judar Pasha's army sets out across the Sahara in late 1590. Many soldiers die on the way, but enough reach the Niger River in early 1591 to fight, with guns and cannons.  
+<sub>On the map: Marrakesh · Judar Pasha's army · Sahara · many die on the way · Gao</sub>
 
 ### 1591 · The Battle of Tondibi
 
