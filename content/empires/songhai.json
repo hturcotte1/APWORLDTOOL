@@ -154,7 +154,7 @@
         },
         {
           "id": "c",
-          "text": "Rely on your army alone to keep you in power, since it was the army that won you the throne.",
+          "text": "Rely on your army alone to keep you in power. It was the army that won you the throne.",
           "points": 2,
           "next": "rebels",
           "explanation": "An army can seize a throne, but keeping it requires legitimacy. Askia Muhammad built his on Islam, the hajj, and the support of Timbuktu's scholars."
@@ -289,7 +289,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Crush the rebellion quickly. Then pardon the rebel soldiers and reunite the army.",
+          "text": "Crush the rebellion quickly. Pardon the rebel soldiers and reunite the army.",
           "points": 7,
           "next": "morocco",
           "explanation": "Ishaq II did defeat the rebels in 1588, but the fighting cost many soldiers and left bitterness. Pardoning and reuniting the army would have left Songhai stronger for the Moroccan invasion."

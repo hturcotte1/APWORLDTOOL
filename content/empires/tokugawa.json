@@ -43,14 +43,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Reward loyal lords with lands near Edo, and strip or shrink your enemies' lands, moving them to distant regions.",
+          "text": "Reward loyal lords with lands near Edo. Strip or shrink your enemies' lands and move them to distant regions.",
           "points": 5,
           "next": "shogun",
           "explanation": "That's what Ieyasu did. He took away or shrank the lands of dozens of enemy daimyo, placed trusted hereditary vassals (fudai) near Edo, and kept the \"outside\" lords (tozama), former enemies and newer allies alike, at a distance. This map of power lasted for more than 250 years."
         },
         {
           "id": "b",
-          "text": "Execute every lord who opposed you and seize all of their lands. They took up arms against you once, and a lord who is dead and landless can never raise another army.",
+          "text": "Execute every lord who opposed you, then seize all of their lands, since a lord who is dead and landless can never raise another army.",
           "points": 1,
           "stability": -1,
           "set": ["executions"],
@@ -74,14 +74,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Have the emperor name you shogun, then govern from Edo in his name.",
+          "text": "Have the emperor name you shogun. Keep him in Kyoto and govern from Edo in his name.",
           "points": 5,
           "next": "christianity",
           "explanation": "Exactly right. In 1603 the emperor appointed Ieyasu shogun, giving his rule legitimacy while real power stayed in Edo. The Tokugawa shogunate ruled Japan until 1868."
         },
         {
           "id": "b",
-          "text": "Remove the emperor and declare yourself emperor. You won the war, and the ruler who holds all the real power should hold the highest title too.",
+          "text": "Remove the emperor and declare yourself emperor. The man who won the war and holds the real power deserves the highest title.",
           "points": 0,
           "stability": -1,
           "next": "christianity",
@@ -107,7 +107,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Redraw the map: move dangerous lords to distant domains, reward loyal ones with lands near Edo, and get the emperor to name you shogun.",
+          "text": "Redraw the map by moving dangerous lords to distant domains and rewarding loyal ones near Edo. Have the emperor name you shogun as well.",
           "points": 4,
           "next": "christianity",
           "explanation": "A good recovery, and what Ieyasu really did right after Sekigahara. He reorganized the daimyo domains and became shogun in 1603, starting more than 250 years of Tokugawa rule."
@@ -152,7 +152,7 @@
         },
         {
           "id": "c",
-          "text": "Allow Christians to worship privately, but stop new missionaries from arriving. That gives the 300,000 converts no reason to rebel, while foreign influence slowly fades.",
+          "text": "Allow Christians to worship privately but stop new missionaries from arriving. That way converts have no reason to rebel, and foreign influence slowly fades.",
           "points": 2,
           "next": "kyushu",
           "explanation": "A middle path, but the shogunate decided Christianity was too dangerous to tolerate at all. It banned the religion in 1614 and later executed many Christians who refused to give up their faith."
@@ -166,7 +166,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Besiege Osaka Castle with your full army and destroy the Toyotomi family's power once and for all.",
+          "text": "Besiege Osaka Castle and destroy the Toyotomi family's power. Your enemies will rally around them for as long as they survive.",
           "points": 5,
           "next": "alternate",
           "explanation": "Ruthless but effective. In 1614–1615 Ieyasu's armies besieged and destroyed Osaka Castle, and Hideyori died. With no rival left, the Tokugawa ruled unchallenged."
@@ -201,7 +201,7 @@
         },
         {
           "id": "b",
-          "text": "Let each lord decide what to do about Christians in his own domain, since he knows his own people best.",
+          "text": "Let each lord decide what to do about Christians in his own domain. He knows his own people best.",
           "points": 1,
           "next": "alternate",
           "explanation": "That would let local lords build foreign alliances behind your back. The shogunate enforced one rule for all of Japan: Christianity was banned."
@@ -231,7 +231,7 @@
         },
         {
           "id": "b",
-          "text": "Station shogunate soldiers in every domain, have them inspect each lord's castle, and order them to report at once on any daimyo who gathers troops or meets in secret with his neighbors.",
+          "text": "Station shogunate soldiers in every domain to inspect each lord's castle. Then have them report at once on any daimyo who gathers troops or meets in secret with his neighbors.",
           "points": 1,
           "next": "shimabara",
           "explanation": "Stationing troops in about 250 domains would be hugely expensive. Alternate attendance (sankin-kōtai) kept the daimyo in line far more cheaply: they paid for their own costly trips to Edo, and their families stayed there."
@@ -253,14 +253,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Send a huge army to crush the rebellion, then punish the cruel local lord whose heavy taxes drove the peasants to revolt.",
+          "text": "Send a huge army to crush the rebellion. Afterward, punish the cruel local lord whose heavy taxes drove the peasants to revolt.",
           "points": 3,
           "next": "sakoku",
           "explanation": "That's what happened. A shogunate army of more than 100,000 took the castle in 1638, and the local lord was executed for misrule. Afterward, the shogun cut ties with the Portuguese, blaming Christianity for the revolt."
         },
         {
           "id": "b",
-          "text": "Negotiate: let the rebels practice Christianity if they go home. A long siege could cost thousands of your soldiers' lives, and peasants sent home can still farm the land and pay taxes.",
+          "text": "Negotiate: let the rebels practice Christianity if they go home, since a long siege could cost thousands of soldiers' lives and peasants sent home can still farm and pay taxes.",
           "points": 1,
           "stability": -1,
           "next": "sakoku",
@@ -283,7 +283,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Expel the Portuguese, ban Japanese from traveling abroad, and allow only the Dutch and Chinese to trade at Nagasaki, under close watch.",
+          "text": "Expel the Portuguese and ban Japanese from traveling abroad. Allow only the Dutch and Chinese to trade at Nagasaki under close watch.",
           "points": 5,
           "next": "genroku",
           "explanation": "This was sakoku: the Portuguese were expelled in 1639, and in 1641 the Dutch were moved to the tiny island of Dejima in Nagasaki harbor. Trade with China, Korea, and a few others continued through approved channels. It kept foreign influence out while still bringing in goods and news."
@@ -353,7 +353,7 @@
         },
         {
           "id": "b",
-          "text": "Leave things as they are. Changing policy again so soon would make the shogunate look unsure of itself.",
+          "text": "Leave things as they are because changing policy again so soon would make the shogunate look unsure of itself.",
           "points": 1,
           "next": "yoshimune",
           "explanation": "Unsolved problems pile up. The real Tokugawa system kept a small, controlled window to the world at Nagasaki, which brought in goods and information while keeping missionaries out."
@@ -375,7 +375,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Allow European books on science and medicine through Nagasaki, as long as they don't promote Christianity, so scholars can find practical ideas for farming and the calendar.",
+          "text": "Allow European books on science and medicine through Nagasaki, as long as they don't promote Christianity. Your scholars need practical ideas for farming and the calendar.",
           "points": 5,
           "next": "end",
           "explanation": "Exactly what Yoshimune did in 1720. This opened the door to rangaku, as Japanese scholars studied European medicine, astronomy, and geography, knowledge that later helped Japan modernize quickly in the 1800s."

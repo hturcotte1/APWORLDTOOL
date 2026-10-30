@@ -48,7 +48,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Crown the emperor's brother, refuse any ransom, and defend Beijing. Then strengthen the northern frontier with walls.",
+          "text": "Crown the emperor's brother, refuse any ransom, and defend Beijing. Strengthen the northern frontier with walls.",
           "points": 5,
           "next": "sea_ban",
           "explanation": "That's what happened. Yu Qian defended Beijing, a new emperor took the throne, and the Mongols released their captive in 1450 once he was no longer useful. Over the next century and a half, the Ming rebuilt much of the Great Wall in brick and stone; most of the wall visitors see today is Ming."
@@ -114,7 +114,7 @@
         },
         {
           "id": "b",
-          "text": "Keep the ban that has stood since the 1370s, and send soldiers to hunt down the pirates and smugglers along the coast.",
+          "text": "Keep the ban that has stood since the 1370s, then send soldiers to hunt down the pirates and smugglers along the coast.",
           "points": 2,
           "next": "pirates",
           "explanation": "Fighting pirates was necessary, and General Qi Jiguang crushed many of them in the 1560s. But as long as trade was illegal, merchants kept becoming smugglers, so the Ming eased the ban in 1567."
@@ -136,7 +136,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Combine the grain, cloth, and labor duties into one payment in silver. Then survey the land so rich landowners can no longer hide their fields from tax collectors.",
+          "text": "Combine the grain, cloth, and labor duties into one payment in silver. Survey the land so rich landowners can no longer hide their fields from tax collectors.",
           "points": 5,
           "set": ["single_whip"],
           "next": "wanli",
@@ -316,7 +316,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Build up a navy, win over Zheng commanders who will switch sides, then conquer Taiwan.",
+          "text": "Build up a navy, win over Zheng commanders who will switch sides, and conquer Taiwan.",
           "points": 5,
           "next": "rites",
           "explanation": "That's what the Qing did. In 1683 a Qing fleet led by a former Zheng admiral captured Taiwan, and the island became part of the Qing Empire."

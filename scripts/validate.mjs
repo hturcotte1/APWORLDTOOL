@@ -188,6 +188,23 @@ for (const id of order) {
   if (share(bestLongest) > 0.45) err(W, `the best option is also the longest on ${Math.round(100 * share(bestLongest))}% of decision screens (max 45%): vary option lengths so length doesn't give away the answer`);
   if (share(bestShortest) < 0.2) err(W, `the best option is the shortest on only ${Math.round(100 * share(bestShortest))}% of decision screens (min 20%): vary option lengths so length doesn't give away the answer`);
   if (bestLen / avgLen > 1.2 || bestLen / avgLen < 0.8) err(W, `best options average ${(bestLen / avgLen).toFixed(2)}x the length of a typical option (must be 0.8-1.2)`);
+  // ...and neither should sentence count or a comma-separated list of steps
+  const commas = (t) => (t.match(/,/g) || []).length;
+  const guesses = {
+    'the option with the fewest sentences': (o) => -sentenceCount(o.text),
+    'the option with the most sentences': (o) => sentenceCount(o.text),
+    'the option with the most commas (a multi-part plan)': (o) => commas(o.text),
+    'the option with the fewest commas': (o) => -commas(o.text),
+  };
+  for (const [name, f] of Object.entries(guesses)) {
+    let hits = 0;
+    for (const opts of sets) {
+      const top = Math.max(...opts.map(f));
+      const picks = opts.filter((o) => f(o) === top);
+      if (picks.some((o) => o.points === Math.max(...opts.map((x) => x.points)))) hits += 1 / picks.length;
+    }
+    if (share(hits) > 0.5) err(W, `picking ${name} finds the best answer on ${Math.round(100 * share(hits))}% of decision screens (max 50%): vary how options are written`);
+  }
 
   const milestones = ids.filter((nid) => nodes[nid].milestone);
   let survived = 0, collapsed = 0, minLen = Infinity, maxLen = 0, maxPts = -Infinity, minPts = Infinity;

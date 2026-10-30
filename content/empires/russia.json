@@ -47,7 +47,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Refuse to pay, guard the river crossings with your army and cannons, and wait the khan out.",
+          "text": "Refuse to pay the tribute. Guard the river crossings with your army and cannons and wait the khan out.",
           "points": 6,
           "next": "third_rome",
           "explanation": "That's essentially what happened. The two armies faced each other across the Ugra for weeks, and then the khan retreated. Historians often date the end of Mongol rule over Russia to this \"Great Stand\" of 1480."
@@ -106,14 +106,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Stop paying tribute and form an alliance with the Crimean khan, who hates the Great Horde as much as you do.",
+          "text": "Stop paying tribute and form an alliance with the Crimean khan, since he hates the Great Horde as much as you do.",
           "points": 4,
           "next": "kazan",
           "explanation": "Smart diplomacy, and Ivan III really did ally with the Crimean Tatars. Moscow had already stopped paying regular tribute, and after the Great Stand on the Ugra River in 1480 it never paid again. The Crimeans destroyed the Great Horde in 1502."
         },
         {
           "id": "b",
-          "text": "Keep paying tribute and hope they leave you alone.",
+          "text": "Keep paying tribute. Peace with the Horde is worth the price.",
           "points": 0,
           "next": "kazan",
           "explanation": "Paying keeps Moscow weak and dependent. Ivan III stopped paying, and after the Great Stand on the Ugra River in 1480, Mongol rule over Russia was over."
@@ -138,7 +138,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Besiege Kazan with cannons, explosive mines under the walls, and your new streltsy musketeers, then push down the Volga to Astrakhan.",
+          "text": "Besiege Kazan with cannons, explosive mines under the walls, and your new streltsy musketeers. Push on down the Volga to Astrakhan.",
           "points": 6,
           "next": "siberia",
           "explanation": "That's what Ivan did: Kazan fell in 1552 and Astrakhan in 1556, giving Russia the whole Volga River down to the Caspian Sea. To celebrate, he built St. Basil's Cathedral in Moscow."
@@ -167,7 +167,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Back Yermak with guns and men, build river forts, and make Siberian peoples pay tribute in furs.",
+          "text": "Back Yermak with guns and men. Build forts along the rivers and make Siberian peoples pay tribute in furs.",
           "points": 6,
           "set": ["siberia"],
           "next": "troubles",
@@ -203,7 +203,7 @@
         },
         {
           "id": "b",
-          "text": "Create a private police force, loyal only to you, that terrorizes the boyars and seizes their lands. If they really poisoned Anastasia, only fear will keep them in line.",
+          "text": "Create a private police force to terrorize the boyars, then seize their lands, since only fear will keep them in line if they really poisoned Anastasia.",
           "points": -1,
           "stability": -1,
           "set": ["terror"],
@@ -238,14 +238,14 @@
         },
         {
           "id": "b",
-          "text": "Invite the Polish king's son to become tsar to make peace with Poland.",
+          "text": "Invite the Polish king's son to become tsar. That would finally make peace with Poland.",
           "points": 0,
           "next": "razin",
           "explanation": "Some boyars really tried this in 1610, but a Catholic Polish tsar was unacceptable to most Orthodox Russians and led to the occupation of Moscow. In 1613 Russians elected Michael Romanov instead."
         },
         {
           "id": "c",
-          "text": "Let the Cossack chiefs and army commanders fight it out, since only the strongest can hold the throne.",
+          "text": "Let the Cossack chiefs and army commanders fight it out. Only the strongest can hold the throne.",
           "points": -1,
           "stability": -1,
           "next": "razin",
@@ -290,7 +290,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Crush the revolt with your regular army, then reform tax collection so officials can't abuse peasants as much.",
+          "text": "Crush the revolt with your regular army. Reform tax collection afterward so officials can't abuse peasants as much.",
           "points": 5,
           "next": "peter",
           "explanation": "The tsar's army did defeat the revolt in 1670, and Razin was executed in Moscow in 1671. Reducing abuse would have helped, but in reality serfdom only grew harsher, and another huge revolt, led by Pugachev, broke out in 1773."
@@ -304,7 +304,7 @@
         },
         {
           "id": "c",
-          "text": "Hire foreign soldiers to defeat the rebels. Russian troops might feel sympathy for fellow peasants and switch sides, but paid foreigners will have no such doubts.",
+          "text": "Hire foreign soldiers to defeat the rebels, as Russian troops might feel sympathy for fellow peasants and switch sides while paid foreigners would not.",
           "points": 2,
           "next": "peter",
           "explanation": "Russia did use some foreign-trained regiments, but its regular army defeated Razin's forces in 1670. Relying on outsiders to fight your own people can make a ruler look weak."
@@ -322,7 +322,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Tour Western Europe in disguise, work in shipyards, and hire experts. Then modernize the army and navy and make nobles wear Western clothes and shave their beards.",
+          "text": "Tour Western Europe in disguise to work in shipyards and hire experts. Back home, modernize the army and navy and make nobles wear Western clothes and shave their beards.",
           "points": 6,
           "next": "northern_war",
           "explanation": "This is what Peter really did on his Grand Embassy of 1697–1698. Back home he built a modern army and navy, forced nobles to shave (or pay a beard tax), and pushed Western-style schools: Westernization from the top down."
@@ -351,14 +351,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Rebuild: melt church bells into cannons, train a new army and navy, and found St. Petersburg on the Baltic.",
+          "text": "Rebuild by melting church bells into cannons and training a new army and navy. Then found St. Petersburg on the Baltic.",
           "points": 6,
           "next": "end",
           "explanation": "Exactly Peter's response. He founded St. Petersburg in 1703, crushed the Swedes at Poltava in 1709, and won Baltic lands in 1721. He also created the Table of Ranks (1722), which promoted officials and officers for their service."
         },
         {
           "id": "b",
-          "text": "Make peace and give up on the Baltic forever. Sweden's army is the best in Europe, and Arkhangelsk can still handle your trade with the West.",
+          "text": "Make peace and give up on the Baltic forever, since Sweden's army is the best in Europe and Arkhangelsk can still handle your trade with the West.",
           "points": 1,
           "next": "end",
           "explanation": "That would leave Russia without a good western seaport. Peter refused to quit after Narva, and by 1721 Russia had won its \"window on the West\" on the Baltic Sea."
@@ -386,7 +386,7 @@
         },
         {
           "id": "b",
-          "text": "Retreat deep into Russia and burn everything in Sweden's path, leaving the invaders nothing to eat.",
+          "text": "Retreat deep into Russia and burn everything in Sweden's path. Invaders with nothing to eat can't keep fighting.",
           "points": 2,
           "next": "end",
           "explanation": "Russia actually used this tactic when Charles XII invaded in 1708–1709, wearing down his army before the Battle of Poltava. But victory also required Peter's modernized army."

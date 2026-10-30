@@ -57,7 +57,7 @@ Key terms: add `{ "term": "devshirme", "def": "…" }` to an empire's `glossary`
 
 Run `npm run check`. This runs:
 
-- **`npm run validate`**: no dead ends or broken links, every path reaches an ending, full paths are 7–9 decisions, exactly 3 options show at every decision, the best option is never tied, points match the tier rules, explanations are at most 3 sentences, every flag that's checked is also set somewhere, and option length doesn't give away the answer (the best option can't be the longest on more than 45% of decisions, and must be the shortest on at least 20%). When you write options, make some wrong answers long and tempting and some best answers short and plain.
+- **`npm run validate`**: no dead ends or broken links, every path reaches an ending, full paths are 7–9 decisions, exactly 3 options show at every decision, the best option is never tied, points match the tier rules, explanations are at most 3 sentences, every flag that's checked is also set somewhere, and the way options are written doesn't give away the answer: the best option can't be the longest on more than 45% of decisions and must be the shortest on at least 20%, and picking by sentence count or by the longest list of steps can't find the best answer more than half the time. When you write options, make some wrong answers long, detailed, and tempting, and some best answers short and plain.
 - **`npm run balance`**: plays every possible path and checks the scoring goals (strong Hard players beat strong Easy players, careless Hard players can sink lowest, collapses land in the lower part of the leaderboard, Hard collapses more than Medium, and Medium more than Easy). It writes `docs/BALANCE_REPORT.md`.
 - **`npm test`**: unit and API tests.
 

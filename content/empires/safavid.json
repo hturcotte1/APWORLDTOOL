@@ -164,7 +164,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep up the scorched-earth defense until the Ottomans tire. Then make peace and give up Baghdad for now. Move your capital farther from the Ottoman border.",
+          "text": "Keep up the scorched-earth defense until the Ottomans tire. Make peace and give up Baghdad for now. Move your capital farther from the Ottoman border.",
           "points": 8,
           "next": "abbas",
           "explanation": "That's what Tahmasp did. His scorched-earth tactics wore out Ottoman armies, the Peace of Amasya (1555) ended the fighting, and he moved the capital from Tabriz to Qazvin, safer from Ottoman attack."
@@ -225,7 +225,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Make a costly peace with the Ottomans and crush the Uzbeks. Then build a new army of ghulams loyal only to you.",
+          "text": "Make a costly peace with the Ottomans and crush the Uzbeks. Build a new army of ghulams loyal only to you.",
           "points": 8,
           "next": "isfahan",
           "explanation": "Exactly Abbas's plan. He made a costly peace with the Ottomans in 1590, beat the Uzbeks, and built a new army of ghulams, musketeers, and artillery loyal only to him. Then, starting in 1603, he turned west and won back his lost lands."
@@ -372,7 +372,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Put your most capable general in full command, with no court officials interfering, then gather every soldier and stock Isfahan with food before the enemy arrives.",
+          "text": "Put your most capable general in full command, with no court officials interfering, and have him gather every soldier and stock Isfahan with food before the enemy arrives.",
           "points": 6,
           "next": "end",
           "explanation": "Strong leadership might have saved the empire. In reality, the shah's army was beaten at Gulnabad in March 1722, and after a seven-month siege the starving city surrendered, effectively ending Safavid rule."
