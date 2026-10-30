@@ -41,7 +41,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Take Timbuktu with your cavalry, then protect its scholars and merchants so learning and trade keep flowing.",
+          "text": "Take Timbuktu with your cavalry. Then protect its scholars and merchants so learning and trade keep flowing.",
           "points": 8,
           "set": ["protected"],
           "next": "jenne",
@@ -49,7 +49,7 @@
         },
         {
           "id": "b",
-          "text": "Take Timbuktu and punish the scholars you suspect of siding with the Tuareg.",
+          "text": "Take Timbuktu, then punish the scholars you suspect of siding with the Tuareg.",
           "points": -2,
           "stability": -1,
           "set": ["punished"],
@@ -230,7 +230,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Strengthen the army and the northern defenses, and try to buy guns and hire gunners through North African traders. Morocco's soldiers are trained with guns, so yours need them too.",
+          "text": "Strengthen the army and the northern defenses. Try to buy guns and hire gunners through North African traders, since Morocco's soldiers are trained with guns.",
           "points": 8,
           "set": ["guns"],
           "next": "succession",
@@ -246,7 +246,7 @@
         },
         {
           "id": "c",
-          "text": "Let Morocco have Taghaza and open new salt mines farther south.",
+          "text": "Let Morocco have Taghaza, and open new salt mines farther south.",
           "points": 3,
           "next": "succession",
           "explanation": "Salt miners really did move to new mines farther south, at Taoudenni, after Morocco seized Taghaza in the 1580s. But giving ground didn't satisfy Morocco, which wanted Songhai's gold, not just its salt."
@@ -289,7 +289,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Crush the rebellion quickly, then pardon the rebel soldiers and reunite the army.",
+          "text": "Crush the rebellion quickly. Then pardon the rebel soldiers and reunite the army.",
           "points": 7,
           "next": "morocco",
           "explanation": "Ishaq II did defeat the rebels in 1588, but the fighting cost many soldiers and left bitterness. Pardoning and reuniting the army would have left Songhai stronger for the Moroccan invasion."
@@ -303,7 +303,7 @@
         },
         {
           "id": "c",
-          "text": "Split the empire with the rebel prince to end the fighting.",
+          "text": "To end the fighting, split the empire with the rebel prince.",
           "points": 1,
           "next": "morocco",
           "explanation": "A divided Songhai would be even easier for Morocco to conquer. Ishaq II won the civil war in 1588, but Songhai was weakened."
@@ -349,14 +349,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Avoid a pitched battle. Pull back, defend the cities, and let disease, heat, and hunger wear down the invaders while your cavalry attacks their supply lines.",
+          "text": "Avoid a pitched battle. Pull back and defend the cities. Let disease, heat, and hunger wear down the invaders while your cavalry attacks their supply lines.",
           "points": 8,
           "next": "end",
           "explanation": "The smartest strategy against a small army far from home. Instead, Songhai met the Moroccans in open battle at Tondibi in March 1591 and was routed by their guns. Gao and Timbuktu fell, and the Songhai Empire broke apart."
         },
         {
           "id": "b",
-          "text": "Meet them in open battle, and stampede a herd of cattle into their lines.",
+          "text": "Meet them in open battle with your spears, bows, and cavalry, and stampede a herd of cattle into their lines.",
           "points": -3,
           "collapse": { "year": 1591, "text": "The cattle charge failed, and Moroccan gunfire shattered your army at Tondibi. The invaders seized Gao and Timbuktu, and the Songhai Empire broke apart." },
           "explanation": "This is what happened at the Battle of Tondibi in 1591. The cattle stampede failed to break the Moroccan lines, and their guns routed Songhai's army; Songhai resistance continued farther south, but the empire never recovered."
