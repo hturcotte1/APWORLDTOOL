@@ -48,14 +48,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Put the emperor's brother on the throne, refuse the Mongols' ransom demands, and defend Beijing. Then strengthen the northern frontier with walls.",
+          "text": "Crown the emperor's brother, refuse any ransom, and defend Beijing. Then strengthen the northern frontier with walls.",
           "points": 5,
           "next": "sea_ban",
           "explanation": "That's what happened. Yu Qian defended Beijing, a new emperor took the throne, and the Mongols released their captive in 1450 once he was no longer useful. Over the next century and a half, the Ming rebuilt much of the Great Wall in brick and stone; most of the wall visitors see today is Ming."
         },
         {
           "id": "b",
-          "text": "Flee south to Nanjing and leave the north to defend itself.",
+          "text": "Flee south to Nanjing, the old capital, and let the north defend itself. Beijing is too close to the Mongols, and if the capital falls with the court inside, the dynasty falls too.",
           "points": 1,
           "stability": -1,
           "next": "mongol_raids",
@@ -77,14 +77,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Build long defensive walls with watchtowers and soldiers stationed along the northern frontier.",
+          "text": "Build long defensive walls along the northern frontier, with watchtowers to spot raiders early and soldiers stationed nearby to stop them before they reach the villages.",
           "points": 3,
           "next": "sea_ban",
           "explanation": "This became Ming policy. Starting in the 1470s, the Ming built long walls along the frontier, and by the late 1500s they had rebuilt much of the Great Wall in brick and stone. Most of the Great Wall that visitors see today dates from the Ming."
         },
         {
           "id": "b",
-          "text": "Send a giant army deep into Mongolia to destroy the raiders once and for all.",
+          "text": "Send a giant army deep into Mongolia to destroy the raiders for good.",
           "points": 0,
           "stability": -1,
           "next": "sea_ban",
@@ -92,7 +92,7 @@
         },
         {
           "id": "c",
-          "text": "Open border markets where Mongols can trade horses for Chinese goods.",
+          "text": "Open border markets where Mongols can trade horses for Chinese goods, so they can get through trade what they now take by raiding.",
           "points": 2,
           "next": "sea_ban",
           "explanation": "A smart idea that the Ming eventually adopted. In 1571 they made peace with the Mongol leader Altan Khan and opened border markets, which reduced raiding. Together with wall building, trade helped calm the frontier."
@@ -107,21 +107,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Ease the sea ban and allow licensed Chinese merchants to trade overseas from an official port.",
+          "text": "Ease the sea ban and let licensed Chinese merchants trade overseas from an official port.",
           "points": 5,
           "next": "single_whip",
           "explanation": "That's what the Ming did in 1567, opening a port in Fujian to licensed traders. Legal trade cut down on piracy, and silver poured in: from Japan through Portuguese traders (direct trade with Japan stayed banned), and after 1571 from the Americas on Spanish ships through Manila. China became the world's biggest buyer of silver."
         },
         {
           "id": "b",
-          "text": "Keep the ban and fight the pirates with soldiers.",
+          "text": "Keep the ban that has stood since the 1370s, and send soldiers to hunt down the pirates and smugglers along the coast.",
           "points": 2,
           "next": "pirates",
           "explanation": "Fighting pirates was necessary, and General Qi Jiguang crushed many of them in the 1560s. But as long as trade was illegal, merchants kept becoming smugglers, so the Ming eased the ban in 1567."
         },
         {
           "id": "c",
-          "text": "Execute every smuggler and burn any ship that leaves port.",
+          "text": "Make an example of the lawbreakers: execute every smuggler you catch and burn any ship that leaves port. Once people fear the law more than they want silver, the smuggling will stop.",
           "points": 0,
           "stability": -1,
           "next": "pirates",
@@ -136,7 +136,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Combine all taxes and labor duties into one payment in silver, and survey the land so everyone pays a fair share.",
+          "text": "Combine the grain, cloth, and labor duties into one payment in silver, and survey the land so rich landowners can no longer hide their fields from tax collectors.",
           "points": 5,
           "set": ["single_whip"],
           "next": "wanli",
@@ -151,7 +151,7 @@
         },
         {
           "id": "c",
-          "text": "Let local landlords decide how much their villages owe.",
+          "text": "Let local landlords decide how much their villages owe. They know the land and the families far better than officials sent from the capital ever could.",
           "points": 0,
           "stability": -1,
           "next": "wanli",
@@ -166,21 +166,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Train disciplined new armies under General Qi Jiguang, then make overseas trade legal so merchants don't need to smuggle.",
+          "text": "Train disciplined new armies under General Qi Jiguang, then legalize overseas trade so merchants stop smuggling.",
           "points": 4,
           "next": "wanli",
           "explanation": "That's what worked. Qi Jiguang's well-trained troops defeated the pirates in the 1560s, and in 1567 the Ming eased the sea ban. Legal trade then brought silver flowing into China."
         },
         {
           "id": "b",
-          "text": "Pay the pirate leaders to go away.",
+          "text": "Pay the pirate leaders to leave your coast alone.",
           "points": 1,
           "next": "wanli",
           "explanation": "Paying off pirates often encouraged more piracy. The Ming beat them with General Qi Jiguang's armies and then partly legalized overseas trade in 1567."
         },
         {
           "id": "c",
-          "text": "Build more forts along the coast and keep the ban.",
+          "text": "Build more forts along the coast and keep the ban. Strong walls will protect the towns, and allowing trade now would only reward the smugglers for breaking the law.",
           "points": 2,
           "next": "wanli",
           "explanation": "Defenses helped, but as long as trade was illegal, smuggling and piracy continued. The Ming eased the ban in 1567."
@@ -195,21 +195,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Get back to work: meet your ministers, fill empty posts with officials who passed the civil service exams, and keep the eunuchs in check.",
+          "text": "Return to court, fill empty posts with exam-trained officials, and keep the eunuchs in check.",
           "points": 5,
           "next": "jesuits",
           "explanation": "That would have been the wise path. In reality, Wanli withdrew from government for decades, posts sat empty, and eunuchs and factions grew powerful, one reason the Ming weakened in its final years."
         },
         {
           "id": "b",
-          "text": "Send trusted eunuchs out to collect special new taxes on mines and merchants.",
+          "text": "Send trusted eunuchs out to collect special new taxes on mines and merchants. They answer only to you, so the money flows straight to the palace instead of through quarreling officials.",
           "points": 1,
           "next": "eunuch_rule",
           "explanation": "This really happened in the late 1590s and early 1600s. The eunuch tax collectors were hated and set off riots in many cities, damaging the dynasty's reputation."
         },
         {
           "id": "c",
-          "text": "Stay hidden in the palace and let the officials fight it out.",
+          "text": "Stay hidden in the palace and let the officials fight it out. They defied you over your heir, so let them run the government without you.",
           "points": 0,
           "stability": -1,
           "next": "eunuch_rule",
@@ -239,7 +239,7 @@
         },
         {
           "id": "c",
-          "text": "Let them preach anywhere and build churches in every city.",
+          "text": "Let them preach anywhere and build churches in every city. Men who bring such useful knowledge have earned your trust, and their goodwill could draw more European scholars to China.",
           "points": 1,
           "next": "qing_rule",
           "explanation": "Too risky: officials worried that missionaries would undermine Confucian traditions and loyalty to the emperor. The Ming let Ricci stay mainly because of his science, not his preaching."
@@ -253,14 +253,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Remove Wei Zhongxian and bring honest, exam-trained officials back into government.",
+          "text": "Remove Wei Zhongxian and bring back honest, exam-trained officials.",
           "points": 4,
           "next": "qing_rule",
           "explanation": "The next emperor did exactly this in 1627, and Wei killed himself. But the damage was done: years of factional fighting had weakened the government just as rebellion and famine spread."
         },
         {
           "id": "b",
-          "text": "Let Wei keep running things. At least there's order.",
+          "text": "Let Wei keep running things. He is cruel, but at least there's order, and with famine in the northwest and Jurchen armies in the northeast, this is no time for a power struggle.",
           "points": 0,
           "stability": -1,
           "next": "qing_rule",
@@ -268,7 +268,7 @@
         },
         {
           "id": "c",
-          "text": "Purge both the eunuchs and the officials, and rule entirely alone.",
+          "text": "Purge both the eunuchs and the officials, and rule entirely alone. After years of feuding, neither group can be trusted with power.",
           "points": 2,
           "next": "qing_rule",
           "explanation": "No emperor can run an empire alone; China needed its trained scholar-officials. The last Ming emperor did remove Wei in 1627, but he then distrusted his ministers, firing dozens and executing several officials and generals."
@@ -294,7 +294,7 @@
         },
         {
           "id": "b",
-          "text": "Replace the Chinese bureaucracy with Manchu nobles and end the exams.",
+          "text": "Replace the Chinese bureaucracy with Manchu nobles and end the exams. Officials trained to serve the Ming cannot be trusted to serve the Qing.",
           "points": 0,
           "stability": -1,
           "next": "feudatories",
@@ -302,7 +302,7 @@
         },
         {
           "id": "c",
-          "text": "Reward the Ming generals who joined you by letting them rule huge southern provinces as their own kingdoms.",
+          "text": "Reward the Ming generals who joined you with huge southern provinces to rule as their own kingdoms.",
           "points": 2,
           "next": "feudatories",
           "explanation": "The Qing really did this in the 1650s, giving three Han generals who had conquered the south for them giant territories. It worked at first, but in 1673 those \"Three Feudatories\" rebelled against the emperor."
@@ -316,21 +316,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Build up a navy, win over Zheng commanders willing to switch sides, and then conquer Taiwan.",
+          "text": "Build up a navy, win over Zheng commanders who will switch sides, then conquer Taiwan.",
           "points": 5,
           "next": "rites",
           "explanation": "That's what the Qing did. In 1683 a Qing fleet led by a former Zheng admiral captured Taiwan, and the island became part of the Qing Empire."
         },
         {
           "id": "b",
-          "text": "Force everyone on the southern coast to move inland so the raiders find no supplies.",
+          "text": "Force everyone on the southern coast to move inland, post soldiers along the empty shore, and let no one return, so the raiders find no food or supplies.",
           "points": 2,
           "next": "rites",
           "explanation": "The Qing actually did this starting in 1661, a brutal \"Great Clearance\" that ruined coastal communities. It hurt the rebels, but it took a navy to finally conquer Taiwan in 1683."
         },
         {
           "id": "c",
-          "text": "Ignore Taiwan. It's just a small island.",
+          "text": "Ignore Taiwan. It's just a small island across the sea, and your armies are needed far more on the mainland, where Ming loyalists still resist.",
           "points": 0,
           "stability": -1,
           "next": "rites",
@@ -345,14 +345,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Fight back with loyal Manchu and Han armies, and offer pardons to rebels who switch sides.",
+          "text": "Fight back with loyal Manchu and Han armies, and offer pardons to rebels who switch sides. If these generals defy you and win, others will follow.",
           "points": 5,
           "next": "rites",
           "explanation": "Kangxi did just this. The war lasted eight years, but by 1681 the Qing had crushed the revolt and placed the south under direct imperial rule."
         },
         {
           "id": "b",
-          "text": "Give in and let the generals keep their lands forever.",
+          "text": "Give in and let the generals keep their lands forever. They helped your family conquer China, and a long civil war could cost the young dynasty everything it has won.",
           "points": 0,
           "stability": -1,
           "next": "rites",
@@ -360,7 +360,7 @@
         },
         {
           "id": "c",
-          "text": "Make peace with the generals, but secretly plan to poison them.",
+          "text": "Make peace now, but secretly plan to poison the generals.",
           "points": 2,
           "next": "rites",
           "explanation": "Plots like this often backfire and destroy trust. Kangxi chose open war plus pardons for rebels who surrendered, and he won by 1681."
@@ -378,7 +378,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep the Jesuit scientists at court, but ban missionaries who follow the Pope's ruling from preaching in China.",
+          "text": "Keep the Jesuit scientists at court, but ban missionaries who follow the Pope's ruling from preaching in China, since honoring ancestors and Confucius is the heart of Chinese culture.",
           "points": 5,
           "next": "end",
           "explanation": "Close to Kangxi's response. In 1721 he ordered that missionaries could no longer preach in China, while Jesuit astronomers and artists kept serving at court; his son formally banned Christianity in 1724. The Qing welcomed useful knowledge but kept firm control over religion and culture."
@@ -392,7 +392,7 @@
         },
         {
           "id": "c",
-          "text": "Expel every European, including the court scientists, and stop learning from the West entirely.",
+          "text": "Expel every European, including the court scientists, and stop learning from the West entirely. Foreigners who obey the Pope over the emperor cannot be trusted.",
           "points": 2,
           "next": "end",
           "explanation": "Too extreme for Kangxi, who personally studied geometry with Jesuit teachers. He banned missionary work in 1721 but kept useful Jesuit experts at court."

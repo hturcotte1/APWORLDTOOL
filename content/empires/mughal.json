@@ -43,14 +43,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Dig in behind a line of carts tied together, place cannons and matchlock gunners between them, and use your fast cavalry to attack from the sides.",
+          "text": "Tie your carts into a wall, put cannons and matchlock gunners in the gaps, and send cavalry around the sides.",
           "points": 5,
           "next": "stay",
           "explanation": "A brilliant victory, and Babur's real plan. His guns terrified the elephants, his cavalry swept around the sides, and Ibrahim Lodi died in battle in 1526. The win founded the Mughal Empire, one of the great gunpowder empires."
         },
         {
           "id": "b",
-          "text": "Charge straight at the enemy with your cavalry before they can attack.",
+          "text": "Charge the Sultan's army head-on with your cavalry before it can attack.",
           "points": 1,
           "set": ["charged"],
           "next": "khanwa",
@@ -58,7 +58,7 @@
         },
         {
           "id": "c",
-          "text": "Retreat to Kabul and wait for a better chance.",
+          "text": "Retreat to Kabul for now. The Sultan's army is far bigger than yours, and one lost battle here could destroy your army and your dream of India. Raid again later, when the odds are better.",
           "points": 0,
           "stability": -1,
           "set": ["retreated"],
@@ -74,14 +74,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Give a rousing speech, promise rewards, and stay to build an empire in India. Then beat the Rajputs with the same guns-and-carts tactics.",
+          "text": "Rally your men with a speech and rewards, then stay and beat the Rajputs with your guns.",
           "points": 5,
           "next": "akbar",
           "explanation": "That's what Babur did. He persuaded his men to stay and beat Rana Sanga's army at the Battle of Khanwa in 1527 using guns behind carts. Babur died in 1530; his son Humayun lost the empire in 1540 but regained it in 1555, and the dynasty lasted until 1857."
         },
         {
           "id": "b",
-          "text": "Take the treasure and go home to Kabul.",
+          "text": "Take the treasure and go home to Kabul. Your soldiers are homesick and miserable in the heat, and a rich army at home beats a shaky throne in India.",
           "points": 0,
           "stability": -1,
           "set": ["went_home"],
@@ -90,7 +90,7 @@
         },
         {
           "id": "c",
-          "text": "Stay, but try to buy off the Rajputs with gold instead of fighting.",
+          "text": "Stay in India, but avoid a risky battle with Rana Sanga. Send gold and gifts to the Rajput kings to break up their alliance and buy peace, and save your soldiers for later wars.",
           "points": 2,
           "next": "akbar",
           "explanation": "Friendship with the Rajputs would matter a lot later, but in 1527 Rana Sanga wanted to drive Babur out entirely. Babur defeated him at the Battle of Khanwa that year."
@@ -115,7 +115,7 @@
         },
         {
           "id": "b",
-          "text": "Make a deal: give the Rajputs half your new lands if they leave you alone.",
+          "text": "Make a deal: give the Rajputs half your new lands if they leave you alone. Your frightened soldiers may not stand against warriors who never retreat, and half an empire is better than none.",
           "points": 1,
           "next": "humayun",
           "explanation": "Giving away half your conquest so early would signal weakness and invite more attacks. Babur instead fought and won at Khanwa in 1527."
@@ -152,7 +152,7 @@
         },
         {
           "id": "c",
-          "text": "Hide in the deserts of Sindh and raid Sher Shah's lands.",
+          "text": "Hide in the deserts of Sindh with your loyal followers and raid Sher Shah's lands. Quick raids keep your name alive and wear him down until people are ready to welcome you back.",
           "points": 1,
           "next": "akbar",
           "explanation": "Raiding could keep your name alive, but not win back an empire. Humayun eventually got real help from Persia's Shah Tahmasp and retook Delhi in 1555."
@@ -170,7 +170,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Build alliances with Rajput kings: marry into their families, give them high ranks in your army, and abolish the jizya on Hindus.",
+          "text": "Most of your subjects are Hindus, so make the Rajput kings your partners: marry into their families, give them high ranks as generals and governors, and abolish the jizya.",
           "points": 5,
           "set": ["tolerance"],
           "next": "ibadat",
@@ -178,7 +178,7 @@
         },
         {
           "id": "b",
-          "text": "Conquer the Rajputs by force and keep collecting the jizya.",
+          "text": "Conquer the Rajputs by force and keep collecting the jizya, as your Muslim nobles expect. Proud kings must learn to obey.",
           "points": 2,
           "next": "chittor",
           "explanation": "Force alone was costly. Akbar did besiege Rajput forts that refused his alliances, but his main strategy was partnership, including abolishing the jizya in 1564. That turned rivals into loyal commanders."
@@ -200,7 +200,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Hold open debates among all faiths, and promote a policy of 'peace with all' (sulh-i kul) that treats every religion with respect.",
+          "text": "Open the debates to all faiths and promote 'peace with all' (sulh-i kul).",
           "points": 5,
           "set": ["sulh"],
           "next": "mansabdar",
@@ -208,14 +208,14 @@
         },
         {
           "id": "b",
-          "text": "Create a brand-new religion that combines all faiths, and order everyone to join it.",
+          "text": "Blend the best ideas of every faith into one new religion, make yourself its guide, and order all your subjects to join it so the whole empire shares one belief.",
           "points": 1,
           "next": "mansabdar",
           "explanation": "Too far. Akbar's small spiritual circle, Din-i Ilahi, was only for a few loyal nobles and faded after he died. Forcing everyone to join would have angered Muslims and Hindus alike."
         },
         {
           "id": "c",
-          "text": "Close the hall. Only Sunni scholars should advise the emperor.",
+          "text": "Close the hall. The debates are stirring up controversy, and only Sunni scholars should advise the emperor on matters of faith.",
           "points": 2,
           "next": "mansabdar",
           "explanation": "That would please some strict scholars but alienate the Hindu and Shia nobles your empire depended on. Akbar instead opened the debates to every faith and promoted \"peace with all.\""
@@ -229,7 +229,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Take the fort, then offer every other Rajput king a generous alliance: high rank, marriage ties, and an end to the jizya.",
+          "text": "Take the fort, then offer every other Rajput king a generous alliance: high rank in your army, marriage ties to your family, and an end to the jizya.",
           "points": 5,
           "set": ["tolerance"],
           "next": "mansabdar",
@@ -244,7 +244,7 @@
         },
         {
           "id": "c",
-          "text": "Give up the siege and avoid the Rajputs entirely.",
+          "text": "Give up the siege and leave the Rajputs alone. They are famous for fighting to the last, and every month here drains men and money.",
           "points": 0,
           "stability": -1,
           "next": "mansabdar",
@@ -263,21 +263,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Give nobles, Muslim and Hindu alike, official ranks called mansabs. Pay them with land-tax rights that move every few years, and use Todar Mal's survey to set fair taxes.",
+          "text": "Give Muslim and Hindu nobles ranks called mansabs, pay them with land-tax rights that move every few years, and set fair taxes with Todar Mal's survey.",
           "points": 5,
           "next": "taj",
           "explanation": "This is Akbar's real system. Mansabdars supplied soldiers and were paid from land taxes they could not keep forever, so no noble could build a private kingdom. Local landholders called zamindars collected the taxes, based on Todar Mal's careful surveys."
         },
         {
           "id": "b",
-          "text": "Give each noble a permanent family estate to rule however he likes.",
+          "text": "Give each noble a permanent family estate to rule as he sees fit.",
           "points": 1,
           "next": "taj",
           "explanation": "Permanent estates would let nobles build private power bases and someday challenge you. Akbar made sure mansabdars were moved around and could not pass their land rights to their sons."
         },
         {
           "id": "c",
-          "text": "Set one high tax on every farm, whether the harvest is good or bad.",
+          "text": "Set one high tax on every farm, whether the harvest is good or bad. A single fixed rate is simple to collect, hard to cheat, and gives the treasury the same income every year.",
           "points": 0,
           "stability": -1,
           "next": "taj",
@@ -293,21 +293,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Build a magnificent white marble tomb, the Taj Mahal, and a grand new capital at Delhi, while keeping the empire's finances in order.",
+          "text": "Build the Taj Mahal and a new capital at Delhi, and keep your finances in order.",
           "points": 5,
           "next": "aurangzeb",
           "explanation": "Monuments like these showed the power and legitimacy of Mughal rule. Shah Jahan built the Taj Mahal (about 1632–1653), which blends Persian, Islamic, and Indian styles, plus a new capital at Delhi with the Red Fort and the jeweled Peacock Throne."
         },
         {
           "id": "b",
-          "text": "Skip the buildings and spend the money conquering Central Asia.",
+          "text": "Skip the buildings and spend the money conquering Central Asia, your ancestors' homeland. Winning it would bring more glory than any tomb.",
           "points": 1,
           "next": "aurangzeb",
           "explanation": "Shah Jahan did try this in 1646–1647: his armies took the city of Balkh in 1646 but had to withdraw in 1647 after huge expenses. The Taj Mahal, which he also built, proved a far better investment in Mughal prestige."
         },
         {
           "id": "c",
-          "text": "Save all the money. Big buildings are a waste.",
+          "text": "Save all the money. Grand buildings cost a fortune, and even with a full treasury, a wise ruler keeps reserves for wars, famines, and hard times ahead.",
           "points": 2,
           "next": "aurangzeb",
           "explanation": "Saving is sensible, but monuments helped legitimize rule by showing power, faith, and wealth. Shah Jahan's Taj Mahal (about 1632–1653) still symbolizes the Mughal golden age."
@@ -327,14 +327,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep Akbar's tolerant policies: no jizya, no temple destruction, and respect for all faiths.",
+          "text": "Keep Akbar's tolerant policies: no jizya, no temple destruction, and respect for all faiths. With the Marathas and Sikhs on the rise, you need your Hindu allies loyal.",
           "points": 5,
           "next": "deccan",
           "explanation": "This would have kept your Hindu allies loyal. Instead, Aurangzeb brought back the jizya in 1679 and destroyed some Hindu temples, which angered Rajputs, Marathas, and Sikhs and fueled revolts that weakened the empire."
         },
         {
           "id": "b",
-          "text": "Bring back the jizya and enforce strict Islamic law across the empire.",
+          "text": "Bring back the jizya and enforce strict Islamic law across the empire. You are a devout ruler, and your religious advisers say it is your duty.",
           "points": 0,
           "stability": -1,
           "next": "revolts",
@@ -342,7 +342,7 @@
         },
         {
           "id": "c",
-          "text": "Live by strict Islamic rules in your own court, but don't tax or punish non-Muslims for their faith.",
+          "text": "Live by strict Islamic rules at court, but don't tax or punish non-Muslims for their faith.",
           "points": 3,
           "next": "deccan",
           "explanation": "A workable middle path: a ruler could be personally devout without alienating his subjects. Aurangzeb instead brought back the jizya in 1679, and resentment helped fuel the revolts that weakened Mughal rule."
@@ -356,7 +356,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Make peace: let Maratha leaders rule their lands as your allies, paying tribute and sending you soldiers.",
+          "text": "Make peace: let Maratha leaders rule their lands as your allies, paying tribute and sending you soldiers. Chasing raiders through the hills has cost enough.",
           "points": 5,
           "next": "end",
           "explanation": "A realistic choice that would have saved men and money. Instead, Aurangzeb spent his last 26 years fighting in the Deccan; the endless war emptied the treasury, and after his death in 1707 the empire began to break apart."
@@ -371,7 +371,7 @@
         },
         {
           "id": "c",
-          "text": "Pull your armies back and defend only the north.",
+          "text": "Pull your armies back and defend only the north. The Deccan war is swallowing men and money, and the rich northern heartland matters most.",
           "points": 2,
           "next": "end",
           "explanation": "Safer than endless war, but giving up the south without a deal could encourage other rebels. Aurangzeb chose to fight on until his death in 1707, a costly decision that weakened the empire."
@@ -385,14 +385,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Cancel the jizya, stop destroying temples, and negotiate with the rebel leaders.",
+          "text": "Cancel the jizya, stop destroying temples, and negotiate with the rebels.",
           "points": 4,
           "next": "end",
           "explanation": "Returning to Akbar's approach would have calmed many rebels. Aurangzeb never changed course, and after his death in 1707 the empire weakened quickly; in 1739 the Persian ruler Nader Shah sacked Delhi."
         },
         {
           "id": "b",
-          "text": "Crush every rebellion with force, no matter the cost.",
+          "text": "Crush every rebellion with force, no matter the cost: march against the Marathas, the Rajputs, the Sikhs, and the Jat farmers, one after another.",
           "points": 0,
           "stability": -1,
           "next": "end",
@@ -400,7 +400,7 @@
         },
         {
           "id": "c",
-          "text": "Hand large regions over to governors and let them deal with the rebels.",
+          "text": "Hand large regions over to governors and let them deal with the rebels, so your own armies can focus on the biggest threats.",
           "points": 2,
           "next": "end",
           "explanation": "This might keep some peace, but it lets governors become nearly independent rulers. That is exactly what happened after 1707, when provinces like Bengal and Hyderabad broke away."
