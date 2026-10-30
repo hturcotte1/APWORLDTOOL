@@ -157,6 +157,7 @@ for (const id of order) {
 
   // walk every reachable state: exactly 3 options showing, unique best answer
   const stateIssues = new Set();
+  const optionSets = new Map(); // every distinct set of options a student can see
   const visitStates = (state, depth) => {
     if (state.ending) return;
     if (depth > 30) { stateIssues.add('path too deep (loop?)'); return; }
@@ -165,11 +166,28 @@ for (const id of order) {
     if (opts.length !== rules.optionsPerNode) stateIssues.add(`node "${state.nodeId}" shows ${opts.length} options when flags = [${state.flags.join(', ')}] (must be ${rules.optionsPerNode})`);
     const top = Math.max(...opts.map((o) => o.points));
     if (opts.filter((o) => o.points === top).length > 1) stateIssues.add(`node "${state.nodeId}" has a tie for the best option when flags = [${state.flags.join(', ')}]`);
+    optionSets.set(`${state.nodeId}:${opts.map((o) => o.id).join(',')}`, opts);
     for (const o of opts) visitStates(applyChoice(e, rules, state, o.id), depth + 1);
   };
   visitStates(startState(e, rules), 0);
   stateIssues.forEach((m) => err(W, m));
   if (stateIssues.size) continue;
+
+  // option length must not give away the best answer (students notice "longest = best")
+  const sets = [...optionSets.values()];
+  let bestLongest = 0, bestShortest = 0, bestLen = 0, avgLen = 0;
+  for (const opts of sets) {
+    const byLen = [...opts].sort((a, b) => b.text.length - a.text.length);
+    const best = opts.reduce((a, b) => (b.points > a.points ? b : a));
+    if (byLen[0] === best) bestLongest++;
+    if (byLen.at(-1) === best) bestShortest++;
+    bestLen += best.text.length;
+    avgLen += opts.reduce((a, o) => a + o.text.length, 0) / opts.length;
+  }
+  const share = (x) => x / sets.length;
+  if (share(bestLongest) > 0.45) err(W, `the best option is also the longest on ${Math.round(100 * share(bestLongest))}% of decision screens (max 45%): vary option lengths so length doesn't give away the answer`);
+  if (share(bestShortest) < 0.2) err(W, `the best option is the shortest on only ${Math.round(100 * share(bestShortest))}% of decision screens (min 20%): vary option lengths so length doesn't give away the answer`);
+  if (bestLen / avgLen > 1.2 || bestLen / avgLen < 0.8) err(W, `best options average ${(bestLen / avgLen).toFixed(2)}x the length of a typical option (must be 0.8-1.2)`);
 
   const milestones = ids.filter((nid) => nodes[nid].milestone);
   let survived = 0, collapsed = 0, minLen = Infinity, maxLen = 0, maxPts = -Infinity, minPts = Infinity;
@@ -201,16 +219,16 @@ for (const id of order) {
     if (!variants.some((v) => allText.includes(v))) warn(W, `glossary term "${g.term}" never appears in the story`);
   }
 
-  summary.push({ id, tier: e.tier, nodes: ids.length, milestones: milestones.length, survived, collapsed, len: `${minLen}-${maxLen}`, minPts, maxPts, instantCollapses });
+  summary.push({ id, tier: e.tier, nodes: ids.length, milestones: milestones.length, survived, collapsed, len: `${minLen}-${maxLen}`, minPts, maxPts, instantCollapses, bestLongest: `${Math.round(100 * share(bestLongest))}%` });
 }
 
 // ---------- report ----------
 console.log('\nContent validation');
 console.log('==================');
 if (summary.length) {
-  console.log('empire     tier    nodes  turning-pts  full-paths  collapse-paths  path-length  score-range  instant-collapses');
+  console.log('empire     tier    nodes  turning-pts  full-paths  collapse-paths  path-length  score-range  instant-collapses  best-is-longest');
   for (const s of summary) {
-    console.log(`${s.id.padEnd(10)} ${s.tier.padEnd(7)} ${String(s.nodes).padStart(5)}  ${String(s.milestones).padStart(11)}  ${String(s.survived).padStart(10)}  ${String(s.collapsed).padStart(14)}  ${s.len.padStart(11)}  ${`${s.minPts} to ${s.maxPts}`.padStart(11)}  ${String(s.instantCollapses).padStart(17)}`);
+    console.log(`${s.id.padEnd(10)} ${s.tier.padEnd(7)} ${String(s.nodes).padStart(5)}  ${String(s.milestones).padStart(11)}  ${String(s.survived).padStart(10)}  ${String(s.collapsed).padStart(14)}  ${s.len.padStart(11)}  ${`${s.minPts} to ${s.maxPts}`.padStart(11)}  ${String(s.instantCollapses).padStart(17)}  ${s.bestLongest.padStart(15)}`);
   }
 }
 if (warnings.length) {
@@ -224,4 +242,5 @@ if (errors.length) {
   process.exit(1);
 }
 console.log('\nAll checks passed: no dead ends, no broken links, every path reaches an ending,');
-console.log(`full paths are ${rules.pathLength.min}-${rules.pathLength.max} decisions, and points match the tier rules.`);
+console.log(`full paths are ${rules.pathLength.min}-${rules.pathLength.max} decisions, points match the tier rules, and option length`);
+console.log("doesn't give away the best answer.");

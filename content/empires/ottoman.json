@@ -43,7 +43,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Hire Orban, cast giant bronze cannons, and attack the city by land and sea at the same time.",
+          "text": "Hire Orban, cast giant cannons, and attack by land and sea at once.",
           "points": 6,
           "set": ["cannons"],
           "next": "istanbul",
@@ -51,14 +51,14 @@
         },
         {
           "id": "b",
-          "text": "Surround the city and wait for it to starve. No need to risk an attack.",
+          "text": "Surround the city, cut off its food, and wait for it to starve. Those walls have stopped attackers for centuries, so why waste your soldiers when hunger can do the work?",
           "points": 2,
           "next": "walls",
           "explanation": "Patient, but slow. A blockade alone could take years, because Venetian and Genoese ships could slip in supplies by sea. Mehmed won quickly in 1453 by combining a blockade with massive cannon fire and a final assault."
         },
         {
           "id": "c",
-          "text": "Leave the city alone and conquer easier lands in Anatolia instead.",
+          "text": "Leave the city alone for now and conquer easier lands in Anatolia, where your army can win quick, cheap victories.",
           "points": -1,
           "stability": -1,
           "next": "walls",
@@ -73,7 +73,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Build Orban's giant cannons now and launch a combined attack by land and sea.",
+          "text": "Build Orban's giant cannons now and attack by land and sea at once. The Pope is calling for a crusade, so every month you wait makes the city harder to take.",
           "points": 4,
           "set": ["cannons", "late_conquest"],
           "next": "chaldiran",
@@ -89,7 +89,7 @@
         },
         {
           "id": "c",
-          "text": "Offer the Byzantine emperor safe passage if he surrenders the city peacefully.",
+          "text": "Offer the Byzantine emperor safe passage if he surrenders the city peacefully, and spare your army a costly fight.",
           "points": 2,
           "set": ["late_conquest"],
           "next": "chaldiran",
@@ -104,7 +104,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Let each religious community run its own affairs under its own leaders, as long as they stay loyal and pay the jizya tax. Bring people of all faiths to resettle the city.",
+          "text": "Let each faith run its own affairs under its own leaders in return for loyalty and the jizya tax, and bring people of all faiths to resettle the city.",
           "points": 6,
           "set": ["millet"],
           "next": "chaldiran",
@@ -112,7 +112,7 @@
         },
         {
           "id": "b",
-          "text": "Order every Christian and Jew to convert to Islam or leave.",
+          "text": "Order every Christian and Jew to convert to Islam or leave, so your capital shares your faith.",
           "points": -1,
           "stability": -1,
           "set": ["harsh"],
@@ -121,7 +121,7 @@
         },
         {
           "id": "c",
-          "text": "Fill the city only with Muslim Turkish settlers and push non-Muslims out to the countryside.",
+          "text": "Fill the city only with Muslim Turkish settlers and push non-Muslims out to the countryside. A capital full of fellow Muslims would be loyal to you and far easier to defend against a crusade.",
           "points": 1,
           "set": ["harsh"],
           "next": "chaldiran",
@@ -143,7 +143,7 @@
         {
           "id": "a",
           "if": "cannons",
-          "text": "March east and fight with your musket-armed janissaries and cannons chained together behind a wall of wagons.",
+          "text": "March east and meet Ismail in battle, with your musket-armed janissaries and your cannons chained together behind a wall of wagons to stop his cavalry.",
           "points": 6,
           "next": "egypt",
           "explanation": "A crushing victory—this is exactly what happened at the Battle of Chaldiran in 1514. Ottoman guns tore apart the Qizilbash cavalry, and Selim briefly captured the Safavid capital, Tabriz. The battle stopped Safavid expansion into Ottoman lands and locked the two empires into a long Sunni–Shia rivalry."
@@ -165,7 +165,7 @@
         },
         {
           "id": "c",
-          "text": "Propose an alliance with Shah Ismail against the Christian kingdoms of Europe.",
+          "text": "Propose an alliance with Shah Ismail against Europe's Christian kingdoms, so fellow Muslim rulers stop wasting their armies on each other.",
           "points": -1,
           "stability": -1,
           "next": "anatolia",
@@ -188,14 +188,14 @@
         },
         {
           "id": "b",
-          "text": "Sign a friendship treaty with the Mamluks and trade with them.",
+          "text": "Sign a friendship treaty with the Mamluks and trade with them. Egypt's grain and wealth can reach your markets through trade, without the cost of another war.",
           "points": 1,
           "next": "vienna",
           "explanation": "Peaceful, but you would miss a huge prize. Egypt's grain and taxes, plus guardianship of the holy cities, made the Ottomans the leading Sunni power. Selim conquered the Mamluks in 1516–1517."
         },
         {
           "id": "c",
-          "text": "Skip Egypt and attack Hungary in Europe right away.",
+          "text": "Skip Egypt and attack Hungary in Europe right away, while your army is battle-ready from beating the Safavids.",
           "points": 2,
           "next": "vienna",
           "explanation": "Europe would come later. Selim secured the Middle East first by conquering Syria and Egypt in 1516–1517, and his son Suleiman then crushed Hungary at the Battle of Mohács in 1526."
@@ -209,21 +209,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Launch a new campaign east with your best janissaries and cannons, and win back the border.",
+          "text": "Send your best janissaries and cannons east to win back the border.",
           "points": 5,
           "next": "vienna",
           "explanation": "Strong recovery. Ottoman firepower was far superior to Safavid cavalry in open battle. Historically, Selim won this showdown at Chaldiran in 1514 and secured eastern Anatolia."
         },
         {
           "id": "b",
-          "text": "Hunt down and punish anyone suspected of supporting the Shah.",
+          "text": "Hunt down and punish anyone suspected of supporting the Shah. Make examples of the ringleaders so the Turkmen tribes learn that following Ismail will cost them everything.",
           "points": 2,
           "next": "vienna",
           "explanation": "Harsh and only partly effective. Selim really did persecute suspected Safavid supporters, but repression alone couldn't stop Ismail. What settled the matter was Selim's victory at Chaldiran in 1514."
         },
         {
           "id": "c",
-          "text": "Ignore the east. It's too far away to matter.",
+          "text": "Ignore the east. It is far from Istanbul, and a few rebel villages cannot topple an empire.",
           "points": -1,
           "next": "vienna",
           "explanation": "Dangerous. A rival empire winning over your own subjects is a direct threat to your throne. Selim took it seriously and crushed the Safavids at Chaldiran in 1514."
@@ -241,14 +241,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Pull back before winter, keep Hungary as a buffer under a friendly local king, and build an alliance with France, the Habsburgs' enemy.",
+          "text": "Pull back before winter, keep Hungary as a buffer under a friendly local king, and ally with France against the Habsburgs.",
           "points": 6,
           "next": "lawgiver",
           "explanation": "Smart and realistic. Suleiman lifted the siege in October 1529 because winter and supply problems made victory impossible, and he left most of Hungary under a friendly vassal king, John Zápolya, while the Habsburgs held the rest. He later allied with France (1536) to pressure the Habsburgs."
         },
         {
           "id": "b",
-          "text": "Dig in and keep the siege going all winter, no matter the cost.",
+          "text": "Dig in and keep the siege going all winter, whatever it costs. Your army has marched hundreds of miles to get here, and if you retreat now, the Habsburgs will call it a victory.",
           "points": -1,
           "stability": -1,
           "next": "overstretched",
@@ -256,7 +256,7 @@
         },
         {
           "id": "c",
-          "text": "Retreat, then turn to the sea: build a powerful navy to rule the Mediterranean.",
+          "text": "Retreat, then build a powerful navy to rule the Mediterranean.",
           "points": 4,
           "next": "navy",
           "explanation": "A good long-term idea. Suleiman did build a strong navy under the admiral Hayreddin Barbarossa, which won the Battle of Preveza in 1538 and dominated much of the Mediterranean. He also had to govern the huge empire he had built, which is why Turks later nicknamed him Kanuni, \"the Lawgiver.\""
@@ -274,7 +274,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Issue clear law codes (kanun) that work alongside Islamic law, promote officials for talent, and have the architect Sinan build magnificent mosques.",
+          "text": "Issue kanun law codes alongside Islamic law, promote officials for talent, and have the architect Sinan build great mosques.",
           "points": 6,
           "set": ["kanun"],
           "next": "janissaries",
@@ -282,14 +282,14 @@
         },
         {
           "id": "b",
-          "text": "Let each provincial governor make his own rules, as long as the taxes arrive.",
+          "text": "Let each provincial governor make his own rules, as long as the taxes arrive. Governors know their regions far better than officials in Istanbul, and the empire is too vast to run from one palace.",
           "points": 1,
           "next": "janissaries",
           "explanation": "Cheap but dangerous, because governors with their own rules can become rival powers. Suleiman did the opposite, issuing empire-wide law codes and sending trained officials to govern."
         },
         {
           "id": "c",
-          "text": "Spend everything on more wars. Laws and buildings can wait.",
+          "text": "Spend everything on more wars. Every conquest brings in new land and taxes, and laws and buildings can wait until the fighting is done.",
           "points": -1,
           "next": "janissaries",
           "explanation": "Wars without good government drain the treasury and anger the people who pay for them. Suleiman fought many wars, but he also invested in laws, officials, and monuments like the Süleymaniye Mosque that legitimized his rule."
@@ -303,7 +303,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Make peace with the Safavids so you can focus on Europe.",
+          "text": "Make peace with the Safavids. You cannot afford two wars at once, so put your soldiers and your shrinking treasury into the fight in Europe.",
           "points": 5,
           "next": "janissaries",
           "explanation": "Wise. Fighting two great rivals at once is how empires break. Suleiman eventually signed the Peace of Amasya with the Safavids in 1555, which settled the border for decades."
@@ -318,7 +318,7 @@
         },
         {
           "id": "c",
-          "text": "Raise taxes sharply on peasants to pay for the armies.",
+          "text": "Raise taxes sharply on peasants to pay for the armies and clear the soldiers' late pay.",
           "points": 1,
           "next": "janissaries",
           "explanation": "Short-term cash, long-term anger. Heavy taxes, along with war, drought, and unpaid soldiers, helped spark the Celali revolts around 1600. Peace on one front, as with the Safavids in 1555, was a better way to save money."
@@ -339,14 +339,14 @@
         },
         {
           "id": "b",
-          "text": "Give up on the sea and focus only on land.",
+          "text": "Give up on the sea and focus only on land. Fleets are costly and can be lost in a single battle, as Lepanto just showed, but land you conquer stays yours.",
           "points": 1,
           "next": "janissaries",
           "explanation": "That would hand the Mediterranean to Spain and Venice and leave your coasts and trade unprotected. The Ottomans instead rebuilt their fleet within a year and kept Cyprus in the 1573 peace."
         },
         {
           "id": "c",
-          "text": "Spend everything on revenge: invade Spain itself.",
+          "text": "Spend everything on revenge and launch an invasion of Spain itself.",
           "points": -1,
           "next": "janissaries",
           "explanation": "Far too ambitious. Spain was across the entire Mediterranean, and a revenge invasion would have bankrupted you. The Ottomans rebuilt their fleet and made peace with Venice in 1573."
@@ -364,14 +364,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Give real power to a capable grand vizier who can punish corruption, fix the finances, and restore discipline.",
+          "text": "Give real power to a capable grand vizier and back him fully as he punishes corruption, fixes the finances, and restores discipline in the army.",
           "points": 6,
           "next": "vienna1683",
           "explanation": "This is what worked. Starting in 1656, the Köprülü family of grand viziers restored order, crushed revolts, and even won new territory. Strong ministers kept the empire powerful even under weak sultans."
         },
         {
           "id": "b",
-          "text": "Abolish the janissaries overnight and build a brand-new army.",
+          "text": "Abolish the janissaries overnight and build a new army loyal only to you.",
           "points": -1,
           "stability": -1,
           "next": "karlowitz",
@@ -400,14 +400,14 @@
         },
         {
           "id": "b",
-          "text": "March on Vienna with the biggest army possible, just as Kara Mustafa wants.",
+          "text": "March on Vienna with the biggest army possible, just as Kara Mustafa wants. The army is strong again, and taking the city that Suleiman could not would make your reign legendary.",
           "points": -1,
           "next": "end",
           "explanation": "This is what really happened, and it went badly. A relief army led by King Jan Sobieski of Poland crushed the Ottomans outside Vienna in 1683, and a Holy League pushed them out of most of Hungary. The Treaty of Karlowitz (1699) was the first time the Ottomans permanently gave up large territories to European powers."
         },
         {
           "id": "c",
-          "text": "Attack Vienna, but move fast, bring your heaviest cannons, and guard against a relief army.",
+          "text": "Attack Vienna quickly with your heaviest cannons, and guard against a relief army.",
           "points": 2,
           "next": "end",
           "explanation": "Better planned, but still a gamble. In 1683 the siege dragged on for two months, giving Europe time to send a relief army. The defeat led to the loss of most of Hungary in the Treaty of Karlowitz (1699)."
@@ -428,7 +428,7 @@
         },
         {
           "id": "b",
-          "text": "Refuse the treaty and keep fighting every enemy at once.",
+          "text": "Refuse the treaty, raise fresh troops, and keep fighting every enemy at once until one great victory turns the war around, rather than give up Hungary for good.",
           "points": -1,
           "collapse": {
             "year": 1702,
@@ -438,7 +438,7 @@
         },
         {
           "id": "c",
-          "text": "Sign the treaty, but blame and execute your generals instead of changing anything.",
+          "text": "Sign the treaty, but execute the generals who lost as a warning to the others, instead of changing anything about how the army fights.",
           "points": 1,
           "next": "end",
           "explanation": "Blaming individuals doesn't fix an army that is falling behind. The Ottomans signed the treaty in 1699, and later reformers argued that the empire had to learn from Europe, leading to experiments like the first Ottoman Turkish printing press in the late 1720s."

@@ -49,7 +49,7 @@
         },
         {
           "id": "b",
-          "text": "Take Timbuktu and punish the scholars who were friendly with the Tuareg.",
+          "text": "Take Timbuktu and punish the scholars you suspect of siding with the Tuareg.",
           "points": -2,
           "stability": -1,
           "set": ["punished"],
@@ -58,7 +58,7 @@
         },
         {
           "id": "c",
-          "text": "Leave Timbuktu to the Tuareg. Desert trade cities are hard to hold.",
+          "text": "Leave Timbuktu to the Tuareg. Desert trade cities are hard to hold, and your army is better used winning lands closer to home in Gao.",
           "points": 1,
           "set": ["skipped"],
           "next": "scholars",
@@ -73,21 +73,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Use your river fleet to surround the city, cut off its supplies, and wait it out.",
+          "text": "Surround the city with your river fleet, cut off its supplies, and wait.",
           "points": 8,
           "next": "askia",
           "explanation": "That's what Sonni Ali did. Jenne surrendered around 1473 after a very long siege, and Songhai gained a key trading city. With Gao, Timbuktu, and Jenne, Songhai controlled the trade of the Niger River."
         },
         {
           "id": "b",
-          "text": "Storm the walls with your cavalry right away.",
+          "text": "Storm the walls with your cavalry right away, before Jenne's defenders can prepare, since the horsemen who won you an empire can surely take one city.",
           "points": -2,
           "next": "askia",
           "explanation": "Horses can't charge across a flooded plain or climb city walls. Sonni Ali used his river fleet to besiege Jenne until it surrendered around 1473."
         },
         {
           "id": "c",
-          "text": "Make Jenne pay you tribute, but leave it independent.",
+          "text": "Make Jenne pay you tribute every year, but leave the city independent and spare your army a long fight.",
           "points": 3,
           "next": "askia",
           "explanation": "Tribute brings in gold, but an independent Jenne could switch sides later. Sonni Ali took the city around 1473 and made it part of Songhai."
@@ -105,7 +105,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Make peace with the scholars: invite them back, protect their schools, and respect Islamic law in the cities.",
+          "text": "Make peace with the scholars: invite them back, protect their schools, and respect Islamic law in the cities. The Muslim merchants who run your caravans will trust you more if the scholars do.",
           "points": 6,
           "set": ["protected"],
           "next": "askia",
@@ -113,7 +113,7 @@
         },
         {
           "id": "b",
-          "text": "Crack down harder on anyone who criticizes you.",
+          "text": "Crack down harder on anyone who criticizes you, so no one dares turn the merchants against you.",
           "points": -3,
           "stability": -1,
           "next": "askia",
@@ -154,7 +154,7 @@
         },
         {
           "id": "c",
-          "text": "Rely on your army alone to keep you in power.",
+          "text": "Rely on your army alone to keep you in power, since it was the army that won you the throne.",
           "points": 2,
           "next": "rebels",
           "explanation": "An army can seize a throne, but keeping it requires legitimacy. Askia Muhammad built his on Islam, the hajj, and the support of Timbuktu's scholars."
@@ -168,7 +168,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Divide the empire into provinces run by governors you appoint, create a full-time professional army, and set standard weights and measures for markets.",
+          "text": "Appoint provincial governors, build a full-time army, and standardize weights and measures.",
           "points": 8,
           "set": ["organized"],
           "next": "daoud",
@@ -176,14 +176,14 @@
         },
         {
           "id": "b",
-          "text": "Let local chiefs rule however they want, as long as they send tribute.",
+          "text": "Let local chiefs rule however they want, as long as they send tribute. They know their own peoples and customs, and letting them keep their power means fewer revolts across such a huge empire.",
           "points": 1,
           "next": "daoud",
           "explanation": "Cheap, but loose control lets chiefs break away. Askia Muhammad appointed his own governors and built a professional army to hold the empire together."
         },
         {
           "id": "c",
-          "text": "Spend your treasure on constant new wars of conquest.",
+          "text": "Spend your treasure on constant new wars of conquest, sending the army out year after year to bring back more land and tribute.",
           "points": -2,
           "next": "daoud",
           "explanation": "Askia Muhammad did wage wars, including against the Mossi, but he paired them with strong government. Endless war without organization would drain your treasury and army."
@@ -197,21 +197,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Win over the scholars and merchants by supporting Islam and making the hajj to Mecca.",
+          "text": "Win over scholars and merchants by supporting Islam and making the hajj to Mecca.",
           "points": 6,
           "next": "daoud",
           "explanation": "A good recovery, and what Askia Muhammad actually did. His hajj in 1496–1497 and his support for Timbuktu's scholars gave his rule religious legitimacy."
         },
         {
           "id": "b",
-          "text": "Execute anyone who might be a rival.",
+          "text": "Execute anyone who might be a rival, starting with Sonni Ali's relatives. A usurper cannot afford to leave rivals alive, and fear will keep the provinces in line.",
           "points": -2,
           "next": "daoud",
           "explanation": "Fear breeds more plots. Askia Muhammad built his legitimacy on Islam and good government instead, and Songhai prospered under him."
         },
         {
           "id": "c",
-          "text": "Appoint loyal governors and build a professional army.",
+          "text": "Appoint loyal governors and build a professional army, so the provinces have no choice but to send tribute.",
           "points": 3,
           "set": ["organized"],
           "next": "daoud",
@@ -230,7 +230,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Strengthen the army and the northern defenses, and try to buy guns and hire gunners through North African traders.",
+          "text": "Strengthen the army and the northern defenses, and try to buy guns and hire gunners through North African traders. Morocco's soldiers are trained with guns, so yours need them too.",
           "points": 8,
           "set": ["guns"],
           "next": "succession",
@@ -238,7 +238,7 @@
         },
         {
           "id": "b",
-          "text": "Ignore Morocco. The Sahara is too wide for any army to cross.",
+          "text": "Ignore Morocco. The Sahara is too wide for any army to cross, and it has protected Songhai for generations.",
           "points": -3,
           "stability": -1,
           "next": "civil_war",
@@ -246,7 +246,7 @@
         },
         {
           "id": "c",
-          "text": "Let Morocco have Taghaza, and open new salt mines farther south, out of Morocco's reach.",
+          "text": "Let Morocco have Taghaza and open new salt mines farther south.",
           "points": 3,
           "next": "succession",
           "explanation": "Salt miners really did move to new mines farther south, at Taoudenni, after Morocco seized Taghaza in the 1580s. But giving ground didn't satisfy Morocco, which wanted Songhai's gold, not just its salt."
@@ -267,7 +267,7 @@
         },
         {
           "id": "b",
-          "text": "Let the princes fight it out. The strongest deserves the throne.",
+          "text": "Let the princes fight it out. The strongest prince deserves the throne, and a ruler who wins it by force will be tough enough to defend Songhai against any enemy.",
           "points": -3,
           "stability": -1,
           "next": "morocco",
@@ -275,7 +275,7 @@
         },
         {
           "id": "c",
-          "text": "Let the army's top general choose the new ruler.",
+          "text": "Let the army's top general choose the next askia.",
           "points": 2,
           "next": "morocco",
           "explanation": "That gives the army too much power and encourages future coups. Songhai's real problem was that rival princes kept fighting, as in the civil war of 1588."
@@ -289,14 +289,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Crush the rebellion quickly, then pardon the rebel soldiers and reunite everyone into one army.",
+          "text": "Crush the rebellion quickly, then pardon the rebel soldiers and reunite the army.",
           "points": 7,
           "next": "morocco",
           "explanation": "Ishaq II did defeat the rebels in 1588, but the fighting cost many soldiers and left bitterness. Pardoning and reuniting the army would have left Songhai stronger for the Moroccan invasion."
         },
         {
           "id": "b",
-          "text": "Execute every rebel soldier as a lesson.",
+          "text": "Execute every rebel soldier as a lesson. If traitors are forgiven, every ambitious prince in Songhai will raise his own army, believing he has nothing to lose.",
           "points": -2,
           "next": "morocco",
           "explanation": "Killing your own soldiers weakens your army just when you need it most. The civil war of 1588 had already cost Songhai dearly before Morocco attacked."
@@ -321,21 +321,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Strike first: send riders to fill in or block the desert wells on the Moroccans' route, and harass them as they cross.",
+          "text": "Strike first: block the desert wells on the Moroccans' route and harass them as they cross.",
           "points": 8,
           "next": "tondibi_ready",
           "explanation": "A smart plan that Songhai never carried out. Accounts say Askia Ishaq II either ignored advice to block the wells or acted too late, so the exhausted Moroccan army reached the Niger River in early 1591 with enough men to fight."
         },
         {
           "id": "b",
-          "text": "Wait for them at the Niger River. Your huge army will crush whoever survives the desert.",
+          "text": "Wait for them at the Niger River. The desert will kill many of them on the way, and your army is far larger, so it can crush whoever survives the crossing.",
           "points": -2,
           "next": "tondibi_weak",
           "explanation": "This is what Songhai did. The Moroccans lost many men crossing the desert, but the survivors still had their guns, and that was enough."
         },
         {
           "id": "c",
-          "text": "Send gifts and offer to pay Morocco a yearly tribute in gold.",
+          "text": "Send gifts and offer to pay Morocco a yearly tribute in gold, hoping al-Mansur will call off his army.",
           "points": 3,
           "next": "tondibi_weak",
           "explanation": "Diplomacy might have worked earlier, but al-Mansur's army was already on the march. Songhai ended up fighting at the Battle of Tondibi in 1591."
@@ -363,7 +363,7 @@
         },
         {
           "id": "c",
-          "text": "Offer to pay tribute in gold if the Moroccans leave Gao alone.",
+          "text": "Offer to pay tribute in gold if the Moroccans leave Gao alone, and save your army for later.",
           "points": 3,
           "next": "end",
           "explanation": "Askia Ishaq II actually offered tribute after the battle, but al-Mansur refused and kept the cities. Paying might buy time, but the Moroccans wanted control of the gold trade."
@@ -380,7 +380,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Avoid open battle: abandon Gao for now, retreat south, and attack the invaders' supply lines while disease and heat weaken them.",
+          "text": "Avoid open battle: abandon Gao for now, retreat south, and attack the invaders' supply lines.",
           "points": 6,
           "next": "end",
           "explanation": "Your best hope. Instead, Songhai fought an open battle at Tondibi in March 1591, and Moroccan guns won the day. Gao and Timbuktu fell, and the empire broke apart, though Songhai rulers kept resisting in the south for years."
@@ -394,7 +394,7 @@
         },
         {
           "id": "c",
-          "text": "Surrender Gao and offer tribute.",
+          "text": "Surrender Gao and offer the Moroccans tribute. Your soldiers have never faced guns, and paying in gold now may save the rest of the empire from a battle you cannot win.",
           "points": 1,
           "stability": -1,
           "next": "end",
