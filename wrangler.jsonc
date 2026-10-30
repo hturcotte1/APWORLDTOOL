@@ -8,7 +8,7 @@
     {
       "binding": "DB",
       "database_name": "rule-the-empire",
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "e17afeee-3a04-40d5-9424-d64ae970c03d",
       "migrations_dir": "migrations"
     }
   ],

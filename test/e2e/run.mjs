@@ -132,7 +132,9 @@ async function practiceCheck(page) {
 async function main() {
   if (!BASE) await startLocalServer();
   console.log(`Testing ${BASE}`);
-  const browser = await chromium.launch();
+  // A deployed site may need to go through the network proxy, if there is one.
+  const proxy = process.env.HTTPS_PROXY && !/^http:\/\/(127\.0\.0\.1|localhost)/.test(BASE) ? { server: process.env.HTTPS_PROXY } : undefined;
+  const browser = await chromium.launch({ proxy });
   const results = [];
   const created = [];
   let failures = 0;

@@ -109,6 +109,8 @@ async function main() {
   if (process.env.NEW_TEACHER_PASSWORD || !have.has('TEACHER_PASSWORD')) {
     const pw = process.env.NEW_TEACHER_PASSWORD || (generated = newPassword());
     sh('npx', ['wrangler', 'secret', 'put', 'TEACHER_PASSWORD'], { input: pw, quiet: true });
+    // Save it right away, so it isn't lost if a later step fails.
+    if (generated) writeFileSync(path.join(ROOT, '.teacher-password.txt'), `${generated}\n`);
     console.log('Teacher password set.');
   } else console.log('Teacher password already set (unchanged).');
   if (!have.has('GAME_SECRET')) {
@@ -125,7 +127,10 @@ async function main() {
     } catch { /* DNS for a brand-new subdomain can take a moment */ }
     if (!health) await new Promise((r) => setTimeout(r, 3000));
   }
-  if (!health) die(`The site did not answer at ${url} yet. New workers.dev addresses can take a few minutes; try again shortly.`);
+  if (!health) {
+    if (generated) console.log(`\n  Teacher password (saved to .teacher-password.txt, which is not committed):\n  ${generated}`);
+    die(`The site did not answer at ${url} yet. New workers.dev addresses can take a few minutes; try again shortly.`);
+  }
   console.log(`Site is up: ${health.empires.length} empires, teacher controls ${health.teacherEnabled ? 'enabled' : 'NOT enabled yet'}.`);
 
   // Put the real link into the docs (they ship with a placeholder).
@@ -138,7 +143,6 @@ async function main() {
   console.log(`\n✔ Deployed: ${url}`);
   console.log(`  Leaderboard for a projector: ${url}/#leaderboard`);
   if (generated) {
-    writeFileSync(path.join(ROOT, '.teacher-password.txt'), `${generated}\n`);
     console.log(`\n  Teacher password (shown once, also saved to .teacher-password.txt, which is not committed):\n  ${generated}`);
   }
 }

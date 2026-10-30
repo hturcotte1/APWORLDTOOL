@@ -38,7 +38,8 @@ async function newPlayer(page, name, period, empireId, shot = null) {
   await wait(page);
 }
 
-const browser = await chromium.launch();
+const proxy = process.env.HTTPS_PROXY && !/^http:\/\/(127\.0\.0\.1|localhost)/.test(BASE) ? { server: process.env.HTTPS_PROXY } : undefined;
+const browser = await chromium.launch({ proxy });
 const tag = Math.random().toString(36).replace(/[^a-z]/g, '').slice(0, 4);
 for (const [label, viewport, colorScheme] of [['desk', { width: 1366, height: 768 }, 'light'], ['phone', { width: 390, height: 844 }, 'light'], ['dark', { width: 1366, height: 768 }, 'dark']]) {
   const ctx = await browser.newContext({ viewport, colorScheme, deviceScaleFactor: label === 'phone' ? 2 : 1 });
