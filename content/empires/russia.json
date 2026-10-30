@@ -54,7 +54,7 @@
         },
         {
           "id": "b",
-          "text": "Pay the tribute. The Horde is still too strong.",
+          "text": "Pay the tribute. Russian princes have paid for over two centuries, and one more payment costs far less than a war. Grow stronger quietly, and stop paying once the Horde falls apart.",
           "points": 1,
           "next": "horde",
           "explanation": "Paying would keep Moscow a junior partner of the Mongols. Ivan III refused, the khan's army retreated from the Ugra in 1480, and Moscow became fully independent."
@@ -76,7 +76,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Adopt the double-headed eagle as your symbol, begin calling yourself tsar, and rebuild Moscow's Kremlin with grand cathedrals.",
+          "text": "Adopt the double-headed eagle, start calling yourself tsar, and rebuild the Kremlin with grand cathedrals.",
           "points": 6,
           "set": ["third_rome"],
           "next": "kazan",
@@ -84,7 +84,7 @@
         },
         {
           "id": "b",
-          "text": "Convert to Catholicism to win allies in Western Europe.",
+          "text": "Convert to Catholicism to win allies in Western Europe. The Pope and the Catholic kings could send money and soldiers to help Moscow stand up to the Tatars and its other enemies.",
           "points": -1,
           "stability": -1,
           "next": "kazan",
@@ -92,7 +92,7 @@
         },
         {
           "id": "c",
-          "text": "Keep your old title, Grand Prince, and avoid showy symbols.",
+          "text": "Keep your old title, Grand Prince, and avoid showy symbols. Grand claims could anger your neighbors, and your people already know who rules them.",
           "points": 2,
           "next": "kazan",
           "explanation": "Modest, but you'd miss a chance to boost your authority. Ivan III borrowed Byzantine symbols like the double-headed eagle and rebuilt the Kremlin to show Moscow's new importance."
@@ -106,7 +106,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Stop paying tribute and form an alliance with the Crimean khan against the Great Horde.",
+          "text": "Stop paying tribute and form an alliance with the Crimean khan, who hates the Great Horde as much as you do.",
           "points": 4,
           "next": "kazan",
           "explanation": "Smart diplomacy, and Ivan III really did ally with the Crimean Tatars. Moscow had already stopped paying regular tribute, and after the Great Stand on the Ugra River in 1480 it never paid again. The Crimeans destroyed the Great Horde in 1502."
@@ -120,7 +120,7 @@
         },
         {
           "id": "c",
-          "text": "Launch a winter raid deep into the steppe against the Horde's camps.",
+          "text": "Gather your best horsemen and launch a winter raid deep into the steppe against the Horde's camps, striking before its warriors can gather to defend them.",
           "points": -1,
           "next": "kazan",
           "explanation": "Steppe armies were hard to pin down, and a failed raid could cost your whole army. Ivan III used patience and diplomacy instead, including an alliance with the Crimean Tatars."
@@ -138,7 +138,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Besiege Kazan with cannons, explosive mines under the walls, and your new musketeers, then push down the Volga to Astrakhan.",
+          "text": "Besiege Kazan with cannons, explosive mines under the walls, and your new streltsy musketeers, then push down the Volga to Astrakhan.",
           "points": 6,
           "next": "siberia",
           "explanation": "That's what Ivan did: Kazan fell in 1552 and Astrakhan in 1556, giving Russia the whole Volga River down to the Caspian Sea. To celebrate, he built St. Basil's Cathedral in Moscow."
@@ -152,7 +152,7 @@
         },
         {
           "id": "c",
-          "text": "Ignore the east and fight Sweden and Poland for ports on the Baltic Sea instead.",
+          "text": "Ignore the east and fight Sweden and Poland for ports on the Baltic Sea, opening a direct sea route for trade with Europe.",
           "points": -1,
           "stability": -1,
           "next": "oprichnina",
@@ -167,7 +167,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Back the expedition: send guns and men, build forts along the rivers, and make Siberian peoples pay tribute in furs.",
+          "text": "Back Yermak with guns and men, build river forts, and make Siberian peoples pay tribute in furs.",
           "points": 6,
           "set": ["siberia"],
           "next": "troubles",
@@ -175,14 +175,14 @@
         },
         {
           "id": "b",
-          "text": "Forbid it. Siberia is too far away and too cold to matter.",
+          "text": "Forbid it. Siberia is too far away and too cold to matter, and a band of Cossacks stirring up trouble in the east could drag you into a war you don't need.",
           "points": 1,
           "next": "troubles",
           "explanation": "Ivan IV reportedly worried at first that the Stroganovs were stirring up trouble, but he soon backed the conquest. Siberia's furs became one of Russia's most valuable exports."
         },
         {
           "id": "c",
-          "text": "Send your whole army east and leave Moscow undefended.",
+          "text": "Send your whole army east, build forts as it goes, and conquer Siberia in one campaign, even if Moscow is left undefended for a while.",
           "points": -1,
           "next": "troubles",
           "explanation": "Dangerous overkill: Crimean Tatar raiders had burned Moscow in 1571. Siberia was conquered by small bands of Cossacks with guns who built forts along the rivers."
@@ -196,14 +196,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Work with the boyars and the Church through councils, and reform the laws to strengthen the tsar fairly.",
+          "text": "Work with the boyars and the Church through councils, and use fair laws to strengthen your rule.",
           "points": 5,
           "next": "troubles",
           "explanation": "This would have built a stronger state. Instead, Ivan created the oprichnina, a private territory and black-clad police force that terrorized the boyars, killed thousands, and wrecked the economy. It is a big part of why he is remembered as \"Ivan the Terrible.\""
         },
         {
           "id": "b",
-          "text": "Create a private police force that terrorizes the boyars and seizes their lands.",
+          "text": "Create a private police force, loyal only to you, that terrorizes the boyars and seizes their lands. If they really poisoned Anastasia, only fear will keep them in line.",
           "points": -1,
           "stability": -1,
           "set": ["terror"],
@@ -231,7 +231,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Call a great assembly of nobles, Church leaders, and townspeople to elect a new tsar from a respected family.",
+          "text": "Call a great assembly of nobles, Church leaders, and townspeople from across the land to elect a new tsar from a respected Russian family.",
           "points": 6,
           "next": "law_code",
           "explanation": "That's what happened: in 1613 an assembly chose 16-year-old Michael Romanov. The Romanov dynasty, backed by the Orthodox Church and the nobles, ruled Russia until 1917."
@@ -245,7 +245,7 @@
         },
         {
           "id": "c",
-          "text": "Let the Cossack chiefs and army commanders fight it out for the throne.",
+          "text": "Let the Cossack chiefs and army commanders fight it out, since only the strongest can hold the throne.",
           "points": -1,
           "stability": -1,
           "next": "razin",
@@ -260,7 +260,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Issue a new law code that ties peasants permanently to the land and their lords, making them serfs.",
+          "text": "Issue a law code that ties peasants to their lords' land for good, making them serfs, so the nobles stay loyal.",
           "points": 5,
           "set": ["serfdom"],
           "next": "peter",
@@ -268,7 +268,7 @@
         },
         {
           "id": "b",
-          "text": "Free the peasants and let them move wherever they want.",
+          "text": "Free the peasants and let them move wherever they want. Free farmers will work harder, and the frontier will fill with settlers loyal to you.",
           "points": -1,
           "stability": -1,
           "next": "peter",
@@ -276,7 +276,7 @@
         },
         {
           "id": "c",
-          "text": "Bring back the old rule that lets peasants move only during a two-week period each year.",
+          "text": "Bring back the old rule that lets peasants move only during a two-week period each year. The nobles get most of what they want, peasants keep a little hope, and tradition is on your side.",
           "points": 2,
           "next": "peter",
           "explanation": "That old rule, around St. George's Day in late autumn, had already been suspended because nobles complained it let peasants escape. The Law Code of 1649 ended peasant movement entirely, making serfdom permanent."
@@ -290,21 +290,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Crush the revolt with your regular army, then reform tax collection so local officials can't abuse peasants as much.",
+          "text": "Crush the revolt with your regular army, then reform tax collection so officials can't abuse peasants as much.",
           "points": 5,
           "next": "peter",
           "explanation": "The tsar's army did defeat the revolt in 1670, and Razin was executed in Moscow in 1671. Reducing abuse would have helped, but in reality serfdom only grew harsher, and another huge revolt, led by Pugachev, broke out in 1773."
         },
         {
           "id": "b",
-          "text": "Abolish serfdom to win the rebels over.",
+          "text": "Abolish serfdom to win the rebels over and end the revolt.",
           "points": -1,
           "next": "peter",
           "explanation": "The nobles who ran your army and government would turn against you instantly. The tsar's army defeated Razin in 1670, he was executed in 1671, and serfdom lasted until 1861."
         },
         {
           "id": "c",
-          "text": "Hire foreign soldiers to defeat the rebels.",
+          "text": "Hire foreign soldiers to defeat the rebels. Russian troops might feel sympathy for fellow peasants and switch sides, but paid foreigners will have no such doubts.",
           "points": 2,
           "next": "peter",
           "explanation": "Russia did use some foreign-trained regiments, but its regular army defeated Razin's forces in 1670. Relying on outsiders to fight your own people can make a ruler look weak."
@@ -329,7 +329,7 @@
         },
         {
           "id": "b",
-          "text": "Keep Russia's old traditions. The West has nothing to teach you.",
+          "text": "Keep Russia's old traditions. The Church and the nobles would fight big changes, and Russia has grown huge without copying the West.",
           "points": 0,
           "next": "sweden",
           "explanation": "Sticking with old ways would leave Russia's army behind Sweden's and the rest of Europe's. Peter chose to learn from the West, and his reforms made Russia a European great power."
@@ -351,21 +351,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Rebuild: melt church bells into cannons, train a new army, build a navy, and found a new capital, St. Petersburg, on the Baltic coast.",
+          "text": "Rebuild: melt church bells into cannons, train a new army and navy, and found St. Petersburg on the Baltic.",
           "points": 6,
           "next": "end",
           "explanation": "Exactly Peter's response. He founded St. Petersburg in 1703, crushed the Swedes at Poltava in 1709, and won Baltic lands in 1721. He also created the Table of Ranks (1722), which promoted officials and officers for their service."
         },
         {
           "id": "b",
-          "text": "Make peace and give up on the Baltic forever.",
+          "text": "Make peace and give up on the Baltic forever. Sweden's army is the best in Europe, and Arkhangelsk can still handle your trade with the West.",
           "points": 1,
           "next": "end",
           "explanation": "That would leave Russia without a good western seaport. Peter refused to quit after Narva, and by 1721 Russia had won its \"window on the West\" on the Baltic Sea."
         },
         {
           "id": "c",
-          "text": "Rush untrained peasant soldiers back at Charles XII right away.",
+          "text": "Rush untrained peasant soldiers back at Charles XII right away. Russia has far more men than Sweden, and striking before the Swedes can rest and resupply could make up for Narva with a quick victory.",
           "points": -1,
           "next": "end",
           "explanation": "Sending untrained troops against Europe's best army would repeat the Narva disaster. Peter took time to rebuild and modernize, then beat Charles XII at Poltava in 1709."
@@ -379,21 +379,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Change course: hire Western officers, build workshops for muskets and cannons, and train a modern army.",
+          "text": "Change course: hire Western officers, build workshops for muskets and cannons, and train a modern army that can match Swedish discipline and firepower.",
           "points": 5,
           "next": "end",
           "explanation": "This is what Peter did after Narva. His rebuilt army destroyed the Swedes at Poltava in 1709, and Russia won lands on the Baltic, where Peter had founded St. Petersburg in 1703; it became his capital around 1712."
         },
         {
           "id": "b",
-          "text": "Retreat deep into Russia and burn everything in Sweden's path.",
+          "text": "Retreat deep into Russia and burn everything in Sweden's path, leaving the invaders nothing to eat.",
           "points": 2,
           "next": "end",
           "explanation": "Russia actually used this tactic when Charles XII invaded in 1708–1709, wearing down his army before the Battle of Poltava. But victory also required Peter's modernized army."
         },
         {
           "id": "c",
-          "text": "Surrender and give Sweden whatever it wants.",
+          "text": "Surrender and give Sweden whatever it wants to save Moscow.",
           "points": -1,
           "collapse": { "year": 1703, "text": "Sweden took your Baltic lands, and your humiliated nobles turned on you. A rival family seized the throne, and Russia broke into feuding regions." },
           "explanation": "Giving up would have left Russia a backward, landlocked country at the mercy of its neighbors. Instead, Peter rebuilt his army and beat Sweden at Poltava in 1709, making Russia a great power."
