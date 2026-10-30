@@ -43,7 +43,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Tie your carts into a wall, put cannons and matchlock gunners in the gaps, and send cavalry around the sides.",
+          "text": "Tie your carts into a wall and put cannons and matchlock gunners in the gaps. Then send cavalry around the sides.",
           "points": 5,
           "next": "stay",
           "explanation": "A brilliant victory, and Babur's real plan. His guns terrified the elephants, his cavalry swept around the sides, and Ibrahim Lodi died in battle in 1526. The win founded the Mughal Empire, one of the great gunpowder empires."
@@ -74,7 +74,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Rally your men with a speech and rewards, then stay and beat the Rajputs with your guns.",
+          "text": "Rally your men with a speech and rewards. Stay in India and beat the Rajputs with your guns.",
           "points": 5,
           "next": "akbar",
           "explanation": "That's what Babur did. He persuaded his men to stay and beat Rana Sanga's army at the Battle of Khanwa in 1527 using guns behind carts. Babur died in 1530; his son Humayun lost the empire in 1540 but regained it in 1555, and the dynasty lasted until 1857."
@@ -108,7 +108,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Build a fortified line of carts, cannons, and matchlock gunners, and let the Rajputs charge into your guns.",
+          "text": "Build a fortified line of carts and cannons with matchlock gunners. Let the Rajputs charge into your guns.",
           "points": 5,
           "next": "akbar",
           "explanation": "Exactly Babur's tactic. At the Battle of Khanwa in 1527, his guns and flanking cavalry broke Rana Sanga's army. This victory made Babur the strongest ruler in northern India, though his son Humayun lost it in 1540 and only won it back in 1555."
@@ -137,7 +137,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Take refuge with the Shah of Persia, borrow Persian troops, and return to win back the empire.",
+          "text": "Take refuge with the Shah of Persia and borrow Persian troops to win back the empire.",
           "points": 3,
           "next": "akbar",
           "explanation": "This is what really happened (even though Babur had won his battles). Humayun lived in exile with the Safavid Shah Tahmasp, returned with Persian troops to take Kabul in 1545, and finally retook Delhi in 1555, shortly before he died. Persian artists and officials who joined him shaped Mughal culture for centuries."
@@ -215,7 +215,7 @@
         },
         {
           "id": "c",
-          "text": "Close the hall. The debates are stirring up controversy, and only Sunni scholars should advise the emperor on matters of faith.",
+          "text": "Close the hall because the debates are stirring up controversy and only Sunni scholars should advise the emperor.",
           "points": 2,
           "next": "mansabdar",
           "explanation": "That would please some strict scholars but alienate the Hindu and Shia nobles your empire depended on. Akbar instead opened the debates to every faith and promoted \"peace with all.\""
@@ -237,7 +237,7 @@
         },
         {
           "id": "b",
-          "text": "Take the fort, then destroy every Rajput kingdom one by one.",
+          "text": "Take the fort. Then destroy every Rajput kingdom one by one.",
           "points": 1,
           "next": "mansabdar",
           "explanation": "Endless war against proud warriors would drain your treasury. Even after Chittor fell in 1568, Mewar kept resisting for decades, so Akbar relied on alliances with other Rajput kings."
@@ -263,7 +263,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Give Muslim and Hindu nobles ranks called mansabs, pay them with land-tax rights that move every few years, and set fair taxes with Todar Mal's survey.",
+          "text": "Give Muslim and Hindu nobles ranks called mansabs, paid with land-tax rights that move every few years. Set fair taxes using Todar Mal's survey.",
           "points": 5,
           "next": "taj",
           "explanation": "This is Akbar's real system. Mansabdars supplied soldiers and were paid from land taxes they could not keep forever, so no noble could build a private kingdom. Local landholders called zamindars collected the taxes, based on Todar Mal's careful surveys."
@@ -277,7 +277,7 @@
         },
         {
           "id": "c",
-          "text": "Set one high tax on every farm, whether the harvest is good or bad. A single fixed rate is simple to collect, hard to cheat, and gives the treasury the same income every year.",
+          "text": "Set one high tax on every farm, whether the harvest is good or bad, because a single fixed rate is simple to collect, hard to cheat, and steady every year.",
           "points": 0,
           "stability": -1,
           "next": "taj",
@@ -293,7 +293,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Build the Taj Mahal and a new capital at Delhi, and keep your finances in order.",
+          "text": "Build the Taj Mahal and a new capital at Delhi. Keep your finances in order while you do.",
           "points": 5,
           "next": "aurangzeb",
           "explanation": "Monuments like these showed the power and legitimacy of Mughal rule. Shah Jahan built the Taj Mahal (about 1632–1653), which blends Persian, Islamic, and Indian styles, plus a new capital at Delhi with the Red Fort and the jeweled Peacock Throne."

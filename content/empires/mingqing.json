@@ -136,7 +136,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Combine the grain, cloth, and labor duties into one payment in silver, and survey the land so rich landowners can no longer hide their fields from tax collectors.",
+          "text": "Combine the grain, cloth, and labor duties into one payment in silver. Then survey the land so rich landowners can no longer hide their fields from tax collectors.",
           "points": 5,
           "set": ["single_whip"],
           "next": "wanli",
@@ -166,7 +166,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Train disciplined new armies under General Qi Jiguang, then legalize overseas trade so merchants stop smuggling.",
+          "text": "Train disciplined new armies under General Qi Jiguang. Then make overseas trade legal so merchants don't need to smuggle.",
           "points": 4,
           "next": "wanli",
           "explanation": "That's what worked. Qi Jiguang's well-trained troops defeated the pirates in the 1560s, and in 1567 the Ming eased the sea ban. Legal trade then brought silver flowing into China."
@@ -195,7 +195,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Return to court, fill empty posts with exam-trained officials, and keep the eunuchs in check.",
+          "text": "Return to court and fill empty posts with exam-trained officials. Keep the eunuchs in check.",
           "points": 5,
           "next": "jesuits",
           "explanation": "That would have been the wise path. In reality, Wanli withdrew from government for decades, posts sat empty, and eunuchs and factions grew powerful, one reason the Ming weakened in its final years."
@@ -224,7 +224,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Welcome Ricci's science and maps, and let the Jesuits live in Beijing under imperial rules.",
+          "text": "Welcome Ricci's science and maps. Let the Jesuits live in Beijing, but under imperial rules.",
           "points": 5,
           "set": ["jesuits"],
           "next": "qing_rule",
@@ -253,7 +253,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Remove Wei Zhongxian and bring back honest, exam-trained officials.",
+          "text": "Remove Wei Zhongxian. Bring honest, exam-trained officials back into government.",
           "points": 4,
           "next": "qing_rule",
           "explanation": "The next emperor did exactly this in 1627, and Wei killed himself. But the damage was done: years of factional fighting had weakened the government just as rebellion and famine spread."
@@ -345,14 +345,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Fight back with loyal Manchu and Han armies, and offer pardons to rebels who switch sides. If these generals defy you and win, others will follow.",
+          "text": "Fight back with loyal Manchu and Han armies and offer pardons to rebels who switch sides. If these generals defy you and win, others will follow.",
           "points": 5,
           "next": "rites",
           "explanation": "Kangxi did just this. The war lasted eight years, but by 1681 the Qing had crushed the revolt and placed the south under direct imperial rule."
         },
         {
           "id": "b",
-          "text": "Give in and let the generals keep their lands forever. They helped your family conquer China, and a long civil war could cost the young dynasty everything it has won.",
+          "text": "Give in and let the generals keep their lands forever, since they helped your family conquer China and a long civil war could cost the young dynasty everything it has won.",
           "points": 0,
           "stability": -1,
           "next": "rites",
