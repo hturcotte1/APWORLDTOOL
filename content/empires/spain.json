@@ -50,14 +50,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Pay for the voyage. It's a small price for a chance at Asian riches before Portugal gets there.",
+          "text": "Pay for the voyage. It's a cheap gamble on reaching Asia's riches before Portugal does.",
           "points": 8,
           "next": "tordesillas",
           "explanation": "A cheap bet that changed history. Columbus never reached Asia (he landed in the Bahamas and the Caribbean in October 1492), but his voyages opened the Americas to Spanish conquest. Within a century, American silver helped make Spain the most powerful empire in Europe."
         },
         {
           "id": "b",
-          "text": "Refuse. The experts are right that Asia is too far away.",
+          "text": "Refuse. Your experts have checked his numbers, and Asia is far too distant to reach by sailing west. His crews would run out of food and water long before land, and your money would be lost.",
           "points": 1,
           "next": "second_chance",
           "explanation": "The experts were right about the distance, but nobody in Europe knew two continents lay in the way. Isabella and Ferdinand funded Columbus, and his 1492 landing in the Caribbean began Spain's empire in the Americas."
@@ -79,14 +79,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Negotiate directly with Portugal and draw a line down the Atlantic: lands to the west for Spain, lands to the east for Portugal.",
+          "text": "Negotiate with Portugal and draw a line down the Atlantic: lands to the west for Spain, lands to the east for Portugal.",
           "points": 7,
           "next": "aztecs",
           "explanation": "That's the Treaty of Tordesillas (1494). The Pope had drawn a first line in 1493, but the two kingdoms negotiated their own line farther west. It avoided war and gave Spain most of the Americas, while Portugal got Africa, the sea route to India, and later Brazil."
         },
         {
           "id": "b",
-          "text": "Go to war with Portugal over the new lands.",
+          "text": "Go to war with Portugal over the new lands. Columbus found them sailing under your flag, and if you let Portugal bully you now, it will try to grab every discovery that follows.",
           "points": -3,
           "stability": -1,
           "next": "aztecs",
@@ -94,7 +94,7 @@
         },
         {
           "id": "c",
-          "text": "Keep the new lands secret and say nothing.",
+          "text": "Keep the new lands secret and tell the other kingdoms nothing.",
           "points": 2,
           "next": "aztecs",
           "explanation": "News of Columbus's voyage was already spreading across Europe. Spain secured its claim openly through the Treaty of Tordesillas (1494)."
@@ -108,21 +108,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Fund expeditions across the Atlantic and claim the new lands for Spain.",
+          "text": "Fund more expeditions across the Atlantic and claim the new lands for Spain. Use the Caribbean islands as bases, and explore the mainland before any rival gets there.",
           "points": 6,
           "next": "aztecs",
           "explanation": "Better late than never. In reality, Spain had funded Columbus back in 1492, and by 1500 Spanish settlements were growing in the Caribbean. Those islands became the base for Spain's conquests on the mainland, starting with the Aztec Empire."
         },
         {
           "id": "b",
-          "text": "Compete with Portugal by sending your own fleets around Africa to India.",
+          "text": "Send your own fleets around Africa to India to compete with Portugal.",
           "points": 1,
           "next": "aztecs",
           "explanation": "The Treaty of Tordesillas (1494) had already given that route to Portugal, so this would mean war. Spain's future lay west, in the Americas."
         },
         {
           "id": "c",
-          "text": "Give up on overseas exploration and focus on wars in Italy.",
+          "text": "Give up on overseas exploration and focus on the wars in Italy. Rich lands close to home are worth more than distant islands no one has mapped.",
           "points": -2,
           "next": "aztecs",
           "explanation": "Spain did fight in Italy, but giving up on the Americas would mean giving up the silver that later paid for everything. Spain's American colonies became the foundation of its empire."
@@ -137,7 +137,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Take control from the conquistadors: create a Council of the Indies to govern from Spain, and set up viceroyalties run by royal appointees.",
+          "text": "Take power from the conquistadors: create a Council of the Indies in Spain and set up viceroyalties run by royal appointees.",
           "points": 8,
           "set": ["royal"],
           "next": "council",
@@ -145,7 +145,7 @@
         },
         {
           "id": "b",
-          "text": "Let Cortés and the conquistadors rule as lords of the lands they conquered.",
+          "text": "Let Cortés and the conquistadors rule as lords of the lands they conquered. They risked their lives, they know the country, and governing it from across an ocean would be slow and costly.",
           "points": -2,
           "stability": -1,
           "next": "conquistadors",
@@ -167,21 +167,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Pass new laws that ban enslaving Indigenous people and phase out the encomienda, but soften them where settlers threaten to revolt.",
+          "text": "Pass laws banning Indigenous slavery and phasing out the encomienda, but soften them if settlers revolt.",
           "points": 7,
           "next": "silver",
           "explanation": "Close to what Charles did with the New Laws of 1542. Settlers in Peru revolted, so the Crown softened the laws, but they still weakened the encomienda holders and strengthened royal control. Forced labor continued, though, through other systems like the mita."
         },
         {
           "id": "b",
-          "text": "Ignore Las Casas. Profits come first.",
+          "text": "Ignore Las Casas. The settlers warn that the colonies will collapse without forced labor, and the profits matter more than one priest's complaints.",
           "points": -1,
           "next": "silver",
           "explanation": "Letting settlers do whatever they wanted would create powerful, abusive colonial lords who answered to no one. The Crown passed the New Laws in 1542 to limit the encomienda and assert royal authority."
         },
         {
           "id": "c",
-          "text": "Abolish all forced labor immediately and punish any settler who resists.",
+          "text": "Abolish all forced labor immediately and punish any settler who resists. Half-measures will only let the abuse go on, and the Crown must show it means what it says.",
           "points": 1,
           "next": "silver",
           "explanation": "Morally appealing, but in 1542 the settlers would have rebelled, as they did in Peru even against the milder New Laws. The Crown chose partial limits and kept forced labor in other forms, like the mita."
@@ -195,14 +195,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Send a skilled royal negotiator with pardons for rebels who switch sides, and soften the laws that angered them.",
+          "text": "Send a skilled royal negotiator to Peru. Offer pardons to rebels who switch sides and soften the laws that angered them, so Gonzalo Pizarro is left with few followers.",
           "points": 7,
           "next": "silver",
           "explanation": "That's what worked. The royal envoy Pedro de la Gasca won over most of Gonzalo Pizarro's followers with pardons, and Pizarro was defeated and executed in 1548. Royal control over Peru was restored."
         },
         {
           "id": "b",
-          "text": "Let Gonzalo Pizarro rule Peru, as long as he sends you some silver.",
+          "text": "Let Gonzalo Pizarro rule Peru, as long as he sends you silver. Fighting him from across an ocean could cost far more.",
           "points": -3,
           "stability": -1,
           "next": "silver",
@@ -228,7 +228,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Use the silver to pay off debts and build up Spain's own farms, workshops, and shipyards, and fight only the wars you truly must.",
+          "text": "Use the silver to pay off debts, build up Spain's own farms and workshops, and avoid needless wars.",
           "points": 8,
           "set": ["invest"],
           "next": "dutch",
@@ -236,7 +236,7 @@
         },
         {
           "id": "b",
-          "text": "Spend it on armies and fleets to defend Catholicism everywhere: against Protestants, the Ottomans, and France.",
+          "text": "Spend it on armies and fleets to defend Catholicism everywhere: against Protestants, the Ottomans, and France. As Europe's leading Catholic monarch, it is your sacred duty, and now you finally have the money.",
           "points": -2,
           "stability": -1,
           "next": "bankrupt",
@@ -244,7 +244,7 @@
         },
         {
           "id": "c",
-          "text": "Spend it on luxuries and imported goods. Spain is rich, so why make things yourself?",
+          "text": "Spend it on luxuries and goods imported from abroad. Spain is rich now, and foreign workshops already make what you need, so why build your own?",
           "points": 1,
           "next": "bankrupt",
           "explanation": "Much of Spain's silver really did flow out to pay for foreign goods and loans, enriching Dutch, Italian, and German merchants and bankers, while Spain's own industries fell behind."
@@ -258,21 +258,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Ease the anti-Protestant laws, keep local Dutch nobles in charge, and avoid a long war.",
+          "text": "Ease the harsh laws against Protestants, keep local Dutch nobles in charge, and avoid a long war.",
           "points": 8,
           "next": "armada",
           "explanation": "The road not taken. Philip sent the Duke of Alba with an army and executed many rebels, and the Dutch Revolt that followed lasted 80 years (1568–1648), cost Spain a fortune, and ended with independence for the northern Netherlands."
         },
         {
           "id": "b",
-          "text": "Send your toughest general with an army to crush the Protestants and punish the rebels.",
+          "text": "Send your toughest general and an army to crush the Protestant rebels.",
           "points": -2,
           "next": "armada",
           "explanation": "This is what Philip did in 1567. The Duke of Alba's harsh crackdown turned unrest into a full revolt that drained Spain for 80 years and ended with an independent Dutch Republic, a Protestant trading rival."
         },
         {
           "id": "c",
-          "text": "Let church courts quietly put heretics on trial, without sending an army.",
+          "text": "Let church courts quietly put heretics on trial, without sending an army. The law stays firm, the Protestants are punished, and you avoid the huge cost of a war far from Spain.",
           "points": 2,
           "next": "armada",
           "explanation": "Harsh heresy trials, and fears that Philip would bring in the Spanish Inquisition, were part of what angered the Dutch in the first place. Philip sent an army in 1567, and the revolt lasted until 1648."
@@ -286,21 +286,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Cut back: make peace where you can, pay your soldiers first, and reform taxes so nobles pay their share.",
+          "text": "Cut back: make peace wherever you can, pay your soldiers first so they stay loyal, and reform taxes so the nobles finally pay their share of the empire's costs.",
           "points": 7,
           "next": "armada",
           "explanation": "Sensible, but not what happened. Philip kept fighting, and in 1576 his unpaid soldiers sacked the city of Antwerp (the \"Spanish Fury\"), which turned even more of the Netherlands against Spain."
         },
         {
           "id": "b",
-          "text": "Borrow even more from foreign bankers at higher interest.",
+          "text": "Borrow even more from foreign bankers, even at higher interest.",
           "points": 1,
           "next": "armada",
           "explanation": "This is what Spain did again and again, and the debts only grew. Spain went bankrupt again in 1596, and interest payments ate up much of the silver."
         },
         {
           "id": "c",
-          "text": "Stop paying your soldiers entirely and let them live off the land in the Netherlands.",
+          "text": "Stop paying your soldiers entirely and let them live off the land in the Netherlands. The rebels' towns can feed them.",
           "points": -3,
           "collapse": {
             "year": 1580,
@@ -321,7 +321,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Call off the invasion. Protect your treasure fleets with warships and strong ports instead, and seek peace with England.",
+          "text": "Call off the invasion. Guard your treasure fleets with warships, strengthen your ports against raiders like Drake, and seek peace with England instead of a risky war.",
           "points": 8,
           "next": "moriscos",
           "explanation": "The wiser choice. Philip sent the Armada in 1588, and it was beaten by English fire ships and gunnery, then wrecked by storms off Scotland and Ireland. Spain stayed powerful, but its reputation took a heavy blow."
@@ -350,14 +350,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Let the Moriscos stay and keep farming. Loyalty can be earned.",
+          "text": "Let the Moriscos stay and keep farming. They are skilled, settled people, and loyalty can be earned.",
           "points": 8,
           "next": "end",
           "explanation": "The road not taken. Philip III expelled about 300,000 Moriscos between 1609 and 1614, which emptied farmland in Valencia and Aragon and added to Spain's decline in the 1600s."
         },
         {
           "id": "b",
-          "text": "Expel them all from Spain.",
+          "text": "Expel them all from Spain, as the Church leaders urge. If even a few secretly practice Islam and help the Ottomans, your coasts are in danger, and a fully Catholic Spain will be safer.",
           "points": -2,
           "next": "end",
           "explanation": "This is what Philip III did, starting in 1609. Losing so many skilled farmers and workers hurt the economy, especially in Valencia, as Spain began a long decline."
@@ -385,14 +385,14 @@
         },
         {
           "id": "b",
-          "text": "Refuse any compromise: raise crushing new taxes everywhere, keep fighting France, and send armies against Portugal and Catalonia at once.",
+          "text": "Refuse any compromise: raise crushing new taxes everywhere, keep fighting France, and send armies against Portugal and Catalonia at once. Weakness invites revolt.",
           "points": -3,
           "collapse": { "year": 1645, "text": "Fighting France, Portugal, and Catalonia at the same time bankrupted the Crown. Armies went unpaid, provinces broke away, and the Spanish Empire fell apart." },
           "explanation": "Too much at once. Spain really did fight on all three fronts and went bankrupt again in 1647, but it put Catalonia first (recovering it in 1652) and finally accepted Portugal's independence in 1668. Crushing new taxes on top of that could have set off revolts everywhere."
         },
         {
           "id": "c",
-          "text": "Raise taxes on Castile yet again to pay for everything.",
+          "text": "Raise taxes on Castile yet again to pay for everything. It is the heart of the empire and has carried its wars before, and squeezing loyal Castile is safer than giving in to rebels.",
           "points": 1,
           "next": "end",
           "explanation": "Castile, the heart of the empire, was already crushed by taxes, and its population and economy were shrinking. Spain survived by making peace with its enemies over the next decades."

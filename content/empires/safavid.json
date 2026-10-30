@@ -43,7 +43,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Declare Twelver Shia Islam the official religion of your empire, bring in Shia scholars, and require your subjects to follow it.",
+          "text": "Declare Twelver Shia Islam the official religion, bring in Shia scholars, and require your subjects to follow it.",
           "points": 8,
           "set": ["shia"],
           "next": "uzbeks",
@@ -51,7 +51,7 @@
         },
         {
           "id": "b",
-          "text": "Stay Sunni like the Ottomans so you can live in peace with them.",
+          "text": "Stay Sunni like the Ottomans and most of your new subjects. Sharing their faith will make your rule easier to accept at home and let you live in peace with your powerful neighbor.",
           "points": -2,
           "stability": -1,
           "next": "unrest",
@@ -73,21 +73,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Lure the Uzbeks into a trap with a pretend retreat, then crush them with your cavalry.",
+          "text": "Fake a retreat, lure the Uzbeks into a trap, and crush them.",
           "points": 8,
           "next": "chaldiran",
           "explanation": "This is what happened at the Battle of Merv in 1510: Ismail faked a retreat, ambushed the Uzbeks, and killed Shaybani Khan. Victories like this made his followers believe he could not be beaten, until Chaldiran."
         },
         {
           "id": "b",
-          "text": "Pay the Uzbeks to stay out of Khurasan.",
+          "text": "Pay the Uzbeks to stay out of Khurasan. Your armies have just conquered most of Persia and need rest, and gold costs less than a war on a distant border.",
           "points": 1,
           "next": "chaldiran",
           "explanation": "Paying off a raiding enemy invites more raids. Ismail fought instead and defeated the Uzbeks at Merv in 1510."
         },
         {
           "id": "c",
-          "text": "Abandon Khurasan to the Uzbeks and focus on the west.",
+          "text": "Abandon Khurasan to the Uzbeks and focus on the west, where the powerful Ottomans are a far bigger danger to you.",
           "points": -2,
           "next": "chaldiran",
           "explanation": "Giving up a rich region would weaken you and shame you in front of your followers. Ismail fought for it and won at Merv in 1510, though the Uzbeks remained a threat for a century."
@@ -101,7 +101,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Make Twelver Shia Islam the official faith after all, and bring in Shia scholars to teach it.",
+          "text": "Make Twelver Shia Islam the official faith after all, and bring in Shia scholars to teach it. Your followers joined you as a holy Shia leader, so give them a cause worth fighting for.",
           "points": 6,
           "set": ["shia"],
           "next": "chaldiran",
@@ -116,7 +116,7 @@
         },
         {
           "id": "c",
-          "text": "Punish anyone who questions you.",
+          "text": "Punish anyone who questions you. If the doubters and rebellious Sunni cities see that defiance costs them dearly, the rest will fall in line.",
           "points": -2,
           "next": "chaldiran",
           "explanation": "Fear without a shared purpose breeds rebellion. Ismail united his people around Twelver Shia Islam as the state religion."
@@ -134,14 +134,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Avoid open battle: retreat into the mountains, burn the crops in the enemy's path, and let winter and hunger drive the Ottomans home.",
+          "text": "Avoid battle: fall back, burn the crops in Selim's path, and let hunger drive him home.",
           "points": 8,
           "next": "suleiman",
           "explanation": "The smartest move. Ismail at first burned the land in Selim's path, but then chose to fight at Chaldiran in 1514 and was badly defeated, and Selim briefly took Tabriz. Later shahs relied on this scorched earth strategy against Ottoman invasions."
         },
         {
           "id": "b",
-          "text": "Charge the Ottoman lines with your Qizilbash cavalry. Your warriors have never lost.",
+          "text": "Charge the Ottoman lines with your Qizilbash cavalry. Your warriors have never lost, and falling back before a sultan who calls you a heretic would shame you.",
           "points": -3,
           "stability": -1,
           "next": "aftermath",
@@ -149,7 +149,7 @@
         },
         {
           "id": "c",
-          "text": "Send ambassadors to Selim offering to stop spreading Shia Islam in Ottoman lands.",
+          "text": "Send ambassadors to Selim offering to stop spreading Shia Islam in Ottoman lands. A promise costs you nothing and might turn his army around.",
           "points": 2,
           "set": ["peace_offer"],
           "next": "aftermath",
@@ -164,14 +164,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep up the scorched-earth defense, then make peace, give up Baghdad for now, and move your capital farther from the Ottoman border.",
+          "text": "Keep up the scorched-earth defense until the Ottomans tire, then make peace, give up Baghdad for now, and move your capital farther from the Ottoman border.",
           "points": 8,
           "next": "abbas",
           "explanation": "That's what Tahmasp did. His scorched-earth tactics wore out Ottoman armies, the Peace of Amasya (1555) ended the fighting, and he moved the capital from Tabriz to Qazvin, safer from Ottoman attack."
         },
         {
           "id": "b",
-          "text": "Gather every soldier for one great battle to win back Baghdad.",
+          "text": "Gather every soldier for one great battle to win back Baghdad. Each year you wait, the Ottomans dig in deeper.",
           "points": -3,
           "stability": -1,
           "next": "abbas",
@@ -196,14 +196,14 @@
       "options": [
         {
           "id": "a",
-          "text": "As Tahmasp grows up, play the chiefs against each other, then take power into his own hands and punish the worst troublemakers.",
+          "text": "As Tahmasp grows up, play the chiefs against each other, then seize power and punish the worst troublemakers.",
           "points": 7,
           "next": "abbas",
           "explanation": "That's what Tahmasp did. After about ten years of chaos he took control, and he ruled for more than 50 years (1524–1576), keeping the Safavid state alive."
         },
         {
           "id": "b",
-          "text": "Let the strongest Qizilbash chief rule in the shah's name forever.",
+          "text": "Let the strongest Qizilbash chief rule in the shah's name for good. A ten-year-old cannot lead an army, and one strong hand can end the chiefs' fighting and stop the Uzbek raids.",
           "points": -2,
           "next": "abbas",
           "explanation": "A shah who is only a puppet invites endless power struggles. Tahmasp took real control in the 1530s and ruled until 1576."
@@ -225,14 +225,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Make peace with the Ottomans for now, even giving up land. Defeat the Uzbeks first, and build a new army loyal only to you: ghulams, plus musketeers and cannon crews.",
+          "text": "Make a costly peace with the Ottomans, crush the Uzbeks, and build a new army of ghulams loyal only to you.",
           "points": 8,
           "next": "isfahan",
           "explanation": "Exactly Abbas's plan. He made a costly peace with the Ottomans in 1590, beat the Uzbeks, and built a new army of ghulams, musketeers, and artillery loyal only to him. Then, starting in 1603, he turned west and won back his lost lands."
         },
         {
           "id": "b",
-          "text": "Fight the Ottomans and the Uzbeks at the same time to win everything back at once.",
+          "text": "Fight the Ottomans and the Uzbeks at the same time. Your people expect a shah who wins back everything that was lost.",
           "points": -3,
           "stability": -1,
           "next": "ottoman_west",
@@ -240,7 +240,7 @@
         },
         {
           "id": "c",
-          "text": "Keep the Qizilbash chiefs in charge of the army, as they have always been.",
+          "text": "Keep the Qizilbash chiefs in charge of the army, as they always have been. They are proven warriors with loyal followers, and pushing them aside could set off a civil war.",
           "points": 1,
           "next": "ottoman_west",
           "explanation": "The Qizilbash chiefs had already murdered your mother and fought over the throne. Abbas cut their power by building a new army of ghulams loyal only to him."
@@ -262,14 +262,14 @@
         },
         {
           "id": "b",
-          "text": "Spend the money on a giant army to conquer Mughal India.",
+          "text": "Spend the money on a giant army to conquer Mughal India, whose riches would make Persia's look small.",
           "points": -2,
           "next": "succession",
           "explanation": "The Mughal Empire was huge and rich, and a war there would drain your treasury. Abbas built up Isfahan and the silk trade instead, though he did take the city of Kandahar from the Mughals in 1622."
         },
         {
           "id": "c",
-          "text": "Keep the old capital and save the money.",
+          "text": "Keep the old capital and save the money for hard times.",
           "points": 2,
           "next": "succession",
           "explanation": "Saving money is fine, but monuments and trade built the shah's prestige and wealth. Abbas moved his capital to Isfahan, which became one of the most beautiful cities in the world."
@@ -290,7 +290,7 @@
         },
         {
           "id": "b",
-          "text": "Ask the Ottoman sultan for permanent peace and accept the losses forever.",
+          "text": "Ask the Ottoman sultan for permanent peace and accept the losses forever. Your army is weak and divided, and another war could cost you even more land than you have already lost.",
           "points": 1,
           "next": "succession",
           "explanation": "Abbas made a temporary peace with the Ottomans in 1590, but he always planned to win his lands back, and starting in 1603 he did."
@@ -315,14 +315,14 @@
       "options": [
         {
           "id": "a",
-          "text": "Give princes real training: let them govern provinces and command armies under trusted advisers.",
+          "text": "Train princes by letting them govern provinces and lead armies under trusted advisers.",
           "points": 8,
           "next": "afghans",
           "explanation": "The road not taken. Safavid princes after Abbas were raised in the harem, and many later shahs were inexperienced rulers who left government to court officials. The empire slowly decayed."
         },
         {
           "id": "b",
-          "text": "Keep the princes locked away in the harem so they can never plot against the shah.",
+          "text": "Keep the princes locked away in the harem, so no ambitious son can ever plot against the shah.",
           "points": -2,
           "stability": -1,
           "next": "isfahan_siege",
@@ -330,7 +330,7 @@
         },
         {
           "id": "c",
-          "text": "Name one heir, train him well, and keep the other princes far from court.",
+          "text": "Name one heir and train him well for the throne. Keep the other princes far from court, with comfortable lives but no armies or offices, so they cannot gather supporters against him.",
           "points": 3,
           "next": "afghans",
           "explanation": "Better than locking them all away. The Safavids instead kept princes in the harem, and later shahs were often weak and easily controlled."
@@ -344,21 +344,21 @@
       "options": [
         {
           "id": "a",
-          "text": "Send your best generals and your gunpowder army to stop the Afghans before they reach Isfahan, and stock the capital with food in case of a siege.",
+          "text": "Send your best generals and gunpowder army to stop the Afghans before they reach Isfahan, and stock the city with food.",
           "points": 8,
           "next": "end",
           "explanation": "That would likely have saved the empire. In reality, Shah Sultan Husayn's disorganized army was beaten at Gulnabad in 1722, Isfahan was besieged until its starving people surrendered, and Safavid rule effectively ended."
         },
         {
           "id": "b",
-          "text": "Rely on prayers, astrologers, and the city walls. The Afghans are only a small band.",
+          "text": "Rely on prayers, astrologers, and the strong walls of Isfahan. The Afghans are only a small band of tribesmen far from home, and they will give up long before the walls fall.",
           "points": -3,
           "collapse": { "year": 1722, "text": "The Afghan army besieged Isfahan for seven months. Tens of thousands starved, and the shah handed his crown to the Afghan leader. The Safavid Empire fell." },
           "explanation": "This is close to what happened under Shah Sultan Husayn. The court hesitated, the army was beaten at Gulnabad, and starving Isfahan surrendered in October 1722."
         },
         {
           "id": "c",
-          "text": "Pay the Afghans to go back to Kandahar.",
+          "text": "Pay the Afghans to turn around and go back to Kandahar.",
           "points": 2,
           "next": "end",
           "explanation": "Buying time might work briefly, but it shows weakness. In 1722 the Afghans defeated the shah's army and captured Isfahan, effectively ending Safavid rule."
@@ -372,7 +372,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Put your most capable general in full command, gather every soldier, and stock Isfahan with food before the enemy arrives.",
+          "text": "Put your most capable general in full command, with no court officials interfering, then gather every soldier and stock Isfahan with food before the enemy arrives.",
           "points": 6,
           "next": "end",
           "explanation": "Strong leadership might have saved the empire. In reality, the shah's army was beaten at Gulnabad in March 1722, and after a seven-month siege the starving city surrendered, effectively ending Safavid rule."
@@ -386,7 +386,7 @@
         },
         {
           "id": "c",
-          "text": "Flee the capital and try to raise an army in the north.",
+          "text": "Flee the capital and try to raise an army in the north. A shah who is captured loses everything, but one who escapes can still fight back.",
           "points": 1,
           "stability": -1,
           "next": "end",
