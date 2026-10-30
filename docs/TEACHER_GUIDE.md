@@ -7,9 +7,9 @@ Each student rules one of eight empires through about 8 historical decisions, se
 
 | What | Link |
 |---|---|
-| **Game (share with students)** | https://YOUR-GAME-LINK |
-| Leaderboard (good for a projector) | https://YOUR-GAME-LINK/#leaderboard |
-| Teacher controls | Click **Teacher** at the bottom of any page, or go to https://YOUR-GAME-LINK/#teacher |
+| **Game (share with students)** | https://rule-the-empire.rule-empire-0ee0f1.workers.dev |
+| Leaderboard (good for a projector) | https://rule-the-empire.rule-empire-0ee0f1.workers.dev/#leaderboard |
+| Teacher controls | Click **Teacher** at the bottom of any page, or go to https://rule-the-empire.rule-empire-0ee0f1.workers.dev/#teacher |
 
 No student accounts or logins are needed. It works on Chromebooks, laptops, tablets, and phones.
 

@@ -3,7 +3,7 @@
 A branching, choose-your-path review game for **AP World History Unit 3: Land-Based Empires (1450–1750)**.
 Students pick one of eight empires, make about 8 historically grounded decisions, see "what you chose vs. what actually happened" after each one, and compete on a shared, live class leaderboard.
 
-**Play:** https://YOUR-GAME-LINK · **Leaderboard:** https://YOUR-GAME-LINK/#leaderboard
+**Play:** https://rule-the-empire.rule-empire-0ee0f1.workers.dev · **Leaderboard:** https://rule-the-empire.rule-empire-0ee0f1.workers.dev/#leaderboard
 
 | Tier | Empires |
 |---|---|
