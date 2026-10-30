@@ -43,7 +43,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Declare Twelver Shia Islam the official religion, bring in Shia scholars, and require your subjects to follow it.",
+          "text": "Declare Twelver Shia Islam the official religion and bring in Shia scholars. Require your subjects to follow it.",
           "points": 8,
           "set": ["shia"],
           "next": "uzbeks",
@@ -101,7 +101,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Make Twelver Shia Islam the official faith after all, and bring in Shia scholars to teach it. Your followers joined you as a holy Shia leader, so give them a cause worth fighting for.",
+          "text": "Make Twelver Shia Islam the official faith after all and bring in Shia scholars to teach it. Your followers joined you as a holy Shia leader and need a cause worth fighting for.",
           "points": 6,
           "set": ["shia"],
           "next": "chaldiran",
@@ -141,7 +141,7 @@
         },
         {
           "id": "b",
-          "text": "Charge the Ottoman lines with your Qizilbash cavalry. Your warriors have never lost, and falling back before a sultan who calls you a heretic would shame you.",
+          "text": "Charge the Ottoman lines with your Qizilbash cavalry, trust warriors who have never lost, and refuse to fall back before a sultan who calls you a heretic.",
           "points": -3,
           "stability": -1,
           "next": "aftermath",
@@ -164,7 +164,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep up the scorched-earth defense until the Ottomans tire, then make peace, give up Baghdad for now, and move your capital farther from the Ottoman border.",
+          "text": "Keep up the scorched-earth defense until the Ottomans tire. Then make peace and give up Baghdad for now. Move your capital farther from the Ottoman border.",
           "points": 8,
           "next": "abbas",
           "explanation": "That's what Tahmasp did. His scorched-earth tactics wore out Ottoman armies, the Peace of Amasya (1555) ended the fighting, and he moved the capital from Tabriz to Qazvin, safer from Ottoman attack."
@@ -196,7 +196,7 @@
       "options": [
         {
           "id": "a",
-          "text": "As Tahmasp grows up, play the chiefs against each other, then seize power and punish the worst troublemakers.",
+          "text": "As Tahmasp grows up, play the chiefs against each other. Then seize power and punish the worst troublemakers.",
           "points": 7,
           "next": "abbas",
           "explanation": "That's what Tahmasp did. After about ten years of chaos he took control, and he ruled for more than 50 years (1524–1576), keeping the Safavid state alive."
@@ -225,7 +225,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Make a costly peace with the Ottomans, crush the Uzbeks, and build a new army of ghulams loyal only to you.",
+          "text": "Make a costly peace with the Ottomans and crush the Uzbeks. Then build a new army of ghulams loyal only to you.",
           "points": 8,
           "next": "isfahan",
           "explanation": "Exactly Abbas's plan. He made a costly peace with the Ottomans in 1590, beat the Uzbeks, and built a new army of ghulams, musketeers, and artillery loyal only to him. Then, starting in 1603, he turned west and won back his lost lands."
@@ -254,7 +254,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Move your capital to Isfahan and build a vast royal square, magnificent mosques, and a bazaar. Bring in Armenian merchants to run a royal silk trade.",
+          "text": "Move your capital to Isfahan and build a vast royal square with magnificent mosques and a bazaar. Bring in Armenian merchants to run a royal silk trade.",
           "points": 8,
           "set": ["isfahan"],
           "next": "succession",
