@@ -148,6 +148,13 @@ fieldset { border: 0; padding: 0; margin: 18px 0 0; min-width: 0; }
 .rules ol { margin: 0 0 10px; padding-left: 1.4em; }
 .rules li { margin-bottom: 6px; }
 .rules li::marker { font-family: var(--display); color: var(--rubric); }
+.makers-mark { margin: 26px auto 0; width: 104px; color: var(--rubric); opacity: 0.82; transform: rotate(-8deg); }
+.makers-mark svg { display: block; overflow: visible; }
+.makers-mark circle { fill: none; stroke: currentColor; stroke-width: 2.2; }
+.makers-mark circle.thin { stroke-width: 0.8; }
+.makers-mark circle.dot { fill: currentColor; stroke: none; }
+.makers-mark .mark-ring { fill: currentColor; font-family: var(--display); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; }
+.makers-mark .mark-initials { fill: currentColor; font-family: var(--display); font-size: 30px; letter-spacing: 0.02em; }
 .saved-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; }
 .saved-row .grow { flex: 1; min-width: 0; line-height: 1.3; }
 

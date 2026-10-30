@@ -297,6 +297,26 @@ function ruler(e, year) {
 }
 
 // ---------- start: the title page ----------
+// The maker's mark at the foot of the title page, like a printer's device in an old book.
+function makersMark() {
+  return `<figure class="makers-mark">
+    <svg viewBox="0 0 120 120" width="104" height="104" role="img" aria-label="Created by Henry Turcotte">
+      <defs>
+        <path id="mark-top" d="M17 60 A43 43 0 0 1 103 60"/>
+        <path id="mark-bottom" d="M10.5 60 A49.5 49.5 0 0 0 109.5 60"/>
+      </defs>
+      <circle cx="60" cy="60" r="56"/>
+      <circle cx="60" cy="60" r="53" class="thin"/>
+      <circle cx="60" cy="60" r="33"/>
+      <circle cx="13" cy="60" r="1.7" class="dot"/>
+      <circle cx="107" cy="60" r="1.7" class="dot"/>
+      <text class="mark-ring" text-anchor="middle"><textPath href="#mark-top" startOffset="50%">Created by</textPath></text>
+      <text class="mark-ring" text-anchor="middle"><textPath href="#mark-bottom" startOffset="50%">Henry Turcotte</textPath></text>
+      <text class="mark-initials" x="60" y="71" text-anchor="middle">HT</text>
+    </svg>
+  </figure>`;
+}
+
 function screenStart() {
   setAccent(null);
   focusTable(null);
@@ -338,7 +358,7 @@ function screenStart() {
       </ol>
       <p class="fine">Only your first game counts for the leaderboard. Every game after that is practice.</p>
     </section>
-    <p class="fleuron" aria-hidden="true">❦</p>
+    ${makersMark()}
   </article>`);
 
   app.querySelector('#start-form').addEventListener('submit', submitStart);
