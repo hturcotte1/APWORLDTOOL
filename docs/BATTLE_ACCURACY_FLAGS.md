@@ -32,6 +32,17 @@ simplifies them. Spot-check these first. (Items that also appear in the solo gam
 - **Yoshimune and Dutch learning.** He let in Chinese-language books on European science in 1720; his order for officials to study Dutch came around 1740.
 - **Edo's population around 1700.** "May have a million people": estimates run from about 0.8 to 1 million.
 
+### Ottoman Empire
+- **Orban's guns "bigger than any the world has seen" (1453).** Fine as his boast, but other giant bombards already existed. His origin is uncertain, so the game doesn't give it.
+- **The Franco-Ottoman alliance.** Contacts began in 1525; the date of the formal agreement is debated, so the game says "the 1530s."
+- **The 1589 janissary riot** over debased coins, when the sultan handed over two officials to be executed, comes from chronicle accounts. How much American silver drove Ottoman inflation is debated.
+- **Osman II (1622).** His plans and the "pilgrimage" pretext come from rumor; accounts differ on where he was seized. "The first Ottoman sultan killed by his own soldiers" is the standard view.
+- **Baghdad.** Sources differ between 1623 and early 1624 for its fall, so the game says "about fifteen years ago" in 1638.
+- **The Treaty of Zuhab border (1639)** is "close to" today's Iran–Iraq border: a simplification.
+- **Bonneval** (reformed the bombardiers in the 1730s) was a former French officer who came to the Ottomans on his own, not sent by France.
+- **Karlowitz (1699)** as the "first major permanent loss" of land to European powers is the standard framing but a generalization.
+- **Lepanto: "several Ottoman commanders" advised staying in harbor.** Rests on chronicle accounts of Pertev Pasha and Uluç Ali.
+
 ### Russian Empire
 - **1480 as the end of Mongol rule.** The "standoff on the Ugra" date is conventional; Ivan III had already stopped paying tribute.
 - **Yermak.** His start date is uncertain; the capture of Sibir's capital is dated 1582. The game's "soft gold" nickname for furs is a common modern phrase.
@@ -40,3 +51,38 @@ simplifies them. Spot-check these first. (Items that also appear in the solo gam
 - **The 1648 Moscow riot.** Mainly against corrupt officials; the hated salt tax had already been repealed in 1647.
 - **Peter the Great.** "More than a thousand" streltsy executed in 1698, and St. Petersburg's forced laborers "many of whom died," are estimates.
 - **"That's how Russia became the world's largest country."** A simplification: Siberia is the bulk of it, but later expansion also counted.
+
+### Spanish Empire
+- **Numbers:** "tens of thousands" of Jews exiled in 1492; about 300,000 Moriscos expelled (about a third of Valencia's people); "tens of thousands" resettled from Granada (about 80,000 is often cited); Alba's Council of Troubles executing "more than a thousand"; Cortés's force of "about 500 Spaniards." All are estimates.
+- **Silver and inflation.** That American silver "helped drive up prices" in Europe is the standard view, but its weight is debated.
+- **1566 in the Netherlands.** The big tax fight (Alba's "Tenth Penny") came after 1567, so the decision is about the heresy laws and the provinces' rights.
+- **Treasure fleets** sailed in regular convoys only from the 1560s, and after 1588 they sailed safely for decades (the first full capture was in 1628).
+- **"The sun never set" on Philip's lands** is a later saying.
+
+### Safavid Empire
+- **Ismail "only 14" in 1501.** He was 13 or 14.
+- **Shia scholars from Lebanon and Iraq.** Most arrived under Tahmasp, not Ismail.
+- **Qizilbash officers murdered one of Ismail's Persian chief ministers** (Mirza Shah Husayn, 1523). Worth a spot-check.
+- **Guns at Jam (1528)** and the start of the ghulam system with Tahmasp's captives: commonly stated, but sources are thin. Abbas's musketeers were largely Iranian peasants, separate from the ghulams.
+- **The capital's move to Qazvin** is dated anywhere from about 1548 to 1558; the game says "the 1550s." The royal silk monopoly is dated to 1619.
+- **Safavid "decline" and the end in 1722.** Historians such as Rudi Matthee question a steady-decline story; Safavid shahs reigned in name until 1736.
+
+### Songhai Empire
+- **Sonni Ali.** The Timbuktu chronicles picture him as a tyrant with "magical powers"; oral tradition remembers him as a hero.
+- **The Jenne siege** ("seven years, seven months, and seven days") is labeled as legend, dated "around 1473."
+- **Askia Muhammad.** The title of the caliph's deputy and his hajj dates; the Mossi campaign (1497–1498) called a holy war; Agadez paying tribute (from Leo Africanus); standard weights and measures.
+- **Askia Musa** took power in 1528 (some sources say 1529) and was killed in a revolt in 1531.
+- **Taghaza.** Moroccan raids in the 1550s; the salt workers moved first to a nearby site and, after Morocco's occupation in the 1580s, probably to Taoudenni.
+- **Bornu "did hire Turkish musketeers"** refers to Mai Idris Alooma.
+- **The 1588 rebel** is named as Muhammad al-Sadiq, Askia Ishaq II's brother and a top army commander. Worth a quick check.
+- **Tondibi (1591).** Most sources give 13 March 1591 (one chronicle gives 12 April). About 4,000 Moroccan fighters is standard; Songhai estimates run from about 28,000 to 40,000+. The lack of guns is the standard explanation for the defeat, but historians also stress the 1588 civil war, famine, and divisions. Morocco's demand for Taghaza taxes and the "block the wells" advice come from the chronicles.
+
+### Clashes and map scenes
+- **Kandahar (1622).** The Mughal relief army never came because Prince Khurram (later Shah Jahan) refused to lead it; his open revolt began in 1623, after the city fell. In the map scene, the "court quarrels" marker sits at Agra as a symbol; Jahangir was mostly at Lahore or in Kashmir that year.
+- **The Siege of Osaka (1614–1615)** is played as one clash; the usual estimate is about 100,000 defenders, many of them masterless samurai.
+- **The Amur (1685–1689).** Albazin was besieged in 1685–1686; the Treaty of Nerchinsk followed in 1689. Russia was at war with the Ottomans and Crimean Tatars at the same time.
+- **Clash strengths are a game device.** Which side wins depends on the students' choices and preparations, not on a historical calculation; every clash's explanation says what really happened.
+- **Map scenes** are drawn schematically: arrows show the general direction of a march, and ovals mark regions, not borders.
+
+### Counterfactual options (by design)
+As in the solo game, some top-scoring options are "the road not taken" (for example, Spain calling off the Armada or keeping the Moriscos, Songhai buying guns or blocking the wells, the Mughals making peace with the Marathas). These reward what would have been smartest for the empire; each explanation says clearly what actually happened. Extra lines that appear only after a team's earlier choice (for example, "The shah never built a corps of ghulams…") describe the team's own game, not real history.

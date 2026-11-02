@@ -8,6 +8,95 @@ This document lists every decision in the live **Class Battle** mode so you can 
 
 **Clashes:** the General's clash option has a battle strength (0–3). Each preparation flag the team holds adds 1. The stronger side wins the prize region; on a tie, whoever holds it keeps it. A side with no team in the class plays its historical option; a fallen empire fights at strength 0.
 
+## Flagged for teacher review (uncertain or debated facts)
+
+The Class Battle content was written for this mode, then checked line by line by an independent review pass, and clear errors were corrected.
+The items below are **not known to be wrong**, but historians debate them, sources disagree, or the game
+simplifies them. Spot-check these first. (Items that also appear in the solo game are listed in `docs/ACCURACY_FLAGS.md`.)
+
+### Mughal Empire
+- **"Stay or go home" (1527).** Babur's soldiers' homesickness crisis was in 1526 and his famous speech before Khanwa in 1527; the decision combines them.
+- **Babur's cart-and-gun line "borrowed from the Ottomans."** Babur himself calls it the Ottoman (Rumi) method; some historians stress Safavid or Central Asian channels.
+- **Todar Mal "began his career serving Sher Shah Suri."** Widely repeated, but it rests mostly on later accounts.
+- **Thomas Roe (1615–1619).** The English already traded at Surat from 1613; Roe sought a formal treaty, which Jahangir never granted.
+- **The Rahimi (1613).** The pilgrim ship the Portuguese seized belonged to Jahangir's mother, and Jahangir punished the Portuguese for it.
+- **"European silver poured into India" (1615).** True across the 1600s, but the flow was still modest in 1615.
+- **Aurangzeb and 1679.** The Rajput war had several causes (the succession in Marwar mattered as much as the jizya), and the best-known temple destructions came in 1669–70, before the jizya. How many temples were destroyed, and why, is debated (e.g., Richard Eaton).
+- **The jagir crisis** behind the Mughal decline (Satish Chandra, Irfan Habib) is the standard account, but debated.
+
+### Ming & Qing China
+- **Wang Zhen and Tumu (1449).** Blaming the eunuch Wang Zhen is the traditional account; the emperor and court politics share the blame.
+- **The Single Whip (1581).** The reform spread province by province from the 1530s; 1581 is the usual date for its empire-wide adoption.
+- **Silver and the fall of the Ming.** Hedged with "may have." The idea that a silver shortage helped bring the Ming down (William Atwell) is disputed (Richard von Glahn and others).
+- **China's population in the 1640s.** Estimates vary widely (roughly 100–150 million).
+- **The Great Clearance and the Zheng.** That defectors and a navy, not the coastal evacuation, defeated the Zheng is an interpretation; the evacuation's death toll is unknown.
+- **"Manchu armies never stayed long" inside the Wall.** They did hold four cities for some months in 1630.
+- **Verbiest's cannons.** Counts vary: about 130 in the 1670s and 300 or more around 1680–1681.
+
+### Tokugawa Japan
+- **Christians in Japan by 1614.** "About 300,000" is the usual figure; estimates range from about 200,000 to 500,000. Martyr counts also vary.
+- **Daimyo punished after Sekigahara.** "Dozens" lost lands (often given as about 88).
+- **Shimabara (1637–1638).** The shogunate army is often given as about 125,000; 27,000–37,000 defenders were killed.
+- **Shakushain's War (1669).** Ainu fighters killed "hundreds" of Japanese (estimates about 270–350).
+- **The 47 rōnin.** "A law against private feuds" simplifies things: registered revenge killings were sometimes legal.
+- **Yoshimune and Dutch learning.** He let in Chinese-language books on European science in 1720; his order for officials to study Dutch came around 1740.
+- **Edo's population around 1700.** "May have a million people": estimates run from about 0.8 to 1 million.
+
+### Ottoman Empire
+- **Orban's guns "bigger than any the world has seen" (1453).** Fine as his boast, but other giant bombards already existed. His origin is uncertain, so the game doesn't give it.
+- **The Franco-Ottoman alliance.** Contacts began in 1525; the date of the formal agreement is debated, so the game says "the 1530s."
+- **The 1589 janissary riot** over debased coins, when the sultan handed over two officials to be executed, comes from chronicle accounts. How much American silver drove Ottoman inflation is debated.
+- **Osman II (1622).** His plans and the "pilgrimage" pretext come from rumor; accounts differ on where he was seized. "The first Ottoman sultan killed by his own soldiers" is the standard view.
+- **Baghdad.** Sources differ between 1623 and early 1624 for its fall, so the game says "about fifteen years ago" in 1638.
+- **The Treaty of Zuhab border (1639)** is "close to" today's Iran–Iraq border: a simplification.
+- **Bonneval** (reformed the bombardiers in the 1730s) was a former French officer who came to the Ottomans on his own, not sent by France.
+- **Karlowitz (1699)** as the "first major permanent loss" of land to European powers is the standard framing but a generalization.
+- **Lepanto: "several Ottoman commanders" advised staying in harbor.** Rests on chronicle accounts of Pertev Pasha and Uluç Ali.
+
+### Russian Empire
+- **1480 as the end of Mongol rule.** The "standoff on the Ugra" date is conventional; Ivan III had already stopped paying tribute.
+- **Yermak.** His start date is uncertain; the capture of Sibir's capital is dated 1582. The game's "soft gold" nickname for furs is a common modern phrase.
+- **The oprichnina's toll** ("thousands") and the forbidden years' dates are estimates.
+- **Tsaritsa Anastasia.** Ivan suspected poison (the game frames it that way); tests of her remains found high mercury, but whether she was poisoned is debated.
+- **The 1648 Moscow riot.** Mainly against corrupt officials; the hated salt tax had already been repealed in 1647.
+- **Peter the Great.** "More than a thousand" streltsy executed in 1698, and St. Petersburg's forced laborers "many of whom died," are estimates.
+- **"That's how Russia became the world's largest country."** A simplification: Siberia is the bulk of it, but later expansion also counted.
+
+### Spanish Empire
+- **Numbers:** "tens of thousands" of Jews exiled in 1492; about 300,000 Moriscos expelled (about a third of Valencia's people); "tens of thousands" resettled from Granada (about 80,000 is often cited); Alba's Council of Troubles executing "more than a thousand"; Cortés's force of "about 500 Spaniards." All are estimates.
+- **Silver and inflation.** That American silver "helped drive up prices" in Europe is the standard view, but its weight is debated.
+- **1566 in the Netherlands.** The big tax fight (Alba's "Tenth Penny") came after 1567, so the decision is about the heresy laws and the provinces' rights.
+- **Treasure fleets** sailed in regular convoys only from the 1560s, and after 1588 they sailed safely for decades (the first full capture was in 1628).
+- **"The sun never set" on Philip's lands** is a later saying.
+
+### Safavid Empire
+- **Ismail "only 14" in 1501.** He was 13 or 14.
+- **Shia scholars from Lebanon and Iraq.** Most arrived under Tahmasp, not Ismail.
+- **Qizilbash officers murdered one of Ismail's Persian chief ministers** (Mirza Shah Husayn, 1523). Worth a spot-check.
+- **Guns at Jam (1528)** and the start of the ghulam system with Tahmasp's captives: commonly stated, but sources are thin. Abbas's musketeers were largely Iranian peasants, separate from the ghulams.
+- **The capital's move to Qazvin** is dated anywhere from about 1548 to 1558; the game says "the 1550s." The royal silk monopoly is dated to 1619.
+- **Safavid "decline" and the end in 1722.** Historians such as Rudi Matthee question a steady-decline story; Safavid shahs reigned in name until 1736.
+
+### Songhai Empire
+- **Sonni Ali.** The Timbuktu chronicles picture him as a tyrant with "magical powers"; oral tradition remembers him as a hero.
+- **The Jenne siege** ("seven years, seven months, and seven days") is labeled as legend, dated "around 1473."
+- **Askia Muhammad.** The title of the caliph's deputy and his hajj dates; the Mossi campaign (1497–1498) called a holy war; Agadez paying tribute (from Leo Africanus); standard weights and measures.
+- **Askia Musa** took power in 1528 (some sources say 1529) and was killed in a revolt in 1531.
+- **Taghaza.** Moroccan raids in the 1550s; the salt workers moved first to a nearby site and, after Morocco's occupation in the 1580s, probably to Taoudenni.
+- **Bornu "did hire Turkish musketeers"** refers to Mai Idris Alooma.
+- **The 1588 rebel** is named as Muhammad al-Sadiq, Askia Ishaq II's brother and a top army commander. Worth a quick check.
+- **Tondibi (1591).** Most sources give 13 March 1591 (one chronicle gives 12 April). About 4,000 Moroccan fighters is standard; Songhai estimates run from about 28,000 to 40,000+. The lack of guns is the standard explanation for the defeat, but historians also stress the 1588 civil war, famine, and divisions. Morocco's demand for Taghaza taxes and the "block the wells" advice come from the chronicles.
+
+### Clashes and map scenes
+- **Kandahar (1622).** The Mughal relief army never came because Prince Khurram (later Shah Jahan) refused to lead it; his open revolt began in 1623, after the city fell. In the map scene, the "court quarrels" marker sits at Agra as a symbol; Jahangir was mostly at Lahore or in Kashmir that year.
+- **The Siege of Osaka (1614–1615)** is played as one clash; the usual estimate is about 100,000 defenders, many of them masterless samurai.
+- **The Amur (1685–1689).** Albazin was besieged in 1685–1686; the Treaty of Nerchinsk followed in 1689. Russia was at war with the Ottomans and Crimean Tatars at the same time.
+- **Clash strengths are a game device.** Which side wins depends on the students' choices and preparations, not on a historical calculation; every clash's explanation says what really happened.
+- **Map scenes** are drawn schematically: arrows show the general direction of a march, and ovals mark regions, not borders.
+
+### Counterfactual options (by design)
+As in the solo game, some top-scoring options are "the road not taken" (for example, Spain calling off the Armada or keeping the Moriscos, Songhai buying guns or blocking the wells, the Mughals making peace with the Marathas). These reward what would have been smartest for the empire; each explanation says clearly what actually happened. Extra lines that appear only after a team's earlier choice (for example, "The shah never built a corps of ghulams…") describe the team's own game, not real history.
+
 ## Contents
 
 - [Clashes](#clashes)
@@ -51,11 +140,11 @@ This document lists every decision in the live **Class Battle** mode so you can 
 _What actually happened:_ That's what happened at Chaldiran in 1514. Ottoman cannons and muskets tore apart the Qizilbash cavalry, Selim briefly took Tabriz, and the Ottomans soon took over eastern Anatolia.
 
 **B.** Leave the slow cannons and supply carts behind and race east with your fast cavalry alone, so you can catch Ismail's army before it slips away into the mountains and the summer ends.  
-**+1 points** · battle strength 1  
+**+1 point** · battle strength 1  
 _What actually happened:_ Speed without firepower throws away your biggest advantage. The Qizilbash were superb horsemen; the Ottomans won at Chaldiran because their guns could stop a cavalry charge.
 
 **C.** Stay home and send the shah rich gifts instead.  
-**-1 points** · battle strength 0 · stability -1  
+**-1 point** · battle strength 0 · stability -1  
 _What actually happened:_ Leaving Ismail's preachers free to stir up revolt among the Turkmen of Anatolia would have weakened your hold at home. Selim saw the Safavids as a threat to his faith and his throne, and chose war.
 
 #### Safavid Empire's General: The Ottomans Are Coming (1514)
@@ -87,7 +176,7 @@ _What actually happened:_ This is what happened at Chaldiran in 1514, and it was
 
 #### Tokugawa Japan's General: Osaka Castle (1614)
 
-> Toyotomi Hideyori, son of the great warlord Hideyoshi, still holds mighty Osaka Castle, and thousands of masterless samurai (rōnin) have gathered there. As long as the Toyotomi survive, enemies of the Tokugawa have someone to rally around. Osaka's walls and moats are among the strongest in Japan.
+> Toyotomi Hideyori, son of the great warlord Hideyoshi, still holds mighty Osaka Castle, and tens of thousands of masterless samurai (rōnin) have gathered there. As long as the Toyotomi survive, enemies of the Tokugawa have someone to rally around. Osaka's walls and moats are among the strongest in Japan.
 
 **What really happened:** option A (used when no team plays this empire).  
 **Preparation:** none.  
@@ -99,7 +188,7 @@ _What actually happened:_ This is what happened at Chaldiran in 1514, and it was
 _What actually happened:_ That's what Ieyasu did. The winter siege of 1614 ended in a truce, the Tokugawa filled in the moats, and in the summer of 1615 they took the castle; Hideyori died and the Toyotomi line ended.
 
 **B.** Storm the castle walls at once, before more rōnin arrive.  
-**+1 points** · battle strength 2  
+**+1 point** · battle strength 2  
 _What actually happened:_ Direct attacks on Osaka's huge walls cost the Tokugawa heavy losses in 1614. Ieyasu won by combining force with a clever truce that stripped the castle of its defenses.
 
 **C.** Leave Hideyori alone in his castle. Attacking the son of the great Hideyoshi could turn him into a hero, and the rōnin will drift away if you simply wait.  
@@ -126,11 +215,11 @@ _What actually happened:_ Waiting would have let the Toyotomi stay a rallying po
 _What actually happened:_ Several Ottoman commanders gave this advice. Instead the fleet sailed out and lost most of its galleys near Lepanto on October 7, 1571, though the Ottomans rebuilt it within a year and kept Cyprus.
 
 **B.** Sail out and attack at once, while your crews are confident after taking Cyprus.  
-**+1 points** · battle strength 1  
+**+1 point** · battle strength 1  
 _What actually happened:_ This is what happened at Lepanto in 1571. The League's gun-heavy galleasses and heavier galleys smashed the Ottoman fleet, but the empire rebuilt its navy within a year.
 
 **C.** Send the fleet home to Istanbul for the winter. Ships are expensive, the sailing season is almost over, and the League's quarreling allies will probably go home on their own before spring.  
-**-1 points** · battle strength 0  
+**-1 point** · battle strength 0  
 _What actually happened:_ Pulling back would hand the sea to your enemies without a fight. The Ottomans had just won Cyprus from Venice and needed their navy to hold it.
 
 #### Spanish Empire's General: The Holy League (1571)
@@ -147,7 +236,7 @@ _What actually happened:_ Pulling back would hand the sea to your enemies withou
 _What actually happened:_ That's what Don John of Austria did on October 7, 1571. The galleasses wrecked the Ottoman formation and the League destroyed most of its fleet, though the Ottomans rebuilt their navy within a year.
 
 **B.** Wait out the season and blockade the coast instead, since the allies quarrel and one defeat could break the League.  
-**+1 points** · battle strength 1  
+**+1 point** · battle strength 1  
 _What actually happened:_ The League's members did quarrel, and it broke up in 1573. But waiting would have let the Ottomans tighten their grip on Cyprus and the eastern Mediterranean.
 
 **C.** Pull Spain's galleys out to fight pirates off North Africa.  
@@ -171,7 +260,7 @@ _What actually happened:_ Spain cared most about North Africa, but abandoning th
 
 **A.** Send a relief army now under a loyal general, and settle the quarrel over the heir once Kandahar is safe.  
 **+5 points** · battle strength 3  
-_What actually happened:_ That would have been wise. Instead the relief army never came, because Prince Khurram rebelled against his father, and Kandahar fell to Shah Abbas in 1622. The Mughals won it back in 1638 but lost it for good in 1649.
+_What actually happened:_ That would have been wise. Instead the relief army never came, because Prince Khurram refused to go and then rebelled against his father, and Kandahar fell to Shah Abbas in 1622. The Mughals won it back in 1638 but lost it for good in 1649.
 
 **B.** Wait for the prince to agree to lead the army.  
 **+2 points** · battle strength 1  
@@ -192,15 +281,15 @@ _What actually happened:_ Kandahar guarded the trade and invasion route into Ind
 
 **A.** Strike now with siege guns while the Mughals quarrel, and take Kandahar before a relief army can arrive.  
 **+8 points** · battle strength 3  
-_What actually happened:_ That's what Shah Abbas did. He besieged Kandahar in 1622 and took it after a short siege, while the Mughal army stayed home because of a prince's rebellion.
+_What actually happened:_ That's what Shah Abbas did. He besieged Kandahar in 1622 and took it after a short siege, while the Mughal relief army never came, because Prince Khurram refused to lead it.
 
 **B.** Send ambassadors to Emperor Jahangir to ask for Kandahar's return. Persia once helped his family win back their throne, a debt he may honor.  
-**+1 points** · battle strength 1  
+**+1 point** · battle strength 1  
 _What actually happened:_ Letters and embassies had not won the city back before, and the Mughals had no intention of giving it up. Persian help to Humayun in the 1540s did not change that.
 
 **C.** Ignore Kandahar and attack the Ottomans in Iraq.  
 **-3 points** · battle strength 0 · stability -1  
-_What actually happened:_ Abbas did take Baghdad from the Ottomans in 1623, a year later. But the Mughal quarrel in 1622 gave him a rare chance in the east that would not last.
+_What actually happened:_ Abbas did take Baghdad from the Ottomans soon after, in 1623–1624. But the Mughal quarrel in 1622 gave him a rare chance in the east that would not last.
 
 🗺 **Map scene ("What really happened" on the projector): "The Siege of Kandahar" (1622).** In 1622, Shah Abbas took Kandahar while the Mughal court quarreled over the next emperor. The Mughals won it back in 1638 but lost it for good in 1649.
 
@@ -210,7 +299,7 @@ _What actually happened:_ Abbas did take Baghdad from the Ottomans in 1623, a ye
 
 #### Russian Empire's General: Albazin on the Amur (1685)
 
-> Russian Cossacks and fur traders have pushed across Siberia to the Amur River and built a fort at Albazin. The Qing emperor Kangxi says the Amur valley belongs to China. In 1685 his army forced Albazin to surrender, but the Cossacks soon came back and rebuilt it. Now a bigger Qing army is on its way.
+> Russian Cossacks and fur traders have pushed across Siberia to the Amur River and built a fort at Albazin. The Qing emperor Kangxi says the Amur valley belongs to his empire. In 1685 his army forced Albazin to surrender, but the Cossacks soon came back and rebuilt it. Now a bigger Qing army is on its way.
 
 **What really happened:** option A (used when no team plays this empire).  
 **Preparation:** `cossacks` (the Cossacks who opened Siberia for you), `forts` (the forts you built in the east).  
@@ -222,11 +311,11 @@ _What actually happened:_ Abbas did take Baghdad from the Ottomans in 1623, a ye
 _What actually happened:_ That's what happened. The Cossacks held Albazin through a long siege in 1686, and in 1689 the Treaty of Nerchinsk gave the Amur valley to the Qing but let Russian caravans trade with China.
 
 **B.** Send every soldier Siberia can spare to hold the Amur, whatever it costs.  
-**+1 points** · battle strength 3  
-_What actually happened:_ Russia's forces in the Far East were tiny and thousands of miles from Moscow, while the Qing could bring large armies and cannons. A long war there would have drained Russia while it faced the Ottomans and Sweden in the west.
+**+1 point** · battle strength 3  
+_What actually happened:_ Russia's forces in the Far East were tiny and thousands of miles from Moscow, while the Qing could bring large armies and cannons. A long war there would have drained Russia while it was also at war with the Ottomans and Crimean Tatars.
 
 **C.** Pull the Cossacks all the way back to the Urals.  
-**-1 points** · battle strength 0 · stability -1  
+**-1 point** · battle strength 0 · stability -1  
 _What actually happened:_ Giving up Siberia would have thrown away its rich fur trade, one of Russia's main sources of wealth. Russia kept Siberia and gave up only the Amur valley.
 
 #### Ming & Qing China's General: Russians on the Amur (1685)
@@ -243,7 +332,7 @@ _What actually happened:_ Giving up Siberia would have thrown away its rich fur 
 _What actually happened:_ That's Kangxi's real strategy. Qing forces besieged Albazin in 1685 and 1686, and in 1689 the Treaty of Nerchinsk, worked out with Jesuit priests as interpreters, gave the Amur valley to the Qing and opened limited trade with Russia.
 
 **B.** Build forts along the river and wait. The Russians are far from home, and hunger will drive them out.  
-**+1 points** · battle strength 2  
+**+1 point** · battle strength 2  
 _What actually happened:_ The Russians had already rebuilt Albazin once after being forced out in 1685. Waiting would let them dig in and keep raiding the peoples who paid tribute to the Qing.
 
 **C.** Leave the Amur to the Russians, since the far north is cold and poor and a war there would pull your armies away from China itself, where the real dangers lie.  
@@ -258,7 +347,7 @@ _What actually happened:_ The Amur lands were close to the Manchus' own homeland
 
 #### Songhai Empire's General: Guns on the Niger (1591)
 
-> Judar Pasha's Moroccan army has crossed the Sahara and reached the Niger River near Gao. Thousands died on the march, but the survivors carry arquebuses and cannons. Songhai's army is far larger, but it fights with spears, bows, and cavalry, and it has never faced massed gunfire.
+> Judar Pasha's Moroccan army has crossed the Sahara and reached the Niger River near Gao. Many died on the march, but the survivors carry arquebuses and cannons. Songhai's army is far larger, but it fights with spears, bows, and cavalry, and it has never faced massed gunfire.
 
 **What really happened:** option B (used when no team plays this empire).  
 **Preparation:** `guns` (the guns and gunners you bought), `wells` (the desert wells blocked on the Moroccans' route).  
@@ -267,10 +356,10 @@ _What actually happened:_ The Amur lands were close to the Manchus' own homeland
 
 **A.** Avoid a pitched battle. Pull back from the river towns, raid the Moroccans' supply lines, and let disease and hunger wear them down.  
 **+8 points** · battle strength 3  
-_What actually happened:_ Some Songhai advisers urged this, and it might have worked. Instead Askia Ishaq II met the Moroccans in open battle at Tondibi in March 1591 and was routed by their guns, and Gao and Timbuktu fell soon after.
+_What actually happened:_ Songhai fighters later used hit-and-run raids against the Moroccans for years, so it might have worked. Instead Askia Ishaq II met the Moroccans in open battle at Tondibi in March 1591 and was routed by their guns, and Gao and Timbuktu fell soon after.
 
 **B.** Meet them in open battle at Tondibi and stampede a herd of cattle into their lines.  
-**+1 points** · battle strength 2  
+**+1 point** · battle strength 2  
 _What actually happened:_ This is what happened at Tondibi in 1591. One chronicle says the gunfire turned the stampeding cattle back into Songhai's own lines, and the army was routed.
 
 **C.** Offer gold and the salt mines if they go home.  
@@ -314,7 +403,7 @@ _What actually happened:_ You'd win a fortune but lose an empire. Babur chose to
 _What actually happened:_ This was Babur's real plan, borrowed from the Ottomans. His guns frightened the elephants, his cavalry swept around the sides, and Ibrahim Lodi died in the battle in April 1526. The victory gave Babur Delhi and Agra and founded the Mughal Empire.
 
 **B.** Charge head-on before his elephants can form up. Speed and surprise have won your horsemen many battles, and one quick blow could break the Sultan's nerve.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Bold, but charging a much bigger army with war elephants was a huge gamble. Babur won by holding a fortified line with his guns and striking from the sides.
 
 **C.** Fall back to Kabul and raid again next year.  
@@ -330,7 +419,7 @@ _What actually happened:_ Too cautious. Babur had already raided India several t
 _What actually happened:_ Wise, and what the Mughals did. Humayun died in 1556, but his son Akbar kept the rupiya and built his tax system on Sher Shah's survey methods. The rupee is still the name of the money in India and Pakistan today.
 
 **B.** Melt down the usurper's coins and replace his officials with men who stayed loyal to Humayun in exile. The emperor's return should mean a fresh start.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Erasing a rival's work wastes tools that already work. The Mughals kept Sher Shah's silver coin and his careful methods for measuring land, and Akbar's officials built on both.
 
 **C.** Reward Humayun's loyal nobles with large grants of land right away, and skip the slow work of measuring fields.  
@@ -359,7 +448,7 @@ _What actually happened:_ That would have turned millions of Hindus against you.
 
 #### General: Chittor and Beyond (1568)
 
-> You command Akbar's armies. The great Rajput fortress of Chittor, home of the kingdom of Mewar, refuses to submit. Beyond it lie richer prizes: Gujarat, with its busy ports and cotton weavers, and Bengal, with its rice fields and silk. Your siege guns are ready, but every month of siege costs money, and the Rajputs are famous for fighting to the last.
+> You command Akbar's armies. The great Rajput fortress of Chittor, home of the kingdom of Mewar, refuses to submit. Farther off lie richer prizes: Gujarat, with its busy ports and cotton weavers, and Bengal, with its rice fields and silk. Your siege guns are ready, but every month of siege costs money, and the Rajputs are famous for fighting to the last.
 
 - _Extra line shown (only if: stayed):_ Babur's victory over Rana Sanga at Khanwa in 1527 taught the Rajput kings to fear Mughal guns.
 - _Extra line shown (only if NOT: stayed):_ Babur once carried his treasure home to Kabul, so many Indian rulers doubt your family is here to stay.
@@ -388,7 +477,7 @@ _What actually happened:_ Leaving a powerful enemy fortress near your capital is
 _What actually happened:_ This was Akbar's real system. Mansabdars had to supply soldiers and were paid from land taxes they could not keep forever, so no noble could build a private kingdom. Taxes were based on Todar Mal's careful surveys of land and average harvests.
 
 **B.** Give each noble a permanent family estate. Men who own their land will defend it fiercely.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Permanent estates would let nobles build private power bases and someday challenge you. Akbar moved mansabdars around and did not let them pass their land rights to their sons.
 
 **C.** Set one high tax on every farm, good harvest or bad, since a fixed rate is simple to collect, hard to cheat, and the same every year.  
@@ -408,7 +497,7 @@ _What actually happened:_ Flat high taxes would ruin farmers in bad years and sp
 **+5 points**  
 _What actually happened:_ Shah Jahan built the Taj Mahal (about 1632–1653), which blends Persian, Islamic, and Indian styles, and in 1648 moved his court to his new capital at Delhi, with its Red Fort. Monuments like these displayed the wealth, faith, and power behind Mughal rule.
 
-**B.** Skip the buildings and conquer Balkh and Samarkand, lands once ruled by Timur and Babur. Winning back your ancestors' homeland would bring more glory than any tomb.  
+**B.** Skip the buildings and conquer Balkh and Samarkand, lands once ruled by Timur, Babur's ancestor. Winning back your ancestors' homeland would bring more glory than any tomb.  
 **0 points** · stability -1  
 _What actually happened:_ Shah Jahan did try this: his armies took Balkh in 1646 but had to withdraw in 1647 after huge costs and losses. The Taj Mahal proved a far better investment in Mughal prestige.
 
@@ -434,9 +523,9 @@ _What actually happened:_ That was roughly the Mughal approach. Roe never won th
 **+2 points**  
 _What actually happened:_ Closing the ports would cost the empire customs duties and silver. Jahangir did punish the Portuguese after they seized a ship owned by his mother in 1613, but he kept trade open and let Europeans compete.
 
-**C.** Give the English what Roe asks: a fort at Surat and their own courts.  
+**C.** Give the English more than Roe asks: a fort at Surat and their own courts.  
 **0 points**  
-_What actually happened:_ Forts and separate courts would create a foreign state inside your empire. Jahangir never granted the treaty Roe asked for, and the Mughals kept European merchants under their own laws.
+_What actually happened:_ Forts and separate courts would create a foreign state inside your empire. Jahangir never granted the treaty Roe asked for, and the Mughals kept European merchants under Mughal law.
 
 ### Round IV: Aurangzeb's Wars (1658–1707)
 
@@ -516,7 +605,7 @@ _What actually happened:_ This is close to what Aurangzeb did. Enlisting Maratha
 _What actually happened:_ That's what happened: Yu Qian organized the defense, the emperor's brother took the throne, and Esen's attack on Beijing failed. With a new emperor crowned, the captive was worth little, and the Mongols released him in 1450. Sadly, when the freed emperor took back his throne in 1457, he had Yu Qian executed.
 
 **B.** Move the court south to Nanjing, the old capital, safe behind the wide Yangzi River. If Beijing falls with the court inside, the whole dynasty falls with it.  
-**+1 points** · stability -1  
+**+1 point** · stability -1  
 _What actually happened:_ Abandoning Beijing would have handed the north to the Mongols and shattered the dynasty's prestige. Some officials did urge this, but Yu Qian rallied the defense of the capital, and the Mongols withdrew.
 
 **C.** Pay whatever ransom the Mongols demand. A dynasty that leaves its emperor in enemy hands will look weak to its own people.  
@@ -533,7 +622,7 @@ _What actually happened:_ This became Ming policy: long walls went up along the 
 
 **B.** Lead a giant army deep into the steppe and destroy the raiders' camps. A wall only waits for the enemy, but a bold strike could end the threat for a generation.  
 **+2 points**  
-_What actually happened:_ Big expeditions into the steppe were costly and risky, as Tumu had just shown: horsemen could retreat for hundreds of miles and strike back when an army ran short of food. Ming generals won a few surprise raids, but the Ming relied mostly on walls and garrisons.
+_What actually happened:_ Big expeditions into the steppe were costly and risky, as Tumu had shown in 1449: horsemen could retreat for hundreds of miles and strike back when an army ran short of food. Ming generals won a few surprise raids, but the Ming relied mostly on walls and garrisons.
 
 **C.** Pull your soldiers back inside the walled cities and let the villages fend for themselves.  
 **0 points** · stability -1  
@@ -548,7 +637,7 @@ _What actually happened:_ Leaving the villages unprotected would let raiders str
 _What actually happened:_ Officials chosen by exams on the Confucian classics gave the Ming a large, educated class trained to serve the state, and the exams stayed the main road to office until 1905. Many Ming emperors still let eunuchs gain power, and it often led to trouble.
 
 **B.** Give the eunuchs control of tax collection and the secret police. They answer only to the emperor, so unlike officials, they can't form factions against him.  
-**+1 points** · sets flag: eunuchs  
+**+1 point** · sets flag: eunuchs  
 _What actually happened:_ Many Ming emperors did this. Eunuchs ran the feared Eastern Depot, a secret police that spied on and arrested officials, and powerful eunuchs such as Liu Jin in the early 1500s grew rich and hated, which weakened trust in the government.
 
 **C.** Raise money for the frontier armies by selling government posts and titles to wealthy families. Rich men who buy a post have a stake in the dynasty's success.  
@@ -573,7 +662,7 @@ _What actually happened:_ That would have been the wise path. In reality, Wanli 
 _What actually happened:_ That would have been the wise path, though with fewer well-trained officials to choose from, rebuilding the government would be slow. In reality, Wanli withdrew from government for decades, and eunuchs and feuding factions grew powerful.
 
 **B.** Send trusted eunuchs out to collect new taxes on mines and merchants. They answer only to you, so the money comes straight to the palace instead of passing through quarreling officials.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ This really happened, starting in 1596. The eunuch tax collectors were hated, squeezed merchants and miners, and set off riots in many cities, damaging the dynasty's reputation.
 
 **C.** Stay inside the palace. The officials defied you over your heir, so let them run the government without you.  
@@ -618,7 +707,7 @@ _What actually happened:_ When trade was banned before 1567, merchants turned to
 
 #### Emperor: The Mandate of Heaven Passes (1644)
 
-> Famine, rebellion, and a weak government brought down the Ming. In 1644 the rebel Li Zicheng captured Beijing, and the last Ming emperor hanged himself. A Ming general then joined forces with the Manchus at the Great Wall, and together they drove Li out. Now your Manchu family, whose Qing dynasty was proclaimed in Manchuria in 1636, rules from Beijing: a small minority ruling well over a hundred million Han Chinese.
+> Famine, rebellion, and a weak government brought down the Ming. In 1644 the rebel Li Zicheng captured Beijing, and the last Ming emperor hanged himself. A Ming general then joined forces with the Manchus at the Great Wall, and together they drove Li out. Now your Manchu family, whose Qing dynasty was proclaimed in Manchuria in 1636, rules from Beijing: a small minority ruling more than a hundred million Han Chinese.
 
 - _Extra line shown (only if: silver_tax):_ Because Ming taxes were paid in silver, a drop in silver imports in the 1630s and 1640s may have made hard times worse for taxpayers.
 - _Extra line shown (only if: wall):_ Manchu armies raided through the rebuilt Great Wall several times but never stayed for long, until the Ming general guarding Shanhai Pass joined them in 1644.
@@ -666,7 +755,7 @@ _What actually happened:_ The Qing did win over many Zheng officers with titles 
 _What actually happened:_ The Qing really did this, starting in 1661, in what is called the Great Clearance. Whole communities lost their homes, fields, and fishing boats, and many people starved; it hurt the Zheng, but the order was fully lifted only in 1684, after Taiwan fell.
 
 **C.** Raise taxes on the coastal provinces to pay for the war, since the coast is where the trouble is.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ The coastal provinces were already suffering from war and raids, and higher taxes would push more coastal people to join or trade with the Zheng. The Qing instead tried to cut the Zheng off from the coast and win over their officers.
 
 ### Round IV: Kangxi's Peace (1673–1722)
@@ -682,7 +771,7 @@ _What actually happened:_ The coastal provinces were already suffering from war 
 _What actually happened:_ Close to Kangxi's response. In 1721, after reading the Pope's ruling, he wrote that Europeans should no longer preach in China, while Jesuit astronomers and artists kept serving at court. His son Yongzheng formally banned Christianity in 1724.
 
 **B.** Accept the Pope's ruling and let missionaries preach freely. Their religion is their own business, and their science has served you well.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ That would let a foreign religious leader decide what your subjects could do, a challenge to the emperor's authority. Kangxi refused and stopped missionary preaching in 1721.
 
 **C.** Expel every European, the court scientists included. Foreigners who obey the Pope over the emperor cannot be trusted to run your calendar.  
@@ -755,7 +844,7 @@ See [The Siege of Osaka 1614](#the-siege-of-osaka-1614) above.
 _What actually happened:_ That's what Ieyasu did. He took away or shrank the lands of dozens of enemy daimyo, placed fudai near Edo, and kept the tozama, former enemies and newer allies alike, at a distance; in the north, the Uesugi clan that had opposed him kept only a quarter of its lands. This map of power lasted for more than 250 years.
 
 **B.** Execute every lord who fought against you and seize all of his lands. A lord who is dead can never raise another army.  
-**+1 points** · stability -1  
+**+1 point** · stability -1  
 _What actually happened:_ Mass executions would terrify the surviving lords into new revolts. Ieyasu executed a few leaders, such as Ishida Mitsunari, but mostly took away or cut lands and moved rivals far from Edo.
 
 **C.** Let every lord keep his lands as before. Generosity, not fear, will win their loyalty, and it will spare Japan another war.  
@@ -773,7 +862,7 @@ _What actually happened:_ Too soft. Leaving powerful enemies with their full lan
 _What actually happened:_ This is what the shogunate did: a nationwide ban in 1614, then rules forcing every family to register at a Buddhist temple. Thousands of Japanese Christians were tortured or killed for refusing to give up their faith, and others worshiped in secret for more than two centuries. Harsh as it was, the ban removed what the shogunate saw as a foreign threat to its control.
 
 **B.** Welcome the missionaries. Christianity could bring European allies and guns, and Christian daimyo would owe you loyalty if a rival ever rose against you.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Risky for a new government: the shogunate feared that missionaries served Spain and Portugal and that converts would put the Pope above the shogun. It banned Christianity in 1614, and thousands of Japanese Christians were later persecuted or killed.
 
 **C.** Leave things as they are. The Christians have caused no trouble, and the silk trade depends on good relations with the Portuguese.  
@@ -792,7 +881,7 @@ _What actually happened:_ The silk trade really did make officials hesitate, but
 _What actually happened:_ That's what happened. A shogunate army of more than 100,000 starved out the castle and took it in 1638, killing nearly all of the tens of thousands inside, including women and children. Afterward the lord, Matsukura Katsuie, was executed for misrule, a rare punishment for a daimyo.
 
 **B.** Negotiate: let the rebels keep their faith if they go home. A long siege could cost thousands of soldiers, and peasants sent home can still farm and pay taxes.  
-**+1 points** · stability -1 · sets flag: tolerated  
+**+1 point** · stability -1 · sets flag: tolerated  
 _What actually happened:_ Giving in to an armed revolt would encourage more of them. The shogunate crushed the rebellion in 1638, blamed Christianity for it, and enforced its ban on the religion even more harshly.
 
 **C.** Crush the rebellion, but leave the local lord and his taxes alone.  
@@ -811,7 +900,7 @@ _What actually happened:_ Victory without fixing the cause invites new revolts. 
 _What actually happened:_ This is the real policy, called sankin-kōtai, made law in 1635 and extended to all daimyo by 1642. The trips to Edo with huge processions were very expensive, and the wives and heirs left in Edo were basically hostages, so rebellion became nearly impossible.
 
 **B.** Station shogunate soldiers in every domain to inspect each lord's castle. Have them report at once on any daimyo who gathers troops or meets in secret with his neighbors.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ The shogunate did send inspectors to the domains from time to time, but keeping soldiers in some 250 domains would have been hugely expensive. Sankin-kōtai worked far more cheaply, since the daimyo paid for their own costly trips to Edo.
 
 **C.** Trust the daimyo. The wars are over, and treating loyal lords like suspects will only give them a reason to turn against you.  
@@ -836,7 +925,7 @@ _What actually happened:_ This was the policy later called sakoku: the Portugues
 _What actually happened:_ Japan was never completely closed. The shogunate kept carefully controlled trade with the Dutch and Chinese at Nagasaki and with Korea, which brought in silk, medicines, books, and news of the world.
 
 **C.** Keep trading with the Portuguese, but search their ships for priests. Their silk is too valuable to lose, and the Dutch may not be able to replace it.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Portuguese silk really did make officials hesitate, but searches had never stopped priests from slipping in. The shogunate decided the Dutch and Chinese could supply such goods instead, and it expelled the Portuguese in 1639.
 
 #### General: Shakushain's War (1669)
@@ -854,7 +943,7 @@ _What actually happened:_ The shogunate did order northern domains, especially T
 _What actually happened:_ Helping Matsumae was the right goal, but shipping troops so far was slow and costly; historically the shogun ordered the northern domains, especially Tsugaru, to send them. The revolt collapsed after Shakushain was killed at a peace meeting in 1669, and afterward the Ainu were forced to trade on even worse terms, not fairer ones.
 
 **B.** Pull out of Ezo. The island is cold and far away, and it isn't worth a war.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Ezo's trade goods, such as dried salmon and furs, made Matsumae rich, and the shogunate would not give up its foothold in the north. It kept control, and after Shakushain was killed in 1669 the Ainu's trade terms got even worse.
 
 **C.** Wage a long war to burn every Ainu village that joined Shakushain. Only a terrible lesson will stop the Ainu from ever rising again.  
@@ -910,7 +999,7 @@ _What actually happened:_ Letting missionaries back in would undo a century of p
 _What actually happened:_ That's what the shogunate decided in 1703, after officials and scholars argued over the case. The 46 rōnin who turned themselves in died by seppuku and were buried beside their lord, and their story became Japan's most famous tale of loyalty, retold in plays like Chūshingura.
 
 **B.** Pardon them. Their loyalty to their dead lord is exactly the samurai virtue your peace depends on, and punishing heroes would turn Edo against you.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ A pardon would tell every samurai that private revenge stood above the shogun's law, inviting more feuds. Some scholars did urge mercy, but the shogunate honored the rōnin's loyalty without excusing the killing.
 
 **C.** Execute them as common criminals. Murder is murder, and samurai must learn that the shogun's law is above their sense of honor.  
@@ -962,7 +1051,7 @@ _What actually happened:_ This is what Mehmed did. Orban's cannons pounded the w
 _What actually happened:_ Patient, but slow. Without warships to stop them, Venetian and Genoese ships could keep slipping food and soldiers into the city by sea. Mehmed won in under two months by pairing a land and sea blockade with huge cannons and a final assault.
 
 **C.** Leave Constantinople alone. Its emperor rules little more than one city, so accept his gifts and conquer easier lands first.  
-**-1 points**  
+**-1 point**  
 _What actually happened:_ A missed chance. An enemy capital in the middle of your lands could become a base for a European crusade. Mehmed made Constantinople his first great target, and its fall in 1453 shocked Europe and made his reputation.
 
 #### Pasha (General): clash, Showdown at Chaldiran (1514)
@@ -978,11 +1067,11 @@ See [Showdown at Chaldiran 1514](#showdown-at-chaldiran-1514) above.
 _What actually happened:_ This is close to what happened. Mehmed brought in people of all three faiths (many of them moved by force), named a new Orthodox patriarch, and let religious communities run much of their own affairs in return for loyalty and taxes. Historians later called this the millet system.
 
 **B.** Fill the city with Muslim Turkish settlers only. A loyal Muslim capital would be easier to defend against a crusade, and Christians can stay in the countryside.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Workable, but you would lose skilled Greek, Armenian, and Jewish merchants and craftsmen. Mehmed deliberately brought in people of many faiths, and by the 1500s Istanbul was one of the largest cities in the world.
 
 **C.** Order every Christian and Jew in the city to convert to Islam or leave.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ Forced conversion would spark revolts and drive away the taxpayers your capital needed. Mehmed did the opposite: he protected Christians and Jews in return for loyalty and the jizya, a tax paid by non-Muslims.
 
 ### Round II: The Magnificent Age (1516–1571)
@@ -996,11 +1085,11 @@ _What actually happened:_ Forced conversion would spark revolts and drive away t
 _What actually happened:_ This is what Selim did. Protecting Mecca, Medina, and the hajj made the Ottoman sultan the leading ruler of the Sunni Muslim world, and Egypt's grain and taxes poured into Istanbul. Later sultans sometimes also called themselves caliph, leader of the Muslim community.
 
 **B.** Load Cairo's treasure and its best craftsmen onto ships for Istanbul, then march home in triumph and leave Egypt and Arabia to whoever can hold them.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Selim did send treasure and many of Cairo's craftsmen to Istanbul, but he also kept Egypt. Its grain and taxes were worth far more than one load of loot, and walking away would have thrown away the prestige of guarding the holy cities.
 
 **C.** Announce that every Muslim ruler, from Morocco to India, must now obey you directly, and send armies against any who refuse. As protector of the holy cities, you should lead them all.  
-**-1 points**  
+**-1 point**  
 _What actually happened:_ Far too much at once. Rulers like the Shia Safavids in Persia and the sultans of Morocco had their own armies and their own claims to rule, and would never simply obey. The Ottomans led the wider Muslim world mainly through prestige: guarding Mecca, Medina, and the hajj.
 
 #### Pasha (General): clash, The Battle of Lepanto (1571)
@@ -1018,11 +1107,11 @@ See [The Battle of Lepanto 1571](#the-battle-of-lepanto-1571) above.
 _What actually happened:_ This is what Suleiman and his advisers did. Zápolya ruled as an Ottoman vassal until he died in 1540, and in 1541 Suleiman took Buda and made central Hungary an Ottoman province for nearly 150 years. France became an ally against the Habsburgs in the 1530s.
 
 **B.** March on Vienna every summer until the Habsburg capital falls. Without Vienna, the Habsburgs could never hold Hungary.  
-**-1 points**  
+**-1 point**  
 _What actually happened:_ Vienna was too far away. Suleiman besieged it in 1529, but autumn rains, long supply lines, and stubborn defenders forced him to turn back. An army that marches every summer wears itself out; holding Hungary was the smarter goal.
 
 **C.** Let Ferdinand have Hungary in return for peace and yearly gifts.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ That would hand a rich kingdom, and a base for attacking your Balkan lands, to your strongest Christian rival. Suleiman fought for Hungary instead, and in 1547 the Habsburgs even agreed to pay him tribute for the slice they kept.
 
 ### Round III: Strains (1580–1650)
@@ -1036,7 +1125,7 @@ _What actually happened:_ That would hand a rich kingdom, and a base for attacki
 _What actually happened:_ The road not taken. Osman II moved fast, and when word spread that he planned to raise a new army in Anatolia, the janissaries rebelled and killed him in 1622, the first Ottoman sultan murdered by his own soldiers. The janissaries were finally abolished in 1826, by a sultan who first made sure he had loyal troops and the support of religious leaders.
 
 **B.** Strike first. Announce a pilgrimage to Mecca, slip away to Anatolia, and raise a new army there that owes everything to you. Then disband the janissaries.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ This was Osman II's plan, or so his enemies claimed. In May 1622 the janissaries rose up, dragged him from the palace, and killed him. A sudden purge without loyal troops ready was deadly.
 
 **C.** Keep the peace by paying the janissaries a big bonus whenever they grumble, and leave their privileges alone. _(only if NOT: france)_  
@@ -1044,12 +1133,12 @@ _What actually happened:_ This was Osman II's plan, or so his enemies claimed. I
 _What actually happened:_ This bought quiet for a while, but bonuses emptied the treasury and taught the janissaries that rioting pays. Sultans after Osman II often gave in this way, and mutinies kept coming.
 
 **C2.** Ask your old allies in France to send officers who can train a new army in the European style. France fears the Habsburgs as much as you do. _(only if: france)_  
-**+1 points**  
-_What actually happened:_ Christian officers drilling Muslim troops would have enraged the janissaries and religious scholars in 1622. French help did come a century later: Bonneval, a French officer who became a Muslim, helped modernize the Ottoman bombardiers, an artillery corps, in the 1730s.
+**+1 point**  
+_What actually happened:_ Christian officers drilling Muslim troops would have enraged the janissaries and religious scholars in 1622. A Frenchman did help a century later: Bonneval, a former French officer who became a Muslim, helped modernize the Ottoman bombardiers, an artillery corps, in the 1730s.
 
 #### Pasha (General): Retaking Baghdad (1638)
 
-> You command Sultan Murad IV's army. Fifteen years ago, Shah Abbas of Persia seized Baghdad, a rich trading city and the old capital of the caliphs. Ottoman armies have tried twice to win it back and failed. Now the sultan himself is marching east with a huge army and heavy siege cannons. Baghdad's walls are strong, and the war with Persia has dragged on ever since.
+> You command Sultan Murad IV's army. About fifteen years ago, Shah Abbas of Persia seized Baghdad, a rich trading city and the old capital of the caliphs. Ottoman armies have tried twice to win it back and failed. Now the sultan himself is marching east with a huge army and heavy siege cannons. Baghdad's walls are strong, and the war with Persia has dragged on ever since.
 
 - _Extra line shown (only if: holy_cities):_ Because your sultans protect Mecca and Medina and claim to lead Sunni Muslims, leaving Baghdad and its famous Sunni shrines in Shia hands is an embarrassment.
 
@@ -1062,7 +1151,7 @@ _What actually happened:_ This is what happened. Murad IV's cannons broke Baghda
 _What actually happened:_ Smaller armies had already tried this, in 1625–1626 and again in 1630, and failed. Baghdad's walls and its Persian defenders were too strong for anything less than a full campaign with heavy guns.
 
 **C.** After Baghdad falls, keep marching. Push deep into Persia, take the shah's capital at Isfahan, and finish off the Safavids for good.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ Ottoman armies had invaded Persia many times but never held its heartland, because scorched earth and long supply lines wore them down. Endless war drained both empires, which is why both sides accepted peace in 1639.
 
 #### Grand Vizier: Bad Coins, Angry Soldiers (1589)
@@ -1076,11 +1165,11 @@ _What actually happened:_ Ottoman armies had invaded Persia many times but never
 _What actually happened:_ The wise path, but the government managed it only in fits and starts. Bad coins and late pay led to more mutinies and fed the Celali revolts in Anatolia (about 1595–1610). Tax farming did raise cash, but it worked best where officials kept collectors from squeezing peasants.
 
 **B.** Raise taxes sharply on peasant farmers. They are the empire's biggest group of taxpayers, and the soldiers must be paid now.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Heavy new taxes brought in money but drove many peasants off their land. Some joined the bandit armies of the Celali revolts, which tore through Anatolia from about 1595 to 1610.
 
 **C.** Mix even more copper into the coins. Each coin will buy less, but the mint can make more of them and pay every soldier on time.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ Debasing the coins again would push prices even higher, and soldiers notice when their pay buys less. Pay in bad coins is exactly what set off this year's riot.
 
 ### Round IV: Revival and Retreat (1656–1699)
@@ -1097,7 +1186,7 @@ _What actually happened:_ Debasing the coins again would push prices even higher
 _What actually happened:_ This is what happened. Köprülü Mehmed Pasha ruthlessly executed rebels and corrupt officials, broke the Venetian blockade in 1657, and restored order, and his son continued his work. The Köprülü years even brought new conquests, such as Crete in 1669.
 
 **B.** Keep replacing grand viziers until one succeeds. Never let one minister grow too powerful, and let your palace advisers weigh in on every appointment.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ This is how the empire had gotten into trouble: weak, short-lived grand viziers who could not fix anything before rivals pushed them out. The turnaround came only when one minister got real power.
 
 **C.** Spend what is left in the treasury to pay off the rioters, then end the costly war with Venice by giving up your claim to the island of Crete.  
@@ -1116,7 +1205,7 @@ _What actually happened:_ Paying off rioters only teaches them that rioting work
 _What actually happened:_ The wise choice. Kara Mustafa besieged Vienna for two months in 1683 until a relief army led by King Jan Sobieski of Poland crushed his army. In the long war that followed, the Ottomans lost most of Hungary at the Treaty of Karlowitz (1699).
 
 **B.** March on Vienna at once with every soldier and gun. Taking the Habsburg capital would finish Suleiman's work and make the army, and the grand vizier, legendary.  
-**-1 points** · stability -1 · loses: Hungary  
+**-1 point** · stability -1 · loses: Hungary  
 _What actually happened:_ This is what happened, and it went badly. On September 12, 1683, Sobieski's relief army smashed the besiegers, Kara Mustafa was executed for the defeat, and a Holy League of Christian powers drove the Ottomans out of most of Hungary.
 
 **C.** Send money and troops to Thököly's Hungarian rebels, and let them wear down the Habsburgs while the main army waits safely at Buda.  
@@ -1135,7 +1224,7 @@ _What actually happened:_ The Ottomans did back Thököly, whom they had recogni
 _What actually happened:_ This is close to what happened. The Ottomans signed at Karlowitz in 1699, their first major permanent loss of land to European powers, and in the following decades sent an ambassador to Paris (1720) and approved the first Ottoman printing press for Turkish books (1727). The empire lasted until 1922.
 
 **B.** Refuse the treaty and fight on until one great victory wins Hungary back. Giving up land to Christian kings would shame the sultan before the whole empire.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ Pride over survival. The army had lost battle after battle and the treasury was exhausted, so fighting on would likely have cost even more land. The Ottomans signed at Karlowitz in 1699 and lived to fight another day.
 
 **C.** Sign the treaty, but execute the commanders who lost as a warning, and keep the army exactly as it is.  
@@ -1161,11 +1250,11 @@ _What actually happened:_ Punishing individuals doesn't fix an army that has fal
 _What actually happened:_ That's essentially what happened. The two armies faced each other across the Ugra for weeks, the help from Poland-Lithuania never came, and in November the khan's army turned back. Historians often date the end of Mongol rule over Russia to this "Great Stand" of 1480.
 
 **B.** Pay this one last time. A single payment costs far less than a war, and the Horde is falling apart anyway; once it collapses, you can stop paying without risking a battle.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Paying would have kept Moscow a junior partner of the Mongols and invited more demands. Ivan III held firm instead, and the khan's army retreated from the Ugra without a major battle.
 
 **C.** Cross the Ugra and attack the khan's camp before his allies arrive.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ A pitched battle could have wiped out Moscow's army in a single day, and crossing a river to attack is especially dangerous. Ivan III wisely held the crossings, and the khan retreated in 1480 without a major battle.
 
 #### Voivode (General): The Siege of Kazan (1552)
@@ -1181,7 +1270,7 @@ _What actually happened:_ That's what happened. Russian engineers blew holes in 
 _What actually happened:_ Moscow had already tried this several times, and its friendly khans kept being overthrown by their own nobles. Ivan conquered Kazan in 1552 and Astrakhan in 1556 instead, taking control of the whole Volga trade route.
 
 **C.** Leave the east alone and march west to win a port on the Baltic Sea.  
-**-1 points**  
+**-1 point**  
 _What actually happened:_ Ivan did start a war for the Baltic in 1558, the Livonian War, and lost it after about 25 years. Taking Kazan first, as he actually did in 1552, removed a dangerous enemy and won the Volga trade.
 
 #### Chief Minister: Swallowing Novgorod (1478)
@@ -1193,12 +1282,12 @@ _What actually happened:_ Ivan did start a war for the Baltic in 1558, the Livon
 _What actually happened:_ That's what Ivan III did. In the 1480s he deported thousands of Novgorod's boyars and merchants and gave their lands to his servicemen as pomestie, estates held only in return for service. These estates bound a new class of gentry tightly to Moscow, and such service estates became the basis of Russia's cavalry army.
 
 **B.** Leave the assembly and the great families in charge, as long as they swear loyalty and pay their taxes. A proud, rich city that runs itself will pay more than one held down by force.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Novgorod's leaders had already turned to Lithuania once, and Moscow had to defeat them in battle in 1471. Ivan III ended the city's self-rule and handed its lands to his own servicemen.
 
 **C.** Burn Novgorod to the ground so it can never rebel again.  
-**-1 points**  
-_What actually happened:_ Destroying a rich trading city would throw away the wealth you just won. Ivan III kept Novgorod and its trade but replaced its leaders with his own men; it was his grandson Ivan IV who later sent his men to sack the city in 1570.
+**-1 point**  
+_What actually happened:_ Destroying a rich trading city would throw away the wealth you just won. Ivan III kept Novgorod and its trade but replaced its leaders with his own men; it was his grandson Ivan IV who later led his men to sack the city in 1570.
 
 ### Round II: Terror and Troubles (1565–1613)
 
@@ -1218,11 +1307,11 @@ _What actually happened:_ Ivan did turn to lesser gentry, but as oprichniki, the
 _What actually happened:_ That would have built a stronger, steadier state. Instead Ivan created the oprichnina (1565–1572), a private territory policed by black-clad horsemen who terrorized the boyars, killed thousands, and wrecked the economy. It is a big reason he is remembered as "Ivan the Terrible."
 
 **B.** Split the realm in two. In your half, a black-clad private army will hunt traitors and seize boyar lands; if the boyars really poisoned Anastasia, only fear will keep the rest in line.  
-**-1 points** · stability -1 · sets flag: terror  
+**-1 point** · stability -1 · sets flag: terror  
 _What actually happened:_ This is what Ivan really did. His oprichnina (1565–1572) killed thousands, including in the sack of Novgorod in 1570, and it could not even stop Crimean Tatars from burning Moscow in 1571.
 
 **C.** Step back from ruling and let the boyar council govern in your name, as it did when you were a boy, so the nobles have no reason to plot.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ When Ivan was a boy, rival boyar clans fought each other for power and ruled badly in his name. A weak tsar invites the same chaos; Ivan went to the opposite extreme with the brutal oprichnina.
 
 #### Voivode (General): Beyond the Urals (1582)
@@ -1236,11 +1325,11 @@ _What actually happened:_ When Ivan was a boy, rival boyar clans fought each oth
 _What actually happened:_ That's how Russia became the world's largest country. Yermak's Cossacks defeated Khan Kuchum and took his capital in 1582, Moscow sent soldiers, and forts such as Tobolsk (1587) followed; Russians reached the Pacific by 1639. The fur tribute, called yasak, made the tsars rich, but it was often taken by force from Siberia's native peoples.
 
 **B.** Forbid it, and order the Stroganovs to recall Yermak.  
-**+1 points**  
-_What actually happened:_ Ivan IV actually did order Yermak recalled at first, angry that the Stroganovs' own lands had been left open to raids. But once Yermak took Sibir's capital, the tsar sent soldiers and rewards, and Siberia's furs became one of Russia's richest sources of wealth.
+**+1 point**  
+_What actually happened:_ Ivan IV actually did order Yermak recalled at first, angry that his own frontier towns had been left open to raids. But once Yermak took Sibir's capital, the tsar sent soldiers and rewards, and Siberia's furs became one of Russia's richest sources of wealth.
 
 **C.** Send the tsar's main army east to conquer all of Siberia in one great campaign, building forts as it goes, so the furs start flowing now instead of in twenty years.  
-**-1 points**  
+**-1 point**  
 _What actually happened:_ Dangerous overkill: Crimean Tatars had burned Moscow in 1571, and the army was needed at home. Siberia was won by small bands of Cossacks and soldiers with guns who built forts along the rivers.
 
 #### Chief Minister: Choosing a Tsar (1613)
@@ -1254,11 +1343,11 @@ _What actually happened:_ Dangerous overkill: Crimean Tatars had burned Moscow i
 _What actually happened:_ That's what happened. In 1613 the assembly elected 16-year-old Michael Romanov, whose great-aunt Anastasia had been Ivan IV's beloved first wife. Backed by the Church and the nobles, the Romanov dynasty ruled Russia until 1917.
 
 **B.** Offer the throne to Władysław, the Polish king's son, if he becomes Orthodox. Peace with Poland would end the war.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Some boyars really tried this in 1610, but the Polish king would not let his son convert, and Polish troops took over the Kremlin instead. Most Orthodox Russians would not accept a Catholic tsar.
 
 **C.** Let the Cossack chiefs and army commanders fight it out for the throne.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ More civil war would have left Russia open to Poland and to Sweden, whose army held Novgorod. Russians chose unity instead and elected Michael Romanov tsar in 1613.
 
 ### Round III: Romanov Russia (1613–1682)
@@ -1272,11 +1361,11 @@ _What actually happened:_ More civil war would have left Russia open to Poland a
 _What actually happened:_ The council of 1666–1667 did depose Nikon, ending his claim to stand above the tsar, but it also condemned the Old Believers, and the state persecuted them for generations. Thousands fled to forests and borderlands, and the split lasted for centuries. Keeping the tsar's authority without mass persecution would have kept Russia more united.
 
 **B.** Let the patriarch rule beside you as an equal "Great Sovereign," as Patriarch Filaret, your grandfather, ruled beside your father.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Your father had shared power with his own father, Filaret, and you had given Nikon the same title, but Nikon used it to claim the Church stood above the tsar. The council of 1666–1667 deposed him, and Peter the Great later did away with the office of patriarch altogether.
 
 **C.** Order every Old Believer to accept the new rituals or face exile, prison, or the stake. If ordinary believers can defy the Church's council, they may soon defy the tsar as well.  
-**-1 points** · stability -1 · sets flag: church_under_tsar  
+**-1 point** · stability -1 · sets flag: church_under_tsar  
 _What actually happened:_ The Church did condemn the Old Believers in 1667, and the state hunted them for generations; their leader, the priest Avvakum, was burned at the stake in 1682. Thousands fled to the forests, and some burned themselves to death rather than give in. Persecution only deepened a split that lasted for centuries.
 
 #### Voivode (General): The Cossacks of Ukraine (1654)
@@ -1291,16 +1380,16 @@ _What actually happened:_ The Church did condemn the Old Believers in 1667, and 
 _What actually happened:_ That's what happened. Russian armies took Smolensk in 1654, and the Truce of Andrusovo (1667) gave Russia Smolensk, Ukraine east of the Dnieper River, and the city of Kyiv. Kyiv was supposed to be handed back after two years, but Russia kept it, and Poland accepted this in 1686.
 
 **B.** Refuse. Russia lost its last war with Poland in 1634, and the Cossacks have changed sides before; they once fought beside the Crimean Tatars.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Without help, the Cossacks would likely have been crushed by Poland or turned to the Ottomans, as one of their later leaders did. By accepting, Russia won Kyiv and Ukraine east of the Dnieper in 1667.
 
 **C.** Promise to protect the Cossacks but send no army. Let them and the Poles wear each other out, then step in when both are too weak to refuse your terms.  
-**-1 points**  
+**-1 point**  
 _What actually happened:_ Broken promises would push the Cossacks back toward Poland, as one of their leaders did in 1658 even with Russian help. Russia sent real armies and won Kyiv and Left-bank Ukraine at Andrusovo in 1667.
 
 #### Chief Minister: The Law Code of 1649 (1649)
 
-> As Chief Minister to Tsar Alexis, you are under pressure. Riots over a salt tax and corrupt officials shook Moscow in 1648. The gentry who serve as the army's officers need peasants to farm their estates, but peasants keep fleeing to the frontier to be free, and the law lets lords reclaim runaways for only a limited number of years. An assembly of the land is meeting to approve a new law code.
+> As Chief Minister to Tsar Alexis, you are under pressure. Riots against corrupt officials and a hated salt tax shook Moscow in 1648. The gentry who serve as the army's officers need peasants to farm their estates, but peasants keep fleeing to the frontier to be free, and the law lets lords reclaim runaways for only a limited number of years. An assembly of the land is meeting to approve a new law code.
 
 - _Extra line shown (only if: terror):_ The oprichnina's terror emptied many villages as peasants fled, and in the 1580s the tsars began suspending the peasants' old right to leave their lords each autumn.
 - _Extra line shown (only if: pomestie):_ Your team's pomestie estates are worth little to the gentry who hold them unless peasants stay to farm the land.
@@ -1314,7 +1403,7 @@ _What actually happened:_ This is what the Law Code of 1649 did. It kept the gen
 _What actually happened:_ St. George's Day had been suspended in the 1580s and 1590s because the gentry said it let their peasants slip away, so bringing it back would have angered the tsar's officers. The Law Code of 1649 instead made serfdom permanent, which caused great suffering and helped spark revolts like Stenka Razin's in 1670.
 
 **C.** Free the peasants to settle wherever they choose. Free farmers work harder, the frontier will fill with settlers, and a grateful peasantry will stand by the tsar.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ In 1649 the gentry who led the tsar's army would have turned against him. Russia instead made serfdom permanent, a cause of great suffering and of revolts like Stenka Razin's in 1670; serfs were not freed until 1861.
 
 ### Round IV: Peter the Great (1682–1725)
@@ -1331,11 +1420,11 @@ _What actually happened:_ In 1649 the gentry who led the tsar's army would have 
 _What actually happened:_ Exactly Peter's response. He founded St. Petersburg in 1703, destroyed Charles XII's army at Poltava in 1709, and won the Baltic coast at the Treaty of Nystad in 1721. The new city was built by tens of thousands of forced laborers, many of whom died.
 
 **B.** Make peace with Sweden and give up the Baltic. Sweden has the best army in Europe, and the White Sea port of Arkhangelsk can still carry your trade with the West.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Arkhangelsk is frozen for about half the year, so Russia would have stayed cut off from Europe's trade and ideas. Peter refused to quit after Narva, and by 1721 Russia had its "window on Europe" on the Baltic.
 
 **C.** Send fresh peasant recruits straight back at Charles XII before he can rest and resupply, since Russia has many times more men than Sweden.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ Sending untrained troops against Europe's best army would have repeated the Narva disaster. Peter took years to rebuild and modernize, then beat Charles XII at Poltava in 1709.
 
 #### Voivode (General): clash, The Amur Frontier (1685)
@@ -1355,11 +1444,11 @@ See [The Amur Frontier 1685](#the-amur-frontier-1685) above.
 _What actually happened:_ This is what Peter did. His Table of Ranks (1722) placed officers and officials in 14 grades and let commoners who rose high enough become nobles, and new schools trained navigators and engineers. Nobles had to serve the state for life, while their power over their serfs grew.
 
 **B.** Ban Western clothes, books, and advisers, and govern the old way through the great noble families. The Church and most nobles hate the changes, and the old ways built a huge empire.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ The old elite did resist, and the streltsy revolted in 1698. But Russia's army and government had fallen behind the West, and Peter's reforms helped make Russia a European great power.
 
 **C.** Change everything overnight: force Western ways on every village and shut down the Orthodox Church.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ Too extreme. Peter's reforms were forceful, but he put the Church under a government council, the Holy Synod (1721), instead of shutting it down, and most peasants' daily lives changed little.
 
 ---
@@ -1381,7 +1470,7 @@ _What actually happened:_ Too extreme. Peter's reforms were forceful, but he put
 _What actually happened:_ A cheap bet that changed history. Columbus never reached Asia; he landed in the Bahamas and the Caribbean in October 1492, but his voyages opened the Americas to Spanish conquest. Within a century, American silver was paying for Spain's armies across Europe.
 
 **B.** Refuse. Your experts have checked his numbers: Asia is far too distant to reach by sailing west, and his crews would run out of food and water long before they saw land.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ The experts were right about the distance, but no one in Europe knew that two continents lay in the way. Ferdinand and Isabella funded Columbus, and his landing in the Caribbean in 1492 began Spain's empire in the Americas.
 
 **C.** Turn him down, and put all your effort into making Spain fully Catholic by forcing its Jews and Muslims to convert or leave.  
@@ -1397,7 +1486,7 @@ _What actually happened:_ In 1492 Ferdinand and Isabella really did order Spain'
 _What actually happened:_ Close to what happened. Cortés won with tens of thousands of Indigenous allies, such as the Tlaxcalans, while smallpox, a disease new to the Americas, killed huge numbers of Mexico's people. Charles made Cortés governor in 1522 but soon sent royal officials and judges to control him, and in 1535 New Spain got its first viceroy.
 
 **B.** Let Cortés and his captains rule Mexico as lords of the lands they won. They risked their lives, they know the country, and governing it from across an ocean would be slow and costly.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Dangerous: conquistadors far from Spain could become independent kings, and in the 1540s Peru's conquistadors did rebel against the Crown. Their encomiendas, grants of Indigenous people's labor, also led to terrible abuse of a population already devastated by disease.
 
 **C.** Recall Cortés in chains for defying the governor of Cuba, and abandon Mexico.  
@@ -1413,7 +1502,7 @@ _What actually happened:_ Abandoning Mexico would have thrown away what became t
 _What actually happened:_ That's what Spain built. The Casa de Contratación (1503) in Seville licensed ships and collected the Crown's share, the Council of the Indies (1524) governed the colonies, and armed escorts grew into the great treasure fleets of the 1560s. Seville became one of the busiest ports in Europe.
 
 **B.** Let any merchant sail to the Indies and trade freely, without licenses or records. Trade will grow faster, and the Crown can tax goods when they land.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Without licenses and records, much of the gold and silver would have been smuggled past the Crown's officials. Spain instead sent colonial trade through the Casa de Contratación in Seville (1503), which licensed ships and recorded their cargoes.
 
 **C.** Lease whole colonies to rich bankers in return for loans. They pay for the ships and settlers, and the Crown takes no risk.  
@@ -1435,7 +1524,7 @@ _What actually happened:_ The road not taken. Philip sent the Duke of Alba with 
 _What actually happened:_ This is what Philip did in 1567. Alba's "Council of Troubles" condemned thousands and executed more than a thousand people, and his harsh rule and new taxes turned unrest into a revolt that drained Spain for 80 years and ended with an independent Dutch Republic.
 
 **C.** Let the Netherlands go. Rebellious provinces so far from Spain, full of heretics and quarrelsome nobles, will cost more to hold than they are worth.  
-**-1 points** · loses: The Netherlands  
+**-1 point** · loses: The Netherlands  
 _What actually happened:_ The Netherlands were among the richest lands in Europe, and their taxes and trade mattered greatly to the Crown. A milder policy could have kept them loyal; instead Philip's crackdown set off a revolt that cost him the northern provinces.
 
 #### Captain-General: clash, The Battle of Lepanto (1571)
@@ -1444,7 +1533,7 @@ See [The Battle of Lepanto 1571](#the-battle-of-lepanto-1571) above.
 
 #### Chief Minister: Mountains of Silver (1556)
 
-> As Chief Minister to the new king, Philip II, you watch a flood of treasure arrive. In 1545 a mountain of silver was found at Potosí, high in the Andes of Peru, and treasure fleets now carry silver to Seville. But Philip has inherited huge debts and wars with France and the Ottomans, and Peru's settlers have rebelled against royal rule twice since 1544. How should the Crown use its silver?
+> As Chief Minister to the new king, Philip II, you watch a flood of treasure arrive. In 1545 a mountain of silver was found at Potosí, high in the Andes of Peru (in today's Bolivia), and treasure fleets now carry silver to Seville. But Philip has inherited huge debts and wars with France and the Ottomans, and Peru's settlers have rebelled against royal rule twice since 1544. How should the Crown use its silver?
 
 - _Extra line shown (only if: atlantic):_ Because your team backed Columbus, Spanish ships have crossed the Atlantic for more than sixty years, and the routes to the Americas are well known.
 - _Extra line shown (only if: royal_control):_ Your team's Casa de Contratación and Council of the Indies make sure the Crown's share of American silver reaches the treasury.
@@ -1516,7 +1605,7 @@ _What actually happened:_ Better preparation might have helped, since the Armada
 _What actually happened:_ Wise, but only partly what happened. Spain did settle with its bankers in 1597, but it kept fighting and went broke again in 1607. The Manila galleons, which sailed between Acapulco and Manila until 1815, linked the Americas with Asia and made Manila a hub of world trade.
 
 **B.** Raise Castile's taxes yet again. Castile is the heart of the empire, its people are loyal, and its assembly has always voted the king money in the end.  
-**-1 points** · stability -1  
+**-1 point** · stability -1  
 _What actually happened:_ Spain did this. In 1590 Castile's assembly voted a huge new tax, the millones, later collected on meat, wine, oil, and vinegar, and it was raised again and again. The burden fell on ordinary Castilians, whose population and economy shrank in the 1600s.
 
 **C.** Seize the silver that bankers and merchants have stored in Seville, and refuse to repay their loans.  
@@ -1540,21 +1629,21 @@ _What actually happened:_ The road not taken. Between 1609 and 1614 Philip III e
 _What actually happened:_ This is what Philip III did. The expulsion (1609–1614) tore families from homes they had lived in for centuries, and many died in revolts, at sea, or in North Africa. Valencia and Aragon lost many of their best farmers, and Valencia's economy took decades to recover.
 
 **C.** Move the Moriscos inland, away from the coasts, and scatter their communities across Castile so they cannot help invaders.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Something like this was tried after a Morisco revolt in Granada (1568–1571), when tens of thousands of Moriscos were forced to resettle across Castile, and it did not end the suspicion. In 1609 Philip III expelled the Moriscos altogether.
 
 #### Captain-General: War Without End (1621)
 
-> As Captain-General for King Philip IV, you must decide what to do as the Twelve Years' Truce with the Dutch runs out in 1621. The northern Dutch provinces have ruled themselves as a republic for decades, and their merchant ships now trade from Asia to the Caribbean. In Germany, the Thirty Years' War has begun, and your Austrian Habsburg cousins want Spanish troops and money. France watches for a chance to strike.
+> As Captain-General for King Philip IV, you must decide what to do as the Twelve Years' Truce with the Dutch runs out in 1621. The northern Dutch provinces have ruled themselves as a republic for decades, and their merchant ships now trade from Asia to the Caribbean. In Germany, the Thirty Years' War has begun, and Spanish troops are already helping your Austrian Habsburg cousins, who want more. France watches for a chance to strike.
 
 - _Extra line shown (only if: dutch_rights):_ Your team's milder policy in the 1560s means many in the southern Netherlands still trust the king; the fight now is over the north.
 
-**A.** Make the truce a lasting peace. Recognize the Dutch Republic, and keep Spain's armies out of the war in Germany.  
+**A.** Make the truce a lasting peace. Recognize the Dutch Republic, and pull Spain's armies out of the war in Germany.  
 **+8 points** · loses: The Netherlands  
 _What actually happened:_ The road not taken. Spain renewed the Dutch war in 1621 and fought France from 1635; its famous infantry was beaten at Rocroi in 1643, and in 1648 at Münster Spain recognized Dutch independence anyway. An early peace would have saved decades of men and money.
 
-**B.** Renew the war to win back the rebel provinces in the north, but stay out of Germany's war and keep the peace with France.  
-**+1 points** · loses: The Netherlands  
+**B.** Renew the war to win back the rebel provinces in the north, but pull out of Germany's war and keep the peace with France.  
+**+1 point** · loses: The Netherlands  
 _What actually happened:_ Fewer fronts would have helped, but the Dutch war alone was enormously costly, and the Dutch Republic was too strong to reconquer. At Münster in 1648 Spain finally recognized Dutch independence.
 
 **C.** Fight on every front: crush the Dutch, send armies to help your cousins in Germany, and take on France if it interferes. Spain's infantry is the best in Europe.  
@@ -1580,7 +1669,7 @@ _What actually happened:_ The wiser path, but without the trust that keeping Phi
 _What actually happened:_ This is what Olivares did. In 1640 Catalonia rose in the Revolt of the Reapers and Portugal proclaimed its own king, John IV; Spain won Catalonia back in 1652 but recognized Portugal's independence in 1668.
 
 **C.** Drop the plan and squeeze Castile's taxpayers even harder. Castile is loyal and has always paid.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Castile was already crushed by taxes, and its population and economy were shrinking. Squeezing it harder would have deepened Spain's decline, while the other kingdoms still paid little toward the wars.
 
 ---
@@ -1647,7 +1736,7 @@ _What actually happened:_ That's what Tahmasp did. After about ten years of civi
 _What actually happened:_ A shah who is only a puppet invites endless power struggles, because every chief wants to be the one holding the strings. Tahmasp took real control in the 1530s and ruled until 1576.
 
 **C.** Give the Uzbeks the eastern lands they want, so you can deal with the chiefs at home. _(only if NOT: persian_scribes)_  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Giving up land in the east would weaken you further and reward the raiders. Tahmasp fought off the Uzbeks again and again while slowly taking control of the Qizilbash.
 
 **C2.** Let your Persian chief minister run the government in your name, and send the quarreling chiefs off to fight on the frontiers. _(only if: persian_scribes)_  
@@ -1771,7 +1860,7 @@ _What actually happened:_ That might have saved the capital. Instead, the larger
 _What actually happened:_ This is what happened. At Gulnabad the Safavid commanders did not work together, and a much smaller Afghan army won. After a seven-month siege, starving Isfahan surrendered in October 1722, and Shah Sultan Husayn handed his crown to Mahmud.
 
 **C.** Offer Mahmud a large payment to turn back to Kandahar.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Buying time might have worked briefly, but it would have shown weakness. Mahmud Hotaki was determined to take Isfahan, and in 1722 he did.
 
 #### Grand Vizier: Unrest on the Frontier (1700)
@@ -1789,7 +1878,7 @@ _What actually happened:_ The road not taken. Under Shah Sultan Husayn, religiou
 _What actually happened:_ Religious pressure and harsh rule turned frontier peoples against the dynasty. In 1709 the Sunni Afghans of Kandahar, led by Mirwais Hotak, killed their Safavid governor and rebelled, and in 1722 his son Mahmud captured Isfahan.
 
 **C.** Raise taxes on the frontier provinces to pay for the court and the army. Those lands have always cost more to defend than they pay.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Heavier taxes on already angry provinces would only feed rebellion. The Afghan revolt of 1709 began against a harsh Safavid governor in Kandahar, and the Safavids never won the city back.
 
 ---
@@ -1831,7 +1920,7 @@ _What actually happened:_ The smart path, but not quite what happened. Sonni Ali
 _What actually happened:_ This is close to what Sonni Ali did in 1468. Many scholars fled, some to the desert town of Walata, and the Muslim merchants who ran the trans-Saharan trade grew to distrust Songhai's king.
 
 **C.** Leave Timbuktu to the Tuareg, and use your horsemen closer to home.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ That would leave a rich prize to your rivals. Sonni Ali captured Timbuktu in 1468, and it became one of Songhai's most important cities.
 
 #### Chief Minister: The Siege of Jenne (1473)
@@ -1891,7 +1980,7 @@ _What actually happened:_ Close to what Askia Muhammad did: his armies campaigne
 _What actually happened:_ Askia Muhammad did attack the Mossi in 1497–1498, calling it a holy war, but the Mossi kingdoms were never conquered. The gold fields lay far to the south and southwest, beyond the reach of Songhai's cavalry.
 
 **C.** Conquer the new lands and replace every local ruler with one of your own officers. No one will rebel against men loyal only to you.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Distant peoples resent foreign officers, and holding them down takes a huge army. Askia Muhammad sent his own governors to key provinces but often left local rulers in place if they paid tribute.
 
 #### Chief Minister: Organizing an Empire (1510)
@@ -1905,7 +1994,7 @@ _What actually happened:_ Distant peoples resent foreign officers, and holding t
 _What actually happened:_ These were Askia Muhammad's reforms. Appointed governors, a full-time army, and fair rules for trade held the huge empire together, and Songhai officials oversaw the salt of Taghaza. Timbuktu's Sankore mosque drew scholars from across West and North Africa.
 
 **B.** Let local chiefs rule as they wish, as long as they send tribute. They know their own peoples, and fewer outsiders means fewer revolts.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Cheap, but loose control lets chiefs break away. Askia Muhammad appointed his own governors and built a professional army to hold the empire together.
 
 **C.** Double the taxes on caravans. The merchants are rich, and the army needs pay.  
@@ -1930,7 +2019,7 @@ _What actually happened:_ The road not taken. Askia Musa was killed in a revolt 
 _What actually happened:_ This is roughly what happened. Repeated fights between princes, ending in a civil war in 1588, weakened Songhai's army right before Morocco invaded.
 
 **C.** Name no heir and keep every brother hoping. As long as each believes he might be chosen, none of them has a reason to rebel against you.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Without a named heir, ambitious princes build their own followings and wait for a chance. In Songhai, rival princes overthrew one another again and again after 1528.
 
 #### General: Raiders at the Salt Mines (1557)
@@ -1945,7 +2034,7 @@ _What actually happened:_ Without a named heir, ambitious princes build their ow
 _What actually happened:_ A sound defense, and salt kept reaching Songhai's markets. Moroccan raiders struck Taghaza in the 1550s, and after Morocco seized it in the 1580s, salt workers moved to new mines farther south at Taoudenni.
 
 **B.** Let Morocco have Taghaza. It is weeks away, and traders will still bring salt to your markets.  
-**+1 points** · loses: Taghaza salt mines  
+**+1 point** · loses: Taghaza salt mines  
 _What actually happened:_ Giving ground did not satisfy Morocco, whose sultans really wanted Songhai's gold. In 1590 Morocco sent an army across the Sahara to take it.
 
 **C.** Lead your whole army north across the Sahara and strike Morocco itself. A bold blow at the sultan's own cities will teach him never to touch Songhai's mines again.  
@@ -1982,7 +2071,7 @@ _What actually happened:_ Askia Daoud was a generous patron of Timbuktu's schola
 _What actually happened:_ Ishaq II did defeat the rebels in 1588, but the fighting cost Songhai many soldiers and left the army bitter and divided. Pardoning and reuniting the army would have left Songhai stronger when the Moroccans came.
 
 **B.** Execute every rebel you capture. If traitors are forgiven, every ambitious prince in Songhai will raise an army, believing he has nothing to lose.  
-**-1 points**  
+**-1 point**  
 _What actually happened:_ Killing your own soldiers weakens your army just when you need it most. The civil war of 1588 had already cost Songhai many fighting men before Morocco attacked.
 
 **C.** Make peace by splitting the empire: the rebel takes the west, and you keep Gao and the east.  
@@ -2010,5 +2099,5 @@ _What actually happened:_ A smart plan that Songhai never carried out. Accounts 
 _What actually happened:_ This is roughly what Songhai did. The Moroccans lost many men crossing the desert, but the survivors still had their guns, and that was enough at Tondibi.
 
 **C.** Send rich gifts to Marrakesh and offer al-Mansur a yearly tribute in gold, hoping he will call his army home.  
-**+1 points**  
+**+1 point**  
 _What actually happened:_ Diplomacy might have worked earlier, but al-Mansur's army was already on the march, and he wanted control of the gold trade. Songhai ended up fighting at Tondibi in March 1591.

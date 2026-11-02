@@ -449,7 +449,7 @@
                 "text": "Strike now with siege guns while the Mughals quarrel, and take Kandahar before a relief army can arrive.",
                 "points": 8,
                 "power": 3,
-                "explanation": "That's what Shah Abbas did. He besieged Kandahar in 1622 and took it after a short siege, while the Mughal army stayed home because of a prince's rebellion."
+                "explanation": "That's what Shah Abbas did. He besieged Kandahar in 1622 and took it after a short siege, while the Mughal relief army never came, because Prince Khurram refused to lead it."
               },
               {
                 "id": "b",
@@ -555,7 +555,7 @@
           "node": {
             "year": 1685,
             "title": "Albazin on the Amur",
-            "text": "Russian Cossacks and fur traders have pushed across Siberia to the Amur River and built a fort at Albazin. The Qing emperor Kangxi says the Amur valley belongs to China. In 1685 his army forced Albazin to surrender, but the Cossacks soon came back and rebuilt it. Now a bigger Qing army is on its way.",
+            "text": "Russian Cossacks and fur traders have pushed across Siberia to the Amur River and built a fort at Albazin. The Qing emperor Kangxi says the Amur valley belongs to his empire. In 1685 his army forced Albazin to surrender, but the Cossacks soon came back and rebuilt it. Now a bigger Qing army is on its way.",
             "options": [
               {
                 "id": "a",
@@ -844,7 +844,7 @@
           "node": {
             "year": 1591,
             "title": "Guns on the Niger",
-            "text": "Judar Pasha's Moroccan army has crossed the Sahara and reached the Niger River near Gao. Thousands died on the march, but the survivors carry arquebuses and cannons. Songhai's army is far larger, but it fights with spears, bows, and cavalry, and it has never faced massed gunfire.",
+            "text": "Judar Pasha's Moroccan army has crossed the Sahara and reached the Niger River near Gao. Many died on the march, but the survivors carry arquebuses and cannons. Songhai's army is far larger, but it fights with spears, bows, and cavalry, and it has never faced massed gunfire.",
             "options": [
               {
                 "id": "a",
