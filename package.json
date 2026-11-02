@@ -8,15 +8,19 @@
     "validate": "node scripts/validate.mjs",
     "balance": "node scripts/balance.mjs",
     "review-doc": "node scripts/build-review.mjs",
+    "review-doc:battle": "node scripts/build-battle-review.mjs",
     "test": "node --test --no-warnings \"test/unit/*.test.mjs\"",
     "test:e2e": "node --no-warnings test/e2e/run.mjs",
-    "check": "npm run validate && npm run balance && npm test",
+    "check": "npm run validate && npm run validate:battle && npm run balance && npm run balance:battle && npm test",
     "dev": "wrangler dev",
     "db:migrate:local": "wrangler d1 migrations apply rule-the-empire --local",
     "db:migrate:remote": "wrangler d1 migrations apply rule-the-empire --remote",
     "deploy": "NODE_USE_ENV_PROXY=1 node scripts/deploy.mjs",
     "format-content": "node scripts/format-content.mjs",
-    "test:e2e:live": "node --no-warnings test/e2e/run.mjs"
+    "test:e2e:live": "node --no-warnings test/e2e/run.mjs",
+    "validate:battle": "node scripts/validate-battle.mjs",
+    "balance:battle": "node scripts/balance-battle.mjs",
+    "test:battle": "node --no-warnings test/e2e/battle.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"

@@ -7,6 +7,9 @@ All of the game's history content lives in plain data files, separate from the g
 | `content/empires/<empire>.json` | One file per empire: intro, decisions, options, points, explanations, the end-screen timeline, and key-term definitions |
 | `content/glossary.json` | Key terms shared by several empires (Sunni, Shia, jizya, …) |
 | `content/rules.json` | Tier rules: point ranges, starting stability, collapse penalty, path-length limits |
+| `content/battle/campaigns/<empire>.json` | **Class Battle:** each empire's four rounds, with one decision each for the Ruler, General, and Vizier, plus the empire's office titles and map regions |
+| `content/battle/clashes.json` | **Class Battle:** the six clashes between empires (each side's General decision, preparations, prize region, and map scene) and the disputed regions |
+| `content/battle/rules.json` | **Class Battle:** rounds, offices, starting stability per tier, exile points, timer choices, clash rules |
 
 ## The easy way: ask Claude
 
@@ -83,6 +86,16 @@ Every turning point (`"milestone": true`) has a `"scene"`: the short animated ma
 
 Key terms: add `{ "term": "devshirme", "def": "…" }` to an empire's `glossary` list, or to `content/glossary.json` for terms several empires share. The game adds the definition in parentheses the **first** time the term appears in a play-through. The optional `"match"` list adds other spellings (for example, plurals).
 
+## Class Battle content
+
+The battle files use the same decision format as the solo game (`year`, `title`, `text`, `context`, and `options` with `text`, `points`, `stability`, `set`, `if`/`ifNot`, `explanation`), with a few differences:
+
+- There's no `next` and no instant collapse. Each round has exactly one decision per office (`ruler`, `general`, `vizier`), so every team sees all twelve decisions.
+- `gain` / `lose` name map regions (from the empire's `regions` list) that the option wins or loses.
+- A slot written as `{ "clash": "lepanto" }` means that office's decision that round is a clash, found in `content/battle/clashes.json`. A clash option also has a `power` (0–3): its battle strength. Each side lists its `prep` flags (each adds 1 strength if the team set it earlier), the option that really happened (`historical`), and what the team sees if it wins or loses.
+- Flags can only be read in a **later** round than the one that sets them. (A clash's preparation can also come from the same round's Ruler or Vizier.)
+- Each empire needs at least three decisions that depend on another office's earlier choice, so teammates' choices matter to each other.
+
 ## Checks that must pass after any edit
 
 Run `npm run check`. This runs:
@@ -90,6 +103,8 @@ Run `npm run check`. This runs:
 - **`npm run validate`**: no dead ends or broken links, every path reaches an ending, full paths are 7–9 decisions, exactly 3 options show at every decision, the best option is never tied, points match the tier rules, explanations are at most 3 sentences, every flag that's checked is also set somewhere, every turning point has a valid map scene whose places sit inside its view, and the way options are written doesn't give away the answer: the best option can't be the longest on more than 45% of decisions and must be the shortest on at least 20%, and picking by sentence count or by the longest list of steps can't find the best answer more than half the time. When you write options, make some wrong answers long, detailed, and tempting, and some best answers short and plain.
 - **`npm run balance`**: plays every possible path and checks the scoring goals (strong Hard players beat strong Easy players, careless Hard players can sink lowest, collapses land in the lower part of the leaderboard, Hard collapses more than Medium, and Medium more than Easy). It writes `docs/BALANCE_REPORT.md`.
 - **`npm test`**: unit and API tests.
+- **`npm run validate:battle`** and **`npm run balance:battle`**: the same kinds of checks for Class Battle content (every reachable combination of earlier choices still shows exactly 3 options with one clear best, flags are set before they're read, the answer isn't given away by length), and thousands of simulated battles that check the scoring goals. The balance run writes `docs/BATTLE_BALANCE.md`.
+- **`npm run test:battle`**: a full live battle with 24 simulated students on a local server (4 in real browsers).
 
-Then run `npm run review-doc` to refresh `docs/CONTENT_REVIEW.md`, and `npm run format-content` to tidy the JSON formatting.
+Then run `npm run review-doc` to refresh `docs/CONTENT_REVIEW.md` (and `npm run review-doc:battle` for `docs/BATTLE_CONTENT_REVIEW.md`), and `npm run format-content` to tidy the JSON formatting.
 If you change points, `npm run balance` tells you if the tuning goals still hold.

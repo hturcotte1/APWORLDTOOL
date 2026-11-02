@@ -11,6 +11,13 @@ import * as store from './db.js';
 
 const MAX_BODY = 10_000;
 const FAILED_LOGIN_DELAY_MS = 500;
+const CODE_LETTERS = 'ABCDEFGHJKMNPQRSTUVWXYZ'; // no I, L, or O, so codes are easy to read on a projector
+
+export function battleCode() {
+  const a = new Uint8Array(4);
+  crypto.getRandomValues(a);
+  return [...a].map((n) => CODE_LETTERS[n % CODE_LETTERS.length]).join('');
+}
 
 export function createApi({ empires, rules, glossary }) {
   const order = rules.empireOrder;
@@ -308,6 +315,13 @@ export function createApi({ empires, rules, glossary }) {
     if (denied) return denied;
     if (path === '/api/teacher/login') return json({ ok: true });
     if (path === '/api/teacher/report') return json(classReport(await store.listGames(env.DB)));
+    if (path === '/api/teacher/battle/new') return newBattle(body, env);
+    if (path === '/api/teacher/battles') return json({ battles: await store.listBattles(env.DB) });
+    if (path === '/api/teacher/battles/delete') {
+      const id = Number(body.id);
+      if (!Number.isInteger(id)) return fail(400, 'Missing battle id.');
+      return json({ ok: true, deleted: await store.deleteBattle(env.DB, id) });
+    }
     if (path === '/api/teacher/delete') {
       const id = Number(body.id);
       if (!Number.isInteger(id)) return fail(400, 'Missing entry id.');
@@ -319,6 +333,26 @@ export function createApi({ empires, rules, glossary }) {
       return json({ ok: true, deleted: await store.clearEntries(env.DB, period) });
     }
     return fail(404, 'Not found.');
+  }
+
+  // Opens a new Class Battle room and returns its code and the host key that
+  // lets the teacher's projector screen run it.
+  async function newBattle(body, env) {
+    if (!env.BATTLE) return fail(503, 'Class Battle is not set up on this server.');
+    const period = parsePeriod(body.period);
+    if (!period) return fail(400, 'Pick a class period.');
+    const hostKey = randomId(18);
+    for (let attempt = 0; attempt < 6; attempt++) {
+      const code = battleCode();
+      const stub = env.BATTLE.get(env.BATTLE.idFromName(code));
+      const res = await stub.fetch('https://battle/init', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ code, period, timer: Number(body.timer) || undefined, hostKey }),
+      });
+      if (res.ok) return json({ code, hostKey });
+    }
+    return fail(503, 'Could not open a battle right now. Please try again.');
   }
 
   async function readBody(request) {

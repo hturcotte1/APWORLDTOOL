@@ -32,5 +32,20 @@ export function createTestDb() {
   const db = new DatabaseSync(':memory:');
   const dir = path.join(ROOT, 'migrations');
   for (const f of readdirSync(dir).filter((x) => x.endsWith('.sql')).sort()) db.exec(readFileSync(path.join(dir, f), 'utf8'));
-  return { prepare: (sql) => new Statement(db, sql), raw: db };
+  return {
+    prepare: (sql) => new Statement(db, sql),
+    batch: async (statements) => {
+      db.exec('BEGIN');
+      try {
+        const out = [];
+        for (const st of statements) out.push(await st.run());
+        db.exec('COMMIT');
+        return out;
+      } catch (e) {
+        db.exec('ROLLBACK');
+        throw e;
+      }
+    },
+    raw: db,
+  };
 }

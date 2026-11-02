@@ -12,5 +12,9 @@
       "migrations_dir": "migrations"
     }
   ],
+  "durable_objects": {
+    "bindings": [{ "name": "BATTLE", "class_name": "BattleRoom" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["BattleRoom"] }],
   "observability": { "enabled": true }
 }

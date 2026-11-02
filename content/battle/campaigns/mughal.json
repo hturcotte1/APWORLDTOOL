@@ -1,0 +1,485 @@
+{
+  "id": "mughal",
+  "titles": {
+    "ruler": "Emperor",
+    "general": "General",
+    "vizier": "Diwan (finance minister)"
+  },
+  "regions": [
+    {
+      "id": "kabul",
+      "name": "Kabul",
+      "at": [
+        69.2,
+        34.6
+      ],
+      "size": [
+        1.7,
+        1.1
+      ],
+      "start": true
+    },
+    {
+      "id": "hindustan",
+      "name": "Hindustan (Delhi and Agra)",
+      "at": [
+        78.2,
+        27.6
+      ],
+      "size": [
+        3.2,
+        2.2
+      ]
+    },
+    {
+      "id": "rajputana",
+      "name": "Rajputana",
+      "at": [
+        73.6,
+        25.9
+      ],
+      "size": [
+        2.3,
+        1.8
+      ]
+    },
+    {
+      "id": "gujarat",
+      "name": "Gujarat",
+      "at": [
+        72,
+        22.6
+      ],
+      "size": [
+        1.7,
+        1.3
+      ]
+    },
+    {
+      "id": "bengal",
+      "name": "Bengal",
+      "at": [
+        88.5,
+        24
+      ],
+      "size": [
+        2,
+        1.7
+      ]
+    },
+    {
+      "id": "deccan",
+      "name": "The Deccan",
+      "at": [
+        76.5,
+        18
+      ],
+      "size": [
+        3,
+        2.3
+      ]
+    }
+  ],
+  "rounds": [
+    {
+      "years": "1526–1556",
+      "title": "Conquest",
+      "ruler": {
+        "year": 1527,
+        "title": "Stay or Go Home?",
+        "text": "As Emperor Babur, you now hold Delhi, Agra, and the treasure of the Delhi sultans. But many of your soldiers hate India's heat and want to carry their loot home to Kabul. Meanwhile Rana Sanga, the Rajput king of Mewar, has gathered a great alliance of Rajputs and Afghans to drive you out. Your frightened troops have heard that Rajput warriors never retreat.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Stay. Give your men a fiery speech, swear off wine as a vow to God, and fight Rana Sanga with your guns behind a wall of carts.",
+            "points": 5,
+            "set": [
+              "stayed"
+            ],
+            "explanation": "That's what Babur did. Before the Battle of Khanwa in 1527 he gave up wine, poured it out, and rallied his men with a famous speech, and his guns and cavalry broke Rana Sanga's army. The victory made the Mughals the strongest power in northern India."
+          },
+          {
+            "id": "b",
+            "text": "Stay in India, but avoid a risky battle. Send gold and gifts to the Rajput kings to split their alliance, and save your soldiers for later wars.",
+            "points": 2,
+            "explanation": "Rana Sanga wanted to drive Babur out of India, not to bargain, so gifts were unlikely to break his alliance. Babur fought him at Khanwa in 1527 and won, breaking the Rajput alliance."
+          },
+          {
+            "id": "c",
+            "text": "Load the treasure and go home to Kabul. A rich army at home beats a shaky throne in a hot, hostile land.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "You'd win a fortune but lose an empire. Babur chose to stay, and India's wealth made the Mughals one of the richest dynasties in the world."
+          }
+        ]
+      },
+      "general": {
+        "year": 1526,
+        "title": "The Battle of Panipat",
+        "text": "You command Babur's army on the plain of Panipat, north of Delhi. Ibrahim Lodi, Sultan of Delhi, faces you with a far larger army that includes many war elephants. Your soldiers are fewer but battle-tested, and you have something the Sultan lacks: field cannons and matchlock guns. Your horsemen are expert archers who can wheel around an enemy at full gallop.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tie your carts together into a wall, put cannons and gunners in the gaps, and send horsemen around both sides.",
+            "points": 5,
+            "set": [
+              "artillery"
+            ],
+            "gain": "hindustan",
+            "explanation": "This was Babur's real plan, borrowed from the Ottomans. His guns frightened the elephants, his cavalry swept around the sides, and Ibrahim Lodi died in the battle in April 1526. The victory gave Babur Delhi and Agra and founded the Mughal Empire."
+          },
+          {
+            "id": "b",
+            "text": "Charge head-on before his elephants can form up. Speed and surprise have won your horsemen many battles, and one quick blow could break the Sultan's nerve.",
+            "points": 1,
+            "explanation": "Bold, but charging a much bigger army with war elephants was a huge gamble. Babur won by holding a fortified line with his guns and striking from the sides."
+          },
+          {
+            "id": "c",
+            "text": "Fall back to Kabul and raid again next year.",
+            "points": 0,
+            "explanation": "Too cautious. Babur had already raided India several times, and this was his moment: his victory at Panipat in 1526 made him ruler of Delhi and Agra."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1555,
+        "title": "Sher Shah's Legacy",
+        "text": "As Diwan, you serve Emperor Humayun, Babur's son. In 1540 the Afghan leader Sher Shah Suri drove Humayun out of India, but now, in 1555, Humayun has retaken Delhi with help from Safavid Persia. While he was gone, Sher Shah's government built roads lined with rest houses, issued a silver coin called the rupiya, and measured farmland to set taxes. Some nobles want every trace of the usurper erased.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Keep Sher Shah's silver coin and his roads and land survey. Hire the clerks who ran them.",
+            "points": 5,
+            "set": [
+              "sher_shah_reforms"
+            ],
+            "explanation": "Wise, and what the Mughals did. Humayun died in 1556, but his son Akbar kept the rupiya and built his tax system on Sher Shah's survey methods. The rupee is still the name of the money in India and Pakistan today."
+          },
+          {
+            "id": "b",
+            "text": "Melt down the usurper's coins and replace his officials with men who stayed loyal to Humayun in exile. The emperor's return should mean a fresh start.",
+            "points": 1,
+            "explanation": "Erasing a rival's work wastes tools that already work. The Mughals kept Sher Shah's silver coin and his careful methods for measuring land, and Akbar's officials built on both."
+          },
+          {
+            "id": "c",
+            "text": "Reward Humayun's loyal nobles with large grants of land right away, and skip the slow work of measuring fields.",
+            "points": 0,
+            "explanation": "Without records, no one knows what land is worth or who owes what, so nobles grab what they can and farmers pay whatever they are told. Akbar later built a careful tax system on Sher Shah's survey instead."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1556–1605",
+      "title": "Akbar the Great",
+      "ruler": {
+        "year": 1562,
+        "title": "The Rajput Question",
+        "text": "As Emperor Akbar, you came to the throne in 1556 at just 13 years old. You are a Muslim, but most of your subjects are Hindus, and the proud Rajput kings hold key forts and the roads to the sea. Now the Raja of Amber, a Rajput kingdom, has offered you his daughter in marriage. Your Muslim nobles expect you to keep collecting the jizya from Hindus.",
+        "context": [
+          {
+            "if": "artillery",
+            "text": "Babur's cannons are still the pride of your army, and the Rajput kings know their forts cannot hold out forever."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Accept the marriage and end the jizya. Make Rajput princes your generals and governors.",
+            "points": 5,
+            "stability": 1,
+            "set": [
+              "rajput_allies"
+            ],
+            "gain": "rajputana",
+            "explanation": "Akbar's real policy. He married the Amber princess in 1562, made Rajput princes such as Man Singh top generals and governors, and abolished the jizya in 1564. Many Rajputs became the empire's most loyal defenders for the next century."
+          },
+          {
+            "id": "b",
+            "text": "Defeat the Rajput kings one by one and keep the jizya, as your Muslim nobles expect. Kings who bow out of fear will not dare to rebel.",
+            "points": 2,
+            "explanation": "Force alone was costly. Akbar did besiege Rajput forts that refused his offers, but his main strategy was partnership, which turned rivals into loyal commanders."
+          },
+          {
+            "id": "c",
+            "text": "Order your Hindu subjects to convert to Islam, so the whole empire shares one faith.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "That would have turned millions of Hindus against you. Akbar did the opposite, abolishing the jizya in 1564 and welcoming Hindus into high government posts."
+          }
+        ]
+      },
+      "general": {
+        "year": 1568,
+        "title": "Chittor and Beyond",
+        "text": "You command Akbar's armies. The great Rajput fortress of Chittor, home of the kingdom of Mewar, refuses to submit. Farther off lie richer prizes: Gujarat, with its busy ports and cotton weavers, and Bengal, with its rice fields and silk. Your siege guns are ready, but every month of siege costs money, and the Rajputs are famous for fighting to the last.",
+        "context": [
+          {
+            "if": "stayed",
+            "text": "Babur's victory over Rana Sanga at Khanwa in 1527 taught the Rajput kings to fear Mughal guns."
+          },
+          {
+            "ifNot": "stayed",
+            "text": "Babur once carried his treasure home to Kabul, so many Indian rulers doubt your family is here to stay."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Take Chittor, then march on Gujarat and Bengal, offering generous terms to any ruler who submits.",
+            "points": 5,
+            "gain": [
+              "gujarat",
+              "bengal"
+            ],
+            "explanation": "That's what Akbar did. Chittor fell in 1568 after a brutal siege, Gujarat and its ports were conquered by 1573, and Bengal fell in 1576. Rajput allies fought beside Akbar in these campaigns."
+          },
+          {
+            "id": "b",
+            "text": "Take Chittor, then besiege every Rajput fort that still resists. Leave no enemy behind you before you move on the coasts.",
+            "points": 2,
+            "explanation": "Mewar kept resisting for decades and did not submit until 1615. Akbar didn't wait: he took Gujarat and Bengal while his Rajput allies helped hold the rest."
+          },
+          {
+            "id": "c",
+            "text": "Skip Chittor. It is a rock fortress that has broken many armies, and the coasts are richer prizes anyway.",
+            "points": 0,
+            "explanation": "Leaving a powerful enemy fortress near your capital is dangerous. Akbar took Chittor in 1568 before turning to Gujarat and Bengal."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1580,
+        "title": "Paying for an Empire",
+        "text": "As Akbar's Diwan, you must pay the officers who lead the army and collect taxes from millions of farmers, without letting any noble grow strong enough to challenge the emperor. You work with Raja Todar Mal, a Hindu expert on land taxes. He proposes measuring every field and setting each farm's tax by its average harvest and prices over the past ten years.",
+        "context": [
+          {
+            "if": "sher_shah_reforms",
+            "text": "Todar Mal began his career serving Sher Shah Suri, and the survey records you kept give him a head start."
+          },
+          {
+            "ifNot": "sher_shah_reforms",
+            "text": "Sher Shah's survey records were thrown away, so Todar Mal must measure the land from scratch."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Give Muslim and Hindu nobles ranks called mansabs, paid with tax rights to land that change every few years. Set taxes with Todar Mal's survey.",
+            "points": 5,
+            "set": [
+              "mansabdars"
+            ],
+            "explanation": "This was Akbar's real system. Mansabdars had to supply soldiers and were paid from land taxes they could not keep forever, so no noble could build a private kingdom. Taxes were based on Todar Mal's careful surveys of land and average harvests."
+          },
+          {
+            "id": "b",
+            "text": "Give each noble a permanent family estate. Men who own their land will defend it fiercely.",
+            "points": 1,
+            "explanation": "Permanent estates would let nobles build private power bases and someday challenge you. Akbar moved mansabdars around and did not let them pass their land rights to their sons."
+          },
+          {
+            "id": "c",
+            "text": "Set one high tax on every farm, good harvest or bad, since a fixed rate is simple to collect, hard to cheat, and the same every year.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "Flat high taxes would ruin farmers in bad years and spark revolts. Todar Mal's system set taxes from surveys and average harvests, which made collection fairer and more reliable."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1605–1658",
+      "title": "Splendor",
+      "ruler": {
+        "year": 1632,
+        "title": "A Monument for the Ages",
+        "text": "As Emperor Shah Jahan, you rule one of the richest empires on Earth. In 1631 your beloved wife, Mumtaz Mahal, died. You want to honor her with a great tomb at Agra, and later to build a splendid new capital at Delhi that shows the world your dynasty's glory. Some advisers urge you to spend the treasure instead on winning back Central Asia, your ancestors' homeland.",
+        "context": [
+          {
+            "if": "mansabdars",
+            "text": "Akbar's mansab ranks and Todar Mal's tax survey still bring a steady stream of money into your treasury."
+          },
+          {
+            "ifNot": "mansabdars",
+            "text": "Without a reliable tax system, your treasury rises and falls with every harvest."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Build them both. Pay as you go, and keep reserves in the treasury.",
+            "points": 5,
+            "explanation": "Shah Jahan built the Taj Mahal (about 1632–1653), which blends Persian, Islamic, and Indian styles, and in 1648 moved his court to his new capital at Delhi, with its Red Fort. Monuments like these displayed the wealth, faith, and power behind Mughal rule."
+          },
+          {
+            "id": "b",
+            "text": "Skip the buildings and conquer Balkh and Samarkand, lands once ruled by Timur, Babur's ancestor. Winning back your ancestors' homeland would bring more glory than any tomb.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "Shah Jahan did try this: his armies took Balkh in 1646 but had to withdraw in 1647 after huge costs and losses. The Taj Mahal proved a far better investment in Mughal prestige."
+          },
+          {
+            "id": "c",
+            "text": "Save the money. Wise rulers keep reserves for wars and famines.",
+            "points": 2,
+            "explanation": "Saving is sensible, but grand monuments helped make Mughal rule look glorious and legitimate. Shah Jahan's Taj Mahal still symbolizes the Mughal golden age."
+          }
+        ]
+      },
+      "general": {
+        "clash": "kandahar"
+      },
+      "vizier": {
+        "year": 1615,
+        "title": "Strangers at Surat",
+        "text": "As Diwan to Emperor Jahangir, you watch European ships crowd the port of Surat in Gujarat. In 1612 English ships beat a Portuguese fleet off Surat, and now King James of England has sent an ambassador, Sir Thomas Roe, asking for a treaty that guarantees English trading rights. Europeans want your cotton cloth, which sells from Southeast Asia to Europe, and they pay mostly in silver.",
+        "context": [
+          {
+            "if": "sher_shah_reforms",
+            "text": "Your mints turn European silver into rupees, the coin Sher Shah introduced, now trusted across India."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Let the English trade at Surat under Mughal law and pay customs, so they and the Portuguese compete for your favor.",
+            "points": 5,
+            "set": [
+              "company_trade"
+            ],
+            "explanation": "That was roughly the Mughal approach. Roe never won the formal treaty he wanted, but the English kept their trading post at Surat under Mughal rules and customs duties, and European silver poured into India to buy its cloth. For most of the 1600s, the companies could trade in Mughal lands only with the emperor's permission."
+          },
+          {
+            "id": "b",
+            "text": "Ban all Europeans. Their warships fight in your harbors, the Portuguese seized a royal pilgrim ship in 1613, and Indian and Arab merchants can carry your cloth without them.",
+            "points": 2,
+            "explanation": "Closing the ports would cost the empire customs duties and silver. Jahangir did punish the Portuguese after they seized a ship owned by his mother in 1613, but he kept trade open and let Europeans compete."
+          },
+          {
+            "id": "c",
+            "text": "Give the English more than Roe asks: a fort at Surat and their own courts.",
+            "points": 0,
+            "explanation": "Forts and separate courts would create a foreign state inside your empire. Jahangir never granted the treaty Roe asked for, and the Mughals kept European merchants under Mughal law."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1658–1707",
+      "title": "Aurangzeb's Wars",
+      "ruler": {
+        "year": 1679,
+        "title": "Aurangzeb's Choice",
+        "text": "As Emperor Aurangzeb, you seized the throne in 1658 after a bloody war against your brothers. You are a devout Sunni Muslim, and religious advisers urge you to bring back the jizya on non-Muslims and enforce strict Islamic law. Meanwhile the Hindu Marathas are rising in the Deccan, and the Sikhs are growing stronger in the Punjab.",
+        "context": [
+          {
+            "if": "rajput_allies",
+            "text": "For over a century, the Rajput alliance has kept the peace and filled your armies with loyal Hindu commanders."
+          },
+          {
+            "ifNot": "rajput_allies",
+            "text": "The Rajput kings have never fully trusted your dynasty."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Keep Akbar's policies: no jizya, no destroyed temples, and respect for every faith.",
+            "points": 5,
+            "stability": 1,
+            "explanation": "This would have kept your Hindu allies loyal. Instead, Aurangzeb brought back the jizya in 1679 and destroyed some Hindu temples, which angered many Rajputs, Marathas, and Sikhs and helped fuel revolts."
+          },
+          {
+            "id": "b",
+            "text": "Bring back the jizya and enforce strict Islamic law. Your religious advisers say it is your duty, and the tax will help pay for your wars.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "This is what Aurangzeb did in 1679, and he also had some Hindu temples destroyed. Many Hindus and Sikhs came to see him as an enemy, and a long war with Rajput kingdoms began that same year."
+          },
+          {
+            "id": "c",
+            "text": "Live strictly by Islamic law at your own court, but don't tax or punish your subjects for their faith.",
+            "points": 3,
+            "explanation": "A workable middle path: a ruler could be personally devout without punishing his subjects. Aurangzeb did live simply and strictly, but he also brought back the jizya in 1679, which deepened resentment among his Hindu subjects."
+          }
+        ]
+      },
+      "general": {
+        "year": 1686,
+        "title": "War in the Deccan",
+        "text": "You command Aurangzeb's armies in the Deccan, the high plateau of southern India, and the emperor himself has moved south to lead the war. The rich sultanates of Bijapur and Golconda still stand. The Marathas, whose kingdom was founded by the warrior-king Shivaji, avoid big battles: they raid your supply lines and slip back into their hill forts.",
+        "context": [
+          {
+            "if": "rajput_allies",
+            "text": "Rajput commanders, allies of your family for over a century, still lead many of your Deccan troops."
+          },
+          {
+            "if": "company_trade",
+            "text": "Customs duties from European trade at Surat help pay your soldiers."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Conquer the sultanates of Bijapur and Golconda, then offer Maratha chiefs ranks and lands if they pay tribute and send soldiers.",
+            "points": 5,
+            "gain": "deccan",
+            "explanation": "Aurangzeb did take Bijapur in 1686 and Golconda in 1687, bringing the Mughal Empire to its largest size. But he never made a lasting peace with the Marathas, and the war dragged on until his death in 1707."
+          },
+          {
+            "id": "b",
+            "text": "Take every Maratha hill fort, however long it takes.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "This is what Aurangzeb did, spending his last 26 years in the Deccan. The Marathas kept fighting, the war drained men and money, and after his death in 1707 Mughal power declined quickly."
+          },
+          {
+            "id": "c",
+            "text": "Pull back and guard the rich north. The Deccan swallows men and money, and its hills favor raiders over armies.",
+            "points": 2,
+            "explanation": "Safer than endless war, but it would leave the Deccan sultanates and the Marathas free to grow stronger. Aurangzeb chose to fight on until his death in 1707, a costly decision."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1695,
+        "title": "Too Many Nobles",
+        "text": "As Diwan, you face a crisis. The number of mansabdars has grown so fast that there is not enough good land to pay them all. Officers wait years for a land grant, called a jagir, and those who get one squeeze the farmers hard, because they may be moved somewhere else in a few years. In some districts, farmers are fleeing their villages.",
+        "context": [
+          {
+            "if": "mansabdars",
+            "text": "Akbar's mansab system served the empire well for a century, but now every new noble expects a jagir."
+          },
+          {
+            "ifNot": "mansabdars",
+            "text": "Many nobles have turned their land grants into family estates, and no one stops them from squeezing farmers."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Stop creating new ranks and pay some officers in cash. Punish jagir holders who overtax farmers.",
+            "points": 5,
+            "explanation": "The road not taken. Aurangzeb kept adding nobles, especially Marathas and Deccanis he hoped to win over, so the shortage of jagirs grew worse. Squeezed farmers rebelled or fled, and after 1707 powerful governors began breaking away."
+          },
+          {
+            "id": "b",
+            "text": "Raise the land tax so there is enough for everyone. Unpaid officers may switch sides.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "Higher taxes on farmers who are already squeezed lead to flight and revolt. Under Aurangzeb, revolts by Jat farmers and others grew, and the empire's tax base shrank."
+          },
+          {
+            "id": "c",
+            "text": "Win over Maratha and Deccan nobles with new ranks, and pay them with land in the newly conquered south. Enemies who become officers stop fighting you.",
+            "points": 2,
+            "explanation": "This is close to what Aurangzeb did. Enlisting Maratha and Deccani nobles bought some loyalty, but there was still too little land to pay everyone, and the crisis deepened."
+          }
+        ]
+      }
+    }
+  ]
+}

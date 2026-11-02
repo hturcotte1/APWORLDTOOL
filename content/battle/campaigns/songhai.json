@@ -1,0 +1,501 @@
+{
+  "id": "songhai",
+  "titles": {
+    "ruler": "King (Sonni, later Askia)",
+    "general": "General",
+    "vizier": "Chief Minister"
+  },
+  "regions": [
+    {
+      "id": "gao",
+      "name": "Gao and the Niger bend",
+      "at": [
+        0,
+        16
+      ],
+      "size": [
+        1.5,
+        1.1
+      ],
+      "start": true
+    },
+    {
+      "id": "timbuktu",
+      "name": "Timbuktu",
+      "at": [
+        -3,
+        16.9
+      ],
+      "size": [
+        1,
+        0.7
+      ]
+    },
+    {
+      "id": "jenne",
+      "name": "Jenne",
+      "at": [
+        -4.6,
+        13.9
+      ],
+      "size": [
+        1,
+        0.7
+      ]
+    },
+    {
+      "id": "sahel_west",
+      "name": "The western Sahel",
+      "at": [
+        -8.5,
+        15.8
+      ],
+      "size": [
+        2.4,
+        1.4
+      ]
+    },
+    {
+      "id": "air",
+      "name": "Air and Agadez",
+      "at": [
+        8,
+        17.8
+      ],
+      "size": [
+        1.8,
+        1.4
+      ]
+    },
+    {
+      "id": "taghaza",
+      "name": "Taghaza salt mines",
+      "at": [
+        -5,
+        23.6
+      ],
+      "size": [
+        0.9,
+        0.7
+      ]
+    }
+  ],
+  "rounds": [
+    {
+      "years": "1464–1473",
+      "title": "Sonni Ali's Conquests",
+      "ruler": {
+        "year": 1464,
+        "title": "The King and the Scholars",
+        "text": "As Sonni Ali, you have just become king of Songhai, a kingdom centered on the city of Gao on the Niger River. Your soldiers, farmers, and fishermen honor the spirits of traditional Songhai religion, and many believe you have magical powers. But the merchants and scholars of the trading cities are Muslims, and they distrust a king who honors Islam in public while also performing the old rituals.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Protect the scholars and their mosques, and keep honoring the old Songhai rituals in the countryside.",
+            "points": 8,
+            "set": [
+              "scholars_loyal"
+            ],
+            "explanation": "A wise balance, though only half of what Sonni Ali did. He kept the loyalty of the Songhai heartland by honoring its traditions, but he clashed with Muslim scholars, and their chronicles remember him as a cruel tyrant."
+          },
+          {
+            "id": "b",
+            "text": "Leave religion to the priests and scholars, and spend your time at war. Victories, not prayers, will keep you on the throne.",
+            "points": 2,
+            "explanation": "Sonni Ali did spend most of his reign at war, and Songhai grew into an empire. But his quarrel with Muslim scholars left a weakness that his general Askia Muhammad used to win support when he seized power in 1493."
+          },
+          {
+            "id": "c",
+            "text": "Punish the scholars who speak against you; many are friends of your Tuareg enemies. Then make the cities honor the Songhai spirits, too.",
+            "points": -3,
+            "stability": -1,
+            "explanation": "Persecution would drive away the scholars and the Muslim merchants who ran the trade across the Sahara. Sonni Ali's harsh treatment of scholars is why Timbuktu's chroniclers remembered him as a tyrant, though Songhai oral tradition honors him as a hero."
+          }
+        ]
+      },
+      "general": {
+        "year": 1468,
+        "title": "The Prize of Timbuktu",
+        "text": "You lead Sonni Ali's cavalry, the fastest striking force in West Africa. Timbuktu, a great center of trade and Islamic learning, is held by Tuareg nomads from the desert. The city's governor has invited Songhai to drive the Tuareg out, but many of its scholars fear your king, and he suspects some of them of siding with the Tuareg.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Take the city, then protect its scholars and merchants so learning and trade keep flowing.",
+            "points": 8,
+            "gain": "timbuktu",
+            "explanation": "The smart path, but not quite what happened. Sonni Ali captured Timbuktu in 1468, then punished scholars he suspected of siding with the Tuareg, and many fled. His harshness made Timbuktu's scholars remember him as a tyrant."
+          },
+          {
+            "id": "b",
+            "text": "Take the city, then punish the scholars your king suspects of helping the Tuareg. Fear will stop the rest from plotting with the nomads once your army rides away.",
+            "points": -2,
+            "gain": "timbuktu",
+            "explanation": "This is close to what Sonni Ali did in 1468. Many scholars fled, some to the desert town of Walata, and the Muslim merchants who ran the trans-Saharan trade grew to distrust Songhai's king."
+          },
+          {
+            "id": "c",
+            "text": "Leave Timbuktu to the Tuareg, and use your horsemen closer to home.",
+            "points": 1,
+            "explanation": "That would leave a rich prize to your rivals. Sonni Ali captured Timbuktu in 1468, and it became one of Songhai's most important cities."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1473,
+        "title": "The Siege of Jenne",
+        "text": "As Sonni Ali's chief minister, you must plan how to bring Jenne into the empire. This rich trading city lies in the Niger's inland delta, and gold from the forests to the south passes through its markets on the way to Timbuktu. For much of the year floodwaters surround Jenne, and its walls have stopped many attackers. Songhai has a fleet of war canoes on the Niger, and a powerful cavalry.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Surround Jenne with war canoes and cut off its supplies. Promise its merchants safety and trade if the city surrenders.",
+            "points": 8,
+            "set": [
+              "river_fleet"
+            ],
+            "gain": "jenne",
+            "explanation": "That's what Sonni Ali did. His war canoes surrounded Jenne, which surrendered around 1473 after a siege that legend says lasted seven years, seven months, and seven days. With Gao, Timbuktu, and Jenne, Songhai controlled the trade of the Niger."
+          },
+          {
+            "id": "b",
+            "text": "Storm the walls with cavalry before the floods rise.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "Horses can't charge across a flooded plain or climb city walls. Sonni Ali used his river fleet to besiege Jenne until it surrendered around 1473."
+          },
+          {
+            "id": "c",
+            "text": "Accept a yearly tribute from Jenne and leave the city free, since a long siege could tie up your army for years while rivals grow stronger elsewhere.",
+            "points": 2,
+            "explanation": "Tribute brings in gold, but an independent Jenne could switch sides later. Sonni Ali took the city around 1473 and made it part of Songhai."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1493–1528",
+      "title": "Askia Muhammad",
+      "ruler": {
+        "year": 1496,
+        "title": "A Throne Without Royal Blood",
+        "text": "As Askia Muhammad, you were one of Sonni Ali's top generals. In 1493 you defeated his son in battle and seized the throne, taking the title askia. You are a devout Muslim, but you are not of royal blood, and many people see you as a usurper. Sonni Ali's family and its supporters are waiting for you to stumble.",
+        "context": [
+          {
+            "if": "scholars_loyal",
+            "text": "Timbuktu's scholars remember that Songhai protected them under Sonni Ali, and they are ready to support you."
+          },
+          {
+            "ifNot": "scholars_loyal",
+            "text": "Timbuktu's scholars still remember how Sonni Ali treated them, and they want proof that you are different."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Go on the hajj to Mecca, appoint Muslim judges, and support the scholars of Timbuktu.",
+            "points": 8,
+            "stability": 1,
+            "set": [
+              "legitimate"
+            ],
+            "explanation": "This is what Askia Muhammad did. On his hajj in 1496–1497 he was named the caliph's deputy for West Africa, and at home he appointed Muslim judges and generously supported Timbuktu's scholars. Islam gave his rule a legitimacy that royal blood could not."
+          },
+          {
+            "id": "b",
+            "text": "Rely on your army. It won you the throne, and soldiers who share in the spoils of war will keep you there.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "An army can seize a throne, but keeping it takes legitimacy, and a general who wins by force invites the next general to try. Askia Muhammad built his legitimacy on Islam, the hajj, and the support of Timbuktu's scholars."
+          },
+          {
+            "id": "c",
+            "text": "Win over the clan chiefs and Sonni Ali's old commanders with rich gifts and high offices, so the most powerful men in Songhai have every reason to accept you.",
+            "points": 2,
+            "explanation": "Gifts and offices can buy time, but loyalty that is bought can be bought again by a rival. Askia Muhammad built a deeper base by making Islam central to his rule."
+          }
+        ]
+      },
+      "general": {
+        "year": 1500,
+        "title": "West to Mali, East to Aïr",
+        "text": "You command Askia Muhammad's armies. To the west lie lands once ruled by the old empire of Mali. Far to the east, in the Aïr Mountains, the sultan of Agadez controls a crossroads of caravan routes across the Sahara. To the south, the Mossi kingdoms have raided Songhai lands before, and farther south lie the gold fields that make West Africa rich.",
+        "context": [
+          {
+            "if": "river_fleet",
+            "text": "Songhai's war canoes control the Niger, so troops and supplies can move quickly by river."
+          },
+          {
+            "ifNot": "river_fleet",
+            "text": "Songhai has no strong river fleet, so every army must march and carry its own supplies."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "if": "river_fleet",
+            "text": "Move troops by canoe along the Niger and take the trade towns west and east. Let local rulers keep their thrones if they pay tribute.",
+            "points": 8,
+            "gain": [
+              "sahel_west",
+              "air"
+            ],
+            "explanation": "Close to what Askia Muhammad did. His armies campaigned west into Mali's old lands and east into Aïr, where the sultan of Agadez kept his throne but paid Songhai tribute. Songhai's war canoes made the Niger a highway for its armies."
+          },
+          {
+            "id": "d",
+            "ifNot": "river_fleet",
+            "text": "Take the trade towns west and east, and let local rulers keep their thrones if they pay tribute.",
+            "points": 6,
+            "gain": [
+              "sahel_west",
+              "air"
+            ],
+            "explanation": "Close to what Askia Muhammad did: his armies campaigned west into Mali's old lands and east into Aïr, where the sultan of Agadez paid Songhai tribute. Without war canoes to carry supplies on the Niger, though, every campaign is slower and costlier."
+          },
+          {
+            "id": "b",
+            "text": "March south to conquer the Mossi kingdoms and seize the gold fields beyond them, so the gold flows straight to Gao instead of through other people's markets.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "Askia Muhammad did attack the Mossi in 1497–1498, calling it a holy war, but the Mossi kingdoms were never conquered. The gold fields lay far to the south and southwest, beyond the reach of Songhai's cavalry."
+          },
+          {
+            "id": "c",
+            "text": "Conquer the new lands and replace every local ruler with one of your own officers. No one will rebel against men loyal only to you.",
+            "points": 1,
+            "explanation": "Distant peoples resent foreign officers, and holding them down takes a huge army. Askia Muhammad sent his own governors to key provinces but often left local rulers in place if they paid tribute."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1510,
+        "title": "Organizing an Empire",
+        "text": "As Askia Muhammad's chief minister, you must run an empire that now stretches across much of West Africa. Its peoples speak many languages, and merchants from North Africa and Egypt crowd the markets of Gao and Timbuktu. Far to the north, in the middle of the Sahara, lie the salt mines of Taghaza. West Africa has little salt of its own, and Taghaza's salt trades for gold.",
+        "context": [
+          {
+            "if": "river_fleet",
+            "text": "The war canoes that took Jenne now guard the river trade between Gao, Timbuktu, and Jenne."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Appoint governors, keep a full-time army, set standard weights and measures, and send officials to run the Taghaza mines.",
+            "points": 8,
+            "set": [
+              "admin"
+            ],
+            "gain": "taghaza",
+            "explanation": "These were Askia Muhammad's reforms. Appointed governors, a full-time army, and fair rules for trade held the huge empire together, and Songhai officials oversaw the salt of Taghaza. Timbuktu's Sankore mosque drew scholars from across West and North Africa."
+          },
+          {
+            "id": "b",
+            "text": "Let local chiefs rule as they wish, as long as they send tribute. They know their own peoples, and fewer outsiders means fewer revolts.",
+            "points": 1,
+            "explanation": "Cheap, but loose control lets chiefs break away. Askia Muhammad appointed his own governors and built a professional army to hold the empire together."
+          },
+          {
+            "id": "c",
+            "text": "Double the taxes on caravans. The merchants are rich, and the army needs pay.",
+            "points": -2,
+            "explanation": "Heavy taxes can push caravans onto other routes across the Sahara. Askia Muhammad encouraged trade instead, and Songhai's markets drew merchants from across the desert."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1528–1582",
+      "title": "Golden Age",
+      "ruler": {
+        "year": 1528,
+        "title": "Brothers and the Throne",
+        "text": "In 1528 Askia Muhammad, old and nearly blind, was overthrown by his own son Musa. Now you rule as Askia Musa. Your father had many sons, and several of your brothers command soldiers and have followers of their own. Songhai has no fixed rule for who inherits the throne, so any prince with an army may try to seize it.",
+        "context": [
+          {
+            "if": "admin",
+            "text": "Askia Muhammad's system of appointed governors gives you important posts to offer your brothers."
+          },
+          {
+            "if": "legitimate",
+            "text": "Because Askia Muhammad made Islam central to his rule, princes and soldiers respect the judgment of Timbuktu's judges and scholars."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Have the scholars and top commanders agree on a clear rule for who inherits. Give your brothers governorships far from Gao.",
+            "points": 8,
+            "stability": 1,
+            "set": [
+              "succession_rule"
+            ],
+            "explanation": "The road not taken. Askia Musa was killed in a revolt in 1531, and Songhai's princes kept fighting over the throne for the rest of the century, which weakened the army."
+          },
+          {
+            "id": "b",
+            "text": "Let the princes fight it out when the time comes. The strongest deserves the throne.",
+            "points": -3,
+            "stability": -1,
+            "explanation": "This is roughly what happened. Repeated fights between princes, ending in a civil war in 1588, weakened Songhai's army right before Morocco invaded."
+          },
+          {
+            "id": "c",
+            "text": "Name no heir and keep every brother hoping. As long as each believes he might be chosen, none of them has a reason to rebel against you.",
+            "points": 1,
+            "explanation": "Without a named heir, ambitious princes build their own followings and wait for a chance. In Songhai, rival princes overthrew one another again and again after 1528."
+          }
+        ]
+      },
+      "general": {
+        "year": 1557,
+        "title": "Raiders at the Salt Mines",
+        "text": "You command Songhai's forces on the northern frontier. Morocco's sultans want the salt mines of Taghaza, deep in the Sahara, and a Moroccan raiding party has just struck the mines, killing some of the people there. Salt from Taghaza is traded for gold in Songhai's markets, but the mines are weeks of desert travel from Gao.",
+        "context": [
+          {
+            "if": "admin",
+            "text": "Askia Muhammad's officials still oversee the Taghaza mines, and his full-time army gives you trained soldiers to send north."
+          },
+          {
+            "ifNot": "admin",
+            "text": "Songhai never put its own officials at Taghaza, so news from the desert reaches you late and secondhand."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Patrol the caravan routes with horsemen and Tuareg allies. If Taghaza falls, help the salt workers open mines farther south.",
+            "points": 8,
+            "explanation": "A sound defense, and salt kept reaching Songhai's markets. Moroccan raiders struck Taghaza in the 1550s, and after Morocco seized it in the 1580s, salt workers moved to new mines farther south at Taoudenni."
+          },
+          {
+            "id": "b",
+            "text": "Let Morocco have Taghaza. It is weeks away, and traders will still bring salt to your markets.",
+            "points": 1,
+            "lose": "taghaza",
+            "explanation": "Giving ground did not satisfy Morocco, whose sultans really wanted Songhai's gold. In 1590 Morocco sent an army across the Sahara to take it."
+          },
+          {
+            "id": "c",
+            "text": "Lead your whole army north across the Sahara and strike Morocco itself. A bold blow at the sultan's own cities will teach him never to touch Songhai's mines again.",
+            "points": -3,
+            "lose": "taghaza",
+            "explanation": "Crossing the Sahara would cost thousands of men to heat and thirst, as Morocco's own army learned in 1590–1591. Meanwhile the salt mines would be left unguarded."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1578,
+        "title": "Guns from the North",
+        "text": "As chief minister to Askia Daoud, you serve a rich empire. Gold from the south and salt from the Sahara pass through Songhai's markets, and Timbuktu's scholars are famous across West and North Africa. But in 1578 Morocco crushed a Portuguese invasion at the Battle of the Three Kings, and its new sultan, Ahmad al-Mansur, is building an army of musketeers. Songhai's soldiers still fight with spears, bows, and cavalry.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Buy guns and hire gunners through North African traders, and train Songhai soldiers to use them.",
+            "points": 8,
+            "set": [
+              "guns"
+            ],
+            "explanation": "The road not taken, though Bornu, near Lake Chad, did hire Turkish musketeers in these years. Songhai's army never adopted guns in large numbers, and when Moroccan musketeers reached the Niger in 1591, that gap proved costly."
+          },
+          {
+            "id": "b",
+            "text": "Trust the Sahara. No army has ever crossed it to attack Songhai, and the sultan's musketeers would die of thirst long before they reached the Niger.",
+            "points": -3,
+            "stability": -1,
+            "explanation": "Many in Songhai believed the desert would protect them. In 1590–1591 a Moroccan army crossed it, and its guns proved decisive."
+          },
+          {
+            "id": "c",
+            "text": "Spend the gold on Timbuktu: new mosques, libraries, and rich gifts for scholars. Songhai's fame as a home of learning is its greatest strength.",
+            "points": 2,
+            "explanation": "Askia Daoud was a generous patron of Timbuktu's scholars, and the city flourished. But learning could not stop bullets, and Songhai's army was still unprepared when Morocco's musketeers arrived in 1591."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1582–1591",
+      "title": "The Moroccan Invasion",
+      "ruler": {
+        "year": 1588,
+        "title": "Brother Against Brother",
+        "text": "As Askia Ishaq II, you face a rebellion. Your brother Muhammad al-Sadiq, a top army commander, has declared himself askia and is marching on Gao, and many soldiers have joined him. Meanwhile Morocco's sultan, Ahmad al-Mansur, is demanding taxes from the Taghaza salt mines, a sign that he has his eye on Songhai.",
+        "context": [
+          {
+            "if": "succession_rule",
+            "text": "Because Songhai has a clear rule for who inherits, most commanders and scholars see the rebel as a lawbreaker, and fewer soldiers have joined him."
+          },
+          {
+            "ifNot": "succession_rule",
+            "text": "With no fixed rule for who inherits, many soldiers believe the rebel has as good a claim as you do."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Strike fast and crush the rebellion. Then pardon the rebel soldiers and bring them back into your army.",
+            "points": 8,
+            "explanation": "Ishaq II did defeat the rebels in 1588, but the fighting cost Songhai many soldiers and left the army bitter and divided. Pardoning and reuniting the army would have left Songhai stronger when the Moroccans came."
+          },
+          {
+            "id": "b",
+            "text": "Execute every rebel you capture. If traitors are forgiven, every ambitious prince in Songhai will raise an army, believing he has nothing to lose.",
+            "points": -1,
+            "explanation": "Killing your own soldiers weakens your army just when you need it most. The civil war of 1588 had already cost Songhai many fighting men before Morocco attacked."
+          },
+          {
+            "id": "c",
+            "text": "Make peace by splitting the empire: the rebel takes the west, and you keep Gao and the east.",
+            "points": -3,
+            "stability": -1,
+            "explanation": "A divided Songhai would be even easier for Morocco to conquer. Ishaq II won the civil war in 1588 and kept the empire together, though it was weakened."
+          }
+        ]
+      },
+      "general": {
+        "clash": "tondibi"
+      },
+      "vizier": {
+        "year": 1590,
+        "title": "An Army in the Desert",
+        "text": "As chief minister to Askia Ishaq II, you receive alarming news. Ahmad al-Mansur has sent an army of about 4,000 men across the Sahara, many armed with arquebuses, along with cannons. It is led by Judar Pasha, a Spanish-born soldier who converted to Islam. The crossing takes months, and the army depends on the few wells along its route.",
+        "context": [
+          {
+            "if": "succession_rule",
+            "text": "With no princes fighting over the throne, your commanders can act quickly and together."
+          },
+          {
+            "ifNot": "succession_rule",
+            "text": "Years of fighting between princes have left your commanders slow and divided."
+          },
+          {
+            "if": "guns",
+            "text": "Your small corps of gunners is ready to ride north with the raiders."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Fill in the wells along the Moroccans' route and send horsemen to harass them as they cross.",
+            "points": 8,
+            "set": [
+              "wells"
+            ],
+            "explanation": "A smart plan that Songhai never carried out. Accounts say Askia Ishaq II either ignored advice to block the wells or acted too late, so the Moroccan army reached the Niger in early 1591 with enough men to fight."
+          },
+          {
+            "id": "b",
+            "text": "Wait for them near Gao. The desert will kill many on the way, and your army is far larger, so it can crush whoever survives the crossing.",
+            "points": -2,
+            "explanation": "This is roughly what Songhai did. The Moroccans lost many men crossing the desert, but the survivors still had their guns, and that was enough at Tondibi."
+          },
+          {
+            "id": "c",
+            "text": "Send rich gifts to Marrakesh and offer al-Mansur a yearly tribute in gold, hoping he will call his army home.",
+            "points": 1,
+            "explanation": "Diplomacy might have worked earlier, but al-Mansur's army was already on the march, and he wanted control of the gold trade. Songhai ended up fighting at Tondibi in March 1591."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -3,6 +3,8 @@
 A 15–20 minute review game for **AP World History Unit 3: Land-Based Empires (1450–1750)**.
 Each student rules one of eight empires through about 8 historical decisions, sees what really happened after every choice, and lands on a shared class leaderboard.
 
+There's also a live whole-class mode, **Class Battle**, where teams of three run an empire together against the other teams on a projector map. See [Class Battle](#class-battle-live-whole-class-mode) below.
+
 ## Your links
 
 | What | Link |
@@ -10,6 +12,8 @@ Each student rules one of eight empires through about 8 historical decisions, se
 | **Game (share with students)** | https://rule-the-empire.rule-empire-0ee0f1.workers.dev |
 | Leaderboard (good for a projector) | https://rule-the-empire.rule-empire-0ee0f1.workers.dev/#leaderboard |
 | Teacher controls | Click **Teacher** at the bottom of any page, or go to https://rule-the-empire.rule-empire-0ee0f1.workers.dev/#teacher |
+| **Class Battle: projector screen** | https://rule-the-empire.rule-empire-0ee0f1.workers.dev/battle |
+| **Class Battle: students join here** | https://rule-the-empire.rule-empire-0ee0f1.workers.dev/join |
 
 No student accounts or logins are needed. It works on Chromebooks, laptops, tablets, and phones.
 
@@ -66,6 +70,61 @@ The report opens when you unlock teacher mode. Students never see it. Use the ta
 
 The report uses students' **first games only**. Practice runs aren't saved, so they aren't counted. Answers from unfinished games count toward "most-missed decisions" but not toward averages. No names appear in the report.
 
+## Class Battle (live, whole-class mode)
+
+A separate live mode for a whole class period (about 40–50 minutes). The solo game above is unchanged; both use the same teacher password and the same site.
+
+**The idea:** the class is split into empire teams, three students to an empire. Each student holds one office: the **Ruler** (faith, legitimacy, succession, monuments), the **General** (armies, gunpowder, frontiers), or the **Vizier** (taxes, trade, officials). The empire's titles change (Sultan, Shah, Shogun, Grand Vizier, Pasha…). All teams play **four rounds** at the same time, one historical era per round, and a world map on the projector shows who holds what.
+
+### Running a battle
+
+1. **On the projector computer**, open **/battle** (link above). Type the teacher password, pick the **class period** and the **time for each round** (2–5 minutes; 3 is the default), and click **Open the battle**. A big 4-letter code appears.
+2. **Students** open **/join** on their own devices (there's also a "join with your code" link on the game's front page), type the code and their **first name**, and tap an open seat: Ruler, General, or Vizier of an empire. With more than 24 students, extras can sit as a **Royal Adviser** (up to two per empire, 40 students at most).
+3. **You don't have to wait for everyone to choose.** **Fill empty seats** puts anyone who hasn't picked into the emptiest empire. **Start the battle** does the same automatically. With fewer than 24 students, some empires simply sit out (history plays their part), and a team with only one or two students has them cover the empty offices too.
+4. **Each round**, every student sees their own office's decision on their screen. Teammates should talk it over, but each one decides alone. They can change their answer until time runs out. The round ends early, a few seconds after the last answer comes in. The projector shows the timer and who has answered (✓), never what they chose.
+5. **Between rounds**, the projector shows the **clashes**, the **map** (newly won lands pulse), and the **team scores**. Each student's screen shows their points and **"What actually happened"**, plus the wiser course when they missed it. Click **What really happened** on a clash to play a short map animation of the real battle, then **Start round II** (and so on) when the class is ready.
+6. After round IV, **Final results** shows the top three empires, the **best Ruler, General, and Vizier** in the class, and every student's own score. Each student's screen shows their empire's rank and their own score.
+
+**Controls during a round:** **Pause** / **Resume**, **+1 minute**, **End round now** (when everyone is done talking), and **End battle** (finishes the battle early and shows the final results). In the lobby, the **✕** next to a name removes that student (for a joke name, for example).
+
+### Clashes between empires
+
+Some rounds pit two empires against each other for a disputed region, and the **General** makes the battle choice:
+
+| Round | Clash | Sides | Prize |
+|---|---|---|---|
+| I | Chaldiran (1514) | Ottoman vs. Safavid | Eastern Anatolia |
+| I | Siege of Osaka (1614) | Tokugawa vs. the Toyotomi (played by the computer) | Osaka and Kansai |
+| II | Lepanto (1571) | Spanish vs. Ottoman | Mediterranean sea lanes |
+| III | Kandahar (1622) | Mughal vs. Safavid | Kandahar |
+| IV | The Amur frontier (1685) | Russian vs. Ming & Qing | The Amur valley |
+| IV | Tondibi (1591) | Songhai vs. Morocco (played by the computer) | Gao |
+
+Each side's strength is the General's choice (0–3) **plus 1 for each preparation** the team made in earlier rounds (for example, the Ottoman Vizier building a fleet before Lepanto, or Mughal artillery before Kandahar). That's why the Ruler and Vizier matter in a war, too. Stronger side wins; on a tie, the side holding the region keeps it. If an empire has no team in your class, its side plays what really happened.
+
+### Scoring
+
+- **Team score:** the points from all three offices' decisions, as in the solo game. Easy empires (Mughal, Ming & Qing, Tokugawa) earn 0 to +5 per decision with 5 stability shields; Medium (Ottoman, Russian) −1 to +6 with 4 shields; Hard (Spanish, Safavid, Songhai) −3 to +8 with only 3 shields.
+- **Collapse:** if a team's stability reaches zero, the empire **falls** at the end of that round and loses half its points (at least 10), just like the solo game. Its students keep playing **"in exile"**: they still see every decision and what really happened, but they earn **half points**, and the fallen empire fights any later clash at zero strength.
+- **Each student's own score:** the points from their own office's decisions (half while in exile). A missed decision (time ran out) scores 0, and nothing happens for that office that round.
+- **Royal Advisers** answer a different office's decision each round. Their advice earns them points but doesn't change what the empire does.
+
+A thoughtful team usually finishes with about 40–55 points; a team that makes the best choice almost every time scores about 50–60 on an Easy empire and 75–95 on a Hard one. The numbers from thousands of simulated battles are in **docs/BATTLE_BALANCE.md**.
+
+### If something goes wrong in a battle
+
+| Problem | Fix |
+|---|---|
+| A student's screen froze or they closed the tab | Reopen **/join** on the same device: they go right back to their seat. |
+| A student's device died | On another device, they open **/join**, type the code and **the same first name**: they get their seat back (this works once the old device is off). |
+| A student arrives late | They join with the code as usual and are placed on the smallest team, taking over an office a teammate was covering (or advising, if every office has its own student). |
+| The projector computer was closed or refreshed | Open **/battle** again on that computer and click **Return to battle ….** The battle keeps running on the server the whole time. |
+| Two students have the same first name | The second one is asked to add a last initial (for example, "Maya R"). |
+
+### Where results go
+
+When a battle finishes, its results (each team's score and result, and each student's first name, empire, office, and score) are saved and appear in the **Class Report** under **Class Battles**, where you can also delete one. Battles don't change the solo leaderboard. A battle that was never finished isn't saved, and every battle room is deleted from the server within 12 hours.
+
 ## Changing the teacher password
 
 The password is stored on the server (in Cloudflare), never in the web page, so students can't find it by inspecting the site.
@@ -83,6 +142,8 @@ Tips: use something long that students won't guess, like four random words with 
 ## Privacy
 
 The leaderboard stores only each student's **first name, period, empire, score, and whether they survived or collapsed**. To make resuming and score-checking work, it also keeps a random game code and the list of choices for that one game. It does **not** store last names, emails, accounts, or IP addresses. The browser remembers an unfinished game only so the student can continue it on the same device. Scores are never kept in the browser.
+
+**Class Battle** saves the same kind of data: each student's first name, period, empire, office (Ruler, General, Vizier, or Adviser), and score, plus each team's score and result. While a battle is running, the server also holds the students' answers for that battle; the whole battle room is deleted within 12 hours. A student's device remembers only the battle code and a random player code so it can reconnect; scores are never kept in the browser.
 
 ## Fair play
 
@@ -107,4 +168,4 @@ The leaderboard stores only each student's **first name, period, empire, score, 
 
 ## Limits and cost
 
-The game runs on Cloudflare's free plan (100,000 requests per day). One student's game uses about 20–30 requests, so even several classes playing at once use a tiny fraction. Nothing to pay and nothing goes to sleep between classes.
+The game runs on Cloudflare's free plan (100,000 requests per day). One student's game uses about 20–30 requests, so even several classes playing at once use a tiny fraction. A Class Battle uses only a small part of the free plan's daily allowance, too. Nothing to pay and nothing goes to sleep between classes.

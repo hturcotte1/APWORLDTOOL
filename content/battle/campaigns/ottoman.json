@@ -1,0 +1,448 @@
+{
+  "id": "ottoman",
+  "titles": {
+    "ruler": "Sultan",
+    "general": "Pasha (General)",
+    "vizier": "Grand Vizier"
+  },
+  "regions": [
+    {
+      "id": "anatolia",
+      "name": "Anatolia",
+      "at": [
+        32.5,
+        39.0
+      ],
+      "size": [
+        4.5,
+        1.9
+      ],
+      "start": true
+    },
+    {
+      "id": "rumelia",
+      "name": "Rumelia (the Balkans)",
+      "at": [
+        23.5,
+        42.4
+      ],
+      "size": [
+        3.0,
+        1.7
+      ],
+      "start": true
+    },
+    {
+      "id": "constantinople",
+      "name": "Constantinople",
+      "at": [
+        28.98,
+        41.05
+      ],
+      "size": [
+        0.9,
+        0.55
+      ]
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt and Syria",
+      "at": [
+        31.0,
+        27.5
+      ],
+      "size": [
+        3.0,
+        3.4
+      ]
+    },
+    {
+      "id": "hungary",
+      "name": "Hungary",
+      "at": [
+        19.6,
+        47.0
+      ],
+      "size": [
+        2.2,
+        1.2
+      ]
+    },
+    {
+      "id": "iraq",
+      "name": "Iraq",
+      "at": [
+        44.2,
+        33.0
+      ],
+      "size": [
+        2.8,
+        2.2
+      ]
+    }
+  ],
+  "rounds": [
+    {
+      "years": "1453–1514",
+      "title": "The Conqueror's City",
+      "ruler": {
+        "year": 1453,
+        "title": "The Walls of Constantinople",
+        "text": "As Sultan Mehmed II, only 21 years old, you rule lands on both sides of Constantinople, the last stronghold of the Byzantine Empire. Its thousand-year-old walls have stopped attackers for centuries, and a great chain blocks its harbor, the Golden Horn. A cannon-maker named Orban offers to cast guns bigger than any the world has seen. Taking the city would make you heir to the Roman emperors.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Hire Orban and build a fleet, then attack by land and sea at once. When the city falls, make it your capital and take the title Caesar of Rome.",
+            "points": 6,
+            "set": [
+              "fleet"
+            ],
+            "gain": "constantinople",
+            "explanation": "This is what Mehmed did. Orban's cannons pounded the walls, ships were dragged overland on greased logs into the Golden Horn, and the city fell on May 29, 1453. Mehmed made it his capital and called himself Kayser-i Rum, \"Caesar of Rome,\" claiming the Roman emperors' legacy."
+          },
+          {
+            "id": "b",
+            "text": "Surround the city by land and starve it out. Those walls have held for centuries, so why waste soldiers when hunger can do the work?",
+            "points": 2,
+            "explanation": "Patient, but slow. Without warships to stop them, Venetian and Genoese ships could keep slipping food and soldiers into the city by sea. Mehmed won in under two months by pairing a land and sea blockade with huge cannons and a final assault."
+          },
+          {
+            "id": "c",
+            "text": "Leave Constantinople alone. Its emperor rules little more than one city, so accept his gifts and conquer easier lands first.",
+            "points": -1,
+            "explanation": "A missed chance. An enemy capital in the middle of your lands could become a base for a European crusade. Mehmed made Constantinople his first great target, and its fall in 1453 shocked Europe and made his reputation."
+          }
+        ]
+      },
+      "general": {
+        "clash": "chaldiran"
+      },
+      "vizier": {
+        "year": 1454,
+        "title": "A Half-Empty Capital",
+        "text": "As Grand Vizier, you must bring Constantinople back to life. After the siege, the great city, which many already call Istanbul, is half empty. Your sultan wants a busy capital full of merchants and craftsmen who pay taxes. The empire rules millions of Orthodox Christians, plus Armenians and Jews, alongside its Muslims. How will you fill the city, and how will you govern so many faiths?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Resettle Muslims, Christians, and Jews from across the empire, and let each faith run its own schools, courts, and charities under its own leaders.",
+            "points": 6,
+            "set": [
+              "tolerant"
+            ],
+            "explanation": "This is close to what happened. Mehmed brought in people of all three faiths (many of them moved by force), named a new Orthodox patriarch, and let religious communities run much of their own affairs in return for loyalty and taxes. Historians later called this the millet system."
+          },
+          {
+            "id": "b",
+            "text": "Fill the city with Muslim Turkish settlers only. A loyal Muslim capital would be easier to defend against a crusade, and Christians can stay in the countryside.",
+            "points": 1,
+            "explanation": "Workable, but you would lose skilled Greek, Armenian, and Jewish merchants and craftsmen. Mehmed deliberately brought in people of many faiths, and by the 1500s Istanbul was one of the largest cities in the world."
+          },
+          {
+            "id": "c",
+            "text": "Order every Christian and Jew in the city to convert to Islam or leave.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "Forced conversion would spark revolts and drive away the taxpayers your capital needed. Mehmed did the opposite: he protected Christians and Jews in return for loyalty and the jizya, a tax paid by non-Muslims."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1516–1571",
+      "title": "The Magnificent Age",
+      "ruler": {
+        "year": 1517,
+        "title": "Keys to the Holy Cities",
+        "text": "As Sultan Selim I, you have just crushed the Mamluk Sultanate and taken Syria and Egypt, including Cairo, one of the richest cities in the Muslim world. Now the Sharif of Mecca sends his son to you with the keys of the holy city. Whoever protects Mecca and Medina, and the pilgrims who travel there on the hajj, wins enormous respect among Sunni Muslims. What will you do with your victory?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Accept the keys. Rule Egypt as a province, guard the pilgrim roads, and call yourself Servant of the Two Holy Cities.",
+            "points": 6,
+            "set": [
+              "holy_cities"
+            ],
+            "gain": "egypt",
+            "explanation": "This is what Selim did. Protecting Mecca, Medina, and the hajj made the Ottoman sultan the leading ruler of the Sunni Muslim world, and Egypt's grain and taxes poured into Istanbul. Later sultans sometimes also called themselves caliph, leader of the Muslim community."
+          },
+          {
+            "id": "b",
+            "text": "Load Cairo's treasure and its best craftsmen onto ships for Istanbul, then march home in triumph and leave Egypt and Arabia to whoever can hold them.",
+            "points": 1,
+            "explanation": "Selim did send treasure and many of Cairo's craftsmen to Istanbul, but he also kept Egypt. Its grain and taxes were worth far more than one load of loot, and walking away would have thrown away the prestige of guarding the holy cities."
+          },
+          {
+            "id": "c",
+            "text": "Announce that every Muslim ruler, from Morocco to India, must now obey you directly, and send armies against any who refuse. As protector of the holy cities, you should lead them all.",
+            "points": -1,
+            "explanation": "Far too much at once. Rulers like the Shia Safavids in Persia and the sultans of Morocco had their own armies and their own claims to rule, and would never simply obey. The Ottomans led the wider Muslim world mainly through prestige: guarding Mecca, Medina, and the hajj."
+          }
+        ]
+      },
+      "general": {
+        "clash": "lepanto"
+      },
+      "vizier": {
+        "year": 1526,
+        "title": "Hungary After Mohács",
+        "text": "As Grand Vizier, you rode with Sultan Suleiman when his army crushed the Hungarians at the Battle of Mohács. Hungary's young king drowned while fleeing. Now two men claim his crown: John Zápolya, a Hungarian noble, and Ferdinand of Habsburg, brother of the mighty Emperor Charles V. Hungary is rich but far from Istanbul, and the Habsburgs will fight hard for it.",
+        "context": [
+          {
+            "if": "tolerant",
+            "text": "Because your empire lets Christian communities keep their churches and leaders, some Hungarians may accept Ottoman rule more easily than the Habsburgs expect."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Back Zápolya as a friendly king who rules under your protection. If he fails, rule central Hungary yourself from Buda. Meanwhile, ally with France, the Habsburgs' great rival.",
+            "points": 6,
+            "set": [
+              "france"
+            ],
+            "gain": "hungary",
+            "explanation": "This is what Suleiman and his advisers did. Zápolya ruled as an Ottoman vassal until he died in 1540, and in 1541 Suleiman took Buda and made central Hungary an Ottoman province for nearly 150 years. France became an ally against the Habsburgs in the 1530s."
+          },
+          {
+            "id": "b",
+            "text": "March on Vienna every summer until the Habsburg capital falls. Without Vienna, the Habsburgs could never hold Hungary.",
+            "points": -1,
+            "explanation": "Vienna was too far away. Suleiman besieged it in 1529, but autumn rains, long supply lines, and stubborn defenders forced him to turn back. An army that marches every summer wears itself out; holding Hungary was the smarter goal."
+          },
+          {
+            "id": "c",
+            "text": "Let Ferdinand have Hungary in return for peace and yearly gifts.",
+            "points": 1,
+            "explanation": "That would hand a rich kingdom, and a base for attacking your Balkan lands, to your strongest Christian rival. Suleiman fought for Hungary instead, and in 1547 the Habsburgs even agreed to pay him tribute for the slice they kept."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1580–1650",
+      "title": "Strains",
+      "ruler": {
+        "year": 1622,
+        "title": "The Sultan and the Janissaries",
+        "text": "As young Sultan Osman II, you are angry. The janissaries, once slave soldiers who served only the sultan, now marry, run shops, and pass their places to their sons. You blame them for last year's disappointing war against Poland. You want an army that obeys you, but the janissaries guard your palace, fill Istanbul's streets, and have forced sultans to sacrifice officials before.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Go slowly. Pay the troops on time and win over their officers. Change the army one step at a time so that no group feels suddenly threatened.",
+            "points": 6,
+            "set": [
+              "army_reform"
+            ],
+            "explanation": "The road not taken. Osman II moved fast, and when word spread that he planned to raise a new army in Anatolia, the janissaries rebelled and killed him in 1622, the first Ottoman sultan murdered by his own soldiers. The janissaries were finally abolished in 1826, by a sultan who first made sure he had loyal troops and the support of religious leaders."
+          },
+          {
+            "id": "b",
+            "text": "Strike first. Announce a pilgrimage to Mecca, slip away to Anatolia, and raise a new army there that owes everything to you. Then disband the janissaries.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "This was Osman II's plan, or so his enemies claimed. In May 1622 the janissaries rose up, dragged him from the palace, and killed him. A sudden purge without loyal troops ready was deadly."
+          },
+          {
+            "id": "c",
+            "ifNot": "france",
+            "text": "Keep the peace by paying the janissaries a big bonus whenever they grumble, and leave their privileges alone.",
+            "points": 2,
+            "explanation": "This bought quiet for a while, but bonuses emptied the treasury and taught the janissaries that rioting pays. Sultans after Osman II often gave in this way, and mutinies kept coming."
+          },
+          {
+            "id": "c2",
+            "if": "france",
+            "text": "Ask your old allies in France to send officers who can train a new army in the European style. France fears the Habsburgs as much as you do.",
+            "points": 1,
+            "explanation": "Christian officers drilling Muslim troops would have enraged the janissaries and religious scholars in 1622. A Frenchman did help a century later: Bonneval, a former French officer who became a Muslim, helped modernize the Ottoman bombardiers, an artillery corps, in the 1730s."
+          }
+        ]
+      },
+      "general": {
+        "year": 1638,
+        "title": "Retaking Baghdad",
+        "text": "You command Sultan Murad IV's army. About fifteen years ago, Shah Abbas of Persia seized Baghdad, a rich trading city and the old capital of the caliphs. Ottoman armies have tried twice to win it back and failed. Now the sultan himself is marching east with a huge army and heavy siege cannons. Baghdad's walls are strong, and the war with Persia has dragged on ever since.",
+        "context": [
+          {
+            "if": "holy_cities",
+            "text": "Because your sultans protect Mecca and Medina and claim to lead Sunni Muslims, leaving Baghdad and its famous Sunni shrines in Shia hands is an embarrassment."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Bring the heavy siege guns and enough food and powder for a long siege. Once Baghdad falls, offer the shah a fixed border and a lasting peace.",
+            "points": 6,
+            "set": [
+              "zuhab"
+            ],
+            "gain": "iraq",
+            "explanation": "This is what happened. Murad IV's cannons broke Baghdad's walls in 1638, and the Treaty of Zuhab (1639) drew a border between the two empires that lasted, with small changes, for centuries. It is close to the border between Iran and Iraq today."
+          },
+          {
+            "id": "b",
+            "text": "Let the governors of the eastern provinces besiege Baghdad each summer with their own troops, and keep the sultan's main army safe for wars in Europe.",
+            "points": 2,
+            "explanation": "Smaller armies had already tried this, in 1625–1626 and again in 1630, and failed. Baghdad's walls and its Persian defenders were too strong for anything less than a full campaign with heavy guns."
+          },
+          {
+            "id": "c",
+            "text": "After Baghdad falls, keep marching. Push deep into Persia, take the shah's capital at Isfahan, and finish off the Safavids for good.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "Ottoman armies had invaded Persia many times but never held its heartland, because scorched earth and long supply lines wore them down. Endless war drained both empires, which is why both sides accepted peace in 1639."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1589,
+        "title": "Bad Coins, Angry Soldiers",
+        "text": "As Grand Vizier, you face a money crisis. Silver from Spanish America is flowing into the empire's markets, and prices keep rising. To stretch its budget, the government has cut the amount of silver in the akçe, its main coin, so soldiers' pay buys less. This year, janissaries paid in the new coins rioted until the sultan handed over two top officials to be executed.",
+        "context": [
+          {
+            "if": "holy_cities",
+            "text": "Egypt's grain and taxes still flow to Istanbul, but even Egypt's wealth cannot keep up with rising prices."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Stop cutting the silver and pay the troops in good coins. Raise money by selling tax-collecting contracts, with inspectors watching the collectors closely.",
+            "points": 6,
+            "set": [
+              "sound_money"
+            ],
+            "explanation": "The wise path, but the government managed it only in fits and starts. Bad coins and late pay led to more mutinies and fed the Celali revolts in Anatolia (about 1595–1610). Tax farming did raise cash, but it worked best where officials kept collectors from squeezing peasants."
+          },
+          {
+            "id": "b",
+            "text": "Raise taxes sharply on peasant farmers. They are the empire's biggest group of taxpayers, and the soldiers must be paid now.",
+            "points": 1,
+            "explanation": "Heavy new taxes brought in money but drove many peasants off their land. Some joined the bandit armies of the Celali revolts, which tore through Anatolia from about 1595 to 1610."
+          },
+          {
+            "id": "c",
+            "text": "Mix even more copper into the coins. Each coin will buy less, but the mint can make more of them and pay every soldier on time.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "Debasing the coins again would push prices even higher, and soldiers notice when their pay buys less. Pay in bad coins is exactly what set off this year's riot."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1656–1699",
+      "title": "Revival and Retreat",
+      "ruler": {
+        "year": 1656,
+        "title": "A Vizier with Full Powers",
+        "text": "As Sultan Mehmed IV, still a teenager, you rule an empire in crisis. The treasury is empty, and this spring soldiers angry about their pay rioted and hanged officials from a plane tree in Istanbul. A Venetian fleet now blocks the Dardanelles, the strait leading to your capital. Grand viziers have come and gone every few months. Your mother suggests a tough old governor, Köprülü Mehmed Pasha, but he has conditions.",
+        "context": [
+          {
+            "if": "sound_money",
+            "text": "Because your team once stopped cutting the silver in the coins, merchants still trust Ottoman money, which gives a strong minister something to build on."
+          },
+          {
+            "if": "army_reform",
+            "text": "Because the army was reformed slowly and paid on time, some regiments still trust the palace and may back a tough new minister."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Accept his conditions: full power to appoint and punish officials, with no meddling from the palace.",
+            "points": 6,
+            "stability": 1,
+            "explanation": "This is what happened. Köprülü Mehmed Pasha ruthlessly executed rebels and corrupt officials, broke the Venetian blockade in 1657, and restored order, and his son continued his work. The Köprülü years even brought new conquests, such as Crete in 1669."
+          },
+          {
+            "id": "b",
+            "text": "Keep replacing grand viziers until one succeeds. Never let one minister grow too powerful, and let your palace advisers weigh in on every appointment.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "This is how the empire had gotten into trouble: weak, short-lived grand viziers who could not fix anything before rivals pushed them out. The turnaround came only when one minister got real power."
+          },
+          {
+            "id": "c",
+            "text": "Spend what is left in the treasury to pay off the rioters, then end the costly war with Venice by giving up your claim to the island of Crete.",
+            "points": 2,
+            "explanation": "Paying off rioters only teaches them that rioting works, and giving up Crete after eleven years of war would look weak. Under the Köprülüs, the Ottomans won Crete in 1669."
+          }
+        ]
+      },
+      "general": {
+        "year": 1683,
+        "title": "Vienna, Once More",
+        "text": "You command the frontier troops in Hungary. A huge Ottoman army has marched north to fight the Habsburgs and help Imre Thököly, a Hungarian rebel against them. At the war council, Grand Vizier Kara Mustafa wants to go straight to Vienna and take the city that Suleiman could not. The peace treaty with the Habsburgs has not quite run out, and the Pope is urging Christian rulers to unite against you.",
+        "context": [
+          {
+            "if": "france",
+            "text": "Your old ally France is again an enemy of the Habsburgs, and King Louis XIV will not send soldiers to help Vienna."
+          },
+          {
+            "if": "army_reform",
+            "text": "Thanks to your team's careful army reforms, your troops are better paid and disciplined, but discipline cannot shorten a supply line hundreds of miles long."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Advise against Vienna. Repair and garrison the fortresses of Hungary, and hold what the empire already has.",
+            "points": 6,
+            "explanation": "The wise choice. Kara Mustafa besieged Vienna for two months in 1683 until a relief army led by King Jan Sobieski of Poland crushed his army. In the long war that followed, the Ottomans lost most of Hungary at the Treaty of Karlowitz (1699)."
+          },
+          {
+            "id": "b",
+            "text": "March on Vienna at once with every soldier and gun. Taking the Habsburg capital would finish Suleiman's work and make the army, and the grand vizier, legendary.",
+            "points": -1,
+            "stability": -1,
+            "lose": "hungary",
+            "explanation": "This is what happened, and it went badly. On September 12, 1683, Sobieski's relief army smashed the besiegers, Kara Mustafa was executed for the defeat, and a Holy League of Christian powers drove the Ottomans out of most of Hungary."
+          },
+          {
+            "id": "c",
+            "text": "Send money and troops to Thököly's Hungarian rebels, and let them wear down the Habsburgs while the main army waits safely at Buda.",
+            "points": 2,
+            "explanation": "The Ottomans did back Thököly, whom they had recognized as king of Upper Hungary in 1682. But his rebels could not beat the Habsburgs alone, and Kara Mustafa's march on Vienna turned a frontier war into a disaster."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1699,
+        "title": "Peace at Karlowitz",
+        "text": "As Grand Vizier, you inherit a long, losing war. Since the failed siege of Vienna in 1683, a Holy League of Austria, Poland, Venice, and later Russia has beaten Ottoman armies again and again, most recently at Zenta in 1697. At Karlowitz, the Habsburgs and their allies offer peace, but the empire must give up most of Hungary and other lands. European armies now drill and fight in new ways.",
+        "context": [
+          {
+            "if": "zuhab",
+            "text": "Thanks to the lasting peace with Persia signed at Zuhab, your eastern border is quiet, so at least you are not fighting on two fronts."
+          },
+          {
+            "ifNot": "zuhab",
+            "text": "With no settled border in the east, Persia could strike while your armies are tied down in Europe."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Sign the treaty. Then send envoys to study how Europeans run their armies, their diplomacy, and inventions like the printing press.",
+            "points": 6,
+            "explanation": "This is close to what happened. The Ottomans signed at Karlowitz in 1699, their first major permanent loss of land to European powers, and in the following decades sent an ambassador to Paris (1720) and approved the first Ottoman printing press for Turkish books (1727). The empire lasted until 1922."
+          },
+          {
+            "id": "b",
+            "text": "Refuse the treaty and fight on until one great victory wins Hungary back. Giving up land to Christian kings would shame the sultan before the whole empire.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "Pride over survival. The army had lost battle after battle and the treasury was exhausted, so fighting on would likely have cost even more land. The Ottomans signed at Karlowitz in 1699 and lived to fight another day."
+          },
+          {
+            "id": "c",
+            "text": "Sign the treaty, but execute the commanders who lost as a warning, and keep the army exactly as it is.",
+            "points": 2,
+            "explanation": "Punishing individuals doesn't fix an army that has fallen behind. Ottoman reformers later argued that the empire had to learn from Europe, not just blame its generals."
+          }
+        ]
+      }
+    }
+  ]
+}

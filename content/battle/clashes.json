@@ -1,0 +1,954 @@
+{
+  "sharedRegions": [
+    {
+      "id": "east_anatolia",
+      "name": "Eastern Anatolia",
+      "at": [
+        40.5,
+        39.2
+      ],
+      "size": [
+        2.8,
+        1.4
+      ],
+      "owner": "safavid"
+    },
+    {
+      "id": "med_sea",
+      "name": "Mediterranean sea lanes",
+      "at": [
+        21.0,
+        35.2
+      ],
+      "size": [
+        6.0,
+        1.6
+      ],
+      "owner": "ottoman"
+    },
+    {
+      "id": "kandahar",
+      "name": "Kandahar",
+      "at": [
+        65.7,
+        31.6
+      ],
+      "size": [
+        1.6,
+        1.1
+      ],
+      "owner": "mughal"
+    },
+    {
+      "id": "amur",
+      "name": "Amur valley",
+      "at": [
+        127.0,
+        51.5
+      ],
+      "size": [
+        5.0,
+        1.6
+      ],
+      "owner": "russia"
+    },
+    {
+      "id": "kansai",
+      "name": "Osaka and Kansai",
+      "at": [
+        135.5,
+        34.8
+      ],
+      "size": [
+        1.1,
+        0.7
+      ],
+      "owner": "ai"
+    }
+  ],
+  "clashes": {
+    "chaldiran": {
+      "round": 1,
+      "year": 1514,
+      "title": "Showdown at Chaldiran",
+      "prize": "east_anatolia",
+      "sides": {
+        "ottoman": {
+          "historical": "a",
+          "prep": [],
+          "win": "Your guns win the day, and eastern Anatolia becomes Ottoman land.",
+          "lose": "The Safavids hold on to eastern Anatolia, and your army marches home with little to show.",
+          "node": {
+            "year": 1514,
+            "title": "Showdown at Chaldiran",
+            "text": "Shah Ismail of Safavid Persia has made Shia Islam his official religion, and his preachers are winning followers among the Turkmen tribes of eastern Anatolia. Sultan Selim orders you east to stop him. Ismail's Qizilbash cavalry are fearsome horsemen who believe their shah cannot lose. Your janissaries carry muskets and you have cannons, but the march across the mountains is long.",
+            "options": [
+              {
+                "id": "a",
+                "text": "Bring every cannon. Chain the guns behind a wall of wagons with your musketeers, and let the Qizilbash charge into them.",
+                "points": 6,
+                "power": 3,
+                "explanation": "That's what happened at Chaldiran in 1514. Ottoman cannons and muskets tore apart the Qizilbash cavalry, Selim briefly took Tabriz, and the Ottomans soon took over eastern Anatolia."
+              },
+              {
+                "id": "b",
+                "text": "Leave the slow cannons and supply carts behind and race east with your fast cavalry alone, so you can catch Ismail's army before it slips away into the mountains and the summer ends.",
+                "points": 1,
+                "power": 1,
+                "explanation": "Speed without firepower throws away your biggest advantage. The Qizilbash were superb horsemen; the Ottomans won at Chaldiran because their guns could stop a cavalry charge."
+              },
+              {
+                "id": "c",
+                "text": "Stay home and send the shah rich gifts instead.",
+                "points": -1,
+                "power": 0,
+                "stability": -1,
+                "explanation": "Leaving Ismail's preachers free to stir up revolt among the Turkmen of Anatolia would have weakened your hold at home. Selim saw the Safavids as a threat to his faith and his throne, and chose war."
+              }
+            ]
+          }
+        },
+        "safavid": {
+          "historical": "c",
+          "prep": [],
+          "win": "Selim's army is worn down and turns back. Eastern Anatolia stays Safavid.",
+          "lose": "The Ottomans win at Chaldiran and take eastern Anatolia from you.",
+          "node": {
+            "year": 1514,
+            "title": "The Ottomans Are Coming",
+            "text": "The Ottoman Sultan Selim I, a Sunni who calls your shah a heretic, is marching east with musket-armed janissaries and many cannons. Your Qizilbash are brave horsemen with swords and bows, and they believe Shah Ismail cannot lose. Eastern Anatolia, home to many Turkmen followers of the shah, lies right in the Ottomans' path. Fight, or fall back?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Avoid a pitched battle. Fall back, burn the crops in Selim's path, and let hunger wear his army down.",
+                "points": 8,
+                "power": 3,
+                "explanation": "The smartest move, and the one later shahs relied on against Ottoman invasions. Ismail did burn land at first, but then fought at Chaldiran in 1514 and was badly beaten."
+              },
+              {
+                "id": "b",
+                "text": "Strike first at dawn, before the janissaries can set up their guns.",
+                "points": 2,
+                "power": 2,
+                "explanation": "Some of Ismail's commanders urged a quick attack, but the shah let the Ottomans set up their defenses. A surprise strike might have done better, but the Ottoman guns were still a huge advantage."
+              },
+              {
+                "id": "c",
+                "text": "Meet the Ottomans head-on in open battle on the plain. Your Qizilbash have never lost, the shah's blessing protects them, and retreating now would shame you before every tribe that follows you.",
+                "points": -2,
+                "power": 1,
+                "stability": -1,
+                "explanation": "This is what happened at Chaldiran in 1514, and it was a disaster. Ottoman cannons and muskets shattered the Qizilbash charge, and the Ottomans went on to take eastern Anatolia."
+              }
+            ]
+          }
+        }
+      },
+      "scene": {
+        "year": "1514",
+        "title": "Showdown at Chaldiran",
+        "caption": "In 1514, Ottoman cannons and muskets crushed the Qizilbash cavalry at Chaldiran. Selim briefly took Tabriz, and the Ottomans soon took eastern Anatolia.",
+        "realm": "ottoman",
+        "view": [
+          24,
+          31,
+          52,
+          46
+        ],
+        "steps": [
+          {
+            "city": "Istanbul",
+            "at": [
+              28.98,
+              41.01
+            ],
+            "mark": "home",
+            "pos": "below"
+          },
+          {
+            "arrow": [
+              [
+                28.98,
+                41.01
+              ],
+              [
+                37.0,
+                40.6
+              ],
+              [
+                43.8,
+                39.2
+              ]
+            ],
+            "side": "own",
+            "label": "Selim's army"
+          },
+          {
+            "battle": "Chaldiran",
+            "at": [
+              44.0,
+              39.1
+            ],
+            "won": true,
+            "note": "1514",
+            "pos": "above"
+          },
+          {
+            "city": "Tabriz",
+            "at": [
+              46.29,
+              38.08
+            ],
+            "mark": "taken",
+            "pos": "below",
+            "note": "taken briefly"
+          },
+          {
+            "area": "eastern Anatolia",
+            "at": [
+              40.5,
+              38.6
+            ],
+            "size": [
+              2.6,
+              1.2
+            ],
+            "side": "own"
+          }
+        ]
+      }
+    },
+    "lepanto": {
+      "round": 2,
+      "year": 1571,
+      "title": "The Battle of Lepanto",
+      "prize": "med_sea",
+      "sides": {
+        "ottoman": {
+          "historical": "b",
+          "prep": [
+            {
+              "flag": "fleet",
+              "why": "the navy you built earlier"
+            }
+          ],
+          "win": "Your fleet keeps control of the Mediterranean sea lanes.",
+          "lose": "The Holy League wins the battle and takes control of the sea lanes.",
+          "node": {
+            "year": 1571,
+            "title": "The Fleet at Lepanto",
+            "text": "Your fleet has just helped conquer Cyprus from Venice. Now a Holy League of Spain, Venice, and the Pope has gathered more than 200 galleys off the coast of Greece to strike back. Your galleys are sheltering in the fortified harbor of Lepanto. Your admirals argue about whether to sail out and fight or to stay safe under the fortress guns.",
+            "options": [
+              {
+                "id": "a",
+                "text": "Keep the fleet in the fortified harbor under its shore guns and let the League waste the sailing season.",
+                "points": 6,
+                "power": 3,
+                "explanation": "Several Ottoman commanders gave this advice. Instead the fleet sailed out and lost most of its galleys near Lepanto on October 7, 1571, though the Ottomans rebuilt it within a year and kept Cyprus."
+              },
+              {
+                "id": "b",
+                "text": "Sail out and attack at once, while your crews are confident after taking Cyprus.",
+                "points": 1,
+                "power": 1,
+                "explanation": "This is what happened at Lepanto in 1571. The League's gun-heavy galleasses and heavier galleys smashed the Ottoman fleet, but the empire rebuilt its navy within a year."
+              },
+              {
+                "id": "c",
+                "text": "Send the fleet home to Istanbul for the winter. Ships are expensive, the sailing season is almost over, and the League's quarreling allies will probably go home on their own before spring.",
+                "points": -1,
+                "power": 0,
+                "explanation": "Pulling back would hand the sea to your enemies without a fight. The Ottomans had just won Cyprus from Venice and needed their navy to hold it."
+              }
+            ]
+          }
+        },
+        "spain": {
+          "historical": "a",
+          "prep": [
+            {
+              "flag": "fleet",
+              "why": "the ships and crews you prepared earlier"
+            }
+          ],
+          "win": "The Holy League's victory gives you control of the Mediterranean sea lanes.",
+          "lose": "The Ottoman fleet keeps control of the sea lanes.",
+          "node": {
+            "year": 1571,
+            "title": "The Holy League",
+            "text": "The Ottomans have seized Cyprus from Venice, and their galleys raid Christian coasts. Pope Pius V has formed a Holy League of Spain, Venice, and other Catholic states, and King Philip's half-brother, Don John of Austria, commands its fleet of more than 200 galleys. The Ottoman fleet is gathered near Lepanto, on the coast of Greece.",
+            "options": [
+              {
+                "id": "a",
+                "text": "Seek battle at once. Put Venice's gun-heavy galleasses out in front to break the Ottoman line before the galleys close in.",
+                "points": 8,
+                "power": 3,
+                "explanation": "That's what Don John of Austria did on October 7, 1571. The galleasses wrecked the Ottoman formation and the League destroyed most of its fleet, though the Ottomans rebuilt their navy within a year."
+              },
+              {
+                "id": "b",
+                "text": "Wait out the season and blockade the coast instead, since the allies quarrel and one defeat could break the League.",
+                "points": 1,
+                "power": 1,
+                "explanation": "The League's members did quarrel, and it broke up in 1573. But waiting would have let the Ottomans tighten their grip on Cyprus and the eastern Mediterranean."
+              },
+              {
+                "id": "c",
+                "text": "Pull Spain's galleys out to fight pirates off North Africa.",
+                "points": -3,
+                "power": 0,
+                "stability": -1,
+                "explanation": "Spain cared most about North Africa, but abandoning the League would have left Venice to face the Ottomans alone. Lepanto was a rare chance to strike the Ottoman fleet at full strength."
+              }
+            ]
+          }
+        }
+      },
+      "scene": {
+        "year": "1571",
+        "title": "The Battle of Lepanto",
+        "caption": "On October 7, 1571, the Holy League destroyed most of the Ottoman fleet near Lepanto. The Ottomans rebuilt their navy within a year and kept Cyprus.",
+        "realm": "spain",
+        "view": [
+          8,
+          30,
+          36,
+          44
+        ],
+        "steps": [
+          {
+            "city": "Messina",
+            "at": [
+              15.55,
+              38.19
+            ],
+            "mark": "home",
+            "pos": "left",
+            "note": "the League gathers"
+          },
+          {
+            "arrow": [
+              [
+                15.55,
+                38.19
+              ],
+              [
+                18.5,
+                37.6
+              ],
+              [
+                21.1,
+                38.3
+              ]
+            ],
+            "side": "own",
+            "label": "Holy League fleet"
+          },
+          {
+            "battle": "Lepanto",
+            "at": [
+              21.3,
+              38.35
+            ],
+            "won": true,
+            "note": "October 7, 1571",
+            "pos": "above"
+          },
+          {
+            "city": "Cyprus",
+            "at": [
+              33.4,
+              35.1
+            ],
+            "mark": "foe",
+            "pos": "below",
+            "note": "kept by the Ottomans"
+          },
+          {
+            "text": "Mediterranean Sea",
+            "at": [
+              18.0,
+              33.5
+            ],
+            "kind": "geo"
+          }
+        ]
+      }
+    },
+    "kandahar": {
+      "round": 3,
+      "year": 1622,
+      "title": "The Siege of Kandahar",
+      "prize": "kandahar",
+      "sides": {
+        "mughal": {
+          "historical": "b",
+          "prep": [
+            {
+              "flag": "artillery",
+              "why": "the cannons you invested in"
+            },
+            {
+              "flag": "mansabdars",
+              "why": "your well-organized officer corps"
+            }
+          ],
+          "win": "Kandahar holds, and the road into India stays in Mughal hands.",
+          "lose": "Kandahar falls to the Safavids.",
+          "node": {
+            "year": 1622,
+            "title": "Kandahar Under Siege",
+            "text": "Shah Abbas of Persia has besieged Kandahar, the fortress city that guards the road between India and Persia. Emperor Jahangir orders Prince Khurram to march west and save it, but the prince refuses to go, fearing that rivals at court will steal his place as heir. The garrison is small and cannot hold out for long.",
+            "options": [
+              {
+                "id": "a",
+                "text": "Send a relief army now under a loyal general, and settle the quarrel over the heir once Kandahar is safe.",
+                "points": 5,
+                "power": 3,
+                "explanation": "That would have been wise. Instead the relief army never came, because Prince Khurram refused to go and then rebelled against his father, and Kandahar fell to Shah Abbas in 1622. The Mughals won it back in 1638 but lost it for good in 1649."
+              },
+              {
+                "id": "b",
+                "text": "Wait for the prince to agree to lead the army.",
+                "points": 2,
+                "power": 1,
+                "explanation": "This is close to what happened. The quarrel with Prince Khurram held up the army, and Kandahar fell to the Safavids in 1622 while the Mughal court argued."
+              },
+              {
+                "id": "c",
+                "text": "Let Kandahar go. It is far from India, it costs a fortune to defend, and the Persians will only keep coming back for it.",
+                "points": 0,
+                "power": 0,
+                "stability": -1,
+                "explanation": "Kandahar guarded the trade and invasion route into India, so losing it cost the Mughals both safety and prestige. They spent years and huge sums trying to win it back."
+              }
+            ]
+          }
+        },
+        "safavid": {
+          "historical": "a",
+          "prep": [
+            {
+              "flag": "ghulams",
+              "why": "your loyal ghulam soldiers"
+            },
+            {
+              "flag": "musketeers",
+              "why": "the musketeers you trained"
+            }
+          ],
+          "win": "Kandahar is yours, and with it the trade road to India.",
+          "lose": "The Mughals hold Kandahar.",
+          "node": {
+            "year": 1622,
+            "title": "The Road to India",
+            "text": "Kandahar, the fortress city on the trade road between Persia and India, has been held by the Mughals since 1595. Your spies report that the Mughal court is divided: Prince Khurram is quarreling with his father, Emperor Jahangir, over who will be the next emperor. Shah Abbas's new army is ready to march.",
+            "options": [
+              {
+                "id": "a",
+                "text": "Strike now with siege guns while the Mughals quarrel, and take Kandahar before a relief army can arrive.",
+                "points": 8,
+                "power": 3,
+                "explanation": "That's what Shah Abbas did. He besieged Kandahar in 1622 and took it after a short siege, while the Mughal army stayed home because of a prince's rebellion."
+              },
+              {
+                "id": "b",
+                "text": "Send ambassadors to Emperor Jahangir to ask for Kandahar's return. Persia once helped his family win back their throne, a debt he may honor.",
+                "points": 1,
+                "power": 1,
+                "explanation": "Letters and embassies had not won the city back before, and the Mughals had no intention of giving it up. Persian help to Humayun in the 1540s did not change that."
+              },
+              {
+                "id": "c",
+                "text": "Ignore Kandahar and attack the Ottomans in Iraq.",
+                "points": -3,
+                "power": 0,
+                "stability": -1,
+                "explanation": "Abbas did take Baghdad from the Ottomans soon after, in 1623–1624. But the Mughal quarrel in 1622 gave him a rare chance in the east that would not last."
+              }
+            ]
+          }
+        }
+      },
+      "scene": {
+        "year": "1622",
+        "title": "The Siege of Kandahar",
+        "caption": "In 1622, Shah Abbas took Kandahar while the Mughal court quarreled over the next emperor. The Mughals won it back in 1638 but lost it for good in 1649.",
+        "realm": "safavid",
+        "view": [
+          48,
+          22,
+          82,
+          40
+        ],
+        "steps": [
+          {
+            "city": "Isfahan",
+            "at": [
+              51.67,
+              32.65
+            ],
+            "mark": "home",
+            "pos": "below"
+          },
+          {
+            "arrow": [
+              [
+                51.67,
+                32.65
+              ],
+              [
+                59.0,
+                33.4
+              ],
+              [
+                65.4,
+                31.7
+              ]
+            ],
+            "side": "own",
+            "label": "Shah Abbas"
+          },
+          {
+            "battle": "Kandahar",
+            "at": [
+              65.7,
+              31.62
+            ],
+            "won": true,
+            "note": "1622",
+            "pos": "above"
+          },
+          {
+            "city": "Agra",
+            "at": [
+              78.01,
+              27.18
+            ],
+            "mark": "foe",
+            "pos": "below",
+            "note": "the Mughal court quarrels"
+          }
+        ]
+      }
+    },
+    "amur": {
+      "round": 4,
+      "year": 1685,
+      "title": "The Amur Frontier",
+      "prize": "amur",
+      "sides": {
+        "russia": {
+          "historical": "a",
+          "prep": [
+            {
+              "flag": "cossacks",
+              "why": "the Cossacks who opened Siberia for you"
+            },
+            {
+              "flag": "forts",
+              "why": "the forts you built in the east"
+            }
+          ],
+          "win": "Russia keeps the Amur valley.",
+          "lose": "The Amur valley goes to the Qing.",
+          "node": {
+            "year": 1685,
+            "title": "Albazin on the Amur",
+            "text": "Russian Cossacks and fur traders have pushed across Siberia to the Amur River and built a fort at Albazin. The Qing emperor Kangxi says the Amur valley belongs to China. In 1685 his army forced Albazin to surrender, but the Cossacks soon came back and rebuilt it. Now a bigger Qing army is on its way.",
+            "options": [
+              {
+                "id": "a",
+                "text": "Hold Albazin as long as you can, then send envoys to make a treaty: give up the Amur valley for a fixed border and the right to trade with China.",
+                "points": 6,
+                "power": 1,
+                "explanation": "That's what happened. The Cossacks held Albazin through a long siege in 1686, and in 1689 the Treaty of Nerchinsk gave the Amur valley to the Qing but let Russian caravans trade with China."
+              },
+              {
+                "id": "b",
+                "text": "Send every soldier Siberia can spare to hold the Amur, whatever it costs.",
+                "points": 1,
+                "power": 3,
+                "explanation": "Russia's forces in the Far East were tiny and thousands of miles from Moscow, while the Qing could bring large armies and cannons. A long war there would have drained Russia while it was also at war with the Ottomans and Crimean Tatars."
+              },
+              {
+                "id": "c",
+                "text": "Pull the Cossacks all the way back to the Urals.",
+                "points": -1,
+                "power": 0,
+                "stability": -1,
+                "explanation": "Giving up Siberia would have thrown away its rich fur trade, one of Russia's main sources of wealth. Russia kept Siberia and gave up only the Amur valley."
+              }
+            ]
+          }
+        },
+        "mingqing": {
+          "historical": "a",
+          "prep": [
+            {
+              "flag": "banners",
+              "why": "your strong Eight Banners army"
+            },
+            {
+              "flag": "cannons",
+              "why": "the cannons cast for your army"
+            }
+          ],
+          "win": "The Amur valley becomes Qing land.",
+          "lose": "The Russians keep their hold on the Amur valley.",
+          "node": {
+            "year": 1685,
+            "title": "Russians on the Amur",
+            "text": "Russian Cossacks and fur traders have built a fort at Albazin on the Amur River, in lands the Qing see as their northern frontier, close to the Manchus' own homeland. The Cossacks demand furs from local peoples who pay tribute to the Qing. Emperor Kangxi now turns his attention north.",
+            "options": [
+              {
+                "id": "a",
+                "text": "Besiege Albazin with a strong army and cannons, then use the victory to set a firm border with the tsar's envoys.",
+                "points": 5,
+                "power": 3,
+                "explanation": "That's Kangxi's real strategy. Qing forces besieged Albazin in 1685 and 1686, and in 1689 the Treaty of Nerchinsk, worked out with Jesuit priests as interpreters, gave the Amur valley to the Qing and opened limited trade with Russia."
+              },
+              {
+                "id": "b",
+                "text": "Build forts along the river and wait. The Russians are far from home, and hunger will drive them out.",
+                "points": 1,
+                "power": 2,
+                "explanation": "The Russians had already rebuilt Albazin once after being forced out in 1685. Waiting would let them dig in and keep raiding the peoples who paid tribute to the Qing."
+              },
+              {
+                "id": "c",
+                "text": "Leave the Amur to the Russians, since the far north is cold and poor and a war there would pull your armies away from China itself, where the real dangers lie.",
+                "points": 0,
+                "power": 0,
+                "explanation": "The Amur lands were close to the Manchus' own homeland, so Kangxi was determined to hold them. He drove the Russians back and fixed the border at Nerchinsk in 1689."
+              }
+            ]
+          }
+        }
+      },
+      "scene": {
+        "year": "1685–1689",
+        "title": "The Amur Frontier",
+        "caption": "Qing armies besieged the Russian fort at Albazin in 1685 and 1686. The 1689 Treaty of Nerchinsk gave the Amur valley to the Qing and opened trade with Russia.",
+        "realm": "mingqing",
+        "view": [
+          104,
+          36,
+          140,
+          60
+        ],
+        "steps": [
+          {
+            "city": "Beijing",
+            "at": [
+              116.41,
+              39.9
+            ],
+            "mark": "home",
+            "pos": "below"
+          },
+          {
+            "arrow": [
+              [
+                116.41,
+                39.9
+              ],
+              [
+                121.0,
+                46.0
+              ],
+              [
+                123.4,
+                53.6
+              ]
+            ],
+            "side": "own",
+            "label": "Qing army"
+          },
+          {
+            "battle": "Albazin",
+            "at": [
+              123.6,
+              53.98
+            ],
+            "won": true,
+            "note": "1685–1686",
+            "pos": "right"
+          },
+          {
+            "city": "Nerchinsk",
+            "at": [
+              116.5,
+              51.98
+            ],
+            "mark": "plain",
+            "pos": "left",
+            "note": "treaty, 1689"
+          },
+          {
+            "area": "Amur valley",
+            "at": [
+              127.0,
+              51.0
+            ],
+            "size": [
+              4.5,
+              1.5
+            ],
+            "side": "own"
+          }
+        ]
+      }
+    },
+    "osaka": {
+      "round": 1,
+      "year": 1614,
+      "title": "The Siege of Osaka",
+      "prize": "kansai",
+      "ai": {
+        "name": "the Toyotomi",
+        "power": 2
+      },
+      "sides": {
+        "tokugawa": {
+          "historical": "a",
+          "prep": [],
+          "win": "Osaka falls, and the Toyotomi threat is gone for good.",
+          "lose": "Osaka Castle holds, and the Toyotomi remain a rallying point for your enemies.",
+          "node": {
+            "year": 1614,
+            "title": "Osaka Castle",
+            "text": "Toyotomi Hideyori, son of the great warlord Hideyoshi, still holds mighty Osaka Castle, and tens of thousands of masterless samurai (rōnin) have gathered there. As long as the Toyotomi survive, enemies of the Tokugawa have someone to rally around. Osaka's walls and moats are among the strongest in Japan.",
+            "options": [
+              {
+                "id": "a",
+                "text": "Besiege Osaka in winter, agree to a truce that lets you fill in the outer moats, then attack again in summer.",
+                "points": 5,
+                "power": 3,
+                "explanation": "That's what Ieyasu did. The winter siege of 1614 ended in a truce, the Tokugawa filled in the moats, and in the summer of 1615 they took the castle; Hideyori died and the Toyotomi line ended."
+              },
+              {
+                "id": "b",
+                "text": "Storm the castle walls at once, before more rōnin arrive.",
+                "points": 1,
+                "power": 2,
+                "explanation": "Direct attacks on Osaka's huge walls cost the Tokugawa heavy losses in 1614. Ieyasu won by combining force with a clever truce that stripped the castle of its defenses."
+              },
+              {
+                "id": "c",
+                "text": "Leave Hideyori alone in his castle. Attacking the son of the great Hideyoshi could turn him into a hero, and the rōnin will drift away if you simply wait.",
+                "points": 0,
+                "power": 0,
+                "explanation": "Waiting would have let the Toyotomi stay a rallying point for every enemy of the Tokugawa. Ieyasu chose to destroy them in 1614–1615."
+              }
+            ]
+          }
+        }
+      },
+      "scene": {
+        "year": "1614–1615",
+        "title": "The Siege of Osaka",
+        "caption": "Ieyasu besieged Osaka in the winter of 1614, filled in its moats during a truce, and took the castle in 1615. The Toyotomi line ended.",
+        "realm": "tokugawa",
+        "view": [
+          128,
+          30,
+          144,
+          40
+        ],
+        "steps": [
+          {
+            "city": "Edo",
+            "at": [
+              139.69,
+              35.69
+            ],
+            "mark": "home",
+            "pos": "below"
+          },
+          {
+            "arrow": [
+              [
+                139.69,
+                35.69
+              ],
+              [
+                137.5,
+                35.4
+              ],
+              [
+                135.7,
+                34.75
+              ]
+            ],
+            "side": "own",
+            "label": "Tokugawa army"
+          },
+          {
+            "battle": "Osaka",
+            "at": [
+              135.5,
+              34.69
+            ],
+            "won": true,
+            "note": "1614–1615",
+            "pos": "below"
+          },
+          {
+            "area": "Kansai",
+            "at": [
+              135.6,
+              34.9
+            ],
+            "size": [
+              1.1,
+              0.7
+            ],
+            "side": "own"
+          }
+        ]
+      }
+    },
+    "tondibi": {
+      "round": 4,
+      "year": 1591,
+      "title": "The Battle of Tondibi",
+      "prize": "gao",
+      "ai": {
+        "name": "Morocco",
+        "power": 4
+      },
+      "sides": {
+        "songhai": {
+          "historical": "b",
+          "prep": [
+            {
+              "flag": "guns",
+              "why": "the guns and gunners you bought"
+            },
+            {
+              "flag": "wells",
+              "why": "the desert wells blocked on the Moroccans' route"
+            }
+          ],
+          "win": "The Moroccan army is worn down and driven off. Songhai survives.",
+          "lose": "Moroccan guns break your army. Gao, Timbuktu, and Jenne fall.",
+          "onLose": {
+            "lose": [
+              "gao",
+              "timbuktu",
+              "jenne"
+            ],
+            "stability": -1
+          },
+          "node": {
+            "year": 1591,
+            "title": "Guns on the Niger",
+            "text": "Judar Pasha's Moroccan army has crossed the Sahara and reached the Niger River near Gao. Thousands died on the march, but the survivors carry arquebuses and cannons. Songhai's army is far larger, but it fights with spears, bows, and cavalry, and it has never faced massed gunfire.",
+            "options": [
+              {
+                "id": "a",
+                "text": "Avoid a pitched battle. Pull back from the river towns, raid the Moroccans' supply lines, and let disease and hunger wear them down.",
+                "points": 8,
+                "power": 3,
+                "explanation": "Songhai fighters later used hit-and-run raids against the Moroccans for years, so it might have worked. Instead Askia Ishaq II met the Moroccans in open battle at Tondibi in March 1591 and was routed by their guns, and Gao and Timbuktu fell soon after."
+              },
+              {
+                "id": "b",
+                "text": "Meet them in open battle at Tondibi and stampede a herd of cattle into their lines.",
+                "points": 1,
+                "power": 2,
+                "explanation": "This is what happened at Tondibi in 1591. One chronicle says the gunfire turned the stampeding cattle back into Songhai's own lines, and the army was routed."
+              },
+              {
+                "id": "c",
+                "text": "Offer gold and the salt mines if they go home.",
+                "points": -3,
+                "power": 0,
+                "stability": -1,
+                "explanation": "After his defeat, Askia Ishaq II did offer gold for peace, but the Sultan of Morocco refused and the occupation went on. Giving in before fighting would have handed Morocco the empire's wealth anyway."
+              }
+            ]
+          }
+        }
+      },
+      "scene": {
+        "year": "1591",
+        "title": "The Battle of Tondibi",
+        "caption": "In March 1591, Moroccan guns routed Songhai's army at Tondibi. Gao and Timbuktu fell, and the Songhai Empire broke apart.",
+        "realm": "songhai",
+        "view": [
+          -15,
+          9,
+          7,
+          34
+        ],
+        "steps": [
+          {
+            "city": "Marrakesh",
+            "at": [
+              -7.99,
+              31.63
+            ],
+            "mark": "foe",
+            "pos": "right"
+          },
+          {
+            "arrow": [
+              [
+                -7.99,
+                31.63
+              ],
+              [
+                -6.4,
+                27.5
+              ],
+              [
+                -4.6,
+                22.5
+              ],
+              [
+                -2.0,
+                18.4
+              ],
+              [
+                -0.3,
+                16.9
+              ]
+            ],
+            "side": "foe",
+            "label": "Moroccan army"
+          },
+          {
+            "battle": "Tondibi",
+            "at": [
+              -0.07,
+              16.65
+            ],
+            "won": false,
+            "note": "March 1591",
+            "pos": "right"
+          },
+          {
+            "city": "Gao",
+            "at": [
+              -0.04,
+              16.27
+            ],
+            "mark": "lost",
+            "pos": "below"
+          },
+          {
+            "city": "Timbuktu",
+            "at": [
+              -3.0,
+              16.77
+            ],
+            "mark": "lost",
+            "pos": "left"
+          }
+        ]
+      }
+    }
+  }
+}

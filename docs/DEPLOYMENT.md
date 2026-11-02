@@ -1,6 +1,6 @@
 # Deployment (for whoever maintains the site)
 
-The game runs on **Cloudflare Workers** (the web pages and API) with a **Cloudflare D1** database (the leaderboard). Both are on Cloudflare's free plan, never sleep, and easily handle several classes at once.
+The game runs on **Cloudflare Workers** (the web pages and API) with a **Cloudflare D1** database (the leaderboard). Live **Class Battles** each run in a **Durable Object** (SQLite-backed, which the free plan includes); `wrangler deploy` creates them from `wrangler.jsonc`, so there's nothing extra to set up. All of it is on Cloudflare's free plan, never sleeps, and easily handles several classes at once.
 
 ## One-time setup
 
@@ -27,6 +27,12 @@ BASE_URL=https://rule-the-empire.<subdomain>.workers.dev TEACHER_PASSWORD='…' 
 
 This plays a full game and an early-collapse game for every empire in a real browser against the live site, checks every score and the leaderboard, then deletes its test entries.
 
+```bash
+BASE_URL=https://rule-the-empire.<subdomain>.workers.dev TEACHER_PASSWORD='…' npm run test:battle
+```
+
+This runs a whole Class Battle on the live site with 24 simulated students (4 of them in real browsers), checks every screen, then deletes the saved test battle.
+
 ## Local development
 
 ```bash
@@ -37,4 +43,5 @@ echo 'GAME_SECRET=local-game-secret' >> .dev.vars
 npm run dev        # http://localhost:8787
 npm run check      # validate + balance + unit/API tests
 npm run test:e2e   # browser play-throughs against a fresh local server
+npm run test:battle  # a full Class Battle with 24 simulated students on a fresh local server
 ```

@@ -1,0 +1,510 @@
+{
+  "id": "russia",
+  "titles": {
+    "ruler": "Grand Prince, later Tsar",
+    "general": "Voivode (General)",
+    "vizier": "Chief Minister"
+  },
+  "regions": [
+    {
+      "id": "muscovy",
+      "name": "Muscovy",
+      "at": [
+        38.5,
+        56.0
+      ],
+      "size": [
+        3.6,
+        2.0
+      ],
+      "start": true
+    },
+    {
+      "id": "novgorod",
+      "name": "Novgorod",
+      "at": [
+        32.0,
+        58.6
+      ],
+      "size": [
+        2.2,
+        1.2
+      ]
+    },
+    {
+      "id": "kazan",
+      "name": "Kazan",
+      "at": [
+        49.0,
+        55.4
+      ],
+      "size": [
+        2.2,
+        1.3
+      ]
+    },
+    {
+      "id": "astrakhan",
+      "name": "Astrakhan",
+      "at": [
+        47.5,
+        47.3
+      ],
+      "size": [
+        1.9,
+        1.5
+      ]
+    },
+    {
+      "id": "siberia",
+      "name": "Siberia",
+      "at": [
+        75.0,
+        60.0
+      ],
+      "size": [
+        11.0,
+        4.5
+      ]
+    },
+    {
+      "id": "ukraine",
+      "name": "Left-bank Ukraine",
+      "at": [
+        32.5,
+        49.6
+      ],
+      "size": [
+        2.3,
+        1.4
+      ]
+    },
+    {
+      "id": "baltic",
+      "name": "The Baltic coast",
+      "at": [
+        28.5,
+        59.6
+      ],
+      "size": [
+        2.2,
+        1.0
+      ]
+    }
+  ],
+  "rounds": [
+    {
+      "years": "1478–1556",
+      "title": "Gathering the Lands",
+      "ruler": {
+        "year": 1480,
+        "title": "The Great Stand on the Ugra",
+        "text": "As Grand Prince Ivan III of Moscow, you have gathered many Russian lands under your rule. For more than two centuries, Russian princes paid tribute to the Mongol khans of the Golden Horde, but the Horde is breaking apart and you have stopped paying. Now Khan Akhmat has marched north to demand it. His army waits across the Ugra River, and the king of Poland-Lithuania has promised to join him.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Refuse to pay. Guard every river crossing with troops and cannons, and let the khan's army sit in the cold.",
+            "points": 6,
+            "set": [
+              "sovereign"
+            ],
+            "explanation": "That's essentially what happened. The two armies faced each other across the Ugra for weeks, the help from Poland-Lithuania never came, and in November the khan's army turned back. Historians often date the end of Mongol rule over Russia to this \"Great Stand\" of 1480."
+          },
+          {
+            "id": "b",
+            "text": "Pay this one last time. A single payment costs far less than a war, and the Horde is falling apart anyway; once it collapses, you can stop paying without risking a battle.",
+            "points": 1,
+            "explanation": "Paying would have kept Moscow a junior partner of the Mongols and invited more demands. Ivan III held firm instead, and the khan's army retreated from the Ugra without a major battle."
+          },
+          {
+            "id": "c",
+            "text": "Cross the Ugra and attack the khan's camp before his allies arrive.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "A pitched battle could have wiped out Moscow's army in a single day, and crossing a river to attack is especially dangerous. Ivan III wisely held the crossings, and the khan retreated in 1480 without a major battle."
+          }
+        ]
+      },
+      "general": {
+        "year": 1552,
+        "title": "The Siege of Kazan",
+        "text": "You command the armies of Ivan IV, crowned the first \"Tsar of All Russia\" in 1547. To the east, the Muslim Khanate of Kazan controls the middle Volga River, a great trade route, and its raiders carry off Russian captives to sell as slaves. For decades Moscow has tried to rule Kazan through friendly khans, and they keep being overthrown. The tsar has given you siege cannons and his new musketeers, the streltsy.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Besiege Kazan with heavy cannons, gunpowder mines dug under its walls, and the streltsy. Then send your army on down the Volga to Astrakhan.",
+            "points": 6,
+            "gain": [
+              "kazan",
+              "astrakhan"
+            ],
+            "set": [
+              "streltsy"
+            ],
+            "explanation": "That's what happened. Russian engineers blew holes in Kazan's walls with gunpowder mines, the city fell in 1552, and Astrakhan was annexed in 1556, giving Russia the whole Volga down to the Caspian Sea. Ivan built St. Basil's Cathedral in Moscow to celebrate."
+          },
+          {
+            "id": "b",
+            "text": "Put another friendly khan on Kazan's throne and make him pay tribute. Ruling a big Muslim city would tie down an army for years.",
+            "points": 2,
+            "explanation": "Moscow had already tried this several times, and its friendly khans kept being overthrown by their own nobles. Ivan conquered Kazan in 1552 and Astrakhan in 1556 instead, taking control of the whole Volga trade route."
+          },
+          {
+            "id": "c",
+            "text": "Leave the east alone and march west to win a port on the Baltic Sea.",
+            "points": -1,
+            "explanation": "Ivan did start a war for the Baltic in 1558, the Livonian War, and lost it after about 25 years. Taking Kazan first, as he actually did in 1552, removed a dangerous enemy and won the Volga trade."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1478,
+        "title": "Swallowing Novgorod",
+        "text": "As Chief Minister to Ivan III, you must decide what to do with Novgorod, the rich trading republic Moscow has just annexed. Novgorod sold furs and wax to German merchants of the Hanseatic League and was ruled for centuries by its own assembly and a few great boyar families. Some of those families once asked Lithuania for help against Moscow. Ivan has already carried Novgorod's assembly bell off to Moscow.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Move Novgorod's old boyar and merchant families to other towns, and give their lands to loyal servicemen to hold only as long as they serve.",
+            "points": 6,
+            "gain": "novgorod",
+            "set": [
+              "pomestie"
+            ],
+            "explanation": "That's what Ivan III did. In the 1480s he deported thousands of Novgorod's boyars and merchants and gave their lands to his servicemen as pomestie, estates held only in return for service. These estates bound a new class of gentry tightly to Moscow, and such service estates became the basis of Russia's cavalry army."
+          },
+          {
+            "id": "b",
+            "text": "Leave the assembly and the great families in charge, as long as they swear loyalty and pay their taxes. A proud, rich city that runs itself will pay more than one held down by force.",
+            "points": 1,
+            "explanation": "Novgorod's leaders had already turned to Lithuania once, and Moscow had to defeat them in battle in 1471. Ivan III ended the city's self-rule and handed its lands to his own servicemen."
+          },
+          {
+            "id": "c",
+            "text": "Burn Novgorod to the ground so it can never rebel again.",
+            "points": -1,
+            "explanation": "Destroying a rich trading city would throw away the wealth you just won. Ivan III kept Novgorod and its trade but replaced its leaders with his own men; it was his grandson Ivan IV who later led his men to sack the city in 1570."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1565–1613",
+      "title": "Terror and Troubles",
+      "ruler": {
+        "year": 1565,
+        "title": "The Tsar's Terror",
+        "text": "As Tsar Ivan IV, you trust almost no one. Your beloved wife Anastasia died in 1560, and you suspect the boyars, Russia's great noble families, of poisoning her. Your war for the Baltic is going badly, and one of your top commanders, Prince Andrei Kurbsky, has fled to the enemy. In protest, you left Moscow and threatened to give up the throne unless you get a free hand against traitors.",
+        "context": [
+          {
+            "if": "pomestie",
+            "text": "Your team's pomestie estates have created thousands of gentry servicemen who owe their land to the tsar, not to the old boyar clans."
+          },
+          {
+            "if": "sovereign",
+            "text": "Since the Great Stand on the Ugra, Moscow's ruler has bowed to no khan, and the Church crowned you as God's chosen tsar."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "if": "pomestie",
+            "text": "Rely on your pomestie gentry and the councils. Punish proven traitors in open trials under your 1550 law code.",
+            "points": 6,
+            "explanation": "Ivan did turn to lesser gentry, but as oprichniki, the black-clad horsemen of his oprichnina (1565–1572), who terrorized the boyars, killed thousands, and wrecked the economy. Working through councils and courts would have built a far steadier state."
+          },
+          {
+            "id": "d",
+            "ifNot": "pomestie",
+            "text": "Rule with the boyar council and the Church, and punish proven traitors in open trials under your 1550 law code.",
+            "points": 6,
+            "explanation": "That would have built a stronger, steadier state. Instead Ivan created the oprichnina (1565–1572), a private territory policed by black-clad horsemen who terrorized the boyars, killed thousands, and wrecked the economy. It is a big reason he is remembered as \"Ivan the Terrible.\""
+          },
+          {
+            "id": "b",
+            "text": "Split the realm in two. In your half, a black-clad private army will hunt traitors and seize boyar lands; if the boyars really poisoned Anastasia, only fear will keep the rest in line.",
+            "points": -1,
+            "stability": -1,
+            "set": [
+              "terror"
+            ],
+            "explanation": "This is what Ivan really did. His oprichnina (1565–1572) killed thousands, including in the sack of Novgorod in 1570, and it could not even stop Crimean Tatars from burning Moscow in 1571."
+          },
+          {
+            "id": "c",
+            "text": "Step back from ruling and let the boyar council govern in your name, as it did when you were a boy, so the nobles have no reason to plot.",
+            "points": 1,
+            "explanation": "When Ivan was a boy, rival boyar clans fought each other for power and ruled badly in his name. A weak tsar invites the same chaos; Ivan went to the opposite extreme with the brutal oprichnina."
+          }
+        ]
+      },
+      "general": {
+        "year": 1582,
+        "title": "Beyond the Urals",
+        "text": "You command the tsar's armies, worn out by a long war for the Baltic that has just ended in defeat. The wealthy Stroganov merchant family wants to push east across the Ural Mountains into the Khanate of Sibir, a land of forests full of sable and fox. Furs are so valuable that they are often called \"soft gold.\" The Stroganovs have hired a band of Cossacks, free frontier warriors, led by a man named Yermak.",
+        "context": [
+          {
+            "if": "streltsy",
+            "text": "Your team's streltsy showed at Kazan what gunpowder can do, and the warriors of Sibir fight mostly with bows."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Back Yermak with guns, gunpowder, and soldiers. Build log forts along the rivers, and make the local peoples pay tribute in furs.",
+            "points": 6,
+            "gain": "siberia",
+            "set": [
+              "cossacks",
+              "forts"
+            ],
+            "explanation": "That's how Russia became the world's largest country. Yermak's Cossacks defeated Khan Kuchum and took his capital in 1582, Moscow sent soldiers, and forts such as Tobolsk (1587) followed; Russians reached the Pacific by 1639. The fur tribute, called yasak, made the tsars rich, but it was often taken by force from Siberia's native peoples."
+          },
+          {
+            "id": "b",
+            "text": "Forbid it, and order the Stroganovs to recall Yermak.",
+            "points": 1,
+            "explanation": "Ivan IV actually did order Yermak recalled at first, angry that his own frontier towns had been left open to raids. But once Yermak took Sibir's capital, the tsar sent soldiers and rewards, and Siberia's furs became one of Russia's richest sources of wealth."
+          },
+          {
+            "id": "c",
+            "text": "Send the tsar's main army east to conquer all of Siberia in one great campaign, building forts as it goes, so the furs start flowing now instead of in twenty years.",
+            "points": -1,
+            "explanation": "Dangerous overkill: Crimean Tatars had burned Moscow in 1571, and the army was needed at home. Siberia was won by small bands of Cossacks and soldiers with guns who built forts along the rivers."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1613,
+        "title": "Choosing a Tsar",
+        "text": "As Chief Minister, you have lived through the Time of Troubles. After Ivan IV's dynasty died out in 1598, Russia suffered famine, civil war, and pretenders claiming to be Ivan's dead son Dmitry. A Polish army held the Kremlin until a people's army from Nizhny Novgorod drove it out in 1612. Now Russia has no tsar, and nobles, Cossacks, and churchmen argue over who should rule.",
+        "context": [
+          {
+            "if": "sovereign",
+            "text": "Ever since Ivan III defied the khan at the Ugra, Russians have expected an Orthodox tsar who bows to no foreign ruler."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Call a Zemsky Sobor, an \"assembly of the land\" with nobles, clergy, and townspeople from across Russia, to elect a tsar from a respected Russian family.",
+            "points": 6,
+            "stability": 1,
+            "set": [
+              "sobor"
+            ],
+            "explanation": "That's what happened. In 1613 the assembly elected 16-year-old Michael Romanov, whose great-aunt Anastasia had been Ivan IV's beloved first wife. Backed by the Church and the nobles, the Romanov dynasty ruled Russia until 1917."
+          },
+          {
+            "id": "b",
+            "text": "Offer the throne to Władysław, the Polish king's son, if he becomes Orthodox. Peace with Poland would end the war.",
+            "points": 1,
+            "explanation": "Some boyars really tried this in 1610, but the Polish king would not let his son convert, and Polish troops took over the Kremlin instead. Most Orthodox Russians would not accept a Catholic tsar."
+          },
+          {
+            "id": "c",
+            "text": "Let the Cossack chiefs and army commanders fight it out for the throne.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "More civil war would have left Russia open to Poland and to Sweden, whose army held Novgorod. Russians chose unity instead and elected Michael Romanov tsar in 1613."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1613–1682",
+      "title": "Romanov Russia",
+      "ruler": {
+        "year": 1666,
+        "title": "The Church Splits",
+        "text": "As Tsar Alexis, the second Romanov tsar, you face a crisis in the Church. Your old friend Patriarch Nikon changed church books and rituals to match Greek practice, such as crossing oneself with three fingers instead of two. Many believers, later called Old Believers, refuse to change, saying the old ways are holy. Nikon also claims a patriarch's power is greater than a tsar's. Now a great church council is meeting in Moscow.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Let the council judge Nikon and settle the rituals. Make clear that the tsar outranks the patriarch, but leave peaceful Old Believers alone.",
+            "points": 6,
+            "stability": 1,
+            "set": [
+              "church_under_tsar"
+            ],
+            "explanation": "The council of 1666–1667 did depose Nikon, ending his claim to stand above the tsar, but it also condemned the Old Believers, and the state persecuted them for generations. Thousands fled to forests and borderlands, and the split lasted for centuries. Keeping the tsar's authority without mass persecution would have kept Russia more united."
+          },
+          {
+            "id": "b",
+            "text": "Let the patriarch rule beside you as an equal \"Great Sovereign,\" as Patriarch Filaret, your grandfather, ruled beside your father.",
+            "points": 1,
+            "explanation": "Your father had shared power with his own father, Filaret, and you had given Nikon the same title, but Nikon used it to claim the Church stood above the tsar. The council of 1666–1667 deposed him, and Peter the Great later did away with the office of patriarch altogether."
+          },
+          {
+            "id": "c",
+            "text": "Order every Old Believer to accept the new rituals or face exile, prison, or the stake. If ordinary believers can defy the Church's council, they may soon defy the tsar as well.",
+            "points": -1,
+            "stability": -1,
+            "set": [
+              "church_under_tsar"
+            ],
+            "explanation": "The Church did condemn the Old Believers in 1667, and the state hunted them for generations; their leader, the priest Avvakum, was burned at the stake in 1682. Thousands fled to the forests, and some burned themselves to death rather than give in. Persecution only deepened a split that lasted for centuries."
+          }
+        ]
+      },
+      "general": {
+        "year": 1654,
+        "title": "The Cossacks of Ukraine",
+        "text": "You command the tsar's armies. In 1648 Bohdan Khmelnytsky led the Orthodox Cossacks of Ukraine in a huge revolt against the mostly Catholic nobles of Poland-Lithuania who ruled them. After years of war, Khmelnytsky asks the Orthodox tsar to take the Cossacks under his protection, and his leaders are ready to swear loyalty to the tsar at Pereiaslav. Accepting means war with Poland-Lithuania.",
+        "context": [
+          {
+            "if": "sobor",
+            "text": "As in 1613, the tsar called an assembly of the land, and in 1653 it voted to take the Cossacks under his protection, so the whole realm stands behind the war."
+          },
+          {
+            "if": "cossacks",
+            "text": "Your team's backing of Yermak showed what Cossack fighters can win when Moscow supports them."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Accept their oath of loyalty, and send your armies against Poland-Lithuania to defend the Cossacks and their lands.",
+            "points": 6,
+            "gain": "ukraine",
+            "explanation": "That's what happened. Russian armies took Smolensk in 1654, and the Truce of Andrusovo (1667) gave Russia Smolensk, Ukraine east of the Dnieper River, and the city of Kyiv. Kyiv was supposed to be handed back after two years, but Russia kept it, and Poland accepted this in 1686."
+          },
+          {
+            "id": "b",
+            "text": "Refuse. Russia lost its last war with Poland in 1634, and the Cossacks have changed sides before; they once fought beside the Crimean Tatars.",
+            "points": 1,
+            "explanation": "Without help, the Cossacks would likely have been crushed by Poland or turned to the Ottomans, as one of their later leaders did. By accepting, Russia won Kyiv and Ukraine east of the Dnieper in 1667."
+          },
+          {
+            "id": "c",
+            "text": "Promise to protect the Cossacks but send no army. Let them and the Poles wear each other out, then step in when both are too weak to refuse your terms.",
+            "points": -1,
+            "explanation": "Broken promises would push the Cossacks back toward Poland, as one of their leaders did in 1658 even with Russian help. Russia sent real armies and won Kyiv and Left-bank Ukraine at Andrusovo in 1667."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1649,
+        "title": "The Law Code of 1649",
+        "text": "As Chief Minister to Tsar Alexis, you are under pressure. Riots against corrupt officials and a hated salt tax shook Moscow in 1648. The gentry who serve as the army's officers need peasants to farm their estates, but peasants keep fleeing to the frontier to be free, and the law lets lords reclaim runaways for only a limited number of years. An assembly of the land is meeting to approve a new law code.",
+        "context": [
+          {
+            "if": "terror",
+            "text": "The oprichnina's terror emptied many villages as peasants fled, and in the 1580s the tsars began suspending the peasants' old right to leave their lords each autumn."
+          },
+          {
+            "if": "pomestie",
+            "text": "Your team's pomestie estates are worth little to the gentry who hold them unless peasants stay to farm the land."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Issue the code. Tie peasants to their lords' land forever, and end the time limit on hunting down runaways.",
+            "points": 5,
+            "set": [
+              "serfdom"
+            ],
+            "explanation": "This is what the Law Code of 1649 did. It kept the gentry loyal and the army staffed, but it trapped millions of peasants and their children in serfdom until 1861, causing great suffering. Anger at serfdom fed huge revolts, like Stenka Razin's in 1670."
+          },
+          {
+            "id": "b",
+            "text": "Bring back St. George's Day, the old custom that let peasants leave their lords for two weeks each autumn. The gentry keep most of their workers, and peasants keep some hope.",
+            "points": 2,
+            "explanation": "St. George's Day had been suspended in the 1580s and 1590s because the gentry said it let their peasants slip away, so bringing it back would have angered the tsar's officers. The Law Code of 1649 instead made serfdom permanent, which caused great suffering and helped spark revolts like Stenka Razin's in 1670."
+          },
+          {
+            "id": "c",
+            "text": "Free the peasants to settle wherever they choose. Free farmers work harder, the frontier will fill with settlers, and a grateful peasantry will stand by the tsar.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "In 1649 the gentry who led the tsar's army would have turned against him. Russia instead made serfdom permanent, a cause of great suffering and of revolts like Stenka Razin's in 1670; serfs were not freed until 1861."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1682–1725",
+      "title": "Peter the Great",
+      "ruler": {
+        "year": 1700,
+        "title": "After Narva",
+        "text": "As Tsar Peter I, you went to war with Sweden in 1700 to win a seaport on the Baltic Sea. Disaster: at Narva, Sweden's young King Charles XII crushed your much larger army, and your old-style regiments could not match Swedish discipline and firepower. Many boyars and churchmen grumble that your love of Western ways has brought God's anger on Russia. Charles may march on Moscow next.",
+        "context": [
+          {
+            "if": "streltsy",
+            "text": "The streltsy your team created in the 1550s grew into an old-fashioned, hereditary corps; after they revolted in 1698, you had more than a thousand executed and began disbanding them."
+          },
+          {
+            "if": "serfdom",
+            "text": "Because serfdom binds peasants to the land, you can draft them by the tens of thousands as soldiers and as laborers for new forts and ports."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Rebuild. Melt church bells into cannons, train a modern army and navy, and found a new city on the Baltic coast.",
+            "points": 6,
+            "gain": "baltic",
+            "explanation": "Exactly Peter's response. He founded St. Petersburg in 1703, destroyed Charles XII's army at Poltava in 1709, and won the Baltic coast at the Treaty of Nystad in 1721. The new city was built by tens of thousands of forced laborers, many of whom died."
+          },
+          {
+            "id": "b",
+            "text": "Make peace with Sweden and give up the Baltic. Sweden has the best army in Europe, and the White Sea port of Arkhangelsk can still carry your trade with the West.",
+            "points": 1,
+            "explanation": "Arkhangelsk is frozen for about half the year, so Russia would have stayed cut off from Europe's trade and ideas. Peter refused to quit after Narva, and by 1721 Russia had its \"window on Europe\" on the Baltic."
+          },
+          {
+            "id": "c",
+            "text": "Send fresh peasant recruits straight back at Charles XII before he can rest and resupply, since Russia has many times more men than Sweden.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "Sending untrained troops against Europe's best army would have repeated the Narva disaster. Peter took years to rebuild and modernize, then beat Charles XII at Poltava in 1709."
+          }
+        ]
+      },
+      "general": {
+        "clash": "amur"
+      },
+      "vizier": {
+        "year": 1700,
+        "title": "Westernizing Russia",
+        "text": "As one of Peter the Great's chief ministers, you returned with him from the Grand Embassy (1697–1698), his long tour of Western Europe's shipyards and workshops. Back home, Peter cut off nobles' beards with his own hands and ordered them to wear Western clothes. Even so, high posts still go mostly to men from old noble families, whatever their skill. Peter asks you how to make nobles and officials serve the state well.",
+        "context": [
+          {
+            "if": "serfdom",
+            "text": "Serfdom frees nobles to serve the state while serfs farm their estates, and Peter's reforms will give nobles even more power over their serfs."
+          },
+          {
+            "if": "church_under_tsar",
+            "text": "Since your team made clear that the tsar outranks the patriarch, Church leaders cannot easily block Peter's reforms."
+          },
+          {
+            "ifNot": "church_under_tsar",
+            "text": "Since your team let the patriarch rule as the tsar's equal, Church leaders feel strong enough to fight Peter's reforms."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Rank every officer and official in a Table of Ranks, so promotion depends on service, and open Western-style schools.",
+            "points": 6,
+            "explanation": "This is what Peter did. His Table of Ranks (1722) placed officers and officials in 14 grades and let commoners who rose high enough become nobles, and new schools trained navigators and engineers. Nobles had to serve the state for life, while their power over their serfs grew."
+          },
+          {
+            "id": "b",
+            "text": "Ban Western clothes, books, and advisers, and govern the old way through the great noble families. The Church and most nobles hate the changes, and the old ways built a huge empire.",
+            "points": 1,
+            "explanation": "The old elite did resist, and the streltsy revolted in 1698. But Russia's army and government had fallen behind the West, and Peter's reforms helped make Russia a European great power."
+          },
+          {
+            "id": "c",
+            "text": "Change everything overnight: force Western ways on every village and shut down the Orthodox Church.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "Too extreme. Peter's reforms were forceful, but he put the Church under a government council, the Holy Synod (1721), instead of shutting it down, and most peasants' daily lives changed little."
+          }
+        ]
+      }
+    }
+  ]
+}

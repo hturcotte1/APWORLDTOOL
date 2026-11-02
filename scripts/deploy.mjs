@@ -132,6 +132,15 @@ async function main() {
     die(`The site did not answer at ${url} yet. New workers.dev addresses can take a few minutes; try again shortly.`);
   }
   console.log(`Site is up: ${health.empires.length} empires, teacher controls ${health.teacherEnabled ? 'enabled' : 'NOT enabled yet'}.`);
+  // Class Battle: the content loads and a battle room (a Durable Object) answers.
+  try {
+    const info = await fetch(`${url}/api/battle/info`).then((r) => r.json());
+    const room = await fetch(`${url}/api/battle/check?code=ZZZZ`);
+    if (!room.ok) throw new Error(`battle room check answered ${room.status}`);
+    console.log(`Class Battle is up: ${Object.keys(info.empires).length} empires, ${Object.keys(info.clashes).length} clashes.`);
+  } catch (e) {
+    die(`The Class Battle part of the site isn't answering: ${e.message}`);
+  }
 
   // Put the real link into the docs (they ship with a placeholder).
   for (const doc of ['docs/TEACHER_GUIDE.md', 'README.md']) {

@@ -1,0 +1,502 @@
+{
+  "id": "spain",
+  "titles": {
+    "ruler": "King or Queen",
+    "general": "Captain-General",
+    "vizier": "Chief Minister"
+  },
+  "regions": [
+    {
+      "id": "castile",
+      "name": "Castile and Aragon",
+      "at": [
+        -3.8,
+        40.2
+      ],
+      "size": [
+        3.4,
+        2.3
+      ],
+      "start": true
+    },
+    {
+      "id": "netherlands",
+      "name": "The Netherlands",
+      "at": [
+        4.8,
+        51.5
+      ],
+      "size": [
+        1.5,
+        0.9
+      ],
+      "start": true
+    },
+    {
+      "id": "caribbean",
+      "name": "The Caribbean",
+      "at": [
+        -75.0,
+        20.0
+      ],
+      "size": [
+        5.0,
+        2.6
+      ]
+    },
+    {
+      "id": "new_spain",
+      "name": "New Spain (Mexico)",
+      "at": [
+        -100.0,
+        21.0
+      ],
+      "size": [
+        5.5,
+        3.6
+      ]
+    },
+    {
+      "id": "peru",
+      "name": "Peru",
+      "at": [
+        -72.0,
+        -13.0
+      ],
+      "size": [
+        3.8,
+        5.5
+      ]
+    },
+    {
+      "id": "philippines",
+      "name": "The Philippines",
+      "at": [
+        122.0,
+        13.0
+      ],
+      "size": [
+        2.0,
+        2.8
+      ]
+    },
+    {
+      "id": "portugal",
+      "name": "Portugal",
+      "at": [
+        -8.2,
+        39.6
+      ],
+      "size": [
+        1.2,
+        2.1
+      ]
+    }
+  ],
+  "rounds": [
+    {
+      "years": "1492–1524",
+      "title": "A New World",
+      "ruler": {
+        "year": 1492,
+        "title": "A Sailor's Wild Idea",
+        "text": "As Queen Isabella of Castile, ruling Spain with your husband, King Ferdinand of Aragon, you have just completed the Reconquista: in January 1492 your armies took Granada, the last Muslim kingdom in Spain. Now an Italian sailor, Christopher Columbus, asks for three ships to sail west across the Atlantic to Asia. Your experts say he has badly underestimated the distance, and they are right. Meanwhile, Portugal is racing to reach Asia by sailing around Africa.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Pay for the voyage. Three ships cost little, and a western route could beat Portugal to Asia's riches.",
+            "points": 8,
+            "gain": "caribbean",
+            "set": [
+              "atlantic"
+            ],
+            "explanation": "A cheap bet that changed history. Columbus never reached Asia; he landed in the Bahamas and the Caribbean in October 1492, but his voyages opened the Americas to Spanish conquest. Within a century, American silver was paying for Spain's armies across Europe."
+          },
+          {
+            "id": "b",
+            "text": "Refuse. Your experts have checked his numbers: Asia is far too distant to reach by sailing west, and his crews would run out of food and water long before they saw land.",
+            "points": 1,
+            "explanation": "The experts were right about the distance, but no one in Europe knew that two continents lay in the way. Ferdinand and Isabella funded Columbus, and his landing in the Caribbean in 1492 began Spain's empire in the Americas."
+          },
+          {
+            "id": "c",
+            "text": "Turn him down, and put all your effort into making Spain fully Catholic by forcing its Jews and Muslims to convert or leave.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "In 1492 Ferdinand and Isabella really did order Spain's Jews to convert or leave; tens of thousands were driven into exile, losing homes and businesses, and Castile's Muslims faced the same choice in 1502. This persecution caused great suffering and cost Spain many skilled merchants and craftspeople. The monarchs also funded Columbus, a far better investment for their power."
+          }
+        ]
+      },
+      "general": {
+        "year": 1521,
+        "title": "The Fall of Tenochtitlan",
+        "text": "As Captain-General for young King Charles I, who also rules the Holy Roman Empire as Charles V, you must decide what to do about Mexico. In 1519 Hernán Cortés, defying the governor of Cuba, invaded it with about 500 Spaniards. Joined by tens of thousands of Indigenous allies who hated Aztec rule, and aided by a smallpox epidemic, he captured the Aztec capital, Tenochtitlan, in 1521. Now he asks the king to approve his conquest.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Approve the conquest and send more ships and settlers, but put royal officials and judges in charge of the new lands.",
+            "points": 8,
+            "gain": "new_spain",
+            "explanation": "Close to what happened. Cortés won with tens of thousands of Indigenous allies, such as the Tlaxcalans, while smallpox, a disease new to the Americas, killed huge numbers of Mexico's people. Charles made Cortés governor in 1522 but soon sent royal officials and judges to control him, and in 1535 New Spain got its first viceroy."
+          },
+          {
+            "id": "b",
+            "text": "Let Cortés and his captains rule Mexico as lords of the lands they won. They risked their lives, they know the country, and governing it from across an ocean would be slow and costly.",
+            "points": 1,
+            "explanation": "Dangerous: conquistadors far from Spain could become independent kings, and in the 1540s Peru's conquistadors did rebel against the Crown. Their encomiendas, grants of Indigenous people's labor, also led to terrible abuse of a population already devastated by disease."
+          },
+          {
+            "id": "c",
+            "text": "Recall Cortés in chains for defying the governor of Cuba, and abandon Mexico.",
+            "points": -2,
+            "explanation": "Abandoning Mexico would have thrown away what became the richest part of Spain's empire, where huge silver mines were found in the 1540s. Charles instead made Cortés governor in 1522, then sent royal officials to keep him in check."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1503,
+        "title": "Ruling the Indies",
+        "text": "As Chief Minister to Isabella and Ferdinand, you must decide how to control Spain's new lands across the Atlantic, which Spaniards call the Indies, and the trade that flows to and from them. Gold from the Caribbean islands is already arriving. Merchants from Genoa, Flanders, and beyond want a share, and rival kings may soon send raiders after Spanish ships. Far from Spain, settlers and governors often ignore royal orders.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Set up a royal trade house in Seville to license every ship and collect the Crown's share, a royal council to govern the colonies, and warships to escort the fleets.",
+            "points": 8,
+            "set": [
+              "royal_control",
+              "fleet"
+            ],
+            "explanation": "That's what Spain built. The Casa de Contratación (1503) in Seville licensed ships and collected the Crown's share, the Council of the Indies (1524) governed the colonies, and armed escorts grew into the great treasure fleets of the 1560s. Seville became one of the busiest ports in Europe."
+          },
+          {
+            "id": "b",
+            "text": "Let any merchant sail to the Indies and trade freely, without licenses or records. Trade will grow faster, and the Crown can tax goods when they land.",
+            "points": 1,
+            "explanation": "Without licenses and records, much of the gold and silver would have been smuggled past the Crown's officials. Spain instead sent colonial trade through the Casa de Contratación in Seville (1503), which licensed ships and recorded their cargoes."
+          },
+          {
+            "id": "c",
+            "text": "Lease whole colonies to rich bankers in return for loans. They pay for the ships and settlers, and the Crown takes no risk.",
+            "points": -2,
+            "explanation": "Charles V actually tried this in 1528, handing Venezuela to the Welsers, a German banking family he owed money. Their agents raided for gold and enslaved Indigenous people, and the Crown later took the colony back."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1545–1580",
+      "title": "Silver and the Sea",
+      "ruler": {
+        "year": 1566,
+        "title": "Trouble in the Netherlands",
+        "text": "As King Philip II, you rule the Netherlands, rich provinces of merchants and cloth makers that you inherited from your father, Charles V. Many Dutch have become Protestants, and your harsh laws against heresy anger even Catholic nobles, who insist on their provinces' old rights. In August 1566 Calvinist crowds smashed statues and images in hundreds of churches. In Madrid, your advisers argue over how to respond.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Soften the heresy laws, respect the provinces' old rights, and keep local nobles like William of Orange in charge.",
+            "points": 8,
+            "stability": 1,
+            "set": [
+              "dutch_rights"
+            ],
+            "explanation": "The road not taken. Philip sent the Duke of Alba with an army in 1567, and his harsh rule, with mass executions and heavy new taxes, helped spark the Dutch Revolt, which lasted until 1648. The northern provinces became the independent Dutch Republic, a Protestant rival in trade."
+          },
+          {
+            "id": "b",
+            "text": "Send the Duke of Alba with an army of Spanish veterans to punish the rebels. Forgive church-smashing now, and every province will think it can defy you.",
+            "points": -2,
+            "stability": -1,
+            "lose": "netherlands",
+            "explanation": "This is what Philip did in 1567. Alba's \"Council of Troubles\" condemned thousands and executed more than a thousand people, and his harsh rule and new taxes turned unrest into a revolt that drained Spain for 80 years and ended with an independent Dutch Republic."
+          },
+          {
+            "id": "c",
+            "text": "Let the Netherlands go. Rebellious provinces so far from Spain, full of heretics and quarrelsome nobles, will cost more to hold than they are worth.",
+            "points": -1,
+            "lose": "netherlands",
+            "explanation": "The Netherlands were among the richest lands in Europe, and their taxes and trade mattered greatly to the Crown. A milder policy could have kept them loyal; instead Philip's crackdown set off a revolt that cost him the northern provinces."
+          }
+        ]
+      },
+      "general": {
+        "clash": "lepanto"
+      },
+      "vizier": {
+        "year": 1556,
+        "title": "Mountains of Silver",
+        "text": "As Chief Minister to the new king, Philip II, you watch a flood of treasure arrive. In 1545 a mountain of silver was found at Potosí, high in the Andes of Peru (in today's Bolivia), and treasure fleets now carry silver to Seville. But Philip has inherited huge debts and wars with France and the Ottomans, and Peru's settlers have rebelled against royal rule twice since 1544. How should the Crown use its silver?",
+        "context": [
+          {
+            "if": "atlantic",
+            "text": "Because your team backed Columbus, Spanish ships have crossed the Atlantic for more than sixty years, and the routes to the Americas are well known."
+          },
+          {
+            "if": "royal_control",
+            "text": "Your team's Casa de Contratación and Council of the Indies make sure the Crown's share of American silver reaches the treasury."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Pay down the Crown's debts, invest in Castile's own farms and workshops, and avoid wars that don't defend Spain itself.",
+            "points": 8,
+            "gain": "peru",
+            "set": [
+              "silver_saved"
+            ],
+            "explanation": "The road not taken. Philip spent the silver and Castile's taxes on wars, and much of the rest bought goods made abroad, so the Crown went bankrupt again and again while silver flooded Europe and helped drive up prices. At Potosí much of the work was done under the mita, a brutal forced-labor draft that sent Indigenous men into the mines, where many died."
+          },
+          {
+            "id": "b",
+            "text": "Spend the silver on armies and fleets to defend the Catholic faith against Protestants, the Ottomans, and France. As Europe's leading Catholic king, it is Philip's sacred duty, and now he can afford it.",
+            "points": 0,
+            "gain": "peru",
+            "explanation": "This is close to what Philip II did. Endless wars cost more than even Potosí could pay, and the Crown stopped paying its debts in 1557, 1560, 1575, and 1596. Meanwhile the brutal mita forced Indigenous men into deadly mine work, and the flood of silver helped cause inflation across Europe."
+          },
+          {
+            "id": "c",
+            "text": "Leave Potosí's silver mostly to Peru's settlers and mine owners for a small tax. That keeps them loyal, and the Crown saves the cost of officials.",
+            "points": -3,
+            "explanation": "Peru's settlers had rebelled in 1544 and 1553, and the richest silver mine on Earth would have given them the means to break away. Instead the Crown tightened its grip, and in the 1570s Viceroy Francisco de Toledo organized the mita, a brutal forced-labor draft that sent Indigenous men into the mines."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1580–1609",
+      "title": "Empire Overstretched",
+      "ruler": {
+        "year": 1580,
+        "title": "The Crown of Portugal",
+        "text": "As King Philip II, you see a chance to unite the whole Iberian Peninsula. In 1578 young King Sebastian of Portugal died fighting in Morocco, and in 1580 his elderly successor, Cardinal Henry, died without an heir. Your mother was a Portuguese princess, so you have a strong claim. But many Portuguese fear being swallowed by Castile, and a rival claimant, António, Prior of Crato, is popular with the common people.",
+        "context": [
+          {
+            "if": "fleet",
+            "text": "The warships your team built can carry troops and supplies along the coast to Lisbon."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Claim the crown with an army behind you, then swear to respect Portugal's laws, let Portuguese officials run it, and leave its overseas empire in Portuguese hands.",
+            "points": 8,
+            "stability": 1,
+            "gain": "portugal",
+            "set": [
+              "portugal_promise"
+            ],
+            "explanation": "That's what Philip did. The Duke of Alba's army defeated António's supporters in 1580, and at the Cortes of Tomar in 1581 Philip promised that Portugal would keep its own laws, officials, coinage, and overseas empire. He now ruled lands so vast that people said the sun never set on them."
+          },
+          {
+            "id": "b",
+            "text": "Conquer Portugal and rule it like Castile, with Castilian governors, laws, and taxes.",
+            "points": -2,
+            "stability": -1,
+            "gain": "portugal",
+            "explanation": "Treating proud Portugal as a conquered province would have stirred up resistance from the start. Philip won over the Portuguese nobles instead by promising at the Cortes of Tomar (1581) to respect their laws and self-government."
+          },
+          {
+            "id": "c",
+            "text": "Stay out of it and let António take the crown. A war with Portugal would be costly, and the Portuguese would fight hard for a king of their own.",
+            "points": 0,
+            "explanation": "Letting the crown go would have thrown away a great prize: Portugal's ports, its fleet, and its trading posts from Brazil to Africa and Asia. Philip claimed the throne in 1580 and was accepted as king of Portugal in 1581."
+          }
+        ]
+      },
+      "general": {
+        "year": 1588,
+        "title": "The Spanish Armada",
+        "text": "As Captain-General, you have gathered a huge fleet, the Armada, of about 130 ships. King Philip II plans to send it up the English Channel to pick up an army from the Netherlands and invade Protestant England. Queen Elizabeth I has been helping the Dutch rebels, English captains like Francis Drake raid your treasure ships and ports, and in 1587 England executed the Catholic Mary, Queen of Scots.",
+        "context": [
+          {
+            "if": "fleet",
+            "text": "Thanks to the armed convoys your team set up long ago, raiders like Drake have taken single ships and sacked ports but have never captured a whole treasure fleet."
+          },
+          {
+            "if": "silver_saved",
+            "text": "Because your team saved Potosí's silver instead of spending it on war, the treasury can afford new warships and stronger ports."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "ifNot": "silver_saved",
+            "text": "Call off the invasion. Use the ships to guard the treasure fleets, and strengthen your ports against raiders like Drake.",
+            "points": 7,
+            "explanation": "The wiser choice. Philip sent the Armada in 1588, and it was broken up by English fire ships and guns, then wrecked by storms off Scotland and Ireland. Afterward Spain strengthened the escorts of its treasure fleets, which kept the silver flowing for decades."
+          },
+          {
+            "id": "d",
+            "if": "silver_saved",
+            "text": "Call off the invasion, and spend the saved silver on fast new galleons to escort the treasure fleets and on stronger defenses for your ports.",
+            "points": 8,
+            "explanation": "The wiser choice, and your saved silver makes it stronger. Philip sent the Armada in 1588, and English fire ships, English guns, and storms off Scotland and Ireland destroyed much of it. After the disaster Spain built better galleons, and its treasure fleets kept sailing safely for decades."
+          },
+          {
+            "id": "b",
+            "text": "Send the Armada now to restore the Catholic faith in England. God's cause is just, and every month you wait gives Drake another chance to raid your ports.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "This is what Philip did. In 1588 English fire ships scattered the Armada off Calais, English guns battered it at Gravelines, and storms wrecked dozens of ships as it sailed home around Scotland and Ireland. Thousands of Spanish sailors and soldiers died, and Spain's reputation took a heavy blow."
+          },
+          {
+            "id": "c",
+            "text": "Send the Armada, but only after it has better long-range cannons and a clear plan for meeting your army in the Netherlands.",
+            "points": 2,
+            "explanation": "Better preparation might have helped, since the Armada's guns and its plan to meet the army in the Netherlands were real weak points. Still, invading England was a huge gamble, and in 1588 it failed."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1596,
+        "title": "The King Is Broke",
+        "text": "As Chief Minister, you must tell King Philip II that the Crown cannot pay its debts, again. Despite all the American silver, it stopped paying its bankers in 1557, 1560, and 1575, because wars in the Netherlands, France, and at sea cost more than it takes in. Now, in 1596, it must stop again. Meanwhile, across the Pacific, Manila galleons carry American silver to trade with Chinese merchants for silk and porcelain.",
+        "context": [
+          {
+            "if": "silver_saved",
+            "text": "Thanks to your team's careful use of Potosí's silver, Castile's farms and workshops are stronger, so the Crown has more to fall back on."
+          },
+          {
+            "if": "royal_control",
+            "text": "Your team's Casa de Contratación records every silver shipment, so you know exactly how much the Crown can count on."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Cut war spending, work out new repayment terms with the bankers, and protect the galleon trade between Acapulco and Manila.",
+            "points": 8,
+            "gain": "philippines",
+            "explanation": "Wise, but only partly what happened. Spain did settle with its bankers in 1597, but it kept fighting and went broke again in 1607. The Manila galleons, which sailed between Acapulco and Manila until 1815, linked the Americas with Asia and made Manila a hub of world trade."
+          },
+          {
+            "id": "b",
+            "text": "Raise Castile's taxes yet again. Castile is the heart of the empire, its people are loyal, and its assembly has always voted the king money in the end.",
+            "points": -1,
+            "stability": -1,
+            "explanation": "Spain did this. In 1590 Castile's assembly voted a huge new tax, the millones, later collected on meat, wine, oil, and vinegar, and it was raised again and again. The burden fell on ordinary Castilians, whose population and economy shrank in the 1600s."
+          },
+          {
+            "id": "c",
+            "text": "Seize the silver that bankers and merchants have stored in Seville, and refuse to repay their loans.",
+            "points": -3,
+            "explanation": "The Crown did sometimes seize private silver arriving from the Americas, but each time bankers lost trust and charged higher interest on later loans. A government that refuses to repay soon finds no one willing to lend, and Spain's wars ran on borrowed money."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1609–1648",
+      "title": "Decline",
+      "ruler": {
+        "year": 1609,
+        "title": "The Moriscos",
+        "text": "As King Philip III, you must decide the fate of the Moriscos, about 300,000 descendants of Spanish Muslims who were forced to become Christians about a century ago. Many are skilled farmers in Valencia and Aragon, experts at watering crops through irrigation canals. Some Church leaders claim they secretly practice Islam and might help the Ottomans or North African raiders attack Spain's coasts. They urge you to expel them all.",
+        "context": [
+          {
+            "if": "silver_saved",
+            "text": "Because your team invested Potosí's silver in Spain's own farms and workshops, skilled farmers like the Moriscos are worth even more to the Crown."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Let the Moriscos stay. Protect their farms and villages, punish only those who truly plot with Spain's enemies, and win the rest over time.",
+            "points": 8,
+            "explanation": "The road not taken. Between 1609 and 1614 Philip III expelled about 300,000 Moriscos, most of them shipped to North Africa, where many suffered and died. In Valencia, where Moriscos were about a third of the people, whole districts were left without farmers."
+          },
+          {
+            "id": "b",
+            "text": "Expel them all, as the Church leaders urge. If even a few are helping the Ottomans, Spain's coasts are in danger, and a fully Catholic Spain will be stronger and more united.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "This is what Philip III did. The expulsion (1609–1614) tore families from homes they had lived in for centuries, and many died in revolts, at sea, or in North Africa. Valencia and Aragon lost many of their best farmers, and Valencia's economy took decades to recover."
+          },
+          {
+            "id": "c",
+            "text": "Move the Moriscos inland, away from the coasts, and scatter their communities across Castile so they cannot help invaders.",
+            "points": 1,
+            "explanation": "Something like this was tried after a Morisco revolt in Granada (1568–1571), when tens of thousands of Moriscos were forced to resettle across Castile, and it did not end the suspicion. In 1609 Philip III expelled the Moriscos altogether."
+          }
+        ]
+      },
+      "general": {
+        "year": 1621,
+        "title": "War Without End",
+        "text": "As Captain-General for King Philip IV, you must decide what to do as the Twelve Years' Truce with the Dutch runs out in 1621. The northern Dutch provinces have ruled themselves as a republic for decades, and their merchant ships now trade from Asia to the Caribbean. In Germany, the Thirty Years' War has begun, and Spanish troops are already helping your Austrian Habsburg cousins, who want more. France watches for a chance to strike.",
+        "context": [
+          {
+            "if": "dutch_rights",
+            "text": "Your team's milder policy in the 1560s means many in the southern Netherlands still trust the king; the fight now is over the north."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Make the truce a lasting peace. Recognize the Dutch Republic, and pull Spain's armies out of the war in Germany.",
+            "points": 8,
+            "lose": "netherlands",
+            "explanation": "The road not taken. Spain renewed the Dutch war in 1621 and fought France from 1635; its famous infantry was beaten at Rocroi in 1643, and in 1648 at Münster Spain recognized Dutch independence anyway. An early peace would have saved decades of men and money."
+          },
+          {
+            "id": "b",
+            "text": "Renew the war to win back the rebel provinces in the north, but pull out of Germany's war and keep the peace with France.",
+            "points": 1,
+            "lose": "netherlands",
+            "explanation": "Fewer fronts would have helped, but the Dutch war alone was enormously costly, and the Dutch Republic was too strong to reconquer. At Münster in 1648 Spain finally recognized Dutch independence."
+          },
+          {
+            "id": "c",
+            "text": "Fight on every front: crush the Dutch, send armies to help your cousins in Germany, and take on France if it interferes. Spain's infantry is the best in Europe.",
+            "points": -3,
+            "stability": -1,
+            "lose": "netherlands",
+            "explanation": "Close to what Spain did, and it was exhausting. Spain's famous infantry was beaten by the French at Rocroi in 1643, the Crown went bankrupt again in 1647, and in 1648 Spain recognized Dutch independence at Münster."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1626,
+        "title": "The Union of Arms",
+        "text": "As Chief Minister, you are the Count-Duke of Olivares, the powerful favorite of King Philip IV. Castile pays most of the cost of Spain's wars, and it is exhausted. Your plan, the Union of Arms, would make every one of the king's kingdoms, from Catalonia and Portugal to Naples, provide a set number of paid soldiers. But each kingdom has its own laws and assemblies, and many insist the king cannot demand this without their consent.",
+        "context": [
+          {
+            "if": "portugal_promise",
+            "text": "Because your team kept Philip II's promises at Tomar, the Portuguese still run their own affairs, and most of their nobles accept the king, for now."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "if": "portugal_promise",
+            "text": "Bargain with each kingdom's assembly. Ask for help rather than giving orders, and accept less where they insist on their rights.",
+            "points": 8,
+            "explanation": "The wiser path. Olivares instead pushed hard, and in 1640 both Catalonia and Portugal revolted; Spain won Catalonia back in 1652 but recognized Portugal's independence in 1668. Respecting each kingdom's rights, as Philip II had promised Portugal, would have held the empire together far better."
+          },
+          {
+            "id": "d",
+            "ifNot": "portugal_promise",
+            "text": "Bargain with each kingdom's assembly. Ask for help rather than giving orders, and accept less where they insist on their rights.",
+            "points": 6,
+            "lose": "portugal",
+            "explanation": "The wiser path, but without the trust that keeping Philip II's promises would have built, Portugal's nobles had little reason to stay loyal. In reality Olivares pushed hard, Catalonia and Portugal both revolted in 1640, and Spain recognized Portugal's independence in 1668."
+          },
+          {
+            "id": "b",
+            "text": "Force the plan through: send Castilian troops to Catalonia, make Portugal pay, and ignore old laws that stand in the way of the war.",
+            "points": -3,
+            "stability": -1,
+            "lose": "portugal",
+            "explanation": "This is what Olivares did. In 1640 Catalonia rose in the Revolt of the Reapers and Portugal proclaimed its own king, John IV; Spain won Catalonia back in 1652 but recognized Portugal's independence in 1668."
+          },
+          {
+            "id": "c",
+            "text": "Drop the plan and squeeze Castile's taxpayers even harder. Castile is loyal and has always paid.",
+            "points": 1,
+            "explanation": "Castile was already crushed by taxes, and its population and economy were shrinking. Squeezing it harder would have deepened Spain's decline, while the other kingdoms still paid little toward the wars."
+          }
+        ]
+      }
+    }
+  ]
+}

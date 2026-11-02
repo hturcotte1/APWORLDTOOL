@@ -367,6 +367,7 @@ function screenStart() {
         <li><b>Learn what really happened.</b> After every choice, compare your decision with the history.</li>
       </ol>
       <p class="fine">Only your first game counts for the leaderboard. Every game after that is practice.</p>
+      <p class="fine">In a Class Battle with your teacher? <a href="/join">Join with your code</a>.</p>
     </section>
     ${makersMark()}
   </article>`);
@@ -1051,6 +1052,7 @@ function screenReport() {
     <p><b>Teacher mode is on.</b> This report comes from students' first games. Practice runs aren't saved, so they aren't counted.</p>
     <div class="btn-row">
       <button class="btn btn-main" data-go="leaderboard">Manage the leaderboard</button>
+      <a class="btn" href="/battle">Start a Class Battle</a>
       <button class="btn btn-ghost" id="lock">Exit teacher mode</button>
     </div>
   </div>
@@ -1079,9 +1081,13 @@ function screenReport() {
 
 async function loadReport() {
   try {
-    const data = await api('/api/teacher/report', {}, { 'x-teacher-password': S.teacher });
+    const [data, battles] = await Promise.all([
+      api('/api/teacher/report', {}, { 'x-teacher-password': S.teacher }),
+      api('/api/teacher/battles', {}, { 'x-teacher-password': S.teacher }).catch(() => ({ battles: [] })),
+    ]);
     if (S.screen !== 'report') return;
     S.report.data = data;
+    S.report.battles = battles.battles;
     S.report.updated = new Date();
     const el = app.querySelector('#report');
     if (el) {
@@ -1096,12 +1102,43 @@ async function loadReport() {
 }
 
 function bindReport() {
+  app.querySelectorAll('[data-del-battle]').forEach((b) => b.addEventListener('click', async () => {
+    if (!confirm('Delete this Class Battle\'s results? This can\'t be undone.')) return;
+    try {
+      await api('/api/teacher/battles/delete', { id: Number(b.dataset.delBattle) }, { 'x-teacher-password': S.teacher });
+      toast('Battle results deleted.');
+      loadReport();
+    } catch (e) {
+      teacherError(e);
+    }
+  }));
   const more = app.querySelector('#show-all');
   if (more) more.addEventListener('click', () => {
     S.report.showAll = !S.report.showAll;
     app.querySelector('#report').innerHTML = reportHtml();
     bindReport();
   });
+}
+
+// Finished Class Battles: the team ranking and the top students of each.
+function battlesHtml() {
+  const period = S.report.period;
+  const list = (S.report.battles || []).filter((b) => period === 'all' || String(b.period) === period);
+  if (!list.length) return '';
+  const rows = list.slice(0, 10).map((b) => {
+    const teams = b.teams.map((t, i) => {
+      const e = empireOf(t.empire);
+      return `<span class="realm" title="${esc(e.name)}: ${t.finalScore}${t.collapsed ? ' (collapsed)' : ''}">${i + 1}. ${emblem(e.emblem, t.collapsed ? '#6b6258' : e.color, 22)}<span>${minus(t.finalScore)}</span></span>`;
+    }).join(' ');
+    const top = b.players.slice(0, 3).map((p) => `${esc(p.name)} (${minus(p.score)})`).join(', ');
+    const when = new Date(`${b.finishedAt.replace(' ', 'T')}Z`).toLocaleDateString();
+    return `<li class="battle-row"><div><b>Period ${b.period}</b> · ${esc(when)} · code ${esc(b.code)}<button class="del small" data-del-battle="${b.id}" aria-label="Delete this battle">✕</button></div><div class="battle-teams">${teams}</div><div class="fine">Top students: ${top || 'none'}</div></li>`;
+  }).join('');
+  return `
+    <section class="report-sec">
+      <h2 class="rubric">Class Battles</h2>
+      <ul class="battle-list">${rows}</ul>
+    </section>`;
 }
 
 // A thin horizontal bar with its value written beside it.
@@ -1118,7 +1155,7 @@ function reportHtml() {
   const where = period === 'all' ? 'any class' : `Period ${period}`;
   const updated = `<p class="fine center updated">Updated ${S.report.updated ? S.report.updated.toLocaleTimeString() : ''}</p>`;
   if (!g.games && !g.playing) {
-    return `<p class="empty"><b>No games yet.</b> Nobody in ${where} has started a first game.</p>${periodsHtml(d)}${updated}`;
+    return `<p class="empty"><b>No games yet.</b> Nobody in ${where} has started a first game.</p>${periodsHtml(d)}${battlesHtml()}${updated}`;
   }
   const tiles = `
     <section class="tiles" aria-label="At a glance">
@@ -1128,7 +1165,7 @@ function reportHtml() {
       <div class="tile"><b>${g.games ? `${pct(g.survived, g.games)}%` : '—'}</b><span>survived</span></div>
       <div class="tile"><b>${g.best === null ? '—' : minus(g.best)}</b><span>top score</span></div>
     </section>`;
-  return `${tiles}${missedHtml(d, g)}${periodsHtml(d)}${empiresHtml(g)}${updated}`;
+  return `${tiles}${missedHtml(d, g)}${periodsHtml(d)}${empiresHtml(g)}${battlesHtml()}${updated}`;
 }
 
 // Period against period: average score, games, and survival rate.

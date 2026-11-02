@@ -27,3 +27,17 @@ export function loadContent() {
   }
   return { rules, glossary, empires, files };
 }
+
+// Class Battle content: rules, clashes, and one campaign per empire.
+export function loadBattle(content = loadContent()) {
+  const dir = path.join(CONTENT_DIR, 'battle');
+  const battleRules = readJson(path.join(dir, 'rules.json'));
+  const clashes = readJson(path.join(dir, 'clashes.json'));
+  const campaigns = {};
+  for (const f of readdirSync(path.join(dir, 'campaigns')).filter((x) => x.endsWith('.json'))) {
+    const data = readJson(path.join(dir, 'campaigns', f));
+    data._file = `content/battle/campaigns/${f}`;
+    campaigns[f.replace(/\.json$/, '')] = data;
+  }
+  return { soloRules: content.rules, empires: content.empires, glossary: content.glossary, battleRules, clashes, campaigns };
+}

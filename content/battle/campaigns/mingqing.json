@@ -1,0 +1,453 @@
+{
+  "id": "mingqing",
+  "titles": {
+    "ruler": "Emperor",
+    "general": "General",
+    "vizier": "Grand Secretary"
+  },
+  "regions": [
+    {
+      "id": "north_china",
+      "name": "North China",
+      "at": [
+        115.0,
+        37.5
+      ],
+      "size": [
+        4.2,
+        2.8
+      ],
+      "start": true
+    },
+    {
+      "id": "south_china",
+      "name": "South China",
+      "at": [
+        113.5,
+        27.5
+      ],
+      "size": [
+        5.0,
+        3.6
+      ],
+      "start": true
+    },
+    {
+      "id": "manchuria",
+      "name": "Manchuria",
+      "at": [
+        126.0,
+        44.0
+      ],
+      "size": [
+        3.8,
+        2.8
+      ]
+    },
+    {
+      "id": "taiwan",
+      "name": "Taiwan",
+      "at": [
+        121.0,
+        23.7
+      ],
+      "size": [
+        0.8,
+        1.3
+      ]
+    }
+  ],
+  "rounds": [
+    {
+      "years": "1449–1500",
+      "title": "Ming Recovery",
+      "ruler": {
+        "year": 1449,
+        "title": "The Emperor Is Captured!",
+        "text": "You lead the imperial court in Beijing, and disaster has struck. The young Zhengtong Emperor marched a huge army against the Oirat Mongols, and they captured him at Tumu Fortress. Now Mongol horsemen under their chief, Esen, are riding toward Beijing, bringing the emperor along as a prisoner and bargaining chip. Panicked officials want to flee south to Nanjing, the old capital. The minister Yu Qian says Beijing must be defended.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Crown the emperor's brother, refuse to bargain for the captive, and defend Beijing.",
+            "points": 5,
+            "stability": 1,
+            "explanation": "That's what happened: Yu Qian organized the defense, the emperor's brother took the throne, and Esen's attack on Beijing failed. With a new emperor crowned, the captive was worth little, and the Mongols released him in 1450. Sadly, when the freed emperor took back his throne in 1457, he had Yu Qian executed."
+          },
+          {
+            "id": "b",
+            "text": "Move the court south to Nanjing, the old capital, safe behind the wide Yangzi River. If Beijing falls with the court inside, the whole dynasty falls with it.",
+            "points": 1,
+            "stability": -1,
+            "explanation": "Abandoning Beijing would have handed the north to the Mongols and shattered the dynasty's prestige. Some officials did urge this, but Yu Qian rallied the defense of the capital, and the Mongols withdrew."
+          },
+          {
+            "id": "c",
+            "text": "Pay whatever ransom the Mongols demand. A dynasty that leaves its emperor in enemy hands will look weak to its own people.",
+            "points": 2,
+            "explanation": "Paying a huge ransom would invite more kidnappings and raids. Once the Ming crowned a new emperor, the captive was worth little to the Mongols, and they released him in 1450."
+          }
+        ]
+      },
+      "general": {
+        "year": 1474,
+        "title": "Raiders on the Frontier",
+        "text": "You command the Ming armies on the northern frontier. Since the disaster at Tumu, Mongol horsemen keep raiding: they burn villages, steal livestock and grain, and vanish into the steppe before your soldiers can catch them. Many of the old frontier walls are just packed earth, full of gaps. The court wants your plan to keep the north safe.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Rebuild and extend the frontier walls, later in brick and stone. Add watchtowers to spot raiders and garrisons ready to stop them.",
+            "points": 5,
+            "set": [
+              "wall"
+            ],
+            "explanation": "This became Ming policy: long walls went up along the Ordos frontier in the 1470s, and by the late 1500s much of the Great Wall had been rebuilt in brick and stone. Most of the Great Wall that visitors see today is Ming work. Walls did not stop every raid, and a 1571 peace with the Mongol leader Altan Khan, which opened border markets, also helped calm the frontier."
+          },
+          {
+            "id": "b",
+            "text": "Lead a giant army deep into the steppe and destroy the raiders' camps. A wall only waits for the enemy, but a bold strike could end the threat for a generation.",
+            "points": 2,
+            "explanation": "Big expeditions into the steppe were costly and risky, as Tumu had shown in 1449: horsemen could retreat for hundreds of miles and strike back when an army ran short of food. Ming generals won a few surprise raids, but the Ming relied mostly on walls and garrisons."
+          },
+          {
+            "id": "c",
+            "text": "Pull your soldiers back inside the walled cities and let the villages fend for themselves.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "Leaving the villages unprotected would let raiders strip the frontier bare and creep closer to Beijing. The Ming chose walls, watchtowers, and garrisons instead."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1450,
+        "title": "Officials or Eunuchs?",
+        "text": "As Grand Secretary, you lead the scholar-officials who run the empire. Most earned their posts by passing the civil service exams on the Confucian classics. But emperors often trust palace eunuchs more, because eunuchs live in the palace and owe everything to the emperor. The eunuch Wang Zhen talked the captured emperor into the march that ended at Tumu. Now you must advise the new emperor: who should run the government?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Keep choosing officials by exam, and limit the eunuchs to running the palace.",
+            "points": 5,
+            "set": [
+              "exams"
+            ],
+            "explanation": "Officials chosen by exams on the Confucian classics gave the Ming a large, educated class trained to serve the state, and the exams stayed the main road to office until 1905. Many Ming emperors still let eunuchs gain power, and it often led to trouble."
+          },
+          {
+            "id": "b",
+            "text": "Give the eunuchs control of tax collection and the secret police. They answer only to the emperor, so unlike officials, they can't form factions against him.",
+            "points": 1,
+            "set": [
+              "eunuchs"
+            ],
+            "explanation": "Many Ming emperors did this. Eunuchs ran the feared Eastern Depot, a secret police that spied on and arrested officials, and powerful eunuchs such as Liu Jin in the early 1500s grew rich and hated, which weakened trust in the government."
+          },
+          {
+            "id": "c",
+            "text": "Raise money for the frontier armies by selling government posts and titles to wealthy families. Rich men who buy a post have a stake in the dynasty's success.",
+            "points": 2,
+            "explanation": "Selling posts brings in quick cash but fills the government with men who expect to earn back what they paid, often through bribes. The Ming did sell some titles in emergencies, but the exams stayed the main road to office."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1550–1600",
+      "title": "Silver and Strain",
+      "ruler": {
+        "year": 1596,
+        "title": "The Emperor Who Stopped Working",
+        "text": "You are the Wanli Emperor, on the throne since 1572. For years your officials have lectured you to name your eldest son as heir, when you favor a younger one. In anger, you have stopped holding court, you rarely see your ministers, and you leave empty government posts unfilled. Now the war in Korea and the cost of rebuilding burned palace halls are draining the treasury.",
+        "context": [
+          {
+            "if": "exams",
+            "text": "The exams your Grand Secretary protected have produced plenty of capable graduates who are waiting for posts."
+          },
+          {
+            "if": "eunuchs",
+            "text": "Palace eunuchs already control the taxes and the secret police, and officials who criticize them end up in prison."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "if": "exams",
+            "text": "Return to court and fill the empty posts with exam-trained officials. Keep the eunuchs in check.",
+            "points": 5,
+            "explanation": "That would have been the wise path. In reality, Wanli withdrew from government for decades, posts sat empty, and eunuchs and feuding factions grew powerful, one reason the Ming weakened in its final years."
+          },
+          {
+            "id": "a2",
+            "ifNot": "exams",
+            "text": "Return to court, fill the empty posts as fast as you can, and rein in the palace eunuchs.",
+            "points": 4,
+            "explanation": "That would have been the wise path, though with fewer well-trained officials to choose from, rebuilding the government would be slow. In reality, Wanli withdrew from government for decades, and eunuchs and feuding factions grew powerful."
+          },
+          {
+            "id": "b",
+            "text": "Send trusted eunuchs out to collect new taxes on mines and merchants. They answer only to you, so the money comes straight to the palace instead of passing through quarreling officials.",
+            "points": 1,
+            "explanation": "This really happened, starting in 1596. The eunuch tax collectors were hated, squeezed merchants and miners, and set off riots in many cities, damaging the dynasty's reputation."
+          },
+          {
+            "id": "c",
+            "text": "Stay inside the palace. The officials defied you over your heir, so let them run the government without you.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "This is what Wanli actually did. Without an active emperor, factions feuded and problems went unsolved, just as a chief named Nurhaci was uniting the Jurchen tribes (later called Manchus) in the northeast."
+          }
+        ]
+      },
+      "general": {
+        "year": 1592,
+        "title": "Japan Invades Korea",
+        "text": "You command the emperor's armies. The Japanese warlord Toyotomi Hideyoshi has sent about 150,000 soldiers into Korea, a Ming ally that sends tribute to the emperor. Armed with muskets, they have taken Seoul and Pyongyang, and Hideyoshi boasts that China is his real goal. Korea's king has fled north to the Chinese border and begs for help.",
+        "context": [
+          {
+            "if": "wall",
+            "text": "With the rebuilt northern walls well manned, you can spare more troops for a war far from home."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Korea has been loyal, so stand by it. Send an army with heavy cannons across the Yalu River to drive the Japanese out.",
+            "points": 5,
+            "set": [
+              "cannons"
+            ],
+            "explanation": "That's what the Ming did. In early 1593 a Ming army using heavy cannons retook Pyongyang, Korean admiral Yi Sun-sin's warships attacked Japanese supply fleets, and after Hideyoshi died in 1598 the Japanese went home. The war was costly for the Ming treasury, but it kept a Japanese army off China's border."
+          },
+          {
+            "id": "b",
+            "text": "Stay out. Korea's war is Korea's problem, and your soldiers are needed against the Mongols in the north.",
+            "points": 2,
+            "explanation": "If Korea fell, a Japanese army would stand on China's border, and Hideyoshi openly planned to march on Beijing. Defending a loyal tribute state also showed that the emperor kept his promises."
+          },
+          {
+            "id": "c",
+            "text": "Build a great fleet and invade Japan itself. Strike Hideyoshi at home, and his armies in Korea will have to sail back to defend him.",
+            "points": 0,
+            "explanation": "Invading Japan across the sea would have been a huge gamble; both of the Mongol ruler Kublai Khan's invasion fleets had failed, in 1274 and 1281. The Ming fought the Japanese in Korea instead, close to their own border."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1581,
+        "title": "Taxes in Silver",
+        "text": "You are Zhang Juzheng, senior Grand Secretary to the young Wanli Emperor. Since 1567, licensed merchants may sail overseas from a port in Fujian, and silver pours in from Japan and, after 1571, from the Americas through Spanish Manila. Yet farmers still pay taxes in grain and cloth and owe forced labor on roads and canals, while rich landowners hide their fields from tax collectors.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Survey the land, then combine the grain, cloth, and labor duties into one tax paid in silver. Keep the licensed trade that brings the silver in.",
+            "points": 5,
+            "set": [
+              "silver_tax"
+            ],
+            "explanation": "This is the Single Whip Reform, which Zhang Juzheng spread across China in 1581 after a national land survey. Taxes became simpler and the treasury filled, but China now depended on a steady flow of silver from Japan (carried mostly by Portuguese and Chinese traders) and from Spanish America."
+          },
+          {
+            "id": "b",
+            "text": "Keep collecting grain, cloth, and labor the old way. Grain feeds the armies directly, and a tax in silver would leave China at the mercy of foreign mines and foreign ships.",
+            "points": 2,
+            "explanation": "Your worry had something to it, since China's silver did come from foreign mines. But the old system was clumsy and easy to cheat, so Zhang Juzheng chose the Single Whip Reform, turning most taxes into one silver payment."
+          },
+          {
+            "id": "c",
+            "text": "Close the Fujian port and ban overseas trade again.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "When trade was banned before 1567, merchants turned to smuggling and pirate fleets raided the coast. Legal trade cut piracy and brought in the silver that China's busy markets needed."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1618–1683",
+      "title": "The Mandate Passes",
+      "ruler": {
+        "year": 1644,
+        "title": "The Mandate of Heaven Passes",
+        "text": "Famine, rebellion, and a weak government brought down the Ming. In 1644 the rebel Li Zicheng captured Beijing, and the last Ming emperor hanged himself. A Ming general then joined forces with the Manchus at the Great Wall, and together they drove Li out. Now your Manchu family, whose Qing dynasty was proclaimed in Manchuria in 1636, rules from Beijing: a small minority ruling more than a hundred million Han Chinese.",
+        "context": [
+          {
+            "if": "silver_tax",
+            "text": "Because Ming taxes were paid in silver, a drop in silver imports in the 1630s and 1640s may have made hard times worse for taxpayers."
+          },
+          {
+            "if": "wall",
+            "text": "Manchu armies raided through the rebuilt Great Wall several times but never stayed for long, until the Ming general guarding Shanhai Pass joined them in 1644."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Keep the Ming system: Confucian ministries, the exams, and Han officials beside Manchus. Claim the Mandate of Heaven, and keep the Eight Banners as your core army.",
+            "points": 5,
+            "stability": 1,
+            "set": [
+              "banners"
+            ],
+            "gain": [
+              "manchuria"
+            ],
+            "explanation": "Exactly the Qing strategy. They kept the exams and ministries, often paired a Manchu and a Han official in top posts, and kept the Eight Banners as the army's core. But they also forced Han men to shave the front of their heads and wear the Manchu queue as a sign of loyalty, and many who refused were killed."
+          },
+          {
+            "id": "b",
+            "text": "Govern only through Manchu nobles, and abolish the exams. Officials trained to serve the Ming will never truly serve a Manchu dynasty.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "A small Manchu minority could never govern so many people alone. The Qing restarted the exams by 1646 and kept Han officials, which over time won over most of China's educated class."
+          },
+          {
+            "id": "c",
+            "text": "Reward the Ming generals who joined you with huge southern provinces to rule as their own kingdoms.",
+            "points": 2,
+            "explanation": "After conquering the south, the Qing really did give three Han generals huge territories to rule. It worked at first, but in 1673 these \"Three Feudatories\" rebelled against the emperor."
+          }
+        ]
+      },
+      "general": {
+        "year": 1662,
+        "title": "Koxinga's Island",
+        "text": "You command the Qing forces on the southern coast. In 1662 the Ming loyalist Zheng Chenggong, known in Europe as Koxinga, drove the Dutch out of Taiwan, then died a few months later. His son now holds the island as a base, and the Zheng war fleets raid your coast. Your soldiers are horsemen and foot soldiers, not sailors.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Build a navy first. Then win over Zheng commanders willing to switch sides, and let them lead the attack on Taiwan.",
+            "points": 5,
+            "gain": [
+              "taiwan"
+            ],
+            "explanation": "That's what the Qing did. Admiral Shi Lang, a former Zheng commander who had switched sides, led a Qing fleet to victory at the Penghu Islands in 1683, and Taiwan surrendered and became part of the Qing Empire."
+          },
+          {
+            "id": "b",
+            "text": "Send your army across the strait at once in every boat you can seize. Each month you wait, the Zheng fleet burns another coastal town.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "Without warships, an army crossing the stormy Taiwan Strait would be sunk by the Zheng fleet or the weather, and early Qing attempts in the 1660s failed. The Qing waited until it had a real navy, then won in 1683."
+          },
+          {
+            "id": "c",
+            "text": "Leave Taiwan alone for now. It's a small island across a stormy strait, and your soldiers are needed on the mainland, where rebels still hold out.",
+            "points": 2,
+            "explanation": "For years the Qing did put the mainland first. But a hostile fleet just off the coast kept raiding, and in 1674 the Zheng joined a great revolt in the south and landed troops in Fujian."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1661,
+        "title": "Empty the Coast?",
+        "text": "As Grand Secretary, you must help cut off the Zheng fleets. They depend on the people of the southern coast for food, timber, sailors, and smuggled trade. Some officials propose a drastic order: force everyone along the coast to move inland, destroy the empty villages, and put to death anyone who crosses back. Others say Zheng commanders and coastal merchants can be won over.",
+        "context": [
+          {
+            "if": "silver_tax",
+            "text": "With taxes paid in silver, coastal trade has become one of the empire's lifelines, and an empty coast would choke off much of the silver flowing into China."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Offer pardons, titles, and rewards to Zheng commanders and coastal merchants who come over to you. Meanwhile, build a navy of your own.",
+            "points": 5,
+            "explanation": "The Qing did win over many Zheng officers with titles and rewards, and Shi Lang, the admiral who finally took Taiwan in 1683, was one of them. In the end, it took defectors and a real navy to defeat the Zheng regime."
+          },
+          {
+            "id": "b",
+            "text": "Clear the coast: move everyone inland, destroy the villages, and let no one return. Without food, sailors, or trade, the Zheng fleets will wither.",
+            "points": 2,
+            "explanation": "The Qing really did this, starting in 1661, in what is called the Great Clearance. Whole communities lost their homes, fields, and fishing boats, and many people starved; it hurt the Zheng, but the order was fully lifted only in 1684, after Taiwan fell."
+          },
+          {
+            "id": "c",
+            "text": "Raise taxes on the coastal provinces to pay for the war, since the coast is where the trouble is.",
+            "points": 1,
+            "explanation": "The coastal provinces were already suffering from war and raids, and higher taxes would push more coastal people to join or trade with the Zheng. The Qing instead tried to cut the Zheng off from the coast and win over their officers."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1673–1722",
+      "title": "Kangxi's Peace",
+      "ruler": {
+        "year": 1720,
+        "title": "The Rites Controversy",
+        "text": "You are the Kangxi Emperor, on the throne since 1661. You have studied geometry with Jesuit priests, and Jesuits run your astronomy office. But in 1715 the Pope ruled that Chinese Christians may not take part in ceremonies honoring their ancestors and Confucius. To you, those rites are the heart of Chinese culture and family loyalty. Now a papal envoy has come to Beijing to insist on the ruling.",
+        "context": [
+          {
+            "if": "cannons",
+            "text": "Because your armies rely on cannons, the Jesuits have been extra useful: the priest Ferdinand Verbiest cast hundreds of guns for you."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Keep the Jesuit scientists at court. But ban missionaries who obey the Pope's ruling from preaching in China.",
+            "points": 5,
+            "explanation": "Close to Kangxi's response. In 1721, after reading the Pope's ruling, he wrote that Europeans should no longer preach in China, while Jesuit astronomers and artists kept serving at court. His son Yongzheng formally banned Christianity in 1724."
+          },
+          {
+            "id": "b",
+            "text": "Accept the Pope's ruling and let missionaries preach freely. Their religion is their own business, and their science has served you well.",
+            "points": 1,
+            "explanation": "That would let a foreign religious leader decide what your subjects could do, a challenge to the emperor's authority. Kangxi refused and stopped missionary preaching in 1721."
+          },
+          {
+            "id": "c",
+            "text": "Expel every European, the court scientists included. Foreigners who obey the Pope over the emperor cannot be trusted to run your calendar.",
+            "points": 2,
+            "explanation": "Too extreme for Kangxi, who valued Jesuit mathematics and astronomy. He stopped missionary preaching but kept useful Jesuit experts at court, and Jesuits served there for decades more."
+          }
+        ]
+      },
+      "general": {
+        "clash": "amur"
+      },
+      "vizier": {
+        "year": 1673,
+        "title": "The Three Feudatories Revolt",
+        "text": "As Grand Secretary to the young Kangxi Emperor, you face a crisis. Three Han Chinese generals rule huge southern provinces almost like kings, with their own armies and taxes. One of them is Wu Sangui, the general who joined the Manchus at the Great Wall in 1644. Their armies cost the treasury a fortune. When Kangxi moves to abolish their domains, they rebel, and much of southern China joins them.",
+        "context": [
+          {
+            "if": "banners",
+            "text": "Your emperor made the Eight Banners the core of the army, and they are ready to march south."
+          },
+          {
+            "ifNot": "banners",
+            "text": "The Eight Banners were never made the core of your army, so you must lean on Han troops whose loyalty is uncertain."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "if": "banners",
+            "text": "Fight: send the Eight Banners south alongside loyal Han Chinese Green Standard troops. Once the rebels are beaten, put regular officials in charge of the south.",
+            "points": 5,
+            "explanation": "That's what Kangxi did. Manchu banner troops and, more and more, loyal Han Chinese Green Standard soldiers crushed the revolt by 1681, and the south came under regular imperial officials, making the Qing the unquestioned rulers of China."
+          },
+          {
+            "id": "a2",
+            "ifNot": "banners",
+            "text": "Fight with whatever loyal troops you can raise, and pay Han commanders well to stay loyal. Once the rebels are beaten, put regular officials in charge.",
+            "points": 4,
+            "explanation": "Kangxi did fight and win by 1681, with Manchu banner armies as well as loyal Han Chinese Green Standard troops. Without a strong banner army at its core, your war would take longer and cost more."
+          },
+          {
+            "id": "b",
+            "text": "Let the generals keep their lands forever. They helped your family conquer China, and a long civil war could cost the young dynasty everything.",
+            "points": 0,
+            "stability": -1,
+            "explanation": "That would leave China split into rival kingdoms. Kangxi refused, and his victory in 1681 made the Qing the unquestioned rulers of China."
+          },
+          {
+            "id": "c",
+            "text": "Fight, and promise death to every rebel, even those who surrender. Mercy would only teach other generals that rebellion is cheap.",
+            "points": 2,
+            "explanation": "Kangxi accepted surrenders instead, and two of the three rebel leaders gave up in 1676–1677, which split the revolt (both were later put to death). Refusing all mercy would have forced every rebel to fight to the end."
+          }
+        ]
+      }
+    }
+  ]
+}

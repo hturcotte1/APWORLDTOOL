@@ -76,3 +76,39 @@ export async function listGames(db) {
   const res = await db.prepare('SELECT period, empire, score, outcome, progress FROM entries ORDER BY id').all();
   return res.results || [];
 }
+
+// ---------- Class Battle results ----------
+export async function saveBattle(db, { code, period, teams, players }) {
+  const summary = teams.map((t) => ({ empire: t.empire, finalScore: t.finalScore, collapsed: t.collapsed, rating: t.rating }));
+  const row = await db
+    .prepare('INSERT INTO battles (code, period, teams) VALUES (?, ?, ?) RETURNING id')
+    .bind(code, period, JSON.stringify(summary))
+    .first();
+  if (players.length) {
+    await db.batch(players.map((p) => db
+      .prepare('INSERT INTO battle_players (battle_id, name, empire, roles, score) VALUES (?, ?, ?, ?, ?)')
+      .bind(row.id, p.name, p.empire, p.roles.join(','), p.score)));
+  }
+  return row.id;
+}
+
+export async function listBattles(db, limit = 20) {
+  const battles = (await db.prepare('SELECT id, code, period, finished_at, teams FROM battles ORDER BY id DESC LIMIT ?').bind(limit).all()).results || [];
+  if (!battles.length) return [];
+  const ids = battles.map((b) => b.id);
+  const players = (await db.prepare(`SELECT battle_id, name, empire, roles, score FROM battle_players WHERE battle_id IN (${ids.map(() => '?').join(',')}) ORDER BY score DESC`).bind(...ids).all()).results || [];
+  return battles.map((b) => ({
+    id: b.id,
+    code: b.code,
+    period: b.period,
+    finishedAt: b.finished_at,
+    teams: JSON.parse(b.teams),
+    players: players.filter((p) => p.battle_id === b.id).map((p) => ({ name: p.name, empire: p.empire, roles: p.roles.split(','), score: p.score })),
+  }));
+}
+
+export async function deleteBattle(db, id) {
+  await db.prepare('DELETE FROM battle_players WHERE battle_id = ?').bind(id).run();
+  const res = await db.prepare('DELETE FROM battles WHERE id = ?').bind(id).run();
+  return res.meta.changes;
+}

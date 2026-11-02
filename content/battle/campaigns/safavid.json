@@ -1,0 +1,447 @@
+{
+  "id": "safavid",
+  "titles": {
+    "ruler": "Shah",
+    "general": "General",
+    "vizier": "Grand Vizier"
+  },
+  "regions": [
+    {
+      "id": "azerbaijan",
+      "name": "Azerbaijan (Tabriz)",
+      "at": [
+        47.3,
+        38.4
+      ],
+      "size": [
+        2.0,
+        1.3
+      ],
+      "start": true
+    },
+    {
+      "id": "persia",
+      "name": "Persia",
+      "at": [
+        53.0,
+        32.0
+      ],
+      "size": [
+        5.0,
+        3.8
+      ]
+    },
+    {
+      "id": "khorasan",
+      "name": "Khorasan",
+      "at": [
+        60.5,
+        35.3
+      ],
+      "size": [
+        2.8,
+        1.8
+      ]
+    },
+    {
+      "id": "gulf",
+      "name": "Hormuz and the Gulf",
+      "at": [
+        56.3,
+        27.0
+      ],
+      "size": [
+        1.4,
+        0.8
+      ]
+    }
+  ],
+  "rounds": [
+    {
+      "years": "1501–1514",
+      "title": "A Shia Empire",
+      "ruler": {
+        "year": 1501,
+        "title": "A Faith for a New Empire",
+        "text": "You are Ismail, only 14, leader of the Safavid Sufi order. Your Qizilbash warriors believe you have almost divine powers, and they have just helped you capture Tabriz, where you are crowned shah. Most of your new subjects are Sunni Muslims, like the powerful Ottomans to the west and the Uzbeks to the east. Now you must decide what your new empire will stand for.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Make Twelver Shia Islam the official religion. Invite Shia scholars from Lebanon and Iraq to teach it, and require your subjects to follow it.",
+            "points": 8,
+            "set": [
+              "shia_state"
+            ],
+            "gain": "persia",
+            "explanation": "This is what Ismail did. It gave his empire an identity separate from its Sunni neighbors, and Iran is still mostly Shia today. But the new faith was often imposed by force, with Sunni scholars killed or driven out, and it made the Ottomans bitter enemies."
+          },
+          {
+            "id": "b",
+            "text": "Stay Sunni like your neighbors and most of your subjects. Sharing their faith would make your rule easier to accept.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "Ismail's power came from his followers' devotion to him as a Shia holy leader, so this would have undercut his own support. Instead he made Twelver Shia Islam the state religion in 1501."
+          },
+          {
+            "id": "c",
+            "text": "Let each city and region keep its own form of Islam, and name no official faith.",
+            "points": 2,
+            "explanation": "Tolerance can hold an empire together, as Akbar later showed in Mughal India. But Ismail's power rested on religious zeal, and a shared Shia faith tied his followers and his new subjects to the dynasty."
+          }
+        ]
+      },
+      "general": {
+        "clash": "chaldiran"
+      },
+      "vizier": {
+        "year": 1508,
+        "title": "Sword and Pen",
+        "text": "As Grand Vizier, you must organize the new empire's government. The Qizilbash chiefs who won the shah's battles want whole provinces as rewards, with the right to keep the taxes. Persian scribes, known as Tajiks, have run governments in Iran for centuries and know how to keep records and collect taxes. But the proud Turkmen warriors look down on them. Who will run the empire?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Let the Qizilbash chiefs lead the armies while Persian officials keep the records and collect the taxes.",
+            "points": 8,
+            "set": [
+              "persian_scribes"
+            ],
+            "explanation": "The Safavids relied on both groups: Turkmen \"men of the sword\" and Persian \"men of the pen.\" Ismail even named Persians as his chief minister, which angered some Qizilbash chiefs. Trained officials who answered to the shah kept tax money flowing to the crown instead of to tribal chiefs."
+          },
+          {
+            "id": "b",
+            "text": "Give each Qizilbash chief a province to rule and tax as he likes. They won your battles, their loyalty is proven, and a rich chief keeps his warriors ready to fight.",
+            "points": -2,
+            "set": [
+              "qizilbash_power"
+            ],
+            "explanation": "Ismail did hand many provinces to Qizilbash chiefs, and it caused trouble for a century. Chiefs with their own lands and taxes fought each other and tried to control later shahs, especially after Ismail died in 1524."
+          },
+          {
+            "id": "c",
+            "text": "Leave the old local rulers in place to collect taxes, as long as they send the shah his share.",
+            "points": 2,
+            "explanation": "Local rulers who keep their own power can switch sides when trouble comes. The Safavids replaced many of Persia's old local rulers with their own governors and officials."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1524–1588",
+      "title": "Holding On",
+      "ruler": {
+        "year": 1524,
+        "title": "The Boy Shah",
+        "text": "You are Tahmasp, only ten years old, and your father, Shah Ismail, has just died. Now the Qizilbash chiefs are fighting a civil war over who will control you and rule in your name. Uzbek raiders strike the eastern provinces, and the Ottomans watch from the west. You are too young to rule alone, but you will not be a boy forever.",
+        "context": [
+          {
+            "if": "qizilbash_power",
+            "text": "Because the Qizilbash chiefs were given whole provinces, each now has his own lands, taxes, and warriors to throw into the fight."
+          },
+          {
+            "if": "persian_scribes",
+            "text": "Persian officials still keep the records and collect the taxes, so the government keeps working even while the chiefs fight."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Bide your time and play the rival chiefs against each other as you grow up. Then take power yourself and punish the worst troublemakers.",
+            "points": 8,
+            "stability": 1,
+            "set": [
+              "royal_control"
+            ],
+            "explanation": "That's what Tahmasp did. After about ten years of civil war he took control in the early 1530s, punished rebellious chiefs, and went on to rule for 52 years (1524–1576), keeping the Safavid state alive."
+          },
+          {
+            "id": "b",
+            "text": "Let the strongest Qizilbash chief rule in your name for good. One strong hand could end the civil war, and a boy cannot lead armies against the Uzbeks.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "A shah who is only a puppet invites endless power struggles, because every chief wants to be the one holding the strings. Tahmasp took real control in the 1530s and ruled until 1576."
+          },
+          {
+            "id": "c",
+            "ifNot": "persian_scribes",
+            "text": "Give the Uzbeks the eastern lands they want, so you can deal with the chiefs at home.",
+            "points": 1,
+            "explanation": "Giving up land in the east would weaken you further and reward the raiders. Tahmasp fought off the Uzbeks again and again while slowly taking control of the Qizilbash."
+          },
+          {
+            "id": "c2",
+            "if": "persian_scribes",
+            "text": "Let your Persian chief minister run the government in your name, and send the quarreling chiefs off to fight on the frontiers.",
+            "points": 3,
+            "explanation": "Persian officials kept the government running, but a minister with no army of his own could not stop the chiefs, who looked down on Persian officials; Qizilbash officers had even murdered one of Ismail's Persian chief ministers. Tahmasp had to take control himself."
+          }
+        ]
+      },
+      "general": {
+        "year": 1534,
+        "title": "Suleiman Invades",
+        "text": "You command the shah's army. The Ottoman Sultan Suleiman the Magnificent has invaded with janissaries and heavy cannons, taken Tabriz, your capital, and marched on to capture Baghdad. More invasions will follow. In the east, Uzbek raiders keep attacking Khorasan. Your Qizilbash horsemen are brave, but Ottoman cannons and muskets can tear apart a cavalry charge. How will you defend the empire?",
+        "context": [
+          {
+            "if": "shia_state",
+            "text": "The Ottomans call your Shia faith heresy, so this war is about religion as well as land."
+          },
+          {
+            "if": "persian_scribes",
+            "text": "Persian officials keep the taxes flowing, so you can pay your soldiers through a long war."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Avoid big battles in the west. Burn crops in the invaders' path, move your capital away from the border, and make peace when Suleiman tires. Send your best troops east against the Uzbeks.",
+            "points": 8,
+            "gain": "khorasan",
+            "explanation": "That's what Tahmasp did. Scorched earth wore down Ottoman armies, he moved the capital from Tabriz to Qazvin in the 1550s, and the Peace of Amasya (1555) let the Ottomans keep Baghdad but left the Persian heartland to the shah. He also held Khorasan against the Uzbeks."
+          },
+          {
+            "id": "b",
+            "text": "Gather every horseman for one great battle to drive Suleiman out. Your people expect a shah who fights, and every year of retreat lets the Ottomans dig in deeper.",
+            "points": -3,
+            "stability": -1,
+            "explanation": "Another open battle against Ottoman cannons could have ended like Chaldiran in 1514. Tahmasp avoided pitched battles with the Ottomans, and that is a big reason his empire survived."
+          },
+          {
+            "id": "c",
+            "text": "Ask the Christian kings of Europe for an alliance against the Ottomans.",
+            "points": 2,
+            "explanation": "The Safavids did exchange letters and envoys with the Habsburgs, who also feared the Ottomans, but no real help came. Tahmasp relied on scorched earth and the Peace of Amasya (1555)."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1553,
+        "title": "Captives from the Caucasus",
+        "text": "As Grand Vizier, you notice new faces at court. The shah's raids into Georgia and the Caucasus have brought back many Georgian, Armenian, and Circassian captives. Some have converted to Islam and are being trained as soldiers and officials, called ghulams. Unlike the Qizilbash, they have no tribe and no lands of their own, so they depend completely on the shah. Meanwhile, Ottoman muskets keep proving their worth.",
+        "context": [
+          {
+            "if": "shia_state",
+            "text": "Captives who convert join the shah's Shia faith, which ties them even more closely to the dynasty."
+          },
+          {
+            "if": "qizilbash_power",
+            "text": "The Qizilbash chiefs who rule whole provinces see these newcomers as a threat to their power."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Train the converted captives as ghulams loyal only to the shah, and recruit Persian peasants as musketeers.",
+            "points": 8,
+            "set": [
+              "ghulams",
+              "musketeers"
+            ],
+            "explanation": "This laid the groundwork for the army Shah Abbas later used to save the empire. Tahmasp's captives were the start of the ghulam corps, and Abbas expanded it into thousands of soldiers alongside Persian musketeers and an artillery corps. Troops paid by the shah, not by tribal chiefs, weakened the Qizilbash."
+          },
+          {
+            "id": "b",
+            "text": "Train the captives as ghulams, but leave guns to the Ottomans. Persian warriors have always fought on horseback, and muskets are slow, smoky, and expensive.",
+            "points": 3,
+            "set": [
+              "ghulams"
+            ],
+            "explanation": "Ghulams loyal only to the shah were a smart start, but guns had already proved their worth. Tahmasp himself had used cannons and musketeers to beat the Uzbeks at Jam in 1528, and Abbas later built a large musket corps."
+          },
+          {
+            "id": "c",
+            "text": "Rely on the Qizilbash, as the shahs always have. Sell the captives in the slave markets and use the money to reward the chiefs.",
+            "points": -2,
+            "explanation": "The Qizilbash had fought a civil war over the boy shah and would fight another after Tahmasp died in 1576. A force loyal only to the shah was the way to tame them."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1588–1629",
+      "title": "Shah Abbas",
+      "ruler": {
+        "year": 1598,
+        "title": "Half the World",
+        "text": "You are Shah Abbas. Your new army has beaten the Uzbeks, and now you want a capital that shows the world the glory of your dynasty and its Shia faith. Isfahan lies in the heart of Persia, far from the Ottoman border, on a river that waters gardens and orchards. Persian craftsmen make some of the finest silk, carpets, and tiles on Earth, and European merchants are eager to buy them.",
+        "context": [
+          {
+            "if": "royal_control",
+            "text": "Because your dynasty brought the Qizilbash chiefs under royal control, the shah can command the money and workers for a project this large."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Make Isfahan your capital and build a vast square with royal mosques, a palace, and a bazaar. Invite merchants and craftsmen to fill it.",
+            "points": 8,
+            "set": [
+              "isfahan"
+            ],
+            "explanation": "That's what Abbas did. The great square, Naqsh-e Jahan, with the Shah Mosque, the Shaykh Lutfallah Mosque, the Ali Qapu palace, and the royal bazaar, displayed Shia faith and royal power side by side. Persians said, \"Isfahan is half the world.\""
+          },
+          {
+            "id": "b",
+            "text": "Stay in Qazvin and save the money for the next war with the Ottomans.",
+            "points": 2,
+            "explanation": "Saving money has its uses, but monuments and trade built the shah's prestige and wealth. Abbas moved his capital to Isfahan, which became one of the most beautiful cities in the world."
+          },
+          {
+            "id": "c",
+            "text": "Spend the money on more Qizilbash cavalry instead. Buildings cannot defend an empire, but warriors can, and the chiefs will be grateful for the pay.",
+            "points": -2,
+            "explanation": "The Qizilbash chiefs had murdered Abbas's mother and made and unmade shahs. Abbas built a new army loyal to himself and spent lavishly on Isfahan, because splendor also helped convince people that his rule was blessed."
+          }
+        ]
+      },
+      "general": {
+        "clash": "kandahar"
+      },
+      "vizier": {
+        "year": 1619,
+        "title": "Silk and the Gulf",
+        "text": "As Grand Vizier, you manage Persia's most valuable export: silk. Armenian merchants, forced by the shah to move from their old town of Julfa to a new suburb of Isfahan, trade from Venice to India. But the Portuguese hold the island fortress of Hormuz at the mouth of the Persian Gulf and tax the sea trade. English East India Company ships have begun arriving, looking for silk.",
+        "context": [
+          {
+            "if": "royal_control",
+            "text": "Because the shahs have tamed the Qizilbash chiefs, the crown itself, not provincial chiefs, can claim the silk trade's profits."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Make silk exports a royal business run by Armenian merchants under the shah's protection, and join the English to drive the Portuguese out of Hormuz.",
+            "points": 8,
+            "set": [
+              "silk_trade"
+            ],
+            "gain": "gulf",
+            "explanation": "That's what happened. Abbas made silk exports a royal monopoly in 1619, Armenian merchants protected by the shah carried it to Europe and India, and in 1622 Persian troops with English ships took Hormuz from the Portuguese. Trade moved to the new port of Bandar Abbas."
+          },
+          {
+            "id": "b",
+            "text": "Keep sending silk the old way, by caravan through Ottoman Aleppo, and leave Hormuz to the Portuguese. The overland roads are well known, and the Portuguese are strong at sea.",
+            "points": 3,
+            "explanation": "Much Persian silk did keep traveling overland through Ottoman lands, even in wartime. But that route paid tolls to your worst enemy, which is why Abbas looked for sea routes and allies like the English."
+          },
+          {
+            "id": "c",
+            "text": "Tax the Armenian merchants as heavily as you can. They are rich, they are Christians, and they have no one to protect them but the shah.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "Squeezing them would drive the best traders away. Abbas did the opposite: he gave the Armenians of New Julfa loans, protection, and the right to build churches, because their trade made the crown rich."
+          }
+        ]
+      }
+    },
+    {
+      "years": "1629–1722",
+      "title": "The Long Decline",
+      "ruler": {
+        "year": 1629,
+        "title": "The Shah's Heirs",
+        "text": "Shah Abbas has just died. He feared his own sons, because powerful princes often plotted against shahs: he had one killed and two others blinded. You are his grandson, Shah Safi, raised hidden away in the harem, knowing little of governing or war. Now you must decide how the princes who come after you will be raised.",
+        "context": [
+          {
+            "if": "silk_trade",
+            "text": "The royal silk trade still fills the treasury, so the dynasty can afford to give princes tutors, households, and real jobs."
+          },
+          {
+            "if": "isfahan",
+            "text": "Isfahan's splendor makes the throne a glittering prize, and any prince who sees it may want it for himself."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Send each prince to govern a province, with trusted advisers to guide and watch him.",
+            "points": 8,
+            "explanation": "The road not taken. After Abbas, Safavid princes were raised in the harem, and many later shahs were inexperienced rulers who left government to court officials and eunuchs. Abbas II (1642–1666) proved an able ruler, but over time the dynasty grew weaker."
+          },
+          {
+            "id": "b",
+            "text": "Keep every prince locked away in the harem. A prince who has never led soldiers or met governors can never raise an army against the shah.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "This is what the Safavids did after Abbas, and it produced shahs who knew little about the world outside the palace. By 1700 the army and treasury had decayed badly."
+          },
+          {
+            "id": "c",
+            "text": "Train one chosen heir well, and keep his brothers far from court with comfortable lives but no armies or offices.",
+            "points": 3,
+            "explanation": "Better than locking them all away, though rivals might still gather around the brothers. The Safavids instead kept princes in the harem, and later shahs were often weak and easily controlled."
+          }
+        ]
+      },
+      "general": {
+        "year": 1722,
+        "title": "The Afghans at Isfahan",
+        "text": "You serve Shah Sultan Husayn, a pious man who avoids hard decisions. Afghan rebels from Kandahar, led by Mahmud Hotaki, are marching on Isfahan with a small but tough army. The shah's army is much bigger and has cannons, but its commanders quarrel, and court officials want a say in every decision. The capital has stored little food. How will you defend it?",
+        "context": [
+          {
+            "if": "ghulams",
+            "text": "The ghulam regiments your team once built still exist, but decades of peace and late pay have left them weak and poorly led."
+          },
+          {
+            "ifNot": "ghulams",
+            "text": "The shah never built a corps of ghulams, so the army is a patchwork of tribal horsemen whose chiefs obey no one but themselves."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Give one capable general full command and let no courtier overrule him. Fortify Isfahan and fill its storehouses with grain before the Afghans arrive.",
+            "points": 8,
+            "explanation": "That might have saved the capital. Instead, the larger Safavid army, split among quarreling commanders, was beaten at Gulnabad in March 1722, and Isfahan was besieged until its starving people surrendered in October. Safavid rule effectively ended, though Safavid shahs reigned in name until 1736."
+          },
+          {
+            "id": "b",
+            "text": "Let the shah's ministers and governors share the command, as custom demands, and meet the Afghans in open battle with your far bigger army.",
+            "points": -3,
+            "stability": -1,
+            "lose": "persia",
+            "explanation": "This is what happened. At Gulnabad the Safavid commanders did not work together, and a much smaller Afghan army won. After a seven-month siege, starving Isfahan surrendered in October 1722, and Shah Sultan Husayn handed his crown to Mahmud."
+          },
+          {
+            "id": "c",
+            "text": "Offer Mahmud a large payment to turn back to Kandahar.",
+            "points": 1,
+            "explanation": "Buying time might have worked briefly, but it would have shown weakness. Mahmud Hotaki was determined to take Isfahan, and in 1722 he did."
+          }
+        ]
+      },
+      "vizier": {
+        "year": 1700,
+        "title": "Unrest on the Frontier",
+        "text": "As Grand Vizier to Shah Sultan Husayn, you hear growing complaints from the provinces. Powerful Shia clergy at court push strict new rules and pressure Sunni Muslims, Sufis, and other minorities. In the east, Sunni Afghans around Kandahar and Baluch tribesmen resent harsh governors and heavy taxes, and the frontier troops often go unpaid. Some court officials say only firmness will keep order.",
+        "context": [
+          {
+            "if": "isfahan",
+            "text": "The court still spends lavishly on palaces, gardens, and religious schools in Isfahan while frontier garrisons wait for their pay."
+          }
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Keep religious peace in the provinces, rein in harsh governors, and pay the frontier troops on time.",
+            "points": 8,
+            "stability": 1,
+            "explanation": "The road not taken. Under Shah Sultan Husayn, religious pressure, harsh governors, and unpaid troops pushed Sunni Afghans and Baluch toward revolt. Fair treatment and paid soldiers might have kept the frontier loyal."
+          },
+          {
+            "id": "b",
+            "text": "Back the clergy. Order the Sunnis of the eastern provinces to accept Shia Islam, and punish those who refuse, so the whole empire shares one faith.",
+            "points": -2,
+            "stability": -1,
+            "explanation": "Religious pressure and harsh rule turned frontier peoples against the dynasty. In 1709 the Sunni Afghans of Kandahar, led by Mirwais Hotak, killed their Safavid governor and rebelled, and in 1722 his son Mahmud captured Isfahan."
+          },
+          {
+            "id": "c",
+            "text": "Raise taxes on the frontier provinces to pay for the court and the army. Those lands have always cost more to defend than they pay.",
+            "points": 1,
+            "explanation": "Heavier taxes on already angry provinces would only feed rebellion. The Afghan revolt of 1709 began against a harsh Safavid governor in Kandahar, and the Safavids never won the city back."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "rounds": 4,
+  "roleOrder": ["ruler", "general", "vizier"],
+  "roles": {
+    "ruler": { "label": "Ruler", "blurb": "Faith, legitimacy, succession, and monuments: why people accept your rule." },
+    "general": { "label": "General", "blurb": "Armies, gunpowder, frontiers, and battles: how the empire grows and defends itself." },
+    "vizier": { "label": "Vizier", "blurb": "Taxes, trade, and officials: how the empire is run from day to day." }
+  },
+  "adviser": { "label": "Royal Adviser", "blurb": "Gives advice on a different role's decision each round. Advice earns you points but doesn't change what the empire does." },
+  "seatsPerEmpire": 3,
+  "maxPlayers": 40,
+  "stability": { "easy": 5, "medium": 4, "hard": 3 },
+  "exileFactor": 0.5,
+  "missedPoints": 0,
+  "timer": { "default": 180, "choices": [120, 180, 240, 300], "addSeconds": 60 },
+  "clashPrepPower": 1,
+  "nodeRules": { "optionsPerNode": 3, "maxExplanationSentences": 3, "maxOptionWords": 40, "maxTextWords": 110 }
+}

@@ -11,10 +11,13 @@ Students pick one of eight empires, make about 8 historically grounded decisions
 | Medium (−1 to +6, 3 stability) | Ottoman Empire · Russian Empire |
 | Hard (−3 to +8, 2 stability, instant-collapse choices) | Spanish Empire · Safavid Empire · Songhai Empire |
 
+**Class Battle** (live, whole-class mode): teams of three students (Ruler, General, Vizier) run the eight empires at the same time over four rounds, with clashes between empires and a world map on the projector. Projector: https://rule-the-empire.rule-empire-0ee0f1.workers.dev/battle · Students join: https://rule-the-empire.rule-empire-0ee0f1.workers.dev/join
+
 ## For teachers
 
 - **[Teacher Guide](docs/TEACHER_GUIDE.md):** how students play, reading the leaderboard, teacher controls, changing the password.
 - **[Content Review](docs/CONTENT_REVIEW.md):** every decision, option, point value, and explanation, with flagged facts at the top.
+- **[Battle Content Review](docs/BATTLE_CONTENT_REVIEW.md):** every Class Battle decision and clash, with flagged facts at the top.
 - **[Editing the content](docs/EDITING_CONTENT.md):** how to change the game's history content later.
 
 ## How it works
@@ -24,6 +27,7 @@ Students pick one of eight empires, make about 8 historically grounded decisions
 - **`src/api.js` + `src/worker.js`** run on Cloudflare Workers. The browser sends only the choices it made, as per-game option codes, and the server replays them, so scores can't be faked. Official first attempts are saved step by step, so students can't take back an answer. The teacher password is checked only on the server (a secret, never sent to the page).
 - **`src/db.js`** stores the leaderboard in Cloudflare D1 (SQLite): first name, period, empire, score, outcome, plus a random game code and choice list for resuming and verifying.
 - **`public/`** holds the game client: plain HTML, CSS, and JS with no framework, original SVG emblems, self-hosted open-license fonts, and a public-domain Natural Earth world map with major rivers. `public/scenes.js` draws the animated map scenes shown after each turning point (the scenes themselves live in the content files).
+- **Class Battle:** `src/battle.js` is the pure team engine (rounds, offices, flags, clashes, collapse, exile). Each battle is a Cloudflare **Durable Object** (`src/battle-room.js`, logic in `src/battle-room-core.js`) that holds the room's state, runs the round timer with an alarm, and talks to the projector (`public/battle.html`) and student screens (`public/join.html`) over WebSockets. Students' screens never receive point values or option ids, only per-battle option codes, and the room deletes itself within 12 hours. Finished battles are saved to D1 for the Class Report.
 - **Teacher Class Report:** unlocking teacher mode opens a report built from the saved first games: most-missed decisions, period-vs-period averages, and empire choices. No extra student data is stored for it.
 
 ## Checks
@@ -33,7 +37,10 @@ npm run validate   # graph checks: no dead ends/broken links, 7–9 decision pat
 npm run balance    # min/max/typical scores on every path for every empire → docs/BALANCE_REPORT.md
 npm test           # unit + API tests (scoring, first-attempt logic, periods, teacher password…)
 npm run test:e2e   # real-browser play-throughs: a full path and a collapse path for every empire
-npm run check      # validate + balance + unit tests
+npm run validate:battle   # Class Battle content checks
+npm run balance:battle    # thousands of simulated battles → docs/BATTLE_BALANCE.md
+npm run test:battle       # a full live battle: 24 students (4 in real browsers) on a local server
+npm run check      # validate + balance (solo and battle) + unit tests
 ```
 
 Deployment and local development: **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**.

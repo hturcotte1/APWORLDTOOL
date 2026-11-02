@@ -300,3 +300,48 @@ test('class report counts answers per decision and per period', async () => {
   // Names are never part of the report.
   assert.ok(!JSON.stringify(body).includes('Ana'));
 });
+
+test('opening a Class Battle needs the teacher password and returns a code and host key', async () => {
+  const inits = [];
+  env.BATTLE = {
+    idFromName: (code) => code,
+    get: (id) => ({
+      fetch: async (url, init) => {
+        const body = JSON.parse(init.body);
+        inits.push({ id, ...body });
+        return new Response(JSON.stringify({ ok: true }), { status: inits.length === 1 ? 409 : 200 }); // first code "taken"
+      },
+    }),
+  };
+  assert.equal((await teacher('/api/teacher/battle/new', { period: 2 }, 'wrong')).status, 401);
+  assert.equal((await teacher('/api/teacher/battle/new', { period: 9 })).status, 400);
+  const res = await teacher('/api/teacher/battle/new', { period: 2, timer: 240 });
+  assert.equal(res.status, 200);
+  assert.match(res.body.code, /^[A-Z]{4}$/);
+  assert.ok(res.body.hostKey.length >= 20);
+  assert.equal(inits.length, 2, 'a taken code is retried with a new one');
+  assert.equal(inits[1].id, res.body.code);
+  assert.equal(inits[1].period, 2);
+  assert.equal(inits[1].timer, 240);
+  assert.equal(inits[1].hostKey, res.body.hostKey);
+});
+
+test('finished Class Battles are listed and can be deleted by the teacher', async () => {
+  const { saveBattle } = await import('../../src/db.js');
+  await saveBattle(env.DB, {
+    code: 'WXYZ', period: 1,
+    teams: [{ empire: 'mughal', finalScore: 40, collapsed: false, rating: 'Skilled Ruler', points: 40, penalty: 0 }],
+    players: [{ name: 'Ana', empire: 'mughal', roles: ['ruler', 'vizier'], score: 30 }, { name: 'Ben', empire: 'mughal', roles: ['general'], score: 10 }],
+  });
+  assert.equal((await teacher('/api/teacher/battles', {}, 'wrong')).status, 401);
+  const list = await teacher('/api/teacher/battles', {});
+  assert.equal(list.body.battles.length, 1);
+  const b = list.body.battles[0];
+  assert.equal(b.code, 'WXYZ');
+  assert.deepEqual(b.players.map((p) => p.name), ['Ana', 'Ben']);
+  assert.deepEqual(b.players[0].roles, ['ruler', 'vizier']);
+  assert.deepEqual(Object.keys(b.players[0]).sort(), ['empire', 'name', 'roles', 'score'], 'only first name, empire, role, and score are kept');
+  const del = await teacher('/api/teacher/battles/delete', { id: b.id });
+  assert.equal(del.body.deleted, 1);
+  assert.equal((await teacher('/api/teacher/battles', {})).body.battles.length, 0);
+});
