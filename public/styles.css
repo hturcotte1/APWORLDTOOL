@@ -706,6 +706,12 @@ body.battle-page main { max-width: 1240px; }
 .battle-setup .resume-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 0 0 14px; margin-bottom: 14px; border-bottom: 1px solid var(--rule); }
 .battle-setup .resume-row p { margin: 0; }
 .battle-setup .how { margin-top: 28px; }
+.pw-row { display: flex; align-items: flex-end; gap: 10px; }
+.pw-row input { flex: 1; min-width: 0; }
+.pw-show { flex: none; font: 600 0.95rem/1 var(--text); font-variant: all-small-caps; letter-spacing: 0.08em; color: var(--ink); background: transparent; border: 1px solid var(--rule); padding: 8px 12px 9px; cursor: pointer; }
+.pw-show:hover { border-color: var(--ink); }
+.pw-show:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.caps-warn { margin: 6px 0 0; font-size: 0.95rem; color: var(--bad); }
 .how ol { padding-left: 1.3em; }
 .how li { margin-bottom: 6px; }
 body[data-link='reconnecting'] main::before { content: 'Reconnecting…'; display: block; max-width: 400px; margin: 0 auto 10px; padding: 6px 12px; text-align: center; color: #1d1610; background: var(--brass); }

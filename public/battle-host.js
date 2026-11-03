@@ -50,7 +50,8 @@ function setupScreen(error = '') {
     <h2 class="rubric">Start a new battle</h2>
     <form id="new-battle" class="enlist" novalidate>
       <label class="field" for="pw">Teacher password</label>
-      <input id="pw" type="password" autocomplete="current-password" required>
+      <div class="pw-row"><input id="pw" type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" required><button type="button" class="pw-show" id="pw-show" aria-pressed="false" aria-controls="pw">Show</button></div>
+      <p class="caps-warn" id="caps" role="status" hidden>Caps Lock is on.</p>
       <fieldset>
         <legend class="field">Class period</legend>
         <div class="periods">${[1, 2, 3].map((p) => `<label><input type="radio" name="period" value="${p}" ${p === 1 ? 'checked' : ''}><span><i aria-hidden="true"></i>Period ${p}</span></label>`).join('')}</div>
@@ -72,6 +73,17 @@ function setupScreen(error = '') {
     </section>
   </article></div>`;
   app.querySelector('#new-battle').addEventListener('submit', openBattle);
+  const pw = app.querySelector('#pw');
+  app.querySelector('#pw-show').addEventListener('click', (ev) => {
+    const show = pw.type === 'password';
+    pw.type = show ? 'text' : 'password';
+    ev.currentTarget.textContent = show ? 'Hide' : 'Show';
+    ev.currentTarget.setAttribute('aria-pressed', String(show));
+    pw.focus();
+  });
+  const caps = (ev) => { if (ev.getModifierState) app.querySelector('#caps').hidden = !ev.getModifierState('CapsLock'); };
+  pw.addEventListener('keydown', caps);
+  pw.addEventListener('keyup', caps);
   app.querySelector('#resume')?.addEventListener('click', () => start(prev));
 }
 
@@ -82,7 +94,7 @@ async function openBattle(ev) {
   try {
     const res = await fetch('/api/teacher/battle/new', {
       method: 'POST',
-      headers: { 'content-type': 'application/json', 'x-teacher-password': app.querySelector('#pw').value },
+      headers: { 'content-type': 'application/json', 'x-teacher-password': app.querySelector('#pw').value.trim() },
       body: JSON.stringify({ period: Number(app.querySelector('input[name=period]:checked').value), timer: Number(app.querySelector('input[name=timer]:checked').value) }),
     });
     const data = await res.json().catch(() => ({}));
@@ -91,7 +103,12 @@ async function openBattle(ev) {
     writeSession(s);
     start(s);
   } catch (e) {
-    setupScreen(e.message);
+    // Keep what was typed so the teacher can check it (with Show) and fix it.
+    const err = app.querySelector('#new-battle .error');
+    if (!err) return setupScreen(e.message);
+    err.textContent = e.message;
+    err.hidden = false;
+    app.querySelector('#pw')?.select();
   } finally {
     btn.disabled = false;
   }
